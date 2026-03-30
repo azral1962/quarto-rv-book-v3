@@ -1,0 +1,726 @@
+---
+title: "Bab 2. Random Variable Umum"
+format: html
+jupyter: python3
+---
+
+## Tujuan Bab
+
+Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
+
+1. memahami **random variable** sebagai pemetaan dari hasil acak ke bilangan,
+2. membedakan **event** dengan **nilai random variable**,
+3. memahami **range** sebagai himpunan nilai yang mungkin,
+4. membedakan random variable **diskrit** dan **kontinu**,
+5. memahami dan menggunakan **PMF**, **CDF**, dan **PDF**,
+6. menghitung dan menafsirkan **ekspektasi**, **varians**, dan **simpangan baku**,
+7. menghubungkan ukuran-ukuran tersebut dengan **pengambilan keputusan**.
+
+## Pembuka
+
+Pada bab sebelumnya, kita sudah melihat bahwa probabilitas menjadi penting ketika kita harus mengambil keputusan di bawah ketidakpastian. Kita juga sudah melihat bahwa salah satu cara paling kuat untuk “menjinakkan” ketidakpastian adalah dengan membuat **model**.
+
+Di bab ini, kita masuk ke fondasi model tersebut: **random variable**.
+
+Random variable adalah salah satu ide yang tampak sederhana, tetapi pengaruhnya sangat besar. Begitu kita berhasil memetakan hasil-hasil acak menjadi angka, kita memperoleh akses ke dunia matematika: kita bisa menggambar, menghitung, mensimulasikan, membandingkan, dan akhirnya memutuskan.
+
+## 2.1 Quick Win: Dari Dunia Acak ke Garis Bilangan
+
+Mari mulai dari contoh sederhana. Misalkan kita melempar dua koin. Ruang sampelnya adalah:
+
+$$
+S = \{HH, HT, TH, TT\}
+$$
+
+Sekarang definisikan random variable:
+
+$$
+X = \text{jumlah sisi Head yang muncul}
+$$
+
+Maka:
+- $X(HH)=2$
+- $X(HT)=1$
+- $X(TH)=1$
+- $X(TT)=0$
+
+Artinya, hasil-hasil acak yang tadinya berupa simbol $HH, HT, TH, TT$ dipetakan menjadi angka $0,1,2$.
+
+Mari lihat dengan Python.
+
+```{python}
+import itertools
+import numpy as np
+import matplotlib.pyplot as plt
+
+outcomes = list(itertools.product(['H', 'T'], repeat=2))
+
+def X(outcome):
+    return outcome.count('H')
+
+mapped = [(o, X(o)) for o in outcomes]
+mapped
+```
+
+```{python}
+values = [X(o) for o in outcomes]
+unique, counts = np.unique(values, return_counts=True)
+
+plt.figure(figsize=(7,4))
+plt.bar(unique, counts / counts.sum())
+plt.xlabel("Nilai X = jumlah Head")
+plt.ylabel("Probabilitas")
+plt.title("Random variable sebagai pemetaan ke bilangan")
+plt.xticks(unique)
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+Dari sini kita melihat *quick win* yang penting:
+- event hidup di ruang sampel,
+- random variable memetakan event ke angka,
+- distribusi random variable memberi tahu kita bagaimana peluang tersebar pada angka-angka itu.
+
+## 2.2 K — Konteks: Mengapa Kita Perlu Random Variable?
+
+Bayangkan beberapa pertanyaan berikut:
+- Berapa jumlah kendaraan yang lewat gerbang tol dalam satu jam?
+- Berapa waktu tunggu pasien sampai dilayani?
+- Berapa profit harian sebuah klinik?
+- Berapa banyak produk cacat dalam 100 unit?
+- Berapa lama sebuah lampu bertahan sebelum rusak?
+
+Semua pertanyaan ini punya satu pola: hasilnya **tidak pasti**, tetapi hasil itu **berupa bilangan**.
+
+Itulah alasan random variable menjadi penting. Ia menjadi jembatan antara:
+- kejadian acak di dunia nyata, dan
+- analisis matematis berbasis angka.
+
+## 2.3 M — Model: Definisi Random Variable
+
+Secara formal, random variable $X$ adalah sebuah fungsi yang memetakan setiap hasil $\omega$ dalam ruang sampel $S$ ke sebuah bilangan real:
+
+$$
+X: S \to \mathbb{R}
+$$
+
+dengan
+
+$$
+\omega \mapsto X(\omega)
+$$
+
+Di sini:
+- $S$ = ruang sampel,
+- $\omega$ = satu hasil acak,
+- $X(\omega)$ = angka yang dihasilkan oleh pemetaan itu.
+
+### Catatan penting
+Random variable bukan “angka yang acak” dalam arti longgar. Secara matematis, random variable adalah **fungsi**. Keacakan datang dari kenyataan bahwa hasil $\omega$ belum diketahui sebelum eksperimen terjadi.
+
+## 2.4 Event vs Nilai Random Variable
+
+Mahasiswa sering bingung membedakan dua hal ini:
+
+- **event** = himpunan hasil dalam ruang sampel,
+- **nilai random variable** = angka hasil pemetaan.
+
+Contoh:
+lempar dua dadu, lalu definisikan
+
+$$
+X = \text{jumlah mata dadu}
+$$
+
+Maka event:
+$$
+E = \{(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\}
+$$
+
+adalah event “jumlah mata dadu = 7”.
+
+Tetapi nilai random variable yang terkait adalah:
+$$
+X = 7
+$$
+
+Jadi:
+- event adalah kumpulan outcome,
+- random variable adalah angka yang dihasilkan dari outcome itu.
+
+Mari visualisasikan cepat.
+
+```{python}
+outcomes = list(itertools.product(range(1, 7), repeat=2))
+sums = [sum(o) for o in outcomes]
+
+unique, counts = np.unique(sums, return_counts=True)
+probs = counts / counts.sum()
+
+plt.figure(figsize=(8,4))
+plt.bar(unique, probs)
+plt.xlabel("Nilai X = jumlah dua dadu")
+plt.ylabel("Probabilitas")
+plt.title("Distribusi random variable jumlah dua dadu")
+plt.xticks(unique)
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+## 2.5 Range: Nilai-Nilai yang Mungkin
+
+Range dari random variable adalah himpunan semua nilai yang mungkin diambil oleh random variable tersebut.
+
+Untuk contoh dua dadu dengan:
+$$
+X = \text{jumlah mata dadu}
+$$
+
+range-nya adalah:
+$$
+\{2,3,4,\dots,12\}
+$$
+
+Range ini penting karena memberi tahu:
+- apa saja kemungkinan nilai,
+- apakah nilai-nilai itu diskrit atau kontinu,
+- bagaimana bentuk distribusinya.
+
+### Diskrit vs Kontinu
+
+#### Random Variable Diskrit
+Jika range terdiri dari titik-titik terpisah, misalnya:
+$$
+\{0,1,2,3,\dots\}
+$$
+maka random variable itu diskrit.
+
+Contoh:
+- jumlah pelanggan datang,
+- jumlah cacat,
+- jumlah pesan masuk,
+- banyaknya Head.
+
+#### Random Variable Kontinu
+Jika range berupa interval pada garis bilangan, misalnya:
+$$
+[0,\infty)
+$$
+atau
+$$
+(-\infty,\infty)
+$$
+maka random variable itu kontinu.
+
+Contoh:
+- waktu tunggu,
+- lama hidup komponen,
+- tinggi badan,
+- suhu.
+
+## 2.6 PMF untuk Random Variable Diskrit
+
+Jika $X$ diskrit, maka distribusinya dapat dinyatakan dengan **Probability Mass Function (PMF)**:
+
+$$
+p_X(x) = P(X=x)
+$$
+
+PMF memberi peluang bahwa random variable mengambil nilai tepat $x$.
+
+### Sifat PMF
+1. 
+$$
+p_X(x) \ge 0
+$$
+
+2. 
+$$
+\sum_x p_X(x) = 1
+$$
+
+#### Contoh: jumlah Head pada dua lemparan koin
+
+$$
+P(X=0)=\frac{1}{4}, \quad P(X=1)=\frac{1}{2}, \quad P(X=2)=\frac{1}{4}
+$$
+
+```{python}
+x = np.array([0, 1, 2])
+pmf = np.array([1/4, 1/2, 1/4])
+
+plt.figure(figsize=(7,4))
+plt.stem(x, pmf, basefmt=" ")
+plt.xlabel("x")
+plt.ylabel("P(X=x)")
+plt.title("PMF jumlah Head pada dua lemparan koin")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi keputusan
+PMF membantu menjawab pertanyaan seperti:
+- seberapa mungkin tepat 2 cacat?
+- seberapa mungkin tepat 5 pelanggan datang?
+- seberapa mungkin tepat 1 dari 3 server gagal?
+
+## 2.7 CDF: Bahasa Probabilitas Kumulatif
+
+Baik untuk random variable diskrit maupun kontinu, salah satu fungsi terpenting adalah **Cumulative Distribution Function (CDF)**:
+
+$$
+F_X(x) = P(X \le x)
+$$
+
+CDF memberi peluang bahwa nilai random variable **tidak melebihi** $x$.
+
+Ini sangat penting karena banyak keputusan berbentuk:
+- peluang rusak sebelum waktu tertentu,
+- peluang demand tidak melebihi stok,
+- peluang profit lebih kecil dari nol,
+- peluang nilai ujian di bawah batas lulus.
+
+#### Contoh CDF diskrit
+
+Untuk $X$ = jumlah Head pada dua lemparan koin:
+- $F(0)=P(X\le 0)=1/4$
+- $F(1)=P(X\le 1)=3/4$
+- $F(2)=1$
+
+```{python}
+cdf = np.cumsum(pmf)
+
+plt.figure(figsize=(7,4))
+plt.step(x, cdf, where='post')
+plt.xlabel("x")
+plt.ylabel("F(x)=P(X≤x)")
+plt.title("CDF random variable diskrit")
+plt.ylim(-0.05, 1.05)
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+## 2.8 PDF untuk Random Variable Kontinu
+
+Untuk random variable kontinu, kita biasanya tidak berbicara tentang peluang tepat pada satu titik, karena:
+
+$$
+P(X=x)=0
+$$
+
+Sebagai gantinya, distribusi dijelaskan dengan **Probability Density Function (PDF)**:
+
+$$
+f_X(x)
+$$
+
+Peluang pada interval diperoleh melalui integral:
+
+$$
+P(a \le X \le b) = \int_a^b f_X(x)\,dx
+$$
+
+### Sifat PDF
+1.
+$$
+f_X(x)\ge 0
+$$
+
+2.
+$$
+\int_{-\infty}^{\infty} f_X(x)\,dx = 1
+$$
+
+#### Contoh cepat: Uniform kontinu pada [0,1]
+
+$$
+f(x)=
+\begin{cases}
+1, & 0 \le x \le 1\\
+0, & \text{lainnya}
+\end{cases}
+$$
+
+Maka:
+$$
+P(0.2 \le X \le 0.7)=0.5
+$$
+
+```{python}
+x = np.linspace(-0.2, 1.2, 400)
+pdf = np.where((x >= 0) & (x <= 1), 1.0, 0.0)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.fill_between(x, 0, pdf, where=((x >= 0.2) & (x <= 0.7)), alpha=0.3)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Uniform(0,1)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi penting
+Tinggi PDF bukan peluang langsung.  
+Peluang adalah **luas area** di bawah kurva PDF.
+
+## 2.9 Menghubungkan PMF, CDF, dan PDF
+
+Hubungan penting:
+
+### Untuk diskrit
+$$
+F_X(x)=\sum_{t \le x} p_X(t)
+$$
+
+### Untuk kontinu
+$$
+F_X(x)=\int_{-\infty}^{x} f_X(t)\,dt
+$$
+
+Jika PDF cukup halus, maka:
+$$
+f_X(x)=\frac{d}{dx}F_X(x)
+$$
+
+Jadi:
+- PMF/PDF memberi struktur lokal distribusi,
+- CDF memberi akumulasi peluang sampai titik tertentu.
+
+## 2.10 Ekspektasi: Tebakan Terbaik Sebelum Fakta Terjadi
+
+Ekspektasi adalah ukuran pusat distribusi. Ia sering dipandang sebagai **rata-rata jangka panjang**.
+
+### Untuk random variable diskrit
+$$
+E[X] = \sum_x x\,p_X(x)
+$$
+
+### Untuk random variable kontinu
+$$
+E[X] = \int_{-\infty}^{\infty} x f_X(x)\,dx
+$$
+
+#### Contoh: jumlah Head pada dua lemparan koin
+$$
+E[X] = 0 \cdot \frac14 + 1 \cdot \frac12 + 2 \cdot \frac14 = 1
+$$
+
+Mari cek dengan simulasi.
+
+```{python}
+rng = np.random.default_rng(123)
+
+n = 100000
+coin1 = rng.integers(0, 2, size=n)
+coin2 = rng.integers(0, 2, size=n)
+Xsim = coin1 + coin2
+
+print("Rata-rata simulasi =", Xsim.mean())
+```
+
+#### Interpretasi keputusan
+Ekspektasi menjawab pertanyaan seperti:
+- rata-rata keuntungan harian,
+- rata-rata jumlah pelanggan,
+- rata-rata cacat per batch,
+- rata-rata waktu tunggu.
+
+Tetapi ekspektasi **tidak mengatakan seluruh cerita**. Dua distribusi dengan mean sama bisa memiliki risiko yang sangat berbeda.
+
+## 2.11 Varians dan Simpangan Baku: Seberapa Liar Penyimpangannya?
+
+Varians mengukur seberapa jauh random variable menyebar dari nilai ekspektasinya.
+
+### Definisi
+$$
+\mathrm{Var}(X)=E[(X-E[X])^2]
+$$
+
+Simpangan baku adalah akar kuadrat varians:
+$$
+\sigma_X = \sqrt{\mathrm{Var}(X)}
+$$
+
+### Bentuk yang sering lebih praktis
+$$
+\mathrm{Var}(X)=E[X^2] - (E[X])^2
+$$
+
+#### Contoh: dua investasi dengan mean sama, variance beda
+
+```{python}
+rng = np.random.default_rng(2026)
+
+A = rng.choice([8, 10, 12], size=100000, p=[0.25, 0.50, 0.25])
+B = rng.choice([0, 10, 20], size=100000, p=[0.25, 0.50, 0.25])
+
+print("Mean A =", A.mean(), "Var A =", A.var(), "Std A =", A.std())
+print("Mean B =", B.mean(), "Var B =", B.var(), "Std B =", B.std())
+```
+
+```{python}
+plt.figure(figsize=(8,4))
+plt.hist(A, bins=np.arange(-0.5, 21.5, 1), alpha=0.6, density=True, label="A")
+plt.hist(B, bins=np.arange(-0.5, 21.5, 1), alpha=0.6, density=True, label="B")
+plt.xlabel("Nilai")
+plt.ylabel("Density / Probability")
+plt.title("Mean sama, variance berbeda")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi keputusan
+Jika kita hanya melihat mean, dua pilihan ini tampak setara. Tetapi jika kita juga melihat variance, kita sadar bahwa salah satu pilihan jauh lebih berisiko.
+
+## 2.12 Sifat-Sifat Penting Ekspektasi dan Varians
+
+### Linearitas ekspektasi
+Untuk konstanta $a,b$:
+$$
+E[aX+b] = aE[X]+b
+$$
+
+Ini sangat penting karena memungkinkan kita memindahkan model ke unit baru atau mengubah skala.
+
+### Varians terhadap transformasi linear
+$$
+\mathrm{Var}(aX+b)=a^2 \mathrm{Var}(X)
+$$
+
+Artinya:
+- menambah konstanta tidak mengubah variance,
+- mengalikan skala dengan $a$ memperbesar variance sebesar $a^2$.
+
+Mari cek.
+
+```{python}
+rng = np.random.default_rng(0)
+X = rng.normal(loc=5, scale=2, size=100000)
+
+Y = 3*X + 10
+
+print("E[X] ~", X.mean())
+print("E[Y] ~", Y.mean(), "   teori =", 3*X.mean() + 10)
+
+print("Var[X] ~", X.var())
+print("Var[Y] ~", Y.var(), "   teori =", 9*X.var())
+```
+
+## 2.13 Diskrit dan Kontinu dalam Praktik
+
+Secara praktik, banyak data diukur secara diskrit:
+- berat badan dibulatkan ke 0.1 kg,
+- waktu dicatat dalam detik,
+- panjang dicatat dalam milimeter.
+
+Tetapi secara model, kadang jauh lebih sederhana menganggap besaran itu kontinu. Ini bukan kesalahan, tetapi bentuk idealisasi yang membantu analisis.
+
+### Pedoman intuitif
+- Jika nilai alami berupa hitungan → cenderung diskrit
+- Jika nilai alami berupa pengukuran halus → sering dimodelkan kontinu
+
+Contoh:
+- jumlah mobil → diskrit
+- waktu hidup lampu → kontinu
+- jumlah pasien → diskrit
+- suhu → kontinu
+
+## 2.14 Dari Histogram ke Distribusi
+
+Dalam kenyataan, kita sering tidak mulai dari rumus distribusi, tetapi dari data. Dari data, kita bisa membuat histogram untuk melihat bentuk penyebaran.
+
+Mari contohkan data simulasi.
+
+```{python}
+rng = np.random.default_rng(99)
+samples = rng.normal(loc=100, scale=15, size=5000)
+
+plt.figure(figsize=(8,4))
+plt.hist(samples, bins=40, density=True, alpha=0.75, edgecolor='black')
+plt.xlabel("Nilai")
+plt.ylabel("Density")
+plt.title("Histogram sebagai pendekatan bentuk distribusi")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+Histogram tidak otomatis menjadi PMF atau PDF yang eksak, tetapi histogram sangat berguna untuk:
+- menduga bentuk distribusi,
+- melihat pusat,
+- melihat penyebaran,
+- mendeteksi skewness atau outlier,
+- memilih model awal yang masuk akal.
+
+## 2.15 KMQA Mini-Case 1 — Timbangan Berat Badan
+
+### K — Konteks
+Sebuah timbangan digital menampilkan berat badan dalam satu angka desimal.
+
+### M — Model
+Jika $X$ adalah berat badan orang yang naik ke timbangan, maka $X$ dapat dimodelkan sebagai random variable kontinu, walaupun tampilan akhirnya dibulatkan.
+
+### Q — Questions
+1. Apa range masuk akalnya?
+2. Apakah lebih masuk akal dipandang diskrit atau kontinu?
+3. Ukuran apa yang penting: mean, variance, atau keduanya?
+
+### A — Apply
+Jawabannya:
+- range teknis mungkin 0–999.9, tetapi range realistis jauh lebih sempit,
+- secara teori lebih nyaman dipandang kontinu,
+- mean memberi pusat berat populasi,
+- variance memberi seberapa beragam berat badan orang yang diukur.
+
+## 2.16 KMQA Mini-Case 2 — Jumlah Kendaraan di Gerbang Tol
+
+### K — Konteks
+Kita ingin memodelkan jumlah kendaraan yang lewat dalam satu jam.
+
+### M — Model
+Jika $X$ = jumlah kendaraan, maka $X$ adalah random variable diskrit.
+
+### Q — Questions
+1. Mengapa diskrit?
+2. Apa range yang masuk akal?
+3. Apa arti $P(X=120)$? Apa arti $P(X\le 120)$?
+
+### A — Apply
+- diskrit karena berupa hitungan,
+- $P(X=120)$ adalah peluang tepat 120 kendaraan,
+- $P(X\le 120)$ adalah peluang jumlah kendaraan tidak melebihi 120.
+
+## 2.17 KMQA Mini-Case 3 — Waktu Tunggu Pasien
+
+### K — Konteks
+Sebuah klinik ingin memodelkan waktu tunggu pasien hingga dilayani.
+
+### M — Model
+Jika $X$ = waktu tunggu (menit), maka $X$ biasanya dimodelkan kontinu.
+
+### Q — Questions
+1. Mengapa kontinu?
+2. Mengapa $P(X=10)=0$ tetapi $P(9.5 \le X \le 10.5)$ bisa positif?
+3. Mengapa CDF penting dalam konteks ini?
+
+### A — Apply
+- kontinu karena waktu dapat berubah halus,
+- pada model kontinu, peluang titik tunggal nol,
+- yang bermakna adalah peluang interval,
+- CDF membantu menjawab “peluang menunggu tidak lebih dari x menit”.
+
+## 2.18 Python Toolbox Dasar untuk Bab Ini
+
+Berikut beberapa alat Python yang sangat sering dipakai untuk random variable.
+
+```{python}
+import numpy as np
+from scipy import stats
+```
+
+### Simulasi data
+```{python}
+sample_binom = np.random.binomial(n=10, p=0.4, size=10)
+sample_norm = np.random.normal(loc=0, scale=1, size=10)
+
+sample_binom, sample_norm[:5]
+```
+
+### PMF / PDF / CDF dari SciPy
+```{python}
+x_discrete = np.arange(0, 11)
+pmf_binom = stats.binom.pmf(x_discrete, n=10, p=0.4)
+
+x_cont = np.linspace(-3, 3, 200)
+pdf_norm = stats.norm.pdf(x_cont, loc=0, scale=1)
+cdf_norm = stats.norm.cdf(x_cont, loc=0, scale=1)
+
+pmf_binom[:5], pdf_norm[:5], cdf_norm[:5]
+```
+
+### Plot cepat
+```{python}
+plt.figure(figsize=(8,4))
+plt.stem(x_discrete, pmf_binom, basefmt=" ")
+plt.title("Contoh PMF Binomial dari scipy.stats")
+plt.xlabel("x")
+plt.ylabel("P(X=x)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+## 2.19 Kesalahan-Kesalahan Umum yang Harus Dihindari
+
+1. **Menganggap random variable sama dengan event**  
+   Tidak. Event adalah himpunan outcome. Random variable adalah fungsi ke bilangan.
+
+2. **Menganggap PDF adalah peluang langsung**  
+   Tidak. Untuk kontinu, peluang adalah luas area di bawah PDF.
+
+3. **Menganggap mean cukup untuk semua keputusan**  
+   Tidak. Variance dan bentuk distribusi juga penting.
+
+4. **Menganggap diskrit dan kontinu bisa dipertukarkan sembarangan**  
+   Tidak. Pemilihan model harus sesuai konteks.
+
+5. **Menganggap $P(X=x)$ untuk kontinu bisa positif**  
+   Tidak. Dalam model kontinu, peluang tepat satu titik adalah nol.
+
+## 2.20 Menyimpulkan Bab Ini
+
+Bab ini memberi fondasi yang akan dipakai terus-menerus pada bab-bab berikutnya.
+
+Kita telah melihat bahwa:
+- random variable adalah fungsi dari ruang sampel ke bilangan real,
+- range membantu kita mengenali jenis peubah acak,
+- PMF dipakai untuk diskrit,
+- PDF dipakai untuk kontinu,
+- CDF berlaku untuk keduanya,
+- ekspektasi memberi ukuran pusat,
+- varians dan simpangan baku memberi ukuran penyebaran.
+
+Dengan fondasi ini, kita siap masuk ke distribusi-distribusi khusus yang sangat sering dipakai dalam pemodelan nyata.
+
+## 2.21 Ringkasan Poin Inti
+
+1. **Random variable** memetakan hasil acak menjadi angka.
+2. **Event** berbeda dari **nilai random variable**.
+3. **Range** adalah himpunan nilai yang mungkin diambil.
+4. **PMF** untuk diskrit, **PDF** untuk kontinu, dan **CDF** untuk keduanya.
+5. **Ekspektasi** mengukur pusat atau rata-rata jangka panjang.
+6. **Varians** dan **simpangan baku** mengukur penyebaran.
+7. Dalam keputusan nyata, kita hampir selalu perlu melihat lebih dari sekadar mean.
+
+## 2.22 Latihan Bab 2
+
+### A. Konseptual
+1. Jelaskan dengan kata-kata sendiri apa itu random variable.
+2. Apa perbedaan antara event “jumlah mata dua dadu = 7” dan nilai random variable $X=7$?
+3. Mengapa PDF bukan peluang langsung?
+
+### B. Hitungan
+1. Untuk dua lemparan koin, hitung PMF dan CDF dari jumlah Head.
+2. Untuk dua dadu fair, hitung:
+   - $P(X=8)$
+   - $P(X\le 8)$
+   dengan $X$ = jumlah dua dadu.
+3. Jika $X$ uniform pada [0,1], hitung:
+   - $P(X<0.3)$
+   - $P(0.3 \le X \le 0.8)$
+
+### C. Python
+1. Simulasikan 50.000 lemparan dua koin dan bandingkan histogram hasil dengan PMF teoritis.
+2. Simulasikan 50.000 lemparan dua dadu dan gambar CDF empiris jumlah mata dadu.
+3. Simulasikan random variable kontinu sederhana dan tunjukkan bahwa peluang titik tunggal mendekati nol.
+
+### D. Aplikatif
+1. Sebutkan satu random variable diskrit dan satu kontinu dari kehidupan sehari-hari.
+2. Dalam konteks layanan klinik, ukuran mana yang lebih penting: mean waktu tunggu atau peluang menunggu lebih dari 30 menit? Jelaskan.
+3. Dalam konteks quality control, mengapa $P(X\le k)$ sering lebih berguna daripada hanya $P(X=k)$?
+
+## 2.23 Penutup Kecil
+
+Bab ini mungkin terlihat “dasar”, tetapi fondasi yang kuat justru dibuat dari konsep-konsep dasar yang dipahami dengan jernih. Begitu Anda benar-benar memahami random variable, PMF, CDF, PDF, ekspektasi, dan varians, banyak topik berikutnya akan terasa jauh lebih masuk akal.
+
+Di bab berikutnya, kita akan mulai memasuki keluarga-keluarga **distribusi diskrit khusus** yang sangat sering dipakai dalam pemodelan: Bernoulli, Binomial, Geometric, Poisson, dan lainnya.

@@ -1,0 +1,739 @@
+---
+title: "Bab 1. Pendahuluan Pengambilan Keputusan"
+format: html
+jupyter: python3
+---
+
+## Tujuan Bab
+
+Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
+
+1. melihat probabilitas dan statistika sebagai **alat pengambilan keputusan**,
+2. memahami mengapa **random variable** diperlukan untuk memodelkan dunia yang tidak pasti,
+3. mengenali peran **ekspektasi** dan **varians** dalam membandingkan pilihan,
+4. menggunakan **Python** untuk mendapatkan *quick wins* sebelum masuk ke logika formal,
+5. menghubungkan konsep probabilitas dengan kasus nyata di bidang teknik, bisnis, dan layanan.
+
+## Pembuka
+
+Banyak mahasiswa pertama kali bertemu probabilitas dan statistika sebagai kumpulan simbol, rumus, dan notasi yang terasa dingin. Padahal, di balik semua itu, probabilitas dan statistika sesungguhnya adalah bahasa untuk menjawab pertanyaan yang sangat manusiawi:
+
+- Apa keputusan yang paling masuk akal bila masa depan belum pasti?
+- Mana pilihan yang lebih aman?
+- Mana yang lebih menguntungkan?
+- Seberapa besar risiko yang harus kita tanggung?
+- Kapan kita harus berhenti mengandalkan intuisi dan mulai menghitung?
+
+Bab ini mengajak Anda masuk ke probabilitas bukan dari pintu definisi formal terlebih dahulu, tetapi dari pintu yang lebih akrab: **pengambilan keputusan**.
+
+## 1.1 Dari Pilihan ke Model
+
+Setiap hari manusia membuat keputusan. Sebagian kecil: memilih rute ke kampus, memilih tempat makan siang, memilih waktu belajar. Sebagian lain lebih besar: memilih investasi, menentukan kebijakan produksi, menetapkan garansi, menambah jumlah dokter, atau menentukan batas aman komponen listrik.
+
+Masalahnya, keputusan hampir selalu dibuat **sebelum** kita tahu apa yang akan terjadi. Masa depan belum datang, data belum lengkap, keadaan tidak sepenuhnya pasti. Karena itu, kita membutuhkan **model**.
+
+Model membantu kita menyederhanakan kenyataan agar bisa dipikirkan, dihitung, dan diputuskan. Salah satu model paling penting dalam probabilitas adalah **random variable**. Dengan random variable, kejadian yang semula acak dipetakan menjadi angka. Begitu dunia acak berhasil dipetakan ke bilangan, kita bisa mulai menghitung:
+- peluang,
+- rata-rata jangka panjang,
+- seberapa liar penyimpangannya,
+- dan konsekuensi keputusan.
+
+## 1.2 Quick Win: Melihat Mengapa Rata-Rata Saja Tidak Cukup
+
+Mari mulai dari contoh yang sangat sederhana. Misalkan Anda harus memilih satu dari dua opsi investasi:
+
+- **A**: stabil, keuntungan kecil tetapi konsisten
+- **B**: bisa sangat menguntungkan, tetapi bisa juga sangat buruk
+
+Secara kasatmata, dua opsi bisa saja memiliki rata-rata hasil yang sama. Tetapi apakah itu berarti keduanya sama baik?
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(42)
+
+## Dua investasi dengan mean hampir sama, tetapi variasi berbeda
+A = rng.normal(loc=10, scale=2, size=10000)
+B = rng.normal(loc=10, scale=12, size=10000)
+
+print("Mean A =", A.mean())
+print("Var A  =", A.var())
+
+print("Mean B =", B.mean())
+print("Var B  =", B.var())
+```
+
+```{python}
+plt.figure(figsize=(9, 4))
+plt.hist(A, bins=60, alpha=0.6, density=True, label="Investasi A")
+plt.hist(B, bins=60, alpha=0.6, density=True, label="Investasi B")
+plt.xlabel("Return")
+plt.ylabel("Density")
+plt.title("Dua investasi dengan mean hampir sama, variance sangat berbeda")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+Dari hasil ini, kita segera mendapat *quick win*:
+
+- **mean** memberi gambaran hasil rata-rata,
+- **variance** memberi gambaran seberapa liar hasil itu,
+- keputusan yang matang tidak cukup melihat rata-rata, tetapi juga perlu melihat **risiko**.
+
+Di sinilah probabilitas dan random variable mulai terasa hidup. Kita tidak sedang belajar rumus demi rumus. Kita sedang belajar cara membandingkan pilihan secara bertanggung jawab.
+
+## 1.3 Pola Umum Pengambilan Keputusan
+
+Dalam buku ini, kita akan sering memakai pola berikut:
+
+### K — Konteks
+Apa situasi nyatanya? Siapa pengambil keputusan? Apa kebutuhan dan risikonya?
+
+### M — Model
+Apa random variable yang relevan? Apa asumsi masuk akalnya? Apa parameter pentingnya?
+
+### Q — Questions
+Apa pertanyaan yang benar-benar ingin dijawab? Peluang? Rata-rata? Risiko bangkrut? Peluang cacat? Jumlah pelanggan? Waktu tunggu?
+
+### A — Apply
+Gunakan Python, simulasi, visualisasi, dan teori probabilitas untuk menjawab pertanyaan dan menarik implikasi keputusan.
+
+Pola ini akan kita sebut sebagai pendekatan **KMQA**:
+**Konteks → Model → Questions → Apply**.
+
+## 1.4 Random Variable sebagai Bahasa Angka untuk Dunia Acak
+
+Misalkan sebuah gerbang tol mencatat jumlah kendaraan yang lewat antara pukul 09.00–10.00. Besaran itu tidak pasti. Setiap hari nilainya bisa berbeda. Kita dapat menyatakan besaran ini sebagai sebuah random variable:
+
+$$
+X = \text{jumlah kendaraan yang melewati gerbang tol antara pukul 09.00–10.00}
+$$
+
+Dengan begitu, kejadian nyata yang berubah-ubah kita petakan menjadi bilangan. Begitu sudah menjadi bilangan, kita bisa bertanya:
+- berapa nilai yang mungkin?
+- berapa peluang setiap nilai?
+- berapa rata-ratanya?
+- seberapa besar variasinya?
+
+Itulah inti random variable.
+
+## 1.5 Kasus 1 — Ekspektasi dan Varians dalam Pilihan Investasi
+
+### K — Konteks
+
+Seorang mahasiswa mendapat dua opsi investasi kecil untuk dana tabungannya:
+
+- Investasi A: hasil tidak terlalu tinggi, tetapi relatif stabil.
+- Investasi B: kadang sangat tinggi, kadang turun tajam.
+
+Ia bertanya: *kalau saya ingin mengambil keputusan yang lebih dewasa, ukuran apa yang harus saya lihat?*
+
+### M — Model
+
+Misalkan:
+- $X_A$ = return investasi A
+- $X_B$ = return investasi B
+
+Masing-masing adalah random variable. Dua ukuran dasar yang penting adalah:
+
+$$
+E[X] = \text{ekspektasi}
+$$
+
+dan
+
+$$
+\mathrm{Var}(X) = E[(X - E[X])^2]
+$$
+
+Ekspektasi memberi gambaran hasil rata-rata jangka panjang. Varians memberi ukuran seberapa jauh hasil itu bisa menyimpang.
+
+### Q — Questions
+
+1. Mana investasi dengan rata-rata hasil lebih baik?
+2. Mana investasi dengan risiko lebih besar?
+3. Bila dua investasi punya rata-rata hampir sama, apakah variance dapat mengubah keputusan?
+
+### A — Apply
+
+```{python}
+import numpy as np
+
+rng = np.random.default_rng(7)
+
+XA = rng.choice([8, 10, 12], size=100000, p=[0.25, 0.50, 0.25])
+XB = rng.choice([-15, 5, 10, 20, 30], size=100000, p=[0.10, 0.20, 0.30, 0.25, 0.15])
+
+print("E[XA] ~", XA.mean(), " Var[XA] ~", XA.var())
+print("E[XB] ~", XB.mean(), " Var[XB] ~", XB.var())
+```
+
+```{python}
+plt.figure(figsize=(9,4))
+plt.hist(XA, bins=np.arange(XA.min()-0.5, XA.max()+1.5), alpha=0.6, density=True, label="XA")
+plt.hist(XB, bins=np.arange(XB.min()-0.5, XB.max()+1.5), alpha=0.6, density=True, label="XB")
+plt.xlabel("Return")
+plt.ylabel("Probability / Density")
+plt.title("Distribusi return dua investasi")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi
+
+Investasi dengan ekspektasi lebih tinggi memang tampak menarik. Tetapi bila variance-nya juga jauh lebih besar, maka keputusan tidak sesederhana “pilih yang rata-ratanya terbesar”. Dalam dunia teknik, sains data, dan bisnis, keputusan hampir selalu menimbang **nilai harapan** dan **ketidakpastian** sekaligus.
+
+#### Poin inti
+- Ekspektasi = pusat distribusi
+- Varians = ukuran penyebaran
+- Dua pilihan dengan mean sama belum tentu sama baik
+- Probabilitas membantu kita memilih secara lebih sadar, bukan sekadar “feeling”
+
+### Latihan singkat
+1. Buat dua investasi lain yang punya mean hampir sama tetapi variance berbeda.
+2. Simulasikan 10.000 kali dan bandingkan histogramnya.
+3. Investasi mana yang akan Anda pilih jika Anda tidak tahan melihat hasil negatif besar?
+
+## 1.6 Kasus 2 — Produk Cacat dan Quality Control
+
+### K — Konteks
+
+Sebuah pabrik mengklaim bahwa peluang sebuah produk cacat hanya 1%. Tim quality control mengambil sampel 100 unit. Mereka ingin tahu peluang menemukan tepat 2 produk cacat. Keputusan yang akan diambil: apakah produksi lanjut seperti biasa, perlu inspeksi tambahan, atau bahkan perlu dihentikan sementara?
+
+### M — Model
+
+Jika:
+- setiap unit independen,
+- tiap unit punya peluang cacat $p = 0.01$,
+- jumlah sampel $n = 100$,
+
+maka banyaknya produk cacat $X$ dapat dimodelkan sebagai:
+
+$$
+X \sim \mathrm{Binomial}(n=100, p=0.01)
+$$
+
+Untuk kejadian langka, distribusi Poisson juga sering menjadi pendekatan:
+
+$$
+X \approx \mathrm{Poisson}(\lambda = np = 1)
+$$
+
+### Q — Questions
+
+1. Berapa peluang tepat 2 cacat?
+2. Seberapa baik Poisson mendekati Binomial pada kasus ini?
+3. Jika ditemukan terlalu banyak cacat, kapan QC harus curiga?
+
+### A — Apply
+
+```{python}
+from math import comb, exp, factorial
+
+n = 100
+p = 0.01
+k = 2
+lam = n * p
+
+binom_p = comb(n, k) * (p**k) * ((1-p)**(n-k))
+pois_p = exp(-lam) * (lam**k) / factorial(k)
+
+print("P(X=2) Binomial =", binom_p)
+print("P(X=2) Poisson  =", pois_p)
+```
+
+```{python}
+from scipy.stats import binom, poisson
+
+x = np.arange(0, 8)
+
+plt.figure(figsize=(9,4))
+plt.stem(x, binom.pmf(x, n, p), linefmt='C0-', markerfmt='C0o', basefmt=" ", label="Binomial")
+plt.stem(x+0.1, poisson.pmf(x, lam), linefmt='C1-', markerfmt='C1s', basefmt=" ", label="Poisson approx")
+plt.xlabel("Jumlah produk cacat")
+plt.ylabel("Peluang")
+plt.title("Binomial vs Poisson untuk produk cacat")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi
+
+Kasus ini penting karena memperkenalkan dua hal sekaligus:
+1. random variable diskrit untuk menghitung banyak kejadian,
+2. pentingnya memilih model yang tepat.
+
+Engineer yang baik bukan yang hafal rumus paling banyak, tetapi yang tahu model mana yang masuk akal untuk suatu konteks.
+
+### Latihan singkat
+1. Hitung peluang tepat 0, 1, 2, dan 3 cacat.
+2. Bandingkan hasil Binomial dan Poisson.
+3. Jika pabrik menemukan 6 produk cacat dari 100, apakah itu masih terasa wajar?
+
+## 1.7 Kasus 3 — Garansi Produk dan Risiko Klaim
+
+### K — Konteks
+
+Sebuah perusahaan lampu ingin menetapkan masa garansi. Umur lampu bersifat acak. Jika masa garansi terlalu pendek, pelanggan kecewa. Jika terlalu panjang, biaya klaim bisa membengkak. Keputusan harus menyeimbangkan daya saing produk dan risiko kerugian.
+
+### M — Model
+
+Misalkan umur lampu $X$ dinyatakan dalam jam. Untuk contoh awal, anggap:
+
+$$
+X \sim \mathcal{N}(900, 50^2)
+$$
+
+Artinya:
+- rata-rata umur = 900 jam
+- simpangan baku = 50 jam
+
+Yang ingin dihitung misalnya:
+$$
+P(X < T)
+$$
+yaitu peluang lampu rusak sebelum waktu garansi $T$.
+
+### Q — Questions
+
+1. Berapa peluang rusak sebelum 800 jam?
+2. Bagaimana jika garansi 850 jam? 900 jam?
+3. Mana kebijakan yang lebih aman bagi perusahaan?
+
+### A — Apply
+
+```{python}
+from scipy.stats import norm
+
+mu = 900
+sigma = 50
+
+for T in [800, 850, 900]:
+    print(f"P(X < {T}) =", norm.cdf(T, loc=mu, scale=sigma))
+```
+
+```{python}
+x = np.linspace(700, 1100, 400)
+pdf = norm.pdf(x, loc=mu, scale=sigma)
+
+plt.figure(figsize=(9,4))
+plt.plot(x, pdf, label="PDF umur lampu")
+for T in [800, 850, 900]:
+    plt.axvline(T, linestyle="--", label=f"T={T}")
+plt.xlabel("Jam hidup")
+plt.ylabel("Density")
+plt.title("Distribusi umur lampu dan pilihan masa garansi")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi
+
+Statistika di sini bukan sekadar menjelaskan data. Ia menjadi alat desain keputusan. Dengan probabilitas, perusahaan dapat memperkirakan biaya klaim sebelum kebijakan garansi benar-benar diterapkan.
+
+### Latihan singkat
+1. Hitung peluang rusak sebelum 875 jam.
+2. Jika target klaim maksimum 10%, berapa garansi maksimum yang bisa diberikan?
+3. Bagaimana jika simpangan baku membesar menjadi 80 jam?
+
+## 1.8 Kasus 4 — Fungsi Random Variable dan Keamanan Sistem
+
+### K — Konteks
+
+Dalam sistem kelistrikan sederhana, daya dapat dinyatakan sebagai:
+
+$$
+P = I^2 R
+$$
+
+Jika arus $I$ memiliki variasi kecil, daya $P$ juga akan ikut acak. Tetapi karena hubungan ini kuadratik, perubahan kecil pada arus bisa membesar pada daya. Untuk sistem teknik, pertanyaan pentingnya adalah: *seberapa sering daya melewati ambang aman?*
+
+### M — Model
+
+Misalkan:
+- $I$ random,
+- $R$ konstan,
+- $P = g(I) = I^2 R$
+
+Berarti $P$ adalah fungsi dari random variable lain. Karakter distribusi $P$ bisa sangat berbeda dari distribusi $I$.
+
+### Q — Questions
+
+1. Jika $I$ berdistribusi normal, seperti apa distribusi $P$?
+2. Berapa peluang $P$ melampaui batas aman tertentu?
+3. Mengapa transformasi nonlinear penting dalam desain?
+
+### A — Apply
+
+```{python}
+rng = np.random.default_rng(123)
+I = rng.normal(loc=10, scale=0.8, size=100000)
+R = 5
+P = (I**2) * R
+
+print("Mean(I) =", I.mean(), "Var(I) =", I.var())
+print("Mean(P) =", P.mean(), "Var(P) =", P.var())
+```
+
+```{python}
+plt.figure(figsize=(9,4))
+plt.hist(I, bins=60, alpha=0.6, density=True, label="Arus I")
+plt.hist(P, bins=60, alpha=0.6, density=True, label="Daya P = I^2 R")
+plt.xlabel("Nilai")
+plt.ylabel("Density")
+plt.title("Distribusi input vs distribusi output setelah transformasi nonlinear")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi
+
+Kasus ini menunjukkan gagasan penting:
+- random variable tidak selalu berdiri sendiri,
+- fungsi dari random variable dapat mengubah bentuk distribusi,
+- keputusan teknik sering bergantung pada distribusi output, bukan sekadar distribusi input.
+
+### Latihan singkat
+1. Hitung peluang $P > 600$.
+2. Ubah simpangan baku arus menjadi 1.5 dan lihat perubahan distribusi daya.
+3. Mengapa fungsi kuadrat lebih “berbahaya” daripada fungsi linear dalam konteks batas aman?
+
+## 1.9 Kasus 5 — Varians, Profit, dan Risiko Bangkrut
+
+### K — Konteks
+
+Sebuah perusahaan memproduksi 1000 unit per hari. Biaya produksi tiap produk adalah \$100. Produk dijual dengan margin 10% per unit yang laku. Penjualan per hari bersifat acak dengan rata-rata 1000 unit. Profit harian ditambahkan ke saldo modal. Bila saldo modal negatif, perusahaan bangkrut.
+
+Pertanyaannya:
+- kalau rata-rata profit positif, apakah perusahaan pasti aman?
+- apakah variance besar pada penjualan bisa tetap membunuh perusahaan?
+
+### M — Model
+
+- biaya per produk = \$100
+- produksi per hari = 1000
+- harga jual per produk = \$110
+- biaya produksi harian = \$100,000
+
+Jika penjualan harian $X_t$, maka profit harian:
+
+$$
+\Pi_t = 110X_t - 100000
+$$
+
+Saldo modal diperbarui setiap hari:
+
+$$
+M_t = M_{t-1} + \Pi_t
+$$
+
+Jika $M_t < 0$, perusahaan bangkrut.
+
+### Q — Questions
+
+1. Jika rata-rata penjualan 1000, apakah expected profit harian positif?
+2. Bagaimana pengaruh variance penjualan terhadap risiko bangkrut?
+3. Bagaimana peran modal awal 1x, 2x, 3x biaya produksi harian?
+
+### A — Apply
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(123)
+
+cost_per_product = 100
+production = 1000
+selling_price = 110
+daily_cost = cost_per_product * production
+mean_sales = 1000
+
+def simulate_company(days=365, initial_capital=100000, sales_std=250, n_sims=2000):
+    bankrupt = 0
+    final_capitals = []
+
+    for _ in range(n_sims):
+        sales = rng.normal(loc=mean_sales, scale=sales_std, size=days)
+        sales = np.maximum(0, np.round(sales))
+        profit = selling_price * sales - daily_cost
+        capital = initial_capital + np.cumsum(profit)
+
+        if np.any(capital < 0):
+            bankrupt += 1
+        final_capitals.append(capital[-1])
+
+    return np.array(final_capitals), bankrupt / n_sims
+```
+
+```{python}
+capital_levels = [1, 2, 3]
+sales_stds = [50, 150, 300, 500]
+
+results = {}
+
+for c in capital_levels:
+    init_cap = c * daily_cost
+    results[c] = []
+    for s in sales_stds:
+        finals, p_bankrupt = simulate_company(initial_capital=init_cap, sales_std=s)
+        results[c].append((s, finals.mean(), p_bankrupt))
+
+for c in capital_levels:
+    print(f"\nModal awal = {c} x biaya harian")
+    for s, mean_final, p_bankrupt in results[c]:
+        print(f"std sales={s:>3} | mean final capital={mean_final:,.0f} | P(bankrupt)={p_bankrupt:.3f}")
+```
+
+```{python}
+plt.figure(figsize=(9,4))
+for c in capital_levels:
+    xs = [r[0] for r in results[c]]
+    ys = [r[2] for r in results[c]]
+    plt.plot(xs, ys, marker='o', label=f"Modal awal {c}x biaya harian")
+plt.xlabel("Std penjualan harian")
+plt.ylabel("Peluang bangkrut")
+plt.title("Variance besar dapat mematikan perusahaan walau expected profit positif")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi
+
+Ini adalah salah satu pelajaran paling penting dalam probabilitas untuk keputusan nyata:
+
+$$
+\text{Expected profit positif} \not\Rightarrow \text{pasti selamat}
+$$
+
+Kalau variance terlalu besar, perusahaan bisa kehabisan napas sebelum sempat menikmati rata-rata jangka panjangnya.
+
+#### Poin inti
+- Mean mengukur “arah”
+- Variance mengukur “ombak”
+- Modal awal adalah “bantalan”
+- Survival bergantung pada kombinasi mean, variance, dan cadangan modal
+
+### Latihan singkat
+1. Ubah penjualan harian dari Normal menjadi Poisson atau Negative Binomial.
+2. Bandingkan peluang bangkrutnya.
+3. Mana yang lebih penting ditambah: margin, modal awal, atau pengurangan variance?
+
+## 1.10 Kasus 6 — Klinik Gigi: Layanan, Throughput, dan Profit
+
+### K — Konteks
+
+Sebuah klinik gigi buka 8 jam per hari. Satu dokter rata-rata memerlukan 30 menit untuk melayani seorang pasien. Karena jenis keluhan pasien berbeda-beda, waktu layanan bersifat acak dan dianggap memoryless. Rata-rata pasien datang 16 orang per hari.
+
+Pertanyaan awal:
+- berapa rata-rata pasien yang dapat dilayani satu dokter per hari?
+- berapa distribusi profit harian jika dokter dibayar tetap dan pasien membayar proporsional dengan durasi layanan?
+
+### M — Model
+
+Klinik buka 8 jam = 480 menit per hari.  
+Jika satu layanan rata-rata 30 menit, maka laju layanan dokter:
+
+$$
+\mu = 2 \text{ pasien/jam}
+$$
+
+Jika rata-rata pasien datang 16 per hari dalam 8 jam, maka laju kedatangan:
+
+$$
+\lambda = 2 \text{ pasien/jam}
+$$
+
+Ini adalah model **M/M/1**:
+- kedatangan Poisson,
+- layanan Eksponensial,
+- satu pelayan.
+
+Untuk profit:
+- gaji dokter = \$350/hari
+- biaya operasional = \$200/hari
+- pasien membayar \$1/menit layanan
+
+Jika total waktu layanan aktual dalam sehari adalah $B$ menit, maka:
+
+$$
+\text{Revenue} = B
+$$
+$$
+\text{Profit} = B - 350 - 200 = B - 550
+$$
+
+Karena $B \le 480$, maka profit maksimum:
+
+$$
+480 - 550 = -70
+$$
+
+Artinya klinik pasti rugi pada tarif \$1/menit.
+
+### Q — Questions
+
+1. Berapa rata-rata pasien yang selesai dilayani per hari?
+2. Bagaimana histogram pasien terlayani per hari?
+3. Bagaimana distribusi profit per hari?
+4. Jika ada dua dokter, apa yang berubah pada throughput dan profit?
+
+### A — Apply
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(42)
+
+def simulate_mm1_day(arrival_rate_per_hour=2.0, service_rate_per_hour=2.0, hours=8.0):
+    ## Generate arrivals
+    arrivals = []
+    t = 0.0
+    while True:
+        t += rng.exponential(scale=1/arrival_rate_per_hour)
+        if t > hours:
+            break
+        arrivals.append(t)
+
+    service_end_prev = 0.0
+    served_count = 0
+    busy_hours = 0.0
+
+    for a in arrivals:
+        service_time = rng.exponential(scale=1/service_rate_per_hour)
+        start = max(a, service_end_prev)
+        end = start + service_time
+
+        overlap_start = max(start, 0.0)
+        overlap_end = min(end, hours)
+        if overlap_end > overlap_start:
+            busy_hours += overlap_end - overlap_start
+
+        if end <= hours:
+            served_count += 1
+            service_end_prev = end
+        else:
+            break
+
+    busy_minutes = 60 * busy_hours
+    return served_count, busy_minutes
+```
+
+```{python}
+served = []
+profits = []
+
+salary_per_doctor = 300
+no_of_doctor = 1
+service_rate_per_doctor_per_hour = 2.0 
+operational_cost_per_day=200
+revenue_per_minute=2
+
+
+for _ in range(10000):
+    s, b = simulate_mm1_day(arrival_rate_per_hour=2.0, service_rate_per_hour=no_of_doctor*service_rate_per_doctor_per_hour, hours=8.0)
+    served.append(s)
+    profits.append(revenue_per_minute * b - no_of_doctor * salary_per_doctor - operational_cost_per_day)
+
+served = np.array(served)
+profits = np.array(profits)
+
+print("Rata-rata pasien terlayani per hari =", served.mean())
+print("Rata-rata profit per hari =", profits.mean())
+print("Profit maksimum simulasi =", profits.max())
+```
+
+```{python}
+plt.figure(figsize=(9,4))
+bins = np.arange(served.min()-0.5, served.max()+1.5, 1)
+plt.hist(served, bins=bins, density=True, alpha=0.75, edgecolor='black')
+plt.xlabel("Jumlah pasien selesai dilayani")
+plt.ylabel("Probabilitas relatif")
+plt.title("Histogram jumlah pasien terlayani per hari")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+plt.figure(figsize=(9,4))
+plt.hist(profits, bins=60, density=True, alpha=0.75, edgecolor='black')
+plt.xlabel("Profit per hari ($)")
+plt.ylabel("Density")
+plt.title("Distribusi profit per hari klinik gigi")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi
+
+Kasus ini mengajarkan beberapa hal sekaligus:
+- kapasitas rata-rata dokter,
+- pengaruh ketidakpastian layanan dan kedatangan,
+- perbedaan antara “rata-rata teoretis” dan “jumlah selesai terlayani sebelum tutup”,
+- kaitan antara model antrian dan model profit.
+
+Untuk dua dokter, throughput meningkat, tetapi biaya tetap juga naik. Keputusan menambah dokter harus menimbang:
+- peningkatan kapasitas,
+- perubahan waiting time,
+- perubahan busy time,
+- dan perubahan profit.
+
+### Latihan singkat
+1. Simulasikan versi dua dokter.
+2. Bandingkan histogram pasien terlayani.
+3. Cari tarif minimum per menit agar secara teori klinik bisa impas.
+
+## 1.11 Menyimpulkan Bab Ini
+
+Bab ini memperkenalkan satu ide besar: **probabilitas dan statistika adalah alat untuk membuat keputusan ketika masa depan belum pasti**.
+
+Kita telah melihat bahwa:
+- investasi menuntut kita membandingkan ekspektasi dan risiko,
+- quality control membutuhkan model jumlah cacat,
+- garansi produk membutuhkan peluang kegagalan sebelum waktu tertentu,
+- fungsi random variable penting untuk keselamatan sistem,
+- variance dapat membuat perusahaan bangkrut walaupun mean profit positif,
+- model antrian dapat menjelaskan throughput dan profit layanan.
+
+Di balik semua contoh itu, ada benang merah yang sama: kita memerlukan cara untuk memetakan ketidakpastian menjadi objek yang bisa dihitung. Itulah peran random variable.
+
+## 1.12 Ringkasan Poin Inti
+
+1. **Pengambilan keputusan** adalah konteks alami bagi probabilitas dan statistika.
+2. **Random variable** memetakan dunia acak ke bilangan.
+3. **Ekspektasi** membantu kita melihat kecenderungan rata-rata.
+4. **Varians** membantu kita mengukur seberapa liar hasil yang mungkin terjadi.
+5. **Python** memberi quick wins: melihat, mensimulasikan, dan memahami sebelum formalisasi penuh.
+6. **Model yang tepat** penting: Binomial, Poisson, Normal, Exponential, dan lainnya tidak dapat dipertukarkan sembarangan.
+7. Dalam banyak masalah nyata, keputusan yang baik tidak cukup melihat mean; ia juga harus melihat **risiko, bentuk distribusi, dan konsekuensi**.
+
+## 1.13 Latihan Bab 1
+
+### A. Konseptual
+1. Mengapa mean saja tidak cukup untuk membandingkan dua pilihan?
+2. Apa perbedaan antara hasil acak dan random variable?
+3. Mengapa keputusan garansi produk adalah masalah probabilistik?
+
+### B. Komputasional
+1. Simulasikan dua investasi dengan mean sama tetapi variance berbeda.
+2. Hitung peluang tepat 3 produk cacat dari 100 jika $p=0.02$.
+3. Hitung peluang sebuah lampu rusak sebelum 850 jam jika umur lampu normal dengan mean 900 dan simpangan baku 60.
+
+### C. Aplikatif
+1. Dalam kasus perusahaan, apakah Anda lebih memilih menaikkan margin, menambah modal awal, atau menurunkan variance penjualan? Jelaskan.
+2. Dalam kasus klinik gigi, apakah Anda akan menambah dokter kedua jika tarif masih \$1/menit? Mengapa?
+3. Berikan satu contoh lain dari kehidupan sehari-hari yang menurut Anda cocok dimodelkan dengan random variable.
+
+## 1.14 Penutup Kecil
+
+Kalau setelah membaca bab ini Anda merasa, “Ternyata probabilitas bukan sekadar rumus, tetapi cara berpikir,” maka bab ini sudah mencapai tujuannya.
+
+Di bab berikutnya, kita akan memperdalam apa sebenarnya random variable itu, bagaimana range-nya didefinisikan, dan bagaimana PMF, CDF, PDF, ekspektasi, serta varians menjadi fondasi seluruh analisis berikutnya.

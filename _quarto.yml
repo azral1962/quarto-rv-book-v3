@@ -1,0 +1,31 @@
+project:
+  type: book
+
+book:
+  title: "Random Variable untuk Pengambilan Keputusan"
+  author: "Armein Z. R. Langi"
+  date: "2026-03-31"
+  chapters:
+    - index.qmd
+    - 00-kata-pengantar.qmd
+    - 01-pendahuluan-pengambilan-keputusan.qmd
+    - 02-random-variable-umum.qmd
+    - 03-distribusi-diskrit.qmd
+    - 04-distribusi-kontinu.qmd
+    - 05-random-variable-multivariat-dan-fungsi.qmd
+    - 06-penutup.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    number-sections: true
+
+execute:
+  echo: true
+  warning: false
+  message: false

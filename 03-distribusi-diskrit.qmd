@@ -1,0 +1,804 @@
+---
+title: "Bab 3. Distribusi Random Variable Diskrit"
+format: html
+jupyter: python3
+---
+
+## Tujuan Bab
+
+Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
+
+1. memahami apa yang dimaksud dengan **distribusi random variable diskrit**,
+2. membangun distribusi diskrit dari **data histogram** atau dari **model probabilistik**,
+3. mengenali dan menggunakan distribusi:
+   - discrete uniform,
+   - Bernoulli,
+   - Binomial,
+   - Geometric,
+   - Poisson,
+4. memahami makna parameter setiap distribusi,
+5. menggunakan Python untuk:
+   - simulasi,
+   - perhitungan PMF/CDF,
+   - visualisasi,
+   - dan pengambilan keputusan,
+6. memilih distribusi diskrit yang tepat untuk konteks masalah tertentu.
+
+## Pembuka
+
+Di bab sebelumnya, kita sudah belajar bahwa random variable adalah cara memetakan dunia acak ke angka. Sekarang kita melangkah lebih jauh: setelah punya random variable, kita perlu tahu **bagaimana peluang tersebar** pada nilai-nilai yang mungkin.
+
+Itulah yang disebut **distribusi**.
+
+Untuk random variable diskrit, distribusi memberi jawaban atas pertanyaan seperti:
+- seberapa mungkin tepat 2 produk cacat?
+- seberapa mungkin tepat 10 pelanggan datang?
+- seberapa mungkin perlu 4 kali percobaan sampai sukses pertama?
+- seberapa mungkin jumlah panggilan masuk dalam satu jam sama dengan 7?
+
+Bab ini akan memperkenalkan keluarga distribusi diskrit yang paling penting dan paling sering dipakai.
+
+## 3.1 Quick Win: Dari Histogram ke Model
+
+Bayangkan kita mengamati jumlah pelanggan yang datang ke sebuah kios kopi per jam selama beberapa hari, lalu mendapatkan data seperti berikut.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+rng = np.random.default_rng(42)
+data = rng.poisson(lam=5, size=500)
+
+values, counts = np.unique(data, return_counts=True)
+probs = counts / counts.sum()
+
+plt.figure(figsize=(8,4))
+plt.bar(values, probs)
+plt.xlabel("Jumlah pelanggan per jam")
+plt.ylabel("Frekuensi relatif")
+plt.title("Histogram empiris jumlah pelanggan")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+Histogram ini belum tentu langsung memberi kita distribusi teoretis, tetapi ia memberi tiga hal penting:
+1. range nilai yang mungkin,
+2. lokasi pusat distribusi,
+3. bentuk kasar penyebaran.
+
+Dari sini kita bisa mulai bertanya: model mana yang paling masuk akal?
+
+## 3.2 Distribusi Diskrit Kustom dari Histogram
+
+### K — Konteks
+
+Kadang-kadang kita tidak mulai dari rumus distribusi yang terkenal. Kita mulai dari data empiris. Misalnya:
+- distribusi nilai kuis,
+- banyak pelanggan datang per jam,
+- banyak tiket gangguan per hari,
+- jumlah pembelian aplikasi per sesi.
+
+### M — Model
+
+Jika kita sudah punya histogram atau frekuensi relatif, kita bisa memperlakukannya sebagai **PMF empiris**:
+
+$$
+p_X(x_i) \approx \frac{\text{frekuensi pada } x_i}{\text{total data}}
+$$
+
+Ini adalah distribusi diskrit kustom.
+
+### Q — Questions
+
+1. Bagaimana membangun PMF dari data?
+2. Bagaimana menghitung CDF empiris?
+3. Bagaimana menghitung mean dan variance dari distribusi diskrit yang dibangun dari histogram?
+
+### A — Apply
+
+```{python}
+x = values
+pmf_emp = probs
+
+mean_emp = np.sum(x * pmf_emp)
+var_emp = np.sum((x - mean_emp)**2 * pmf_emp)
+cdf_emp = np.cumsum(pmf_emp)
+
+print("Mean empiris =", mean_emp)
+print("Variance empiris =", var_emp)
+```
+
+```{python}
+plt.figure(figsize=(8,4))
+plt.stem(x, pmf_emp, basefmt=" ")
+plt.xlabel("x")
+plt.ylabel("p(x)")
+plt.title("PMF empiris dari histogram")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+plt.figure(figsize=(8,4))
+plt.step(x, cdf_emp, where='post')
+plt.xlabel("x")
+plt.ylabel("F(x)")
+plt.title("CDF empiris")
+plt.ylim(-0.05, 1.05)
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi
+
+Distribusi diskrit kustom sangat berguna ketika:
+- kita punya data nyata,
+- tetapi belum ingin atau belum bisa memaksakan model teoritis tertentu,
+- dan kita tetap ingin menghitung ekspektasi, varians, serta peluang kumulatif.
+
+### Ringkasan mini
+- Histogram dapat menjadi PMF empiris
+- Dari PMF empiris kita bisa hitung mean, variance, dan CDF
+- Ini adalah langkah awal yang penting sebelum memilih model yang lebih teoritis
+
+## 3.3 Discrete Uniform Distribution
+
+### K — Konteks
+
+Ada situasi di mana semua nilai mungkin dianggap sama-sama mungkin. Misalnya:
+- hasil lemparan dadu fair,
+- memilih satu nomor secara acak dari 1 sampai 10,
+- memilih satu hari dari 7 hari secara uniform.
+
+### M — Model
+
+Jika $X$ uniform diskrit pada $\{a, a+1, \dots, b\}$, maka:
+
+$$
+P(X=x)=\frac{1}{b-a+1}, \qquad x=a,a+1,\dots,b
+$$
+
+### Q — Questions
+
+1. Berapa peluang satu nilai tertentu?
+2. Berapa ekspektasi dan variansnya?
+3. Kapan asumsi “semua sama mungkin” masuk akal?
+
+### A — Apply
+
+```{python}
+x = np.arange(1, 7)  ## dadu fair
+pmf = np.ones_like(x) / len(x)
+
+print("Mean =", np.sum(x * pmf))
+print("Variance =", np.sum((x - np.sum(x*pmf))**2 * pmf))
+```
+
+```{python}
+plt.figure(figsize=(7,4))
+plt.bar(x, pmf)
+plt.xlabel("Mata dadu")
+plt.ylabel("Probabilitas")
+plt.title("Distribusi uniform diskrit pada dadu fair")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Hasil teoritis
+Untuk uniform diskrit pada $\{1,2,\dots,n\}$:
+
+$$
+E[X] = \frac{n+1}{2}
+$$
+
+$$
+\mathrm{Var}(X) = \frac{n^2-1}{12}
+$$
+
+#### Interpretasi keputusan
+Distribusi uniform diskrit dipakai ketika tidak ada alasan untuk memberi bobot lebih pada satu nilai dibanding yang lain.
+
+### Latihan singkat
+1. Hitung mean dan variance untuk uniform diskrit pada $\{3,4,\dots,10\}$.
+2. Simulasikan 10000 sampel dari distribusi itu.
+3. Beri contoh keputusan nyata yang cocok dimodelkan uniform diskrit.
+
+## 3.4 Bernoulli Distribution
+
+### K — Konteks
+
+Banyak keputusan nyata berujung pada dua kemungkinan:
+- sukses / gagal,
+- cacat / tidak cacat,
+- hujan / tidak hujan,
+- lolos / tidak lolos,
+- klik / tidak klik.
+
+### M — Model
+
+Random variable Bernoulli memiliki dua nilai:
+$$
+X \in \{0,1\}
+$$
+
+dengan:
+$$
+P(X=1)=p, \qquad P(X=0)=1-p
+$$
+
+### Q — Questions
+
+1. Apa arti parameter $p$?
+2. Berapa ekspektasi dan variansnya?
+3. Masalah apa yang paling cocok dimodelkan Bernoulli?
+
+### A — Apply
+
+```{python}
+p = 0.7
+x = np.array([0, 1])
+pmf = np.array([1-p, p])
+
+mean = np.sum(x * pmf)
+var = np.sum((x - mean)**2 * pmf)
+
+print("Mean =", mean)
+print("Variance =", var)
+```
+
+```{python}
+plt.figure(figsize=(6,4))
+plt.bar(x, pmf)
+plt.xticks([0,1], ["0 (gagal)", "1 (sukses)"])
+plt.ylabel("Probabilitas")
+plt.title("Distribusi Bernoulli")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Hasil teoritis
+$$
+E[X]=p
+$$
+
+$$
+\mathrm{Var}(X)=p(1-p)
+$$
+
+#### Interpretasi
+Bernoulli adalah batu bata paling dasar bagi banyak distribusi lain. Binomial, misalnya, dibangun dari pengulangan Bernoulli.
+
+### Latihan singkat
+1. Jika peluang klik iklan 0.03, tulis model Bernoullinya.
+2. Hitung mean dan variance-nya.
+3. Mengapa variance Bernoulli maksimum saat $p=0.5$?
+
+## 3.5 Binomial Distribution
+
+### K — Konteks
+
+Sekarang kita beralih dari satu percobaan Bernoulli ke $n$ percobaan Bernoulli independen.  
+Contoh:
+- dari 100 produk, berapa yang cacat?
+- dari 20 email, berapa yang dibuka?
+- dari 10 lemparan koin, berapa Head?
+
+### M — Model
+
+Jika:
+- ada $n$ percobaan independen,
+- setiap percobaan punya peluang sukses $p$,
+- $X$ = jumlah sukses,
+
+maka:
+
+$$
+X \sim \mathrm{Binomial}(n,p)
+$$
+
+dengan PMF:
+
+$$
+P(X=k)=\binom{n}{k} p^k (1-p)^{n-k}, \qquad k=0,1,\dots,n
+$$
+
+### Q — Questions
+
+1. Bagaimana menghitung peluang tepat $k$ sukses?
+2. Berapa ekspektasi dan varians?
+3. Kapan Binomial tepat dipakai?
+
+### A — Apply
+
+```{python}
+n = 10
+p = 0.3
+k = np.arange(0, n+1)
+
+pmf = stats.binom.pmf(k, n=n, p=p)
+
+plt.figure(figsize=(8,4))
+plt.stem(k, pmf, basefmt=" ")
+plt.xlabel("Jumlah sukses")
+plt.ylabel("P(X=k)")
+plt.title("PMF Binomial(n=10, p=0.3)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("P(X=3) =", stats.binom.pmf(3, n=10, p=0.3))
+print("P(X<=3) =", stats.binom.cdf(3, n=10, p=0.3))
+print("E[X] =", n*p)
+print("Var(X) =", n*p*(1-p))
+```
+
+#### Hasil teoritis
+$$
+E[X]=np
+$$
+
+$$
+\mathrm{Var}(X)=np(1-p)
+$$
+
+#### Interpretasi keputusan
+Gunakan Binomial ketika:
+- jumlah percobaan tetap,
+- tiap percobaan independen,
+- peluang sukses tetap,
+- yang kita hitung adalah **jumlah sukses**.
+
+#### Contoh keputusan QC
+Jika sebuah pabrik mengklaim tingkat cacat 1%, maka banyak cacat pada sampel 100 unit cocok dimodelkan Binomial(100, 0.01). Dari sana kita bisa menghitung apakah hasil inspeksi masih masuk akal.
+
+### Latihan singkat
+1. Hitung peluang tepat 2 cacat dari 100 unit jika $p=0.01$.
+2. Hitung peluang paling banyak 2 cacat.
+3. Simulasikan dan bandingkan hasil empiris dengan PMF teoritis.
+
+## 3.6 Geometric Distribution
+
+### K — Konteks
+
+Kadang bukan jumlah sukses yang ingin kita hitung, tetapi **berapa lama menunggu sampai sukses pertama**.
+
+Contoh:
+- berapa kali mencoba login sampai berhasil?
+- berapa banyak panggilan sampai ada yang menjawab?
+- berapa kali inspeksi sampai menemukan cacat pertama?
+
+### M — Model
+
+Jika setiap percobaan independen dan peluang sukses tiap percobaan adalah $p$, maka random variable Geometric dapat didefinisikan sebagai:
+
+$$
+X = \text{jumlah percobaan sampai sukses pertama}
+$$
+
+dengan PMF:
+
+$$
+P(X=k)=(1-p)^{k-1}p, \qquad k=1,2,3,\dots
+$$
+
+### Q — Questions
+
+1. Berapa peluang sukses pertama terjadi pada percobaan ke-$k$?
+2. Berapa rata-rata jumlah percobaan sampai sukses pertama?
+3. Mengapa distribusi ini punya sifat memoryless?
+
+### A — Apply
+
+```{python}
+p = 0.25
+k = np.arange(1, 15)
+
+pmf = stats.geom.pmf(k, p)
+
+plt.figure(figsize=(8,4))
+plt.stem(k, pmf, basefmt=" ")
+plt.xlabel("k = percobaan sampai sukses pertama")
+plt.ylabel("P(X=k)")
+plt.title("PMF Geometric(p=0.25)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("P(X=4) =", stats.geom.pmf(4, p))
+print("P(X<=4) =", stats.geom.cdf(4, p))
+print("Mean =", 1/p)
+print("Variance =", (1-p)/(p**2))
+```
+
+#### Hasil teoritis
+$$
+E[X]=\frac{1}{p}
+$$
+
+$$
+\mathrm{Var}(X)=\frac{1-p}{p^2}
+$$
+
+#### Sifat memoryless
+Distribusi Geometric memenuhi:
+
+$$
+P(X>m+n \mid X>m)=P(X>n)
+$$
+
+Artinya, jika kita sudah gagal sampai titik tertentu, peluang menunggu lebih lama lagi tidak “mengingat” masa lalu. Sifat ini akan muncul lagi pada distribusi Eksponensial di bab kontinu.
+
+### Latihan singkat
+1. Jika peluang sukses 0.2, berapa rata-rata jumlah percobaan sampai sukses pertama?
+2. Hitung peluang perlu lebih dari 5 percobaan.
+3. Verifikasi sifat memoryless dengan simulasi.
+
+## 3.7 Poisson Distribution
+
+### K — Konteks
+
+Poisson sangat penting untuk memodelkan **jumlah kejadian** dalam suatu interval tetap, ketika kejadian itu:
+- relatif jarang,
+- independen,
+- dan rata-rata kejadian per interval diketahui.
+
+Contoh:
+- jumlah panggilan masuk per jam,
+- jumlah pelanggan datang per 10 menit,
+- jumlah cacat pada lembar besar material,
+- jumlah kendaraan lewat per menit.
+
+### M — Model
+
+Jika $X$ = jumlah kejadian dalam interval, dengan rata-rata $\lambda$, maka:
+
+$$
+X \sim \mathrm{Poisson}(\lambda)
+$$
+
+dan PMF-nya:
+
+$$
+P(X=k)=e^{-\lambda}\frac{\lambda^k}{k!}, \qquad k=0,1,2,\dots
+$$
+
+### Q — Questions
+
+1. Berapa peluang tepat $k$ kejadian?
+2. Mengapa mean dan variance Poisson sama?
+3. Kapan Poisson menjadi pendekatan yang baik untuk Binomial?
+
+### A — Apply
+
+```{python}
+lam = 4
+k = np.arange(0, 15)
+
+pmf = stats.poisson.pmf(k, mu=lam)
+
+plt.figure(figsize=(8,4))
+plt.stem(k, pmf, basefmt=" ")
+plt.xlabel("Jumlah kejadian")
+plt.ylabel("P(X=k)")
+plt.title("PMF Poisson(λ=4)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("P(X=3) =", stats.poisson.pmf(3, mu=lam))
+print("P(X<=3) =", stats.poisson.cdf(3, mu=lam))
+print("Mean =", lam)
+print("Variance =", lam)
+```
+
+#### Hasil teoritis
+$$
+E[X]=\lambda
+$$
+
+$$
+\mathrm{Var}(X)=\lambda
+$$
+
+#### Poisson sebagai pendekatan Binomial
+Jika:
+- $n$ besar,
+- $p$ kecil,
+- $\lambda = np$ moderat,
+
+maka:
+$$
+\mathrm{Binomial}(n,p) \approx \mathrm{Poisson}(\lambda)
+$$
+
+Mari bandingkan.
+
+```{python}
+n = 100
+p = 0.02
+lam = n * p
+x = np.arange(0, 10)
+
+pmf_binom = stats.binom.pmf(x, n=n, p=p)
+pmf_pois = stats.poisson.pmf(x, mu=lam)
+
+plt.figure(figsize=(8,4))
+plt.stem(x, pmf_binom, linefmt='C0-', markerfmt='C0o', basefmt=" ", label='Binomial')
+plt.stem(x+0.1, pmf_pois, linefmt='C1-', markerfmt='C1s', basefmt=" ", label='Poisson approx')
+plt.xlabel("x")
+plt.ylabel("P(X=x)")
+plt.title("Pendekatan Poisson terhadap Binomial")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi keputusan
+Poisson cocok untuk menghitung volume kedatangan, insiden, atau kejadian jarang dalam interval. Dalam keputusan operasional, ini sangat berguna untuk:
+- kapasitas layanan,
+- staffing,
+- quality control,
+- reliability.
+
+### Latihan singkat
+1. Jika rata-rata pelanggan datang 5 per jam, hitung peluang tepat 7 pelanggan.
+2. Hitung peluang paling banyak 3 pelanggan.
+3. Bandingkan hasil Poisson dan Binomial pada kasus kejadian langka.
+
+## 3.8 Memilih Distribusi yang Tepat
+
+Salah satu kemampuan terpenting bukan hanya menghitung, tetapi memilih model yang masuk akal. Berikut panduan ringkas.
+
+### Bernoulli
+Gunakan jika:
+- hanya ada dua hasil,
+- fokus pada satu percobaan.
+
+Contoh:
+- klik / tidak klik,
+- cacat / tidak cacat.
+
+### Binomial
+Gunakan jika:
+- ada $n$ percobaan independen,
+- peluang sukses tetap,
+- fokus pada jumlah sukses.
+
+Contoh:
+- jumlah cacat dari 100 unit.
+
+### Geometric
+Gunakan jika:
+- fokus pada berapa lama menunggu sampai sukses pertama,
+- percobaan independen,
+- peluang sukses tetap.
+
+Contoh:
+- jumlah percobaan sampai login berhasil.
+
+### Poisson
+Gunakan jika:
+- fokus pada jumlah kejadian dalam interval,
+- rata-rata kejadian diketahui,
+- kejadian independen dan relatif jarang.
+
+Contoh:
+- jumlah pasien datang per jam.
+
+### Uniform diskrit
+Gunakan jika:
+- semua nilai dianggap sama mungkin.
+
+Contoh:
+- hasil dadu fair.
+
+## 3.9 Mini-Case KMQA 1 — Produk Cacat
+
+### K — Konteks
+Pabrik mengklaim tingkat cacat 1%. Tim QC mengambil sampel 100 unit.
+
+### M — Model
+Jika $X$ = jumlah cacat, maka:
+$$
+X \sim \text{Binomial}(100, 0.01)
+$$
+
+Pendekatan Poisson:
+$$
+X \approx \text{Poisson}(1)
+$$
+
+### Q — Questions
+1. Berapa peluang tepat 2 cacat?
+2. Berapa peluang paling banyak 2 cacat?
+3. Jika ditemukan 6 cacat, apakah itu masih terasa wajar?
+
+### A — Apply
+
+```{python}
+n = 100
+p = 0.01
+lam = n*p
+
+print("P(X=2) Binomial =", stats.binom.pmf(2, n, p))
+print("P(X=2) Poisson  =", stats.poisson.pmf(2, lam))
+
+print("P(X<=2) Binomial =", stats.binom.cdf(2, n, p))
+print("P(X<=2) Poisson  =", stats.poisson.cdf(2, lam))
+
+print("P(X>=6) Binomial =", 1 - stats.binom.cdf(5, n, p))
+```
+
+#### Interpretasi
+Kalau peluang mendapatkan 6 atau lebih cacat ternyata sangat kecil, maka tim QC pantas curiga bahwa klaim tingkat cacat 1% mungkin tidak lagi valid.
+
+## 3.10 Mini-Case KMQA 2 — Kedatangan Pelanggan
+
+### K — Konteks
+Sebuah kios kopi ingin tahu distribusi jumlah pelanggan per jam agar bisa menyiapkan stok dan staf.
+
+### M — Model
+Jika $X$ = jumlah pelanggan datang per jam, gunakan:
+$$
+X \sim \text{Poisson}(\lambda)
+$$
+
+### Q — Questions
+1. Berapa peluang tepat 10 pelanggan datang?
+2. Berapa peluang lebih dari 12 pelanggan datang?
+3. Apa arti mean dan variance dalam konteks operasional?
+
+### A — Apply
+
+```{python}
+lam = 8
+
+print("P(X=10) =", stats.poisson.pmf(10, mu=lam))
+print("P(X>12) =", 1 - stats.poisson.cdf(12, mu=lam))
+```
+
+#### Interpretasi
+Distribusi Poisson membantu kios kopi menilai:
+- seberapa sering hari ramai,
+- seberapa besar stok minimum masuk akal,
+- dan berapa kapasitas pelayanan yang aman.
+
+## 3.11 Mini-Case KMQA 3 — Login Sampai Berhasil
+
+### K — Konteks
+Sebuah sistem login punya probabilitas sukses 0.8 untuk setiap percobaan independen.
+
+### M — Model
+Jika $X$ = jumlah percobaan sampai sukses pertama:
+$$
+X \sim \text{Geometric}(p=0.8)
+$$
+
+### Q — Questions
+1. Berapa peluang sukses pada percobaan pertama?
+2. Berapa peluang butuh lebih dari 3 percobaan?
+3. Berapa rata-rata jumlah percobaan sampai berhasil?
+
+### A — Apply
+
+```{python}
+p = 0.8
+print("P(X=1) =", stats.geom.pmf(1, p))
+print("P(X>3) =", 1 - stats.geom.cdf(3, p))
+print("Mean =", 1/p)
+```
+
+## 3.12 Python Toolbox untuk Bab Ini
+
+Berikut beberapa fungsi Python yang sangat sering dipakai.
+
+```{python}
+from scipy import stats
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+### Bernoulli
+```{python}
+stats.bernoulli.pmf([0,1], p=0.3)
+```
+
+### Binomial
+```{python}
+stats.binom.pmf(3, n=10, p=0.4), stats.binom.cdf(3, n=10, p=0.4)
+```
+
+### Geometric
+```{python}
+stats.geom.pmf(4, p=0.2), stats.geom.cdf(4, p=0.2)
+```
+
+### Poisson
+```{python}
+stats.poisson.pmf(5, mu=3), stats.poisson.cdf(5, mu=3)
+```
+
+### Simulasi
+```{python}
+rng = np.random.default_rng(0)
+rng.binomial(n=10, p=0.3, size=10)
+```
+
+## 3.13 Kesalahan Umum yang Harus Dihindari
+
+1. **Salah memilih model**  
+   Misalnya memakai Binomial padahal yang ditanya adalah waktu tunggu sampai sukses pertama.
+
+2. **Mencampuradukkan “jumlah sukses” dan “percobaan sampai sukses”**  
+   Ini perbedaan Binomial vs Geometric.
+
+3. **Menganggap Poisson untuk semua count data**  
+   Tidak. Poisson cocok jika mean dan variance kurang lebih sejalan. Bila variance jauh lebih besar, model lain mungkin lebih cocok.
+
+4. **Lupa memeriksa asumsi independensi dan peluang tetap**  
+   Binomial dan Geometric bergantung kuat pada asumsi ini.
+
+5. **Menghafal rumus tanpa memahami konteks**  
+   Tujuan bab ini justru agar Anda tahu kapan suatu distribusi relevan.
+
+## 3.14 Menyimpulkan Bab Ini
+
+Distribusi diskrit adalah alat yang sangat kuat untuk memodelkan banyak situasi nyata yang berupa hitungan. Kita telah melihat beberapa keluarga penting:
+
+- **uniform diskrit** untuk nilai-nilai yang sama mungkin,
+- **Bernoulli** untuk satu percobaan dua hasil,
+- **Binomial** untuk jumlah sukses dari banyak percobaan,
+- **Geometric** untuk menunggu sukses pertama,
+- **Poisson** untuk jumlah kejadian dalam suatu interval.
+
+Yang terpenting bukan hanya bisa menghitung peluangnya, tetapi juga bisa mengatakan:
+- apa random variable-nya,
+- apa arti parameternya,
+- mengapa model itu masuk akal,
+- dan keputusan apa yang didukung oleh model itu.
+
+## 3.15 Ringkasan Poin Inti
+
+1. Distribusi diskrit menjelaskan bagaimana peluang tersebar pada nilai-nilai hitungan.
+2. Histogram empiris bisa menjadi langkah awal membangun PMF kustom.
+3. **Uniform diskrit** dipakai bila semua nilai sama mungkin.
+4. **Bernoulli** memodelkan satu percobaan dua hasil.
+5. **Binomial** memodelkan jumlah sukses dari $n$ percobaan independen.
+6. **Geometric** memodelkan jumlah percobaan sampai sukses pertama.
+7. **Poisson** memodelkan jumlah kejadian dalam interval tetap.
+8. Memilih distribusi yang tepat adalah kemampuan yang lebih penting daripada sekadar menghafal rumus.
+
+## 3.16 Latihan Bab 3
+
+### A. Konseptual
+1. Jelaskan perbedaan Bernoulli, Binomial, dan Geometric.
+2. Mengapa Poisson sering dipakai untuk jumlah kejadian per interval?
+3. Kapan uniform diskrit masuk akal, dan kapan tidak?
+
+### B. Hitungan
+1. Sebuah email dibuka dengan peluang 0.2. Modelkan satu email sebagai Bernoulli dan hitung mean serta variance.
+2. Dari 20 email independen, hitung peluang tepat 5 terbuka.
+3. Jika peluang sukses 0.25, hitung peluang sukses pertama terjadi pada percobaan ke-4.
+4. Jika rata-rata panggilan masuk 6 per jam, hitung peluang tepat 8 panggilan masuk.
+
+### C. Python
+1. Simulasikan 50.000 Bernoulli dengan $p=0.4$, lalu bandingkan mean dan variance simulasi dengan teori.
+2. Simulasikan Binomial(20, 0.1) dan bandingkan histogram dengan PMF teoritis.
+3. Simulasikan Geometric(0.3) dan verifikasi mean-nya.
+4. Simulasikan Poisson(5) dan bandingkan histogram dengan PMF teoritis.
+
+### D. Aplikatif
+1. Modelkan masalah quality control sederhana dengan Binomial.
+2. Modelkan kedatangan pelanggan per jam dengan Poisson.
+3. Modelkan percobaan login sampai berhasil dengan Geometric.
+4. Jelaskan distribusi mana yang Anda pilih dan mengapa.
+
+## 3.17 Penutup Kecil
+
+Kalau di bab sebelumnya kita baru belajar “apa itu random variable”, maka di bab ini kita mulai benar-benar melihat keluarga model yang bisa dipakai untuk dunia nyata.
+
+Di bab berikutnya, kita akan beralih ke **distribusi random variable kontinu**. Di sana, fokus kita tidak lagi pada hitungan kejadian, tetapi pada besaran seperti waktu, umur hidup, tinggi, jarak, dan banyak pengukuran lain yang lebih nyaman dipandang kontinu.

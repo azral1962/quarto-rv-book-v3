@@ -1,0 +1,936 @@
+---
+title: "Bab 4. Distribusi Random Variable Kontinu"
+format: html
+jupyter: python3
+---
+
+## Tujuan Bab
+
+Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
+
+1. memahami perbedaan mendasar antara random variable diskrit dan kontinu,
+2. membangun distribusi kontinu sederhana dari tabel selang atau pendekatan trapezoid,
+3. mengenali dan menggunakan distribusi kontinu penting:
+   - uniform kontinu,
+   - normal,
+   - gamma,
+   - eksponensial,
+   - erlang,
+   - weibull,
+   - pareto,
+   - chi-square,
+4. memahami hubungan antardistribusi,
+5. menggunakan Python untuk simulasi, visualisasi PDF/CDF, dan perhitungan peluang,
+6. menghubungkan distribusi kontinu dengan keputusan nyata di bidang teknik, layanan, bisnis, dan reliability.
+
+## Pembuka
+
+Di bab sebelumnya, kita banyak berurusan dengan besaran yang berupa **hitungan**:
+- jumlah cacat,
+- jumlah pelanggan,
+- jumlah sukses,
+- jumlah percobaan.
+
+Sekarang kita beralih ke dunia yang sedikit berbeda: dunia **pengukuran**.
+
+Kita akan memodelkan besaran seperti:
+- waktu tunggu,
+- umur hidup lampu,
+- tinggi badan,
+- error pengukuran,
+- besar permintaan,
+- lama layanan,
+- dan waktu antar kedatangan.
+
+Pada banyak situasi seperti ini, lebih masuk akal memodelkan nilai sebagai **kontinu**. Nilainya tidak sekadar 0, 1, 2, 3, tetapi berada pada rentang yang halus di garis bilangan.
+
+## 4.1 Quick Win: Mengapa PDF Bukan Peluang Langsung?
+
+Mari ambil contoh yang sederhana. Misalkan $X$ adalah random variable kontinu yang uniform pada interval [0, 1]. Kita tahu PDF-nya adalah:
+
+$$
+f(x)=1 \quad \text{untuk } 0 \le x \le 1
+$$
+
+Sekarang pertanyaannya:
+- berapa $P(X=0.5)$?
+- berapa $P(0.4 \le X \le 0.6)$?
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+## Uniform(0,1)
+print("P(X=0.5) untuk model kontinu = 0")
+print("P(0.4 <= X <= 0.6) =", 0.6 - 0.4)
+```
+
+```{python}
+x = np.linspace(-0.2, 1.2, 400)
+pdf = np.where((x >= 0) & (x <= 1), 1.0, 0.0)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.fill_between(x, 0, pdf, where=((x >= 0.4) & (x <= 0.6)), alpha=0.3)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("Pada RV kontinu, peluang = luas area, bukan tinggi kurva")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+Dari *quick win* ini kita memperoleh satu pelajaran besar:
+
+> Untuk random variable kontinu, peluang tidak datang dari tinggi titik, tetapi dari **luas area di bawah kurva PDF**.
+
+## 4.2 Distribusi Kontinu Kustom dari Tabel Selang / Trapezoid
+
+### K — Konteks
+
+Kadang kita tidak mulai dari distribusi terkenal seperti Normal atau Exponential. Kita hanya punya perkiraan bentuk dari domain expert atau dari tabel interval. Misalnya:
+- permintaan produk kemungkinan besar di tengah, menurun di tepi,
+- usia layanan komponen diperkirakan lebih padat pada interval tertentu,
+- waktu tempuh berada dalam rentang tertentu dengan perubahan kerapatan yang kasar.
+
+### M — Model
+
+Kita dapat membentuk PDF kustom dari titik-titik $(x_i, f_i)$, lalu menggunakan interpolasi linier atau pendekatan trapezoid. Selama luas totalnya dinormalisasi menjadi 1, fungsi itu dapat dipakai sebagai PDF.
+
+### Q — Questions
+
+1. Bagaimana membangun PDF kontinu dari tabel?
+2. Bagaimana memastikan luas total = 1?
+3. Bagaimana menghitung peluang interval secara numerik?
+
+### A — Apply
+
+```{python}
+## Titik-titik pembentuk "density" mentah
+x_pts = np.array([0, 2, 4, 6, 8, 10], dtype=float)
+y_raw = np.array([0.0, 0.1, 0.25, 0.2, 0.08, 0.0], dtype=float)
+
+## Normalisasi agar integral = 1
+area_raw = np.trapezoid(y_raw, x_pts)
+y = y_raw / area_raw
+
+x_grid = np.linspace(0, 10, 500)
+y_grid = np.interp(x_grid, x_pts, y)
+```
+
+```{python}
+plt.figure(figsize=(8,4))
+plt.plot(x_grid, y_grid, label="PDF kustom (interpolasi linier)")
+plt.scatter(x_pts, y, color='red')
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF kontinu kustom dari tabel selang")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+## Peluang interval [3, 7]
+mask = (x_grid >= 3) & (x_grid <= 7)
+prob_3_7 = np.trapezoid(y_grid[mask], x_grid[mask])
+print("P(3 <= X <= 7) ~", prob_3_7)
+
+## Mean numerik
+mean_num = np.trapezoid(x_grid * y_grid, x_grid)
+var_num = np.trapezoid((x_grid - mean_num)**2 * y_grid, x_grid)
+print("Mean ~", mean_num)
+print("Variance ~", var_num)
+```
+
+#### Interpretasi
+
+Distribusi kontinu kustom penting ketika:
+- data atau pengetahuan domain belum cukup untuk memilih distribusi tertutup tertentu,
+- kita tetap ingin menghitung peluang, mean, variance, dan quantile,
+- pendekatan numerik lebih realistis daripada memaksakan model yang belum tentu cocok.
+
+## 4.3 Uniform Kontinu
+
+### K — Konteks
+
+Distribusi uniform kontinu cocok ketika nilai dianggap tersebar merata pada sebuah interval. Misalnya:
+- waktu kedatangan acak di antara dua titik waktu,
+- lokasi acak pada segmen garis,
+- nilai acak yang dipilih secara merata dari suatu rentang.
+
+### M — Model
+
+Jika:
+$$
+X \sim \mathrm{Uniform}(a,b)
+$$
+maka PDF-nya:
+
+$$
+f(x)=\frac{1}{b-a}, \qquad a \le x \le b
+$$
+
+dan nol di luar interval tersebut.
+
+### Q — Questions
+
+1. Berapa peluang $X$ berada pada sub-interval tertentu?
+2. Berapa mean dan variance?
+3. Kapan asumsi “semua nilai di interval sama padat” masuk akal?
+
+### A — Apply
+
+```{python}
+a, b = 2, 8
+x = np.linspace(0, 10, 400)
+pdf = np.where((x >= a) & (x <= b), 1/(b-a), 0.0)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.fill_between(x, 0, pdf, where=((x >= 3) & (x <= 5)), alpha=0.3)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Uniform(2,8)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("P(3 <= X <= 5) =", (5-3)/(8-2))
+print("Mean =", (a+b)/2)
+print("Variance =", (b-a)**2 / 12)
+```
+
+#### Hasil teoritis
+$$
+E[X]=\frac{a+b}{2}
+$$
+
+$$
+\mathrm{Var}(X)=\frac{(b-a)^2}{12}
+$$
+
+### Latihan singkat
+1. Jika $X \sim \mathrm{Uniform}(10,20)$, hitung $P(12 \le X \le 15)$.
+2. Hitung mean dan variance-nya.
+3. Beri satu contoh aplikasi nyata yang cocok dimodelkan uniform kontinu.
+
+## 4.4 Normal Distribution
+
+### K — Konteks
+
+Normal adalah salah satu distribusi paling terkenal karena sering muncul pada:
+- error pengukuran,
+- tinggi badan,
+- berat badan,
+- hasil agregasi banyak pengaruh kecil,
+- noise sensor.
+
+### M — Model
+
+Jika:
+$$
+X \sim \mathcal{N}(\mu, \sigma^2)
+$$
+maka PDF-nya:
+
+$$
+f(x)=\frac{1}{\sigma \sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+$$
+
+Parameter:
+- $\mu$: pusat distribusi,
+- $\sigma$: skala penyebaran.
+
+### Q — Questions
+
+1. Berapa peluang $X$ kurang dari nilai tertentu?
+2. Berapa peluang $X$ berada dalam interval tertentu?
+3. Bagaimana pengaruh $\mu$ dan $\sigma$ pada bentuk kurva?
+
+### A — Apply
+
+```{python}
+mu, sigma = 100, 15
+x = np.linspace(40, 160, 500)
+pdf = stats.norm.pdf(x, loc=mu, scale=sigma)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Normal(100, 15^2)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("P(X < 90) =", stats.norm.cdf(90, loc=mu, scale=sigma))
+print("P(90 <= X <= 110) =", stats.norm.cdf(110, loc=mu, scale=sigma) - stats.norm.cdf(90, loc=mu, scale=sigma))
+```
+
+#### Hubungan dengan Binomial
+
+Jika:
+- $X \sim \mathrm{Binomial}(n,p)$,
+- $n$ besar,
+
+maka Binomial dapat didekati oleh Normal dengan:
+
+$$
+\mu = np, \qquad \sigma^2 = np(1-p)
+$$
+
+Mari lihat contoh.
+
+```{python}
+n, p = 100, 0.4
+mu_bin = n*p
+sigma_bin = np.sqrt(n*p*(1-p))
+
+x = np.arange(20, 61)
+pmf_bin = stats.binom.pmf(x, n=n, p=p)
+
+x_cont = np.linspace(20, 60, 500)
+pdf_norm = stats.norm.pdf(x_cont, loc=mu_bin, scale=sigma_bin)
+
+plt.figure(figsize=(8,4))
+plt.stem(x, pmf_bin, basefmt=" ", label="Binomial")
+plt.plot(x_cont, pdf_norm, 'r', label="Normal approximation")
+plt.xlabel("x")
+plt.ylabel("Probability / Density")
+plt.title("Pendekatan Normal terhadap Binomial")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+#### Interpretasi keputusan
+Normal sering dipakai untuk:
+- menetapkan toleransi manufaktur,
+- menghitung peluang deviasi pengukuran,
+- mengevaluasi performa relatif terhadap target.
+
+### Latihan singkat
+1. Jika $X \sim \mathcal{N}(70,10^2)$, hitung $P(X < 60)$.
+2. Hitung $P(65 \le X \le 80)$.
+3. Simulasikan 10000 sampel dari distribusi ini dan bandingkan histogram dengan PDF.
+
+## 4.5 Gamma Distribution
+
+### K — Konteks
+
+Distribusi Gamma sangat berguna untuk memodelkan:
+- waktu tunggu sampai beberapa kejadian terjadi,
+- lifetime positif dengan bentuk fleksibel,
+- akumulasi beberapa waktu tunggu eksponensial.
+
+### M — Model
+
+Salah satu parametrisasinya:
+$$
+X \sim \mathrm{Gamma}(\alpha, \theta)
+$$
+
+dengan:
+- $\alpha$ = shape,
+- $\theta$ = scale.
+
+PDF-nya:
+
+$$
+f(x)=\frac{1}{\Gamma(\alpha)\theta^\alpha}x^{\alpha-1}e^{-x/\theta}, \qquad x>0
+$$
+
+### Q — Questions
+
+1. Apa pengaruh shape dan scale?
+2. Kapan Gamma lebih cocok daripada Exponential?
+3. Bagaimana menghitung peluang waktu selesai sebelum batas tertentu?
+
+### A — Apply
+
+```{python}
+alpha, theta = 3, 2
+x = np.linspace(0, 30, 500)
+pdf = stats.gamma.pdf(x, a=alpha, scale=theta)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Gamma(shape=3, scale=2)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("Mean =", alpha * theta)
+print("Variance =", alpha * theta**2)
+print("P(X <= 8) =", stats.gamma.cdf(8, a=alpha, scale=theta))
+```
+
+#### Hasil teoritis
+$$
+E[X]=\alpha\theta
+$$
+
+$$
+\mathrm{Var}(X)=\alpha\theta^2
+$$
+
+### Interpretasi
+Gamma cocok untuk waktu positif yang tidak memoryless dan memiliki bentuk yang bisa semakin “membukit” saat shape membesar.
+
+## 4.6 Exponential Distribution
+
+### K — Konteks
+
+Distribusi Exponential sangat terkenal untuk memodelkan:
+- waktu antar kedatangan pada Poisson process,
+- waktu sampai kegagalan pertama pada sistem memoryless,
+- waktu tunggu hingga kejadian berikutnya.
+
+### M — Model
+
+Jika:
+$$
+X \sim \mathrm{Exponential}(\lambda)
+$$
+maka PDF-nya:
+
+$$
+f(x)=\lambda e^{-\lambda x}, \qquad x \ge 0
+$$
+
+CDF-nya:
+
+$$
+F(x)=1-e^{-\lambda x}
+$$
+
+### Q — Questions
+
+1. Berapa peluang menunggu kurang dari $t$?
+2. Mengapa distribusi ini memoryless?
+3. Bagaimana hubungannya dengan Poisson process?
+
+### A — Apply
+
+```{python}
+lam = 0.5
+x = np.linspace(0, 15, 500)
+pdf = stats.expon.pdf(x, scale=1/lam)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Exponential(rate=0.5)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("Mean =", 1/lam)
+print("Variance =", 1/lam**2)
+print("P(X <= 3) =", stats.expon.cdf(3, scale=1/lam))
+print("P(X > 5) =", 1 - stats.expon.cdf(5, scale=1/lam))
+```
+
+#### Sifat memoryless
+$$
+P(X>s+t \mid X>s)=P(X>t)
+$$
+
+Distribusi Exponential adalah versi kontinu dari ide memoryless yang di dunia diskrit dimiliki distribusi Geometric.
+
+#### Hubungan dengan Poisson process
+
+Jika jumlah kejadian per interval mengikuti Poisson process dengan rate $\lambda$, maka waktu antar kedatangan mengikuti Exponential($\lambda$).
+
+Mari simulasikan.
+
+```{python}
+rng = np.random.default_rng(123)
+lam = 2.0  ## rata-rata 2 kejadian per satuan waktu
+
+interarrival = rng.exponential(scale=1/lam, size=50000)
+
+x = np.linspace(0, np.percentile(interarrival, 99.5), 400)
+pdf = stats.expon.pdf(x, scale=1/lam)
+
+plt.figure(figsize=(8,4))
+plt.hist(interarrival, bins=60, density=True, alpha=0.6, label="Simulasi")
+plt.plot(x, pdf, label="PDF teoritis")
+plt.xlabel("Interarrival time")
+plt.ylabel("Density")
+plt.title("Interarrival time pada Poisson process ~ Exponential")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+### Latihan singkat
+1. Jika rata-rata waktu tunggu 10 menit, berapa rate $\lambda$?
+2. Hitung peluang waktu tunggu kurang dari 5 menit.
+3. Verifikasi sifat memoryless dengan simulasi.
+
+## 4.7 Erlang Distribution
+
+### K — Konteks
+
+Erlang muncul ketika kita menjumlahkan beberapa waktu tunggu Eksponensial independen dengan rate yang sama. Misalnya:
+- total waktu layanan yang melewati beberapa tahap berurutan,
+- waktu sampai $k$ kejadian dalam Poisson process.
+
+### M — Model
+
+Jika:
+$$
+X = X_1 + X_2 + \cdots + X_k
+$$
+dengan tiap $X_i \sim \text{Exponential}(\lambda)$ independen, maka:
+
+$$
+X \sim \text{Erlang}(k,\lambda)
+$$
+
+Erlang adalah kasus khusus Gamma dengan shape integer.
+
+### Q — Questions
+
+1. Bagaimana bentuk distribusinya dibanding Exponential?
+2. Bagaimana pengaruh $k$?
+3. Apa arti praktis “jumlah beberapa tahap layanan”?
+
+### A — Apply
+
+```{python}
+lam = 0.5
+k = 3
+
+x = np.linspace(0, 25, 500)
+pdf = stats.gamma.pdf(x, a=k, scale=1/lam)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Erlang(k=3, rate=0.5)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("Mean =", k/lam)
+print("Variance =", k/(lam**2))
+print("P(X <= 8) =", stats.gamma.cdf(8, a=k, scale=1/lam))
+```
+
+#### Interpretasi
+Jika suatu proses terdiri dari 3 tahap memoryless independen, maka total waktunya tidak lagi Exponential, tetapi Erlang-3.
+
+## 4.8 Weibull Distribution
+
+### K — Konteks
+
+Weibull sangat populer dalam reliability engineering karena dapat memodelkan berbagai pola kegagalan:
+- kegagalan awal,
+- kegagalan acak,
+- kegagalan akibat keausan.
+
+### M — Model
+
+Jika:
+$$
+X \sim \text{Weibull}(k,\lambda)
+$$
+dengan:
+- $k$ = shape,
+- $\lambda$ = scale,
+
+maka PDF-nya adalah:
+
+$$
+f(x)=\frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1}e^{-(x/\lambda)^k}, \qquad x \ge 0
+$$
+
+### Q — Questions
+
+1. Bagaimana shape $k$ memengaruhi hazard?
+2. Kapan Weibull lebih realistis daripada Exponential?
+3. Bagaimana peluang komponen gagal sebelum waktu tertentu?
+
+### A — Apply
+
+```{python}
+k_shape = 2.0
+lam_scale = 10.0
+
+x = np.linspace(0, 30, 500)
+pdf = stats.weibull_min.pdf(x, c=k_shape, scale=lam_scale)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Weibull(shape=2, scale=10)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("P(X <= 8) =", stats.weibull_min.cdf(8, c=k_shape, scale=lam_scale))
+```
+
+#### Interpretasi
+Weibull lebih fleksibel daripada Exponential. Ia sangat berguna saat laju kegagalan tidak konstan.
+
+## 4.9 Pareto Distribution
+
+### K — Konteks
+
+Pareto dipakai untuk fenomena heavy-tail, misalnya:
+- kekayaan,
+- ukuran file,
+- kerugian ekstrem,
+- pendapatan segelintir pihak yang sangat besar.
+
+### M — Model
+
+Jika:
+$$
+X \sim \text{Pareto}(x_m,\alpha)
+$$
+maka untuk $x \ge x_m$:
+
+$$
+f(x)=\alpha \frac{x_m^\alpha}{x^{\alpha+1}}
+$$
+
+### Q — Questions
+
+1. Mengapa Pareto menghasilkan peluang ekstrem yang lebih besar?
+2. Kapan model heavy-tail penting dalam keputusan?
+3. Mengapa mean/variance bisa bermasalah untuk parameter tertentu?
+
+### A — Apply
+
+```{python}
+alpha = 3.0
+xm = 1.0
+
+x = np.linspace(1, 10, 500)
+pdf = stats.pareto.pdf(x, b=alpha, scale=xm)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Pareto")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("P(X > 3) =", 1 - stats.pareto.cdf(3, b=alpha, scale=xm))
+```
+
+#### Interpretasi
+Pareto penting ketika kejadian ekstrem tidak boleh diabaikan. Dalam pengambilan keputusan risiko, tail tebal bisa sangat menentukan.
+
+## 4.10 Chi-Square Distribution
+
+### K — Konteks
+
+Chi-Square muncul dalam:
+- inferensi statistik,
+- goodness-of-fit,
+- analisis varians,
+- penjumlahan kuadrat peubah normal baku.
+
+### M — Model
+
+Jika:
+$$
+Z_1, Z_2, \dots, Z_k \sim \mathcal{N}(0,1)
+$$
+independen, maka:
+
+$$
+X = Z_1^2 + Z_2^2 + \cdots + Z_k^2
+\sim \chi^2(k)
+$$
+
+Distribusi ini adalah kasus khusus Gamma.
+
+### Q — Questions
+
+1. Mengapa bentuknya hanya pada nilai non-negatif?
+2. Apa hubungan Chi-Square dengan Normal?
+3. Mengapa distribusi ini penting di statistika?
+
+### A — Apply
+
+```{python}
+df = 5
+x = np.linspace(0, 20, 500)
+pdf = stats.chi2.pdf(x, df=df)
+
+plt.figure(figsize=(8,4))
+plt.plot(x, pdf)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.title("PDF Chi-Square(df=5)")
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+```{python}
+print("Mean =", df)
+print("Variance =", 2*df)
+print("P(X <= 7) =", stats.chi2.cdf(7, df=df))
+```
+
+## 4.11 Hubungan Antardistribusi
+
+Bagian ini penting karena membantu mahasiswa melihat probabilitas sebagai jaringan ide, bukan daftar rumus terpisah.
+
+### Exponential ↔ Poisson Process
+Jika banyak kejadian dalam interval mengikuti Poisson process dengan rate $\lambda$, maka waktu antar kedatangan mengikuti Exponential($\lambda$).
+
+### Erlang ↔ Exponential
+Erlang adalah jumlah beberapa random variable Exponential independen dengan rate sama.
+
+### Gamma ↔ Erlang
+Erlang adalah kasus khusus Gamma dengan parameter shape berupa bilangan bulat positif.
+
+### Normal ↔ Binomial
+Binomial dengan $n$ besar sering dapat didekati oleh Normal.
+
+### Chi-Square ↔ Gamma
+Chi-Square adalah kasus khusus Gamma.
+
+Mari buat diagram singkat dengan Mermaid.
+
+```{mermaid}
+flowchart LR
+    PoissonProcess["Poisson Process"] --> Exponential["Exponential (interarrival time)"]
+    Exponential --> Erlang["Erlang = jumlah k Exponential iid"]
+    Erlang --> Gamma["Gamma (generalisasi Erlang)"]
+    Binomial["Binomial (n besar)"] --> Normal["Normal approximation"]
+    Gamma --> ChiSquare["Chi-Square (kasus khusus Gamma)"]
+```
+
+## 4.12 Mini-Case KMQA 1 — Garansi Produk
+
+### K — Konteks
+Umur hidup lampu memengaruhi kebijakan garansi. Jika garansi terlalu panjang, biaya klaim meningkat. Jika terlalu pendek, pelanggan kecewa.
+
+### M — Model
+Misalkan umur hidup $X \sim \mathcal{N}(900,50^2)$.
+
+### Q — Questions
+1. Berapa peluang rusak sebelum 800 jam?
+2. Berapa jika garansi 850 atau 900 jam?
+3. Kebijakan mana yang lebih konservatif?
+
+### A — Apply
+
+```{python}
+mu, sigma = 900, 50
+for T in [800, 850, 900]:
+    print(f"P(X < {T}) =", stats.norm.cdf(T, loc=mu, scale=sigma))
+```
+
+#### Interpretasi
+CDF langsung memberi estimasi proporsi klaim garansi.
+
+## 4.13 Mini-Case KMQA 2 — Waktu Antar Kedatangan Pasien
+
+### K — Konteks
+Sebuah klinik menerima pasien secara acak. Kita ingin memodelkan selang waktu antar kedatangan.
+
+### M — Model
+Jika kedatangan mengikuti Poisson process dengan rate $\lambda$, maka interarrival time:
+$$
+X \sim \mathrm{Exponential}(\lambda)
+$$
+
+### Q — Questions
+1. Berapa peluang pasien berikut datang dalam 10 menit?
+2. Berapa rata-rata selang tunggu?
+
+### A — Apply
+
+```{python}
+## rate 2 pasien/jam => 1 pasien setiap 30 menit rata-rata
+lam_per_hour = 2
+lam_per_minute = lam_per_hour / 60
+
+print("Rata-rata waktu tunggu (menit) =", 1/lam_per_minute)
+print("P(datang dalam 10 menit) =", stats.expon.cdf(10, scale=1/lam_per_minute))
+```
+
+## 4.14 Mini-Case KMQA 3 — Tiga Sub-Layanan Berantai
+
+### K — Konteks
+Sebuah layanan terdiri dari tiga tahap berurutan, masing-masing memoryless dan independen.
+
+### M — Model
+Masing-masing tahap $X_i \sim \mathrm{Exponential}(\lambda)$, maka total:
+$$
+T = X_1 + X_2 + X_3 \sim \text{Erlang}(3,\lambda)
+$$
+
+### Q — Questions
+1. Berapa mean total durasi?
+2. Mengapa totalnya tidak lagi Exponential?
+3. Bagaimana histogram Monte Carlo dibanding PDF Erlang?
+
+### A — Apply
+
+```{python}
+rng = np.random.default_rng(42)
+lam = 0.5
+n = 100000
+
+X1 = rng.exponential(scale=1/lam, size=n)
+X2 = rng.exponential(scale=1/lam, size=n)
+X3 = rng.exponential(scale=1/lam, size=n)
+T = X1 + X2 + X3
+
+x = np.linspace(0, np.percentile(T, 99.5), 400)
+pdf = stats.gamma.pdf(x, a=3, scale=1/lam)
+
+plt.figure(figsize=(8,4))
+plt.hist(T, bins=60, density=True, alpha=0.6, label="Monte Carlo")
+plt.plot(x, pdf, label="PDF Erlang-3")
+plt.xlabel("Durasi total")
+plt.ylabel("Density")
+plt.title("Jumlah 3 Exponential iid menghasilkan Erlang-3")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+## 4.15 Python Toolbox untuk Distribusi Kontinu
+
+```{python}
+from scipy import stats
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+### Normal
+```{python}
+stats.norm.pdf(0, loc=0, scale=1), stats.norm.cdf(1.96, loc=0, scale=1)
+```
+
+### Exponential
+```{python}
+stats.expon.pdf(2, scale=3), stats.expon.cdf(2, scale=3)
+```
+
+### Gamma
+```{python}
+stats.gamma.pdf(4, a=3, scale=2), stats.gamma.cdf(4, a=3, scale=2)
+```
+
+### Weibull
+```{python}
+stats.weibull_min.pdf(4, c=2, scale=10), stats.weibull_min.cdf(4, c=2, scale=10)
+```
+
+### Pareto
+```{python}
+stats.pareto.pdf(2, b=3, scale=1), stats.pareto.cdf(2, b=3, scale=1)
+```
+
+### Chi-Square
+```{python}
+stats.chi2.pdf(5, df=4), stats.chi2.cdf(5, df=4)
+```
+
+## 4.16 Kesalahan Umum yang Harus Dihindari
+
+1. **Menganggap tinggi PDF adalah peluang**  
+   Tidak. Peluang adalah area di bawah kurva.
+
+2. **Menghitung $P(X=x)$ untuk kontinu seolah-olah positif**  
+   Dalam model kontinu, peluang titik tunggal adalah nol.
+
+3. **Memakai Exponential untuk semua lifetime**  
+   Exponential hanya cocok bila hazard rate konstan / memoryless.
+
+4. **Memakai Normal untuk data yang sangat skewed atau bernilai negatif-padahal tidak mungkin**  
+   Pilih model sesuai konteks.
+
+5. **Menghafal distribusi tanpa memahami makna parameter**  
+   Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, variance, dan implikasinya.
+
+## 4.17 Menyimpulkan Bab Ini
+
+Distribusi kontinu memberi kita bahasa untuk memodelkan banyak besaran dunia nyata yang berupa pengukuran, waktu, umur hidup, dan nilai-nilai positif yang berubah halus.
+
+Kita telah melihat:
+- **uniform kontinu** untuk interval yang merata,
+- **normal** untuk fenomena simetris dan agregatif,
+- **gamma** untuk waktu tunggu positif yang fleksibel,
+- **exponential** untuk memoryless waiting time,
+- **erlang** untuk jumlah beberapa exponential,
+- **weibull** untuk reliability yang lebih fleksibel,
+- **pareto** untuk heavy-tail,
+- **chi-square** untuk inferensi statistik dan hubungan dengan normal.
+
+Di samping itu, hubungan antardistribusi membantu kita melihat probabilitas sebagai sistem ide yang saling terhubung.
+
+## 4.18 Ringkasan Poin Inti
+
+1. Untuk random variable kontinu, peluang diperoleh dari **area** di bawah PDF.
+2. Distribusi kontinu kustom bisa dibangun dari tabel atau interpolasi numerik.
+3. **Uniform kontinu** cocok untuk interval merata.
+4. **Normal** penting untuk banyak fenomena simetris dan sebagai pendekatan Binomial.
+5. **Exponential** memodelkan waiting time memoryless dan terkait erat dengan Poisson process.
+6. **Gamma** dan **Erlang** memodelkan akumulasi waiting time.
+7. **Weibull** sangat penting dalam reliability engineering.
+8. **Pareto** penting untuk fenomena ekstrem dan heavy-tail.
+9. **Chi-Square** adalah distribusi penting dalam statistika inferensial.
+10. Memahami hubungan antardistribusi membantu membangun intuisi yang lebih dalam.
+
+## 4.19 Latihan Bab 4
+
+### A. Konseptual
+1. Mengapa peluang titik tunggal pada RV kontinu bernilai nol?
+2. Apa perbedaan utama antara PDF dan CDF?
+3. Mengapa Exponential disebut memoryless?
+4. Mengapa Weibull sering lebih realistis daripada Exponential untuk data kegagalan?
+
+### B. Hitungan
+1. Jika $X \sim \mathrm{Uniform}(2,8)$, hitung $P(3 \le X \le 5)$.
+2. Jika $X \sim \mathcal{N}(100,15^2)$, hitung $P(X<90)$.
+3. Jika $X \sim \mathrm{Exponential}(\lambda=0.5)$, hitung $P(X \le 3)$.
+4. Jika $X \sim \mathrm{Gamma}(3,2)$, hitung $E[X]$ dan $\mathrm{Var}(X)$.
+
+### C. Python
+1. Simulasikan 10000 sampel Uniform(0,1) dan bandingkan histogram dengan PDF.
+2. Simulasikan Normal dan bandingkan histogram dengan PDF.
+3. Simulasikan interarrival time Poisson process dan bandingkan dengan Exponential teoritis.
+4. Simulasikan jumlah tiga Exponential dan bandingkan dengan Erlang teoritis.
+
+### D. Aplikatif
+1. Pilih model yang paling cocok untuk:
+   - tinggi badan,
+   - waktu antar kedatangan pelanggan,
+   - lifetime komponen dengan keausan,
+   - kerugian ekstrem.
+2. Jelaskan alasan pemilihan model tersebut.
+3. Dalam kasus garansi produk, ukuran apa yang paling penting: mean umur, variance umur, atau peluang rusak sebelum T?
+
+## 4.20 Penutup Kecil
+
+Kalau bab sebelumnya mengajarkan kita menghitung kejadian yang berupa hitungan, maka bab ini mengajarkan kita berpikir tentang besaran yang mengalir: waktu, umur hidup, pengukuran, dan intensitas.
+
+Di bab berikutnya, kita akan memperluas pandangan lagi: dunia nyata jarang hanya punya satu peubah acak. Kita akan mulai melihat **lebih dari satu random variable sekaligus**, hubungan di antaranya, serta apa yang terjadi ketika satu random variable menjadi fungsi dari yang lain.

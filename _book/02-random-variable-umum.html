@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Bab 2. Random Variable Umum – Random Variable untuk Pengambilan Keputusan</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-distribusi-diskrit.html" rel="next">
+<link href="./01-pendahuluan-pengambilan-keputusan.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-random-variable-umum.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Random Variable untuk Pengambilan Keputusan</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Random Variable untuk Pengambilan Keputusan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-kata-pengantar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kata Pengantar</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-pendahuluan-pengambilan-keputusan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bab 1. Pendahuluan Pengambilan Keputusan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-random-variable-umum.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-distribusi-diskrit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-distribusi-kontinu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bab 4. Distribusi Random Variable Kontinu</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-random-variable-multivariat-dan-fungsi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bab 5. Random Variable Multivariat dan Fungsi Random Variable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-penutup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bab 6. Penutup</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#tujuan-bab" id="toc-tujuan-bab" class="nav-link active" data-scroll-target="#tujuan-bab"><span class="header-section-number">4.1</span> Tujuan Bab</a></li>
+  <li><a href="#pembuka" id="toc-pembuka" class="nav-link" data-scroll-target="#pembuka"><span class="header-section-number">4.2</span> Pembuka</a></li>
+  <li><a href="#quick-win-dari-dunia-acak-ke-garis-bilangan" id="toc-quick-win-dari-dunia-acak-ke-garis-bilangan" class="nav-link" data-scroll-target="#quick-win-dari-dunia-acak-ke-garis-bilangan"><span class="header-section-number">4.3</span> 2.1 Quick Win: Dari Dunia Acak ke Garis Bilangan</a></li>
+  <li><a href="#k-konteks-mengapa-kita-perlu-random-variable" id="toc-k-konteks-mengapa-kita-perlu-random-variable" class="nav-link" data-scroll-target="#k-konteks-mengapa-kita-perlu-random-variable"><span class="header-section-number">4.4</span> 2.2 K — Konteks: Mengapa Kita Perlu Random Variable?</a></li>
+  <li><a href="#m-model-definisi-random-variable" id="toc-m-model-definisi-random-variable" class="nav-link" data-scroll-target="#m-model-definisi-random-variable"><span class="header-section-number">4.5</span> 2.3 M — Model: Definisi Random Variable</a>
+  <ul class="collapse">
+  <li><a href="#catatan-penting" id="toc-catatan-penting" class="nav-link" data-scroll-target="#catatan-penting"><span class="header-section-number">4.5.1</span> Catatan penting</a></li>
+  </ul></li>
+  <li><a href="#event-vs-nilai-random-variable" id="toc-event-vs-nilai-random-variable" class="nav-link" data-scroll-target="#event-vs-nilai-random-variable"><span class="header-section-number">4.6</span> 2.4 Event vs Nilai Random Variable</a></li>
+  <li><a href="#range-nilai-nilai-yang-mungkin" id="toc-range-nilai-nilai-yang-mungkin" class="nav-link" data-scroll-target="#range-nilai-nilai-yang-mungkin"><span class="header-section-number">4.7</span> 2.5 Range: Nilai-Nilai yang Mungkin</a>
+  <ul class="collapse">
+  <li><a href="#diskrit-vs-kontinu" id="toc-diskrit-vs-kontinu" class="nav-link" data-scroll-target="#diskrit-vs-kontinu"><span class="header-section-number">4.7.1</span> Diskrit vs Kontinu</a></li>
+  </ul></li>
+  <li><a href="#pmf-untuk-random-variable-diskrit" id="toc-pmf-untuk-random-variable-diskrit" class="nav-link" data-scroll-target="#pmf-untuk-random-variable-diskrit"><span class="header-section-number">4.8</span> 2.6 PMF untuk Random Variable Diskrit</a>
+  <ul class="collapse">
+  <li><a href="#sifat-pmf" id="toc-sifat-pmf" class="nav-link" data-scroll-target="#sifat-pmf"><span class="header-section-number">4.8.1</span> Sifat PMF</a></li>
+  </ul></li>
+  <li><a href="#cdf-bahasa-probabilitas-kumulatif" id="toc-cdf-bahasa-probabilitas-kumulatif" class="nav-link" data-scroll-target="#cdf-bahasa-probabilitas-kumulatif"><span class="header-section-number">4.9</span> 2.7 CDF: Bahasa Probabilitas Kumulatif</a></li>
+  <li><a href="#pdf-untuk-random-variable-kontinu" id="toc-pdf-untuk-random-variable-kontinu" class="nav-link" data-scroll-target="#pdf-untuk-random-variable-kontinu"><span class="header-section-number">4.10</span> 2.8 PDF untuk Random Variable Kontinu</a>
+  <ul class="collapse">
+  <li><a href="#sifat-pdf" id="toc-sifat-pdf" class="nav-link" data-scroll-target="#sifat-pdf"><span class="header-section-number">4.10.1</span> Sifat PDF</a></li>
+  </ul></li>
+  <li><a href="#menghubungkan-pmf-cdf-dan-pdf" id="toc-menghubungkan-pmf-cdf-dan-pdf" class="nav-link" data-scroll-target="#menghubungkan-pmf-cdf-dan-pdf"><span class="header-section-number">4.11</span> 2.9 Menghubungkan PMF, CDF, dan PDF</a>
+  <ul class="collapse">
+  <li><a href="#untuk-diskrit" id="toc-untuk-diskrit" class="nav-link" data-scroll-target="#untuk-diskrit"><span class="header-section-number">4.11.1</span> Untuk diskrit</a></li>
+  <li><a href="#untuk-kontinu" id="toc-untuk-kontinu" class="nav-link" data-scroll-target="#untuk-kontinu"><span class="header-section-number">4.11.2</span> Untuk kontinu</a></li>
+  </ul></li>
+  <li><a href="#ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" id="toc-ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" class="nav-link" data-scroll-target="#ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi"><span class="header-section-number">4.12</span> 2.10 Ekspektasi: Tebakan Terbaik Sebelum Fakta Terjadi</a>
+  <ul class="collapse">
+  <li><a href="#untuk-random-variable-diskrit" id="toc-untuk-random-variable-diskrit" class="nav-link" data-scroll-target="#untuk-random-variable-diskrit"><span class="header-section-number">4.12.1</span> Untuk random variable diskrit</a></li>
+  <li><a href="#untuk-random-variable-kontinu" id="toc-untuk-random-variable-kontinu" class="nav-link" data-scroll-target="#untuk-random-variable-kontinu"><span class="header-section-number">4.12.2</span> Untuk random variable kontinu</a></li>
+  </ul></li>
+  <li><a href="#varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" id="toc-varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" class="nav-link" data-scroll-target="#varians-dan-simpangan-baku-seberapa-liar-penyimpangannya"><span class="header-section-number">4.13</span> 2.11 Varians dan Simpangan Baku: Seberapa Liar Penyimpangannya?</a>
+  <ul class="collapse">
+  <li><a href="#definisi" id="toc-definisi" class="nav-link" data-scroll-target="#definisi"><span class="header-section-number">4.13.1</span> Definisi</a></li>
+  <li><a href="#bentuk-yang-sering-lebih-praktis" id="toc-bentuk-yang-sering-lebih-praktis" class="nav-link" data-scroll-target="#bentuk-yang-sering-lebih-praktis"><span class="header-section-number">4.13.2</span> Bentuk yang sering lebih praktis</a></li>
+  </ul></li>
+  <li><a href="#sifat-sifat-penting-ekspektasi-dan-varians" id="toc-sifat-sifat-penting-ekspektasi-dan-varians" class="nav-link" data-scroll-target="#sifat-sifat-penting-ekspektasi-dan-varians"><span class="header-section-number">4.14</span> 2.12 Sifat-Sifat Penting Ekspektasi dan Varians</a>
+  <ul class="collapse">
+  <li><a href="#linearitas-ekspektasi" id="toc-linearitas-ekspektasi" class="nav-link" data-scroll-target="#linearitas-ekspektasi"><span class="header-section-number">4.14.1</span> Linearitas ekspektasi</a></li>
+  <li><a href="#varians-terhadap-transformasi-linear" id="toc-varians-terhadap-transformasi-linear" class="nav-link" data-scroll-target="#varians-terhadap-transformasi-linear"><span class="header-section-number">4.14.2</span> Varians terhadap transformasi linear</a></li>
+  </ul></li>
+  <li><a href="#diskrit-dan-kontinu-dalam-praktik" id="toc-diskrit-dan-kontinu-dalam-praktik" class="nav-link" data-scroll-target="#diskrit-dan-kontinu-dalam-praktik"><span class="header-section-number">4.15</span> 2.13 Diskrit dan Kontinu dalam Praktik</a>
+  <ul class="collapse">
+  <li><a href="#pedoman-intuitif" id="toc-pedoman-intuitif" class="nav-link" data-scroll-target="#pedoman-intuitif"><span class="header-section-number">4.15.1</span> Pedoman intuitif</a></li>
+  </ul></li>
+  <li><a href="#dari-histogram-ke-distribusi" id="toc-dari-histogram-ke-distribusi" class="nav-link" data-scroll-target="#dari-histogram-ke-distribusi"><span class="header-section-number">4.16</span> 2.14 Dari Histogram ke Distribusi</a></li>
+  <li><a href="#kmqa-mini-case-1-timbangan-berat-badan" id="toc-kmqa-mini-case-1-timbangan-berat-badan" class="nav-link" data-scroll-target="#kmqa-mini-case-1-timbangan-berat-badan"><span class="header-section-number">4.17</span> 2.15 KMQA Mini-Case 1 — Timbangan Berat Badan</a>
+  <ul class="collapse">
+  <li><a href="#k-konteks" id="toc-k-konteks" class="nav-link" data-scroll-target="#k-konteks"><span class="header-section-number">4.17.1</span> K — Konteks</a></li>
+  <li><a href="#m-model" id="toc-m-model" class="nav-link" data-scroll-target="#m-model"><span class="header-section-number">4.17.2</span> M — Model</a></li>
+  <li><a href="#q-questions" id="toc-q-questions" class="nav-link" data-scroll-target="#q-questions"><span class="header-section-number">4.17.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply" id="toc-a-apply" class="nav-link" data-scroll-target="#a-apply"><span class="header-section-number">4.17.4</span> A — Apply</a></li>
+  </ul></li>
+  <li><a href="#kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" id="toc-kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" class="nav-link" data-scroll-target="#kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol"><span class="header-section-number">4.18</span> 2.16 KMQA Mini-Case 2 — Jumlah Kendaraan di Gerbang Tol</a>
+  <ul class="collapse">
+  <li><a href="#k-konteks-1" id="toc-k-konteks-1" class="nav-link" data-scroll-target="#k-konteks-1"><span class="header-section-number">4.18.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-1" id="toc-m-model-1" class="nav-link" data-scroll-target="#m-model-1"><span class="header-section-number">4.18.2</span> M — Model</a></li>
+  <li><a href="#q-questions-1" id="toc-q-questions-1" class="nav-link" data-scroll-target="#q-questions-1"><span class="header-section-number">4.18.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-1" id="toc-a-apply-1" class="nav-link" data-scroll-target="#a-apply-1"><span class="header-section-number">4.18.4</span> A — Apply</a></li>
+  </ul></li>
+  <li><a href="#kmqa-mini-case-3-waktu-tunggu-pasien" id="toc-kmqa-mini-case-3-waktu-tunggu-pasien" class="nav-link" data-scroll-target="#kmqa-mini-case-3-waktu-tunggu-pasien"><span class="header-section-number">4.19</span> 2.17 KMQA Mini-Case 3 — Waktu Tunggu Pasien</a>
+  <ul class="collapse">
+  <li><a href="#k-konteks-2" id="toc-k-konteks-2" class="nav-link" data-scroll-target="#k-konteks-2"><span class="header-section-number">4.19.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-2" id="toc-m-model-2" class="nav-link" data-scroll-target="#m-model-2"><span class="header-section-number">4.19.2</span> M — Model</a></li>
+  <li><a href="#q-questions-2" id="toc-q-questions-2" class="nav-link" data-scroll-target="#q-questions-2"><span class="header-section-number">4.19.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-2" id="toc-a-apply-2" class="nav-link" data-scroll-target="#a-apply-2"><span class="header-section-number">4.19.4</span> A — Apply</a></li>
+  </ul></li>
+  <li><a href="#python-toolbox-dasar-untuk-bab-ini" id="toc-python-toolbox-dasar-untuk-bab-ini" class="nav-link" data-scroll-target="#python-toolbox-dasar-untuk-bab-ini"><span class="header-section-number">4.20</span> 2.18 Python Toolbox Dasar untuk Bab Ini</a>
+  <ul class="collapse">
+  <li><a href="#simulasi-data" id="toc-simulasi-data" class="nav-link" data-scroll-target="#simulasi-data"><span class="header-section-number">4.20.1</span> Simulasi data</a></li>
+  <li><a href="#pmf-pdf-cdf-dari-scipy" id="toc-pmf-pdf-cdf-dari-scipy" class="nav-link" data-scroll-target="#pmf-pdf-cdf-dari-scipy"><span class="header-section-number">4.20.2</span> PMF / PDF / CDF dari SciPy</a></li>
+  <li><a href="#plot-cepat" id="toc-plot-cepat" class="nav-link" data-scroll-target="#plot-cepat"><span class="header-section-number">4.20.3</span> Plot cepat</a></li>
+  </ul></li>
+  <li><a href="#kesalahan-kesalahan-umum-yang-harus-dihindari" id="toc-kesalahan-kesalahan-umum-yang-harus-dihindari" class="nav-link" data-scroll-target="#kesalahan-kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">4.21</span> 2.19 Kesalahan-Kesalahan Umum yang Harus Dihindari</a></li>
+  <li><a href="#menyimpulkan-bab-ini" id="toc-menyimpulkan-bab-ini" class="nav-link" data-scroll-target="#menyimpulkan-bab-ini"><span class="header-section-number">4.22</span> 2.20 Menyimpulkan Bab Ini</a></li>
+  <li><a href="#ringkasan-poin-inti" id="toc-ringkasan-poin-inti" class="nav-link" data-scroll-target="#ringkasan-poin-inti"><span class="header-section-number">4.23</span> 2.21 Ringkasan Poin Inti</a></li>
+  <li><a href="#latihan-bab-2" id="toc-latihan-bab-2" class="nav-link" data-scroll-target="#latihan-bab-2"><span class="header-section-number">4.24</span> 2.22 Latihan Bab 2</a>
+  <ul class="collapse">
+  <li><a href="#a.-konseptual" id="toc-a.-konseptual" class="nav-link" data-scroll-target="#a.-konseptual"><span class="header-section-number">4.24.1</span> A. Konseptual</a></li>
+  <li><a href="#b.-hitungan" id="toc-b.-hitungan" class="nav-link" data-scroll-target="#b.-hitungan"><span class="header-section-number">4.24.2</span> B. Hitungan</a></li>
+  <li><a href="#c.-python" id="toc-c.-python" class="nav-link" data-scroll-target="#c.-python"><span class="header-section-number">4.24.3</span> C. Python</a></li>
+  <li><a href="#d.-aplikatif" id="toc-d.-aplikatif" class="nav-link" data-scroll-target="#d.-aplikatif"><span class="header-section-number">4.24.4</span> D. Aplikatif</a></li>
+  </ul></li>
+  <li><a href="#penutup-kecil" id="toc-penutup-kecil" class="nav-link" data-scroll-target="#penutup-kecil"><span class="header-section-number">4.25</span> 2.23 Penutup Kecil</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="tujuan-bab" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="tujuan-bab"><span class="header-section-number">4.1</span> Tujuan Bab</h2>
+<p>Setelah mempelajari bab ini, mahasiswa diharapkan mampu:</p>
+<ol type="1">
+<li>memahami <strong>random variable</strong> sebagai pemetaan dari hasil acak ke bilangan,</li>
+<li>membedakan <strong>event</strong> dengan <strong>nilai random variable</strong>,</li>
+<li>memahami <strong>range</strong> sebagai himpunan nilai yang mungkin,</li>
+<li>membedakan random variable <strong>diskrit</strong> dan <strong>kontinu</strong>,</li>
+<li>memahami dan menggunakan <strong>PMF</strong>, <strong>CDF</strong>, dan <strong>PDF</strong>,</li>
+<li>menghitung dan menafsirkan <strong>ekspektasi</strong>, <strong>varians</strong>, dan <strong>simpangan baku</strong>,</li>
+<li>menghubungkan ukuran-ukuran tersebut dengan <strong>pengambilan keputusan</strong>.</li>
+</ol>
+</section>
+<section id="pembuka" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="pembuka"><span class="header-section-number">4.2</span> Pembuka</h2>
+<p>Pada bab sebelumnya, kita sudah melihat bahwa probabilitas menjadi penting ketika kita harus mengambil keputusan di bawah ketidakpastian. Kita juga sudah melihat bahwa salah satu cara paling kuat untuk “menjinakkan” ketidakpastian adalah dengan membuat <strong>model</strong>.</p>
+<p>Di bab ini, kita masuk ke fondasi model tersebut: <strong>random variable</strong>.</p>
+<p>Random variable adalah salah satu ide yang tampak sederhana, tetapi pengaruhnya sangat besar. Begitu kita berhasil memetakan hasil-hasil acak menjadi angka, kita memperoleh akses ke dunia matematika: kita bisa menggambar, menghitung, mensimulasikan, membandingkan, dan akhirnya memutuskan.</p>
+</section>
+<section id="quick-win-dari-dunia-acak-ke-garis-bilangan" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="quick-win-dari-dunia-acak-ke-garis-bilangan"><span class="header-section-number">4.3</span> 2.1 Quick Win: Dari Dunia Acak ke Garis Bilangan</h2>
+<p>Mari mulai dari contoh sederhana. Misalkan kita melempar dua koin. Ruang sampelnya adalah:</p>
+<p><span class="math display">\[
+S = \{HH, HT, TH, TT\}
+\]</span></p>
+<p>Sekarang definisikan random variable:</p>
+<p><span class="math display">\[
+X = \text{jumlah sisi Head yang muncul}
+\]</span></p>
+<p>Maka: - <span class="math inline">\(X(HH)=2\)</span> - <span class="math inline">\(X(HT)=1\)</span> - <span class="math inline">\(X(TH)=1\)</span> - <span class="math inline">\(X(TT)=0\)</span></p>
+<p>Artinya, hasil-hasil acak yang tadinya berupa simbol <span class="math inline">\(HH, HT, TH, TT\)</span> dipetakan menjadi angka <span class="math inline">\(0,1,2\)</span>.</p>
+<p>Mari lihat dengan Python.</p>
+<div id="f29d76e7" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> itertools</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>outcomes <span class="op">=</span> <span class="bu">list</span>(itertools.product([<span class="st">'H'</span>, <span class="st">'T'</span>], repeat<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> X(outcome):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> outcome.count(<span class="st">'H'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>mapped <span class="op">=</span> [(o, X(o)) <span class="cf">for</span> o <span class="kw">in</span> outcomes]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>mapped</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>[(('H', 'H'), 2), (('H', 'T'), 1), (('T', 'H'), 1), (('T', 'T'), 0)]</code></pre>
+</div>
+</div>
+<div id="3c5d926a" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [X(o) <span class="cf">for</span> o <span class="kw">in</span> outcomes]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>unique, counts <span class="op">=</span> np.unique(values, return_counts<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.bar(unique, counts <span class="op">/</span> counts.<span class="bu">sum</span>())</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nilai X = jumlah Head"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Probabilitas"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Random variable sebagai pemetaan ke bilangan"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.xticks(unique)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-3-output-1.png" width="589" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Dari sini kita melihat <em>quick win</em> yang penting: - event hidup di ruang sampel, - random variable memetakan event ke angka, - distribusi random variable memberi tahu kita bagaimana peluang tersebar pada angka-angka itu.</p>
+</section>
+<section id="k-konteks-mengapa-kita-perlu-random-variable" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="k-konteks-mengapa-kita-perlu-random-variable"><span class="header-section-number">4.4</span> 2.2 K — Konteks: Mengapa Kita Perlu Random Variable?</h2>
+<p>Bayangkan beberapa pertanyaan berikut: - Berapa jumlah kendaraan yang lewat gerbang tol dalam satu jam? - Berapa waktu tunggu pasien sampai dilayani? - Berapa profit harian sebuah klinik? - Berapa banyak produk cacat dalam 100 unit? - Berapa lama sebuah lampu bertahan sebelum rusak?</p>
+<p>Semua pertanyaan ini punya satu pola: hasilnya <strong>tidak pasti</strong>, tetapi hasil itu <strong>berupa bilangan</strong>.</p>
+<p>Itulah alasan random variable menjadi penting. Ia menjadi jembatan antara: - kejadian acak di dunia nyata, dan - analisis matematis berbasis angka.</p>
+</section>
+<section id="m-model-definisi-random-variable" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="m-model-definisi-random-variable"><span class="header-section-number">4.5</span> 2.3 M — Model: Definisi Random Variable</h2>
+<p>Secara formal, random variable <span class="math inline">\(X\)</span> adalah sebuah fungsi yang memetakan setiap hasil <span class="math inline">\(\omega\)</span> dalam ruang sampel <span class="math inline">\(S\)</span> ke sebuah bilangan real:</p>
+<p><span class="math display">\[
+X: S \to \mathbb{R}
+\]</span></p>
+<p>dengan</p>
+<p><span class="math display">\[
+\omega \mapsto X(\omega)
+\]</span></p>
+<p>Di sini: - <span class="math inline">\(S\)</span> = ruang sampel, - <span class="math inline">\(\omega\)</span> = satu hasil acak, - <span class="math inline">\(X(\omega)\)</span> = angka yang dihasilkan oleh pemetaan itu.</p>
+<section id="catatan-penting" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="catatan-penting"><span class="header-section-number">4.5.1</span> Catatan penting</h3>
+<p>Random variable bukan “angka yang acak” dalam arti longgar. Secara matematis, random variable adalah <strong>fungsi</strong>. Keacakan datang dari kenyataan bahwa hasil <span class="math inline">\(\omega\)</span> belum diketahui sebelum eksperimen terjadi.</p>
+</section>
+</section>
+<section id="event-vs-nilai-random-variable" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="event-vs-nilai-random-variable"><span class="header-section-number">4.6</span> 2.4 Event vs Nilai Random Variable</h2>
+<p>Mahasiswa sering bingung membedakan dua hal ini:</p>
+<ul>
+<li><strong>event</strong> = himpunan hasil dalam ruang sampel,</li>
+<li><strong>nilai random variable</strong> = angka hasil pemetaan.</li>
+</ul>
+<p>Contoh: lempar dua dadu, lalu definisikan</p>
+<p><span class="math display">\[
+X = \text{jumlah mata dadu}
+\]</span></p>
+<p>Maka event: <span class="math display">\[
+E = \{(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\}
+\]</span></p>
+<p>adalah event “jumlah mata dadu = 7”.</p>
+<p>Tetapi nilai random variable yang terkait adalah: <span class="math display">\[
+X = 7
+\]</span></p>
+<p>Jadi: - event adalah kumpulan outcome, - random variable adalah angka yang dihasilkan dari outcome itu.</p>
+<p>Mari visualisasikan cepat.</p>
+<div id="881c06ca" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>outcomes <span class="op">=</span> <span class="bu">list</span>(itertools.product(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>), repeat<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sums <span class="op">=</span> [<span class="bu">sum</span>(o) <span class="cf">for</span> o <span class="kw">in</span> outcomes]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>unique, counts <span class="op">=</span> np.unique(sums, return_counts<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>probs <span class="op">=</span> counts <span class="op">/</span> counts.<span class="bu">sum</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.bar(unique, probs)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nilai X = jumlah dua dadu"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Probabilitas"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribusi random variable jumlah dua dadu"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(unique)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-4-output-1.png" width="672" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="range-nilai-nilai-yang-mungkin" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="range-nilai-nilai-yang-mungkin"><span class="header-section-number">4.7</span> 2.5 Range: Nilai-Nilai yang Mungkin</h2>
+<p>Range dari random variable adalah himpunan semua nilai yang mungkin diambil oleh random variable tersebut.</p>
+<p>Untuk contoh dua dadu dengan: <span class="math display">\[
+X = \text{jumlah mata dadu}
+\]</span></p>
+<p>range-nya adalah: <span class="math display">\[
+\{2,3,4,\dots,12\}
+\]</span></p>
+<p>Range ini penting karena memberi tahu: - apa saja kemungkinan nilai, - apakah nilai-nilai itu diskrit atau kontinu, - bagaimana bentuk distribusinya.</p>
+<section id="diskrit-vs-kontinu" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="diskrit-vs-kontinu"><span class="header-section-number">4.7.1</span> Diskrit vs Kontinu</h3>
+<section id="random-variable-diskrit" class="level4" data-number="4.7.1.1">
+<h4 data-number="4.7.1.1" class="anchored" data-anchor-id="random-variable-diskrit"><span class="header-section-number">4.7.1.1</span> Random Variable Diskrit</h4>
+<p>Jika range terdiri dari titik-titik terpisah, misalnya: <span class="math display">\[
+\{0,1,2,3,\dots\}
+\]</span> maka random variable itu diskrit.</p>
+<p>Contoh: - jumlah pelanggan datang, - jumlah cacat, - jumlah pesan masuk, - banyaknya Head.</p>
+</section>
+<section id="random-variable-kontinu" class="level4" data-number="4.7.1.2">
+<h4 data-number="4.7.1.2" class="anchored" data-anchor-id="random-variable-kontinu"><span class="header-section-number">4.7.1.2</span> Random Variable Kontinu</h4>
+<p>Jika range berupa interval pada garis bilangan, misalnya: <span class="math display">\[
+[0,\infty)
+\]</span> atau <span class="math display">\[
+(-\infty,\infty)
+\]</span> maka random variable itu kontinu.</p>
+<p>Contoh: - waktu tunggu, - lama hidup komponen, - tinggi badan, - suhu.</p>
+</section>
+</section>
+</section>
+<section id="pmf-untuk-random-variable-diskrit" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="pmf-untuk-random-variable-diskrit"><span class="header-section-number">4.8</span> 2.6 PMF untuk Random Variable Diskrit</h2>
+<p>Jika <span class="math inline">\(X\)</span> diskrit, maka distribusinya dapat dinyatakan dengan <strong>Probability Mass Function (PMF)</strong>:</p>
+<p><span class="math display">\[
+p_X(x) = P(X=x)
+\]</span></p>
+<p>PMF memberi peluang bahwa random variable mengambil nilai tepat <span class="math inline">\(x\)</span>.</p>
+<section id="sifat-pmf" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="sifat-pmf"><span class="header-section-number">4.8.1</span> Sifat PMF</h3>
+<ol type="1">
+<li><p><span class="math display">\[
+p_X(x) \ge 0
+\]</span></p></li>
+<li><p><span class="math display">\[
+\sum_x p_X(x) = 1
+\]</span></p></li>
+</ol>
+<section id="contoh-jumlah-head-pada-dua-lemparan-koin" class="level4" data-number="4.8.1.1">
+<h4 data-number="4.8.1.1" class="anchored" data-anchor-id="contoh-jumlah-head-pada-dua-lemparan-koin"><span class="header-section-number">4.8.1.1</span> Contoh: jumlah Head pada dua lemparan koin</h4>
+<p><span class="math display">\[
+P(X=0)=\frac{1}{4}, \quad P(X=1)=\frac{1}{2}, \quad P(X=2)=\frac{1}{4}
+\]</span></p>
+<div id="bd483ad9" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pmf <span class="op">=</span> np.array([<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.stem(x, pmf, basefmt<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"P(X=x)"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"PMF jumlah Head pada dua lemparan koin"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-5-output-1.png" width="589" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretasi-keputusan" class="level4" data-number="4.8.1.2">
+<h4 data-number="4.8.1.2" class="anchored" data-anchor-id="interpretasi-keputusan"><span class="header-section-number">4.8.1.2</span> Interpretasi keputusan</h4>
+<p>PMF membantu menjawab pertanyaan seperti: - seberapa mungkin tepat 2 cacat? - seberapa mungkin tepat 5 pelanggan datang? - seberapa mungkin tepat 1 dari 3 server gagal?</p>
+</section>
+</section>
+</section>
+<section id="cdf-bahasa-probabilitas-kumulatif" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="cdf-bahasa-probabilitas-kumulatif"><span class="header-section-number">4.9</span> 2.7 CDF: Bahasa Probabilitas Kumulatif</h2>
+<p>Baik untuk random variable diskrit maupun kontinu, salah satu fungsi terpenting adalah <strong>Cumulative Distribution Function (CDF)</strong>:</p>
+<p><span class="math display">\[
+F_X(x) = P(X \le x)
+\]</span></p>
+<p>CDF memberi peluang bahwa nilai random variable <strong>tidak melebihi</strong> <span class="math inline">\(x\)</span>.</p>
+<p>Ini sangat penting karena banyak keputusan berbentuk: - peluang rusak sebelum waktu tertentu, - peluang demand tidak melebihi stok, - peluang profit lebih kecil dari nol, - peluang nilai ujian di bawah batas lulus.</p>
+<section id="contoh-cdf-diskrit" class="level4" data-number="4.9.0.1">
+<h4 data-number="4.9.0.1" class="anchored" data-anchor-id="contoh-cdf-diskrit"><span class="header-section-number">4.9.0.1</span> Contoh CDF diskrit</h4>
+<p>Untuk <span class="math inline">\(X\)</span> = jumlah Head pada dua lemparan koin: - <span class="math inline">\(F(0)=P(X\le 0)=1/4\)</span> - <span class="math inline">\(F(1)=P(X\le 1)=3/4\)</span> - <span class="math inline">\(F(2)=1\)</span></p>
+<div id="2b2f2f03" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cdf <span class="op">=</span> np.cumsum(pmf)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.step(x, cdf, where<span class="op">=</span><span class="st">'post'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"F(x)=P(X≤x)"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"CDF random variable diskrit"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-6-output-1.png" width="589" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="pdf-untuk-random-variable-kontinu" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="pdf-untuk-random-variable-kontinu"><span class="header-section-number">4.10</span> 2.8 PDF untuk Random Variable Kontinu</h2>
+<p>Untuk random variable kontinu, kita biasanya tidak berbicara tentang peluang tepat pada satu titik, karena:</p>
+<p><span class="math display">\[
+P(X=x)=0
+\]</span></p>
+<p>Sebagai gantinya, distribusi dijelaskan dengan <strong>Probability Density Function (PDF)</strong>:</p>
+<p><span class="math display">\[
+f_X(x)
+\]</span></p>
+<p>Peluang pada interval diperoleh melalui integral:</p>
+<p><span class="math display">\[
+P(a \le X \le b) = \int_a^b f_X(x)\,dx
+\]</span></p>
+<section id="sifat-pdf" class="level3" data-number="4.10.1">
+<h3 data-number="4.10.1" class="anchored" data-anchor-id="sifat-pdf"><span class="header-section-number">4.10.1</span> Sifat PDF</h3>
+<ol type="1">
+<li><p><span class="math display">\[
+f_X(x)\ge 0
+\]</span></p></li>
+<li><p><span class="math display">\[
+\int_{-\infty}^{\infty} f_X(x)\,dx = 1
+\]</span></p></li>
+</ol>
+<section id="contoh-cepat-uniform-kontinu-pada-01" class="level4" data-number="4.10.1.1">
+<h4 data-number="4.10.1.1" class="anchored" data-anchor-id="contoh-cepat-uniform-kontinu-pada-01"><span class="header-section-number">4.10.1.1</span> Contoh cepat: Uniform kontinu pada [0,1]</h4>
+<p><span class="math display">\[
+f(x)=
+\begin{cases}
+1, &amp; 0 \le x \le 1\\
+0, &amp; \text{lainnya}
+\end{cases}
+\]</span></p>
+<p>Maka: <span class="math display">\[
+P(0.2 \le X \le 0.7)=0.5
+\]</span></p>
+<div id="21ba882e" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.2</span>, <span class="dv">400</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> np.where((x <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (x <span class="op">&lt;=</span> <span class="dv">1</span>), <span class="fl">1.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.plot(x, pdf)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.fill_between(x, <span class="dv">0</span>, pdf, where<span class="op">=</span>((x <span class="op">&gt;=</span> <span class="fl">0.2</span>) <span class="op">&amp;</span> (x <span class="op">&lt;=</span> <span class="fl">0.7</span>)), alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"PDF Uniform(0,1)"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-7-output-1.png" width="663" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretasi-penting" class="level4" data-number="4.10.1.2">
+<h4 data-number="4.10.1.2" class="anchored" data-anchor-id="interpretasi-penting"><span class="header-section-number">4.10.1.2</span> Interpretasi penting</h4>
+<p>Tinggi PDF bukan peluang langsung.<br>
+Peluang adalah <strong>luas area</strong> di bawah kurva PDF.</p>
+</section>
+</section>
+</section>
+<section id="menghubungkan-pmf-cdf-dan-pdf" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="menghubungkan-pmf-cdf-dan-pdf"><span class="header-section-number">4.11</span> 2.9 Menghubungkan PMF, CDF, dan PDF</h2>
+<p>Hubungan penting:</p>
+<section id="untuk-diskrit" class="level3" data-number="4.11.1">
+<h3 data-number="4.11.1" class="anchored" data-anchor-id="untuk-diskrit"><span class="header-section-number">4.11.1</span> Untuk diskrit</h3>
+<p><span class="math display">\[
+F_X(x)=\sum_{t \le x} p_X(t)
+\]</span></p>
+</section>
+<section id="untuk-kontinu" class="level3" data-number="4.11.2">
+<h3 data-number="4.11.2" class="anchored" data-anchor-id="untuk-kontinu"><span class="header-section-number">4.11.2</span> Untuk kontinu</h3>
+<p><span class="math display">\[
+F_X(x)=\int_{-\infty}^{x} f_X(t)\,dt
+\]</span></p>
+<p>Jika PDF cukup halus, maka: <span class="math display">\[
+f_X(x)=\frac{d}{dx}F_X(x)
+\]</span></p>
+<p>Jadi: - PMF/PDF memberi struktur lokal distribusi, - CDF memberi akumulasi peluang sampai titik tertentu.</p>
+</section>
+</section>
+<section id="ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi"><span class="header-section-number">4.12</span> 2.10 Ekspektasi: Tebakan Terbaik Sebelum Fakta Terjadi</h2>
+<p>Ekspektasi adalah ukuran pusat distribusi. Ia sering dipandang sebagai <strong>rata-rata jangka panjang</strong>.</p>
+<section id="untuk-random-variable-diskrit" class="level3" data-number="4.12.1">
+<h3 data-number="4.12.1" class="anchored" data-anchor-id="untuk-random-variable-diskrit"><span class="header-section-number">4.12.1</span> Untuk random variable diskrit</h3>
+<p><span class="math display">\[
+E[X] = \sum_x x\,p_X(x)
+\]</span></p>
+</section>
+<section id="untuk-random-variable-kontinu" class="level3" data-number="4.12.2">
+<h3 data-number="4.12.2" class="anchored" data-anchor-id="untuk-random-variable-kontinu"><span class="header-section-number">4.12.2</span> Untuk random variable kontinu</h3>
+<p><span class="math display">\[
+E[X] = \int_{-\infty}^{\infty} x f_X(x)\,dx
+\]</span></p>
+<section id="contoh-jumlah-head-pada-dua-lemparan-koin-1" class="level4" data-number="4.12.2.1">
+<h4 data-number="4.12.2.1" class="anchored" data-anchor-id="contoh-jumlah-head-pada-dua-lemparan-koin-1"><span class="header-section-number">4.12.2.1</span> Contoh: jumlah Head pada dua lemparan koin</h4>
+<p><span class="math display">\[
+E[X] = 0 \cdot \frac14 + 1 \cdot \frac12 + 2 \cdot \frac14 = 1
+\]</span></p>
+<p>Mari cek dengan simulasi.</p>
+<div id="5400a1d9" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">123</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>coin1 <span class="op">=</span> rng.integers(<span class="dv">0</span>, <span class="dv">2</span>, size<span class="op">=</span>n)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>coin2 <span class="op">=</span> rng.integers(<span class="dv">0</span>, <span class="dv">2</span>, size<span class="op">=</span>n)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>Xsim <span class="op">=</span> coin1 <span class="op">+</span> coin2</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Rata-rata simulasi ="</span>, Xsim.mean())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rata-rata simulasi = 1.00235</code></pre>
+</div>
+</div>
+</section>
+<section id="interpretasi-keputusan-1" class="level4" data-number="4.12.2.2">
+<h4 data-number="4.12.2.2" class="anchored" data-anchor-id="interpretasi-keputusan-1"><span class="header-section-number">4.12.2.2</span> Interpretasi keputusan</h4>
+<p>Ekspektasi menjawab pertanyaan seperti: - rata-rata keuntungan harian, - rata-rata jumlah pelanggan, - rata-rata cacat per batch, - rata-rata waktu tunggu.</p>
+<p>Tetapi ekspektasi <strong>tidak mengatakan seluruh cerita</strong>. Dua distribusi dengan mean sama bisa memiliki risiko yang sangat berbeda.</p>
+</section>
+</section>
+</section>
+<section id="varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="varians-dan-simpangan-baku-seberapa-liar-penyimpangannya"><span class="header-section-number">4.13</span> 2.11 Varians dan Simpangan Baku: Seberapa Liar Penyimpangannya?</h2>
+<p>Varians mengukur seberapa jauh random variable menyebar dari nilai ekspektasinya.</p>
+<section id="definisi" class="level3" data-number="4.13.1">
+<h3 data-number="4.13.1" class="anchored" data-anchor-id="definisi"><span class="header-section-number">4.13.1</span> Definisi</h3>
+<p><span class="math display">\[
+\mathrm{Var}(X)=E[(X-E[X])^2]
+\]</span></p>
+<p>Simpangan baku adalah akar kuadrat varians: <span class="math display">\[
+\sigma_X = \sqrt{\mathrm{Var}(X)}
+\]</span></p>
+</section>
+<section id="bentuk-yang-sering-lebih-praktis" class="level3" data-number="4.13.2">
+<h3 data-number="4.13.2" class="anchored" data-anchor-id="bentuk-yang-sering-lebih-praktis"><span class="header-section-number">4.13.2</span> Bentuk yang sering lebih praktis</h3>
+<p><span class="math display">\[
+\mathrm{Var}(X)=E[X^2] - (E[X])^2
+\]</span></p>
+<section id="contoh-dua-investasi-dengan-mean-sama-variance-beda" class="level4" data-number="4.13.2.1">
+<h4 data-number="4.13.2.1" class="anchored" data-anchor-id="contoh-dua-investasi-dengan-mean-sama-variance-beda"><span class="header-section-number">4.13.2.1</span> Contoh: dua investasi dengan mean sama, variance beda</h4>
+<div id="c223f9fb" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2026</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> rng.choice([<span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>], size<span class="op">=</span><span class="dv">100000</span>, p<span class="op">=</span>[<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.25</span>])</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> rng.choice([<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">20</span>], size<span class="op">=</span><span class="dv">100000</span>, p<span class="op">=</span>[<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.25</span>])</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean A ="</span>, A.mean(), <span class="st">"Var A ="</span>, A.var(), <span class="st">"Std A ="</span>, A.std())</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean B ="</span>, B.mean(), <span class="st">"Var B ="</span>, B.var(), <span class="st">"Std B ="</span>, B.std())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean A = 9.98924 Var A = 2.0013242224 Std A = 1.414681668220805
+Mean B = 9.9584 Var B = 49.78426944 Std B = 7.055796867824356</code></pre>
+</div>
+</div>
+<div id="b2095c44" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.hist(A, bins<span class="op">=</span>np.arange(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">21.5</span>, <span class="dv">1</span>), alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"A"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.hist(B, bins<span class="op">=</span>np.arange(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">21.5</span>, <span class="dv">1</span>), alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"B"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nilai"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Density / Probability"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Mean sama, variance berbeda"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-10-output-1.png" width="663" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretasi-keputusan-2" class="level4" data-number="4.13.2.2">
+<h4 data-number="4.13.2.2" class="anchored" data-anchor-id="interpretasi-keputusan-2"><span class="header-section-number">4.13.2.2</span> Interpretasi keputusan</h4>
+<p>Jika kita hanya melihat mean, dua pilihan ini tampak setara. Tetapi jika kita juga melihat variance, kita sadar bahwa salah satu pilihan jauh lebih berisiko.</p>
+</section>
+</section>
+</section>
+<section id="sifat-sifat-penting-ekspektasi-dan-varians" class="level2" data-number="4.14">
+<h2 data-number="4.14" class="anchored" data-anchor-id="sifat-sifat-penting-ekspektasi-dan-varians"><span class="header-section-number">4.14</span> 2.12 Sifat-Sifat Penting Ekspektasi dan Varians</h2>
+<section id="linearitas-ekspektasi" class="level3" data-number="4.14.1">
+<h3 data-number="4.14.1" class="anchored" data-anchor-id="linearitas-ekspektasi"><span class="header-section-number">4.14.1</span> Linearitas ekspektasi</h3>
+<p>Untuk konstanta <span class="math inline">\(a,b\)</span>: <span class="math display">\[
+E[aX+b] = aE[X]+b
+\]</span></p>
+<p>Ini sangat penting karena memungkinkan kita memindahkan model ke unit baru atau mengubah skala.</p>
+</section>
+<section id="varians-terhadap-transformasi-linear" class="level3" data-number="4.14.2">
+<h3 data-number="4.14.2" class="anchored" data-anchor-id="varians-terhadap-transformasi-linear"><span class="header-section-number">4.14.2</span> Varians terhadap transformasi linear</h3>
+<p><span class="math display">\[
+\mathrm{Var}(aX+b)=a^2 \mathrm{Var}(X)
+\]</span></p>
+<p>Artinya: - menambah konstanta tidak mengubah variance, - mengalikan skala dengan <span class="math inline">\(a\)</span> memperbesar variance sebesar <span class="math inline">\(a^2\)</span>.</p>
+<p>Mari cek.</p>
+<div id="41549e3b" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">0</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">5</span>, scale<span class="op">=</span><span class="dv">2</span>, size<span class="op">=</span><span class="dv">100000</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>X <span class="op">+</span> <span class="dv">10</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"E[X] ~"</span>, X.mean())</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"E[Y] ~"</span>, Y.mean(), <span class="st">"   teori ="</span>, <span class="dv">3</span><span class="op">*</span>X.mean() <span class="op">+</span> <span class="dv">10</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Var[X] ~"</span>, X.var())</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Var[Y] ~"</span>, Y.var(), <span class="st">"   teori ="</span>, <span class="dv">9</span><span class="op">*</span>X.var())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>E[X] ~ 4.998183498453758
+E[Y] ~ 24.994550495361278    teori = 24.994550495361274
+Var[X] ~ 4.001028098478324
+Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="diskrit-dan-kontinu-dalam-praktik" class="level2" data-number="4.15">
+<h2 data-number="4.15" class="anchored" data-anchor-id="diskrit-dan-kontinu-dalam-praktik"><span class="header-section-number">4.15</span> 2.13 Diskrit dan Kontinu dalam Praktik</h2>
+<p>Secara praktik, banyak data diukur secara diskrit: - berat badan dibulatkan ke 0.1 kg, - waktu dicatat dalam detik, - panjang dicatat dalam milimeter.</p>
+<p>Tetapi secara model, kadang jauh lebih sederhana menganggap besaran itu kontinu. Ini bukan kesalahan, tetapi bentuk idealisasi yang membantu analisis.</p>
+<section id="pedoman-intuitif" class="level3" data-number="4.15.1">
+<h3 data-number="4.15.1" class="anchored" data-anchor-id="pedoman-intuitif"><span class="header-section-number">4.15.1</span> Pedoman intuitif</h3>
+<ul>
+<li>Jika nilai alami berupa hitungan → cenderung diskrit</li>
+<li>Jika nilai alami berupa pengukuran halus → sering dimodelkan kontinu</li>
+</ul>
+<p>Contoh: - jumlah mobil → diskrit - waktu hidup lampu → kontinu - jumlah pasien → diskrit - suhu → kontinu</p>
+</section>
+</section>
+<section id="dari-histogram-ke-distribusi" class="level2" data-number="4.16">
+<h2 data-number="4.16" class="anchored" data-anchor-id="dari-histogram-ke-distribusi"><span class="header-section-number">4.16</span> 2.14 Dari Histogram ke Distribusi</h2>
+<p>Dalam kenyataan, kita sering tidak mulai dari rumus distribusi, tetapi dari data. Dari data, kita bisa membuat histogram untuk melihat bentuk penyebaran.</p>
+<p>Mari contohkan data simulasi.</p>
+<div id="0ce1449b" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">99</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">100</span>, scale<span class="op">=</span><span class="dv">15</span>, size<span class="op">=</span><span class="dv">5000</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>plt.hist(samples, bins<span class="op">=</span><span class="dv">40</span>, density<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.75</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nilai"</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Density"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Histogram sebagai pendekatan bentuk distribusi"</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-12-output-1.png" width="680" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Histogram tidak otomatis menjadi PMF atau PDF yang eksak, tetapi histogram sangat berguna untuk: - menduga bentuk distribusi, - melihat pusat, - melihat penyebaran, - mendeteksi skewness atau outlier, - memilih model awal yang masuk akal.</p>
+</section>
+<section id="kmqa-mini-case-1-timbangan-berat-badan" class="level2" data-number="4.17">
+<h2 data-number="4.17" class="anchored" data-anchor-id="kmqa-mini-case-1-timbangan-berat-badan"><span class="header-section-number">4.17</span> 2.15 KMQA Mini-Case 1 — Timbangan Berat Badan</h2>
+<section id="k-konteks" class="level3" data-number="4.17.1">
+<h3 data-number="4.17.1" class="anchored" data-anchor-id="k-konteks"><span class="header-section-number">4.17.1</span> K — Konteks</h3>
+<p>Sebuah timbangan digital menampilkan berat badan dalam satu angka desimal.</p>
+</section>
+<section id="m-model" class="level3" data-number="4.17.2">
+<h3 data-number="4.17.2" class="anchored" data-anchor-id="m-model"><span class="header-section-number">4.17.2</span> M — Model</h3>
+<p>Jika <span class="math inline">\(X\)</span> adalah berat badan orang yang naik ke timbangan, maka <span class="math inline">\(X\)</span> dapat dimodelkan sebagai random variable kontinu, walaupun tampilan akhirnya dibulatkan.</p>
+</section>
+<section id="q-questions" class="level3" data-number="4.17.3">
+<h3 data-number="4.17.3" class="anchored" data-anchor-id="q-questions"><span class="header-section-number">4.17.3</span> Q — Questions</h3>
+<ol type="1">
+<li>Apa range masuk akalnya?</li>
+<li>Apakah lebih masuk akal dipandang diskrit atau kontinu?</li>
+<li>Ukuran apa yang penting: mean, variance, atau keduanya?</li>
+</ol>
+</section>
+<section id="a-apply" class="level3" data-number="4.17.4">
+<h3 data-number="4.17.4" class="anchored" data-anchor-id="a-apply"><span class="header-section-number">4.17.4</span> A — Apply</h3>
+<p>Jawabannya: - range teknis mungkin 0–999.9, tetapi range realistis jauh lebih sempit, - secara teori lebih nyaman dipandang kontinu, - mean memberi pusat berat populasi, - variance memberi seberapa beragam berat badan orang yang diukur.</p>
+</section>
+</section>
+<section id="kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" class="level2" data-number="4.18">
+<h2 data-number="4.18" class="anchored" data-anchor-id="kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol"><span class="header-section-number">4.18</span> 2.16 KMQA Mini-Case 2 — Jumlah Kendaraan di Gerbang Tol</h2>
+<section id="k-konteks-1" class="level3" data-number="4.18.1">
+<h3 data-number="4.18.1" class="anchored" data-anchor-id="k-konteks-1"><span class="header-section-number">4.18.1</span> K — Konteks</h3>
+<p>Kita ingin memodelkan jumlah kendaraan yang lewat dalam satu jam.</p>
+</section>
+<section id="m-model-1" class="level3" data-number="4.18.2">
+<h3 data-number="4.18.2" class="anchored" data-anchor-id="m-model-1"><span class="header-section-number">4.18.2</span> M — Model</h3>
+<p>Jika <span class="math inline">\(X\)</span> = jumlah kendaraan, maka <span class="math inline">\(X\)</span> adalah random variable diskrit.</p>
+</section>
+<section id="q-questions-1" class="level3" data-number="4.18.3">
+<h3 data-number="4.18.3" class="anchored" data-anchor-id="q-questions-1"><span class="header-section-number">4.18.3</span> Q — Questions</h3>
+<ol type="1">
+<li>Mengapa diskrit?</li>
+<li>Apa range yang masuk akal?</li>
+<li>Apa arti <span class="math inline">\(P(X=120)\)</span>? Apa arti <span class="math inline">\(P(X\le 120)\)</span>?</li>
+</ol>
+</section>
+<section id="a-apply-1" class="level3" data-number="4.18.4">
+<h3 data-number="4.18.4" class="anchored" data-anchor-id="a-apply-1"><span class="header-section-number">4.18.4</span> A — Apply</h3>
+<ul>
+<li>diskrit karena berupa hitungan,</li>
+<li><span class="math inline">\(P(X=120)\)</span> adalah peluang tepat 120 kendaraan,</li>
+<li><span class="math inline">\(P(X\le 120)\)</span> adalah peluang jumlah kendaraan tidak melebihi 120.</li>
+</ul>
+</section>
+</section>
+<section id="kmqa-mini-case-3-waktu-tunggu-pasien" class="level2" data-number="4.19">
+<h2 data-number="4.19" class="anchored" data-anchor-id="kmqa-mini-case-3-waktu-tunggu-pasien"><span class="header-section-number">4.19</span> 2.17 KMQA Mini-Case 3 — Waktu Tunggu Pasien</h2>
+<section id="k-konteks-2" class="level3" data-number="4.19.1">
+<h3 data-number="4.19.1" class="anchored" data-anchor-id="k-konteks-2"><span class="header-section-number">4.19.1</span> K — Konteks</h3>
+<p>Sebuah klinik ingin memodelkan waktu tunggu pasien hingga dilayani.</p>
+</section>
+<section id="m-model-2" class="level3" data-number="4.19.2">
+<h3 data-number="4.19.2" class="anchored" data-anchor-id="m-model-2"><span class="header-section-number">4.19.2</span> M — Model</h3>
+<p>Jika <span class="math inline">\(X\)</span> = waktu tunggu (menit), maka <span class="math inline">\(X\)</span> biasanya dimodelkan kontinu.</p>
+</section>
+<section id="q-questions-2" class="level3" data-number="4.19.3">
+<h3 data-number="4.19.3" class="anchored" data-anchor-id="q-questions-2"><span class="header-section-number">4.19.3</span> Q — Questions</h3>
+<ol type="1">
+<li>Mengapa kontinu?</li>
+<li>Mengapa <span class="math inline">\(P(X=10)=0\)</span> tetapi <span class="math inline">\(P(9.5 \le X \le 10.5)\)</span> bisa positif?</li>
+<li>Mengapa CDF penting dalam konteks ini?</li>
+</ol>
+</section>
+<section id="a-apply-2" class="level3" data-number="4.19.4">
+<h3 data-number="4.19.4" class="anchored" data-anchor-id="a-apply-2"><span class="header-section-number">4.19.4</span> A — Apply</h3>
+<ul>
+<li>kontinu karena waktu dapat berubah halus,</li>
+<li>pada model kontinu, peluang titik tunggal nol,</li>
+<li>yang bermakna adalah peluang interval,</li>
+<li>CDF membantu menjawab “peluang menunggu tidak lebih dari x menit”.</li>
+</ul>
+</section>
+</section>
+<section id="python-toolbox-dasar-untuk-bab-ini" class="level2" data-number="4.20">
+<h2 data-number="4.20" class="anchored" data-anchor-id="python-toolbox-dasar-untuk-bab-ini"><span class="header-section-number">4.20</span> 2.18 Python Toolbox Dasar untuk Bab Ini</h2>
+<p>Berikut beberapa alat Python yang sangat sering dipakai untuk random variable.</p>
+<div id="0138dbc9" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="simulasi-data" class="level3" data-number="4.20.1">
+<h3 data-number="4.20.1" class="anchored" data-anchor-id="simulasi-data"><span class="header-section-number">4.20.1</span> Simulasi data</h3>
+<div id="debdd572" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sample_binom <span class="op">=</span> np.random.binomial(n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span><span class="fl">0.4</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sample_norm <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sample_binom, sample_norm[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>(array([6, 5, 1, 6, 4, 4, 6, 5, 3, 4], dtype=int32),
+ array([ 0.82180221, -0.0723118 , -2.2435944 , -0.95365702,  1.55398382]))</code></pre>
+</div>
+</div>
+</section>
+<section id="pmf-pdf-cdf-dari-scipy" class="level3" data-number="4.20.2">
+<h3 data-number="4.20.2" class="anchored" data-anchor-id="pmf-pdf-cdf-dari-scipy"><span class="header-section-number">4.20.2</span> PMF / PDF / CDF dari SciPy</h3>
+<div id="4e443b6e" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x_discrete <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">11</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pmf_binom <span class="op">=</span> stats.binom.pmf(x_discrete, n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>x_cont <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">200</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>pdf_norm <span class="op">=</span> stats.norm.pdf(x_cont, loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>cdf_norm <span class="op">=</span> stats.norm.cdf(x_cont, loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>pmf_binom[:<span class="dv">5</span>], pdf_norm[:<span class="dv">5</span>], cdf_norm[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>(array([0.00604662, 0.04031078, 0.12093235, 0.21499085, 0.25082266]),
+ array([0.00443185, 0.0048492 , 0.00530104, 0.00578971, 0.00631769]),
+ array([0.0013499 , 0.00148973, 0.00164266, 0.00180976, 0.00199218]))</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-cepat" class="level3" data-number="4.20.3">
+<h3 data-number="4.20.3" class="anchored" data-anchor-id="plot-cepat"><span class="header-section-number">4.20.3</span> Plot cepat</h3>
+<div id="0fec4626" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.stem(x_discrete, pmf_binom, basefmt<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Contoh PMF Binomial dari scipy.stats"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"P(X=x)"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-random-variable-umum_files/figure-html/cell-16-output-1.png" width="672" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="kesalahan-kesalahan-umum-yang-harus-dihindari" class="level2" data-number="4.21">
+<h2 data-number="4.21" class="anchored" data-anchor-id="kesalahan-kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">4.21</span> 2.19 Kesalahan-Kesalahan Umum yang Harus Dihindari</h2>
+<ol type="1">
+<li><p><strong>Menganggap random variable sama dengan event</strong><br>
+Tidak. Event adalah himpunan outcome. Random variable adalah fungsi ke bilangan.</p></li>
+<li><p><strong>Menganggap PDF adalah peluang langsung</strong><br>
+Tidak. Untuk kontinu, peluang adalah luas area di bawah PDF.</p></li>
+<li><p><strong>Menganggap mean cukup untuk semua keputusan</strong><br>
+Tidak. Variance dan bentuk distribusi juga penting.</p></li>
+<li><p><strong>Menganggap diskrit dan kontinu bisa dipertukarkan sembarangan</strong><br>
+Tidak. Pemilihan model harus sesuai konteks.</p></li>
+<li><p><strong>Menganggap <span class="math inline">\(P(X=x)\)</span> untuk kontinu bisa positif</strong><br>
+Tidak. Dalam model kontinu, peluang tepat satu titik adalah nol.</p></li>
+</ol>
+</section>
+<section id="menyimpulkan-bab-ini" class="level2" data-number="4.22">
+<h2 data-number="4.22" class="anchored" data-anchor-id="menyimpulkan-bab-ini"><span class="header-section-number">4.22</span> 2.20 Menyimpulkan Bab Ini</h2>
+<p>Bab ini memberi fondasi yang akan dipakai terus-menerus pada bab-bab berikutnya.</p>
+<p>Kita telah melihat bahwa: - random variable adalah fungsi dari ruang sampel ke bilangan real, - range membantu kita mengenali jenis peubah acak, - PMF dipakai untuk diskrit, - PDF dipakai untuk kontinu, - CDF berlaku untuk keduanya, - ekspektasi memberi ukuran pusat, - varians dan simpangan baku memberi ukuran penyebaran.</p>
+<p>Dengan fondasi ini, kita siap masuk ke distribusi-distribusi khusus yang sangat sering dipakai dalam pemodelan nyata.</p>
+</section>
+<section id="ringkasan-poin-inti" class="level2" data-number="4.23">
+<h2 data-number="4.23" class="anchored" data-anchor-id="ringkasan-poin-inti"><span class="header-section-number">4.23</span> 2.21 Ringkasan Poin Inti</h2>
+<ol type="1">
+<li><strong>Random variable</strong> memetakan hasil acak menjadi angka.</li>
+<li><strong>Event</strong> berbeda dari <strong>nilai random variable</strong>.</li>
+<li><strong>Range</strong> adalah himpunan nilai yang mungkin diambil.</li>
+<li><strong>PMF</strong> untuk diskrit, <strong>PDF</strong> untuk kontinu, dan <strong>CDF</strong> untuk keduanya.</li>
+<li><strong>Ekspektasi</strong> mengukur pusat atau rata-rata jangka panjang.</li>
+<li><strong>Varians</strong> dan <strong>simpangan baku</strong> mengukur penyebaran.</li>
+<li>Dalam keputusan nyata, kita hampir selalu perlu melihat lebih dari sekadar mean.</li>
+</ol>
+</section>
+<section id="latihan-bab-2" class="level2" data-number="4.24">
+<h2 data-number="4.24" class="anchored" data-anchor-id="latihan-bab-2"><span class="header-section-number">4.24</span> 2.22 Latihan Bab 2</h2>
+<section id="a.-konseptual" class="level3" data-number="4.24.1">
+<h3 data-number="4.24.1" class="anchored" data-anchor-id="a.-konseptual"><span class="header-section-number">4.24.1</span> A. Konseptual</h3>
+<ol type="1">
+<li>Jelaskan dengan kata-kata sendiri apa itu random variable.</li>
+<li>Apa perbedaan antara event “jumlah mata dua dadu = 7” dan nilai random variable <span class="math inline">\(X=7\)</span>?</li>
+<li>Mengapa PDF bukan peluang langsung?</li>
+</ol>
+</section>
+<section id="b.-hitungan" class="level3" data-number="4.24.2">
+<h3 data-number="4.24.2" class="anchored" data-anchor-id="b.-hitungan"><span class="header-section-number">4.24.2</span> B. Hitungan</h3>
+<ol type="1">
+<li>Untuk dua lemparan koin, hitung PMF dan CDF dari jumlah Head.</li>
+<li>Untuk dua dadu fair, hitung:
+<ul>
+<li><span class="math inline">\(P(X=8)\)</span></li>
+<li><span class="math inline">\(P(X\le 8)\)</span> dengan <span class="math inline">\(X\)</span> = jumlah dua dadu.</li>
+</ul></li>
+<li>Jika <span class="math inline">\(X\)</span> uniform pada [0,1], hitung:
+<ul>
+<li><span class="math inline">\(P(X&lt;0.3)\)</span></li>
+<li><span class="math inline">\(P(0.3 \le X \le 0.8)\)</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="c.-python" class="level3" data-number="4.24.3">
+<h3 data-number="4.24.3" class="anchored" data-anchor-id="c.-python"><span class="header-section-number">4.24.3</span> C. Python</h3>
+<ol type="1">
+<li>Simulasikan 50.000 lemparan dua koin dan bandingkan histogram hasil dengan PMF teoritis.</li>
+<li>Simulasikan 50.000 lemparan dua dadu dan gambar CDF empiris jumlah mata dadu.</li>
+<li>Simulasikan random variable kontinu sederhana dan tunjukkan bahwa peluang titik tunggal mendekati nol.</li>
+</ol>
+</section>
+<section id="d.-aplikatif" class="level3" data-number="4.24.4">
+<h3 data-number="4.24.4" class="anchored" data-anchor-id="d.-aplikatif"><span class="header-section-number">4.24.4</span> D. Aplikatif</h3>
+<ol type="1">
+<li>Sebutkan satu random variable diskrit dan satu kontinu dari kehidupan sehari-hari.</li>
+<li>Dalam konteks layanan klinik, ukuran mana yang lebih penting: mean waktu tunggu atau peluang menunggu lebih dari 30 menit? Jelaskan.</li>
+<li>Dalam konteks quality control, mengapa <span class="math inline">\(P(X\le k)\)</span> sering lebih berguna daripada hanya <span class="math inline">\(P(X=k)\)</span>?</li>
+</ol>
+</section>
+</section>
+<section id="penutup-kecil" class="level2" data-number="4.25">
+<h2 data-number="4.25" class="anchored" data-anchor-id="penutup-kecil"><span class="header-section-number">4.25</span> 2.23 Penutup Kecil</h2>
+<p>Bab ini mungkin terlihat “dasar”, tetapi fondasi yang kuat justru dibuat dari konsep-konsep dasar yang dipahami dengan jernih. Begitu Anda benar-benar memahami random variable, PMF, CDF, PDF, ekspektasi, dan varians, banyak topik berikutnya akan terasa jauh lebih masuk akal.</p>
+<p>Di bab berikutnya, kita akan mulai memasuki keluarga-keluarga <strong>distribusi diskrit khusus</strong> yang sangat sering dipakai dalam pemodelan: Bernoulli, Binomial, Geometric, Poisson, dan lainnya.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-pendahuluan-pengambilan-keputusan.html" class="pagination-link" aria-label="Bab 1. Pendahuluan Pengambilan Keputusan">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bab 1. Pendahuluan Pengambilan Keputusan</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-distribusi-diskrit.html" class="pagination-link" aria-label="Bab 3. Distribusi Random Variable Diskrit">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

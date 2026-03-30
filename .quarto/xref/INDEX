@@ -1,0 +1,26 @@
+{
+  "00-kata-pengantar.qmd": {
+    "00-kata-pengantar.html": "2ff5a631"
+  },
+  "index.qmd": {
+    "index.html": "3d3ac3ee"
+  },
+  "01-pendahuluan-pengambilan-keputusan.qmd": {
+    "01-pendahuluan-pengambilan-keputusan.html": "49b7b5e9"
+  },
+  "02-random-variable-umum.qmd": {
+    "02-random-variable-umum.html": "7c539d5f"
+  },
+  "03-distribusi-diskrit.qmd": {
+    "03-distribusi-diskrit.html": "6263b295"
+  },
+  "04-distribusi-kontinu.qmd": {
+    "04-distribusi-kontinu.html": "4e397dbb"
+  },
+  "05-random-variable-multivariat-dan-fungsi.qmd": {
+    "05-random-variable-multivariat-dan-fungsi.html": "703b0fc3"
+  },
+  "06-penutup.qmd": {
+    "06-penutup.html": "8d214928"
+  }
+}

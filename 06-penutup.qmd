@@ -1,0 +1,375 @@
+---
+title: "Bab 6. Penutup"
+format: html
+jupyter: python3
+---
+
+## Tujuan Bab
+
+Bab ini bertujuan untuk:
+
+1. merangkum gagasan utama yang telah dipelajari sepanjang buku,
+2. menegaskan kembali hubungan antara **random variable**, **probabilitas**, **Python**, dan **pengambilan keputusan**,
+3. membantu mahasiswa melihat struktur besar dari seluruh materi,
+4. menutup perjalanan belajar ini dengan nada yang menguatkan, realistis, dan inspiratif.
+
+## Pembuka
+
+Kalau Anda sudah sampai pada bab ini, berarti Anda telah menempuh sebuah perjalanan intelektual yang cukup penting.
+
+Di awal, mungkin probabilitas dan statistika tampak seperti kumpulan rumus yang asing. Ada simbol, distribusi, integral, penjumlahan, dan notasi yang mudah terasa jauh dari kehidupan nyata. Tetapi sepanjang buku ini, kita berusaha menempuh jalan yang berbeda. Kita tidak memulai dari rumus demi rumus. Kita memulai dari **pertanyaan nyata**:
+
+- bagaimana memilih keputusan ketika masa depan belum pasti?
+- bagaimana membandingkan pilihan yang sama-sama mungkin untung?
+- bagaimana menilai risiko?
+- bagaimana memodelkan jumlah, waktu, umur hidup, profit, dan kegagalan?
+- bagaimana menggunakan Python untuk melihat, mencoba, dan memahami?
+
+Bab ini adalah tempat kita berhenti sejenak, melihat ke belakang, lalu menyadari apa yang sebenarnya sudah kita pelajari.
+
+## 6.1 Ide Besar Buku Ini
+
+Ada satu ide besar yang mengikat seluruh buku ini:
+
+> **Probabilitas dan statistika adalah alat berpikir untuk membuat keputusan di bawah ketidakpastian.**
+
+Di balik semua contoh, distribusi, simulasi, dan rumus, ada satu kebutuhan yang sama: kita ingin bertindak dengan lebih bijaksana meskipun kita tidak tahu masa depan secara pasti.
+
+Kita belajar bahwa:
+- masa depan sering kali tidak pasti,
+- tetapi ketidakpastian itu bukan alasan untuk menyerah,
+- justru dengan model yang tepat, kita bisa berpikir lebih jernih.
+
+Dan salah satu model terpenting yang kita pelajari adalah **random variable**.
+
+## 6.2 Apa yang Sebenarnya Sudah Kita Kuasai?
+
+Mari kita lihat ulang perjalanan kita.
+
+### Dari ketidakpastian ke angka
+Kita belajar bahwa random variable adalah cara memetakan dunia acak ke bilangan. Ini adalah langkah yang sangat besar. Begitu hasil acak dipetakan menjadi angka, kita bisa:
+- menghitung peluang,
+- mencari rata-rata,
+- mengukur variasi,
+- membandingkan pilihan,
+- membangun simulasi,
+- dan merancang keputusan.
+
+### Dari angka ke distribusi
+Kita belajar bahwa satu angka tidak cukup. Yang lebih penting adalah **bagaimana peluang tersebar** pada nilai-nilai yang mungkin. Itulah distribusi.
+
+Distribusi membuat kita bertanya:
+- apa nilai yang mungkin?
+- seberapa mungkin?
+- seberapa besar peluang berada di bawah batas tertentu?
+- seberapa liar penyimpangannya?
+
+### Dari mean ke risk
+Kita belajar bahwa mean atau ekspektasi sangat penting, tetapi tidak cukup. Dua pilihan dengan rata-rata sama belum tentu sama baik. Variance, simpangan baku, dan bentuk distribusi ikut menentukan kualitas keputusan.
+
+### Dari satu peubah ke beberapa peubah
+Kita belajar bahwa dunia nyata jarang hanya punya satu peubah acak. Sering kali kita perlu memikirkan pasangan atau kelompok peubah acak:
+- pelanggan dan revenue,
+- tinggi dan berat,
+- arus dan daya,
+- jumlah cacat dan biaya garansi.
+
+Dari situ kita belajar joint distribution, marginal, conditional, covariance, correlation, dan transformasi fungsi.
+
+### Dari teori ke eksperimen
+Kita juga belajar bahwa Python bukan sekadar kalkulator. Python adalah laboratorium kecil yang memungkinkan kita:
+- mencoba ide,
+- melihat pola,
+- menjalankan simulasi Monte Carlo,
+- memverifikasi rumus,
+- dan membangun intuisi.
+
+## 6.3 Ringkasan Per Bab
+
+### Bab 1 — Pendahuluan: Pengambilan Keputusan
+Bab pertama menanamkan pesan utama buku ini: probabilitas bukan sekadar kumpulan rumus, tetapi cara berpikir saat masa depan belum pasti. Melalui contoh investasi, produk cacat, garansi, fungsi random variable, risiko bangkrut, dan klinik gigi, kita melihat bahwa probabilitas hidup dalam keputusan nyata.
+
+### Bab 2 — Random Variable Umum
+Bab kedua memberi fondasi formal:
+- random variable sebagai fungsi,
+- range,
+- diskrit dan kontinu,
+- PMF, CDF, PDF,
+- ekspektasi,
+- varians,
+- simpangan baku.
+
+Inilah kerangka dasar yang menopang semua bab sesudahnya.
+
+### Bab 3 — Distribusi Diskrit
+Bab ketiga mengenalkan keluarga distribusi diskrit:
+- uniform diskrit,
+- Bernoulli,
+- Binomial,
+- Geometric,
+- Poisson,
+- serta distribusi kustom dari histogram.
+
+Di sini kita belajar memilih model untuk hitungan kejadian.
+
+### Bab 4 — Distribusi Kontinu
+Bab keempat membawa kita ke dunia waktu, umur hidup, dan pengukuran:
+- uniform kontinu,
+- normal,
+- gamma,
+- exponential,
+- erlang,
+- weibull,
+- pareto,
+- chi-square,
+- serta hubungan antardistribusi.
+
+Di sini kita melihat bahwa banyak fenomena dunia nyata lebih nyaman dipandang kontinu.
+
+### Bab 5 — Multivariat dan Fungsi Random Variable
+Bab kelima memperluas perspektif:
+- joint distribution,
+- marginal,
+- conditional,
+- independensi,
+- covariance,
+- correlation,
+- fungsi random variable.
+
+Di sini kita melihat bahwa ketidakpastian sering datang bersama-sama dan sering menghasilkan peubah turunan yang justru paling penting bagi keputusan.
+
+## 6.4 Prinsip-Prinsip Inti yang Perlu Diingat
+
+Berikut adalah beberapa prinsip inti yang layak dibawa terus, bahkan setelah buku ini selesai dibaca.
+
+### 1. Mulai dari konteks, bukan dari rumus
+Ketika menghadapi masalah baru, jangan buru-buru bertanya “rumus apa yang dipakai?”  
+Mulailah dari:
+- apa keputusannya,
+- apa yang tidak pasti,
+- apa random variable-nya,
+- apa ukuran yang perlu dihitung.
+
+### 2. Model yang baik lebih penting daripada rumus yang banyak
+Banyak kesalahan datang bukan karena salah menghitung, tetapi karena salah memodelkan. Distribusi yang salah akan menghasilkan keputusan yang salah.
+
+### 3. Ekspektasi penting, tetapi variance juga penting
+Mean memberi arah, variance memberi ukuran ombaknya. Dalam banyak masalah nyata, survival, safety, dan reliability sangat dipengaruhi variance.
+
+### 4. PDF bukan peluang
+Untuk random variable kontinu, peluang datang dari area, bukan dari tinggi kurva.
+
+### 5. Korelasi bukan sebab-akibat
+Dua peubah bisa berkorelasi tanpa salah satunya menyebabkan yang lain. Statistik membantu melihat pola, tetapi interpretasi tetap membutuhkan akal sehat dan konteks.
+
+### 6. Python membantu belajar, bukan menggantikan berpikir
+Kode yang baik bukan jalan pintas untuk menghindari pemahaman. Sebaliknya, Python memberi kita kesempatan untuk menguji pemahaman secara aktif.
+
+### 7. Ketidakpastian bisa dimodelkan, meskipun tidak bisa dihilangkan
+Kita tidak akan pernah menghapus ketidakpastian dari hidup dan sistem nyata. Tetapi kita bisa menghadapinya dengan lebih terstruktur.
+
+## 6.5 Checklist Kompetensi
+
+Berikut checklist sederhana. Jika Anda sudah mampu melakukan sebagian besar hal di bawah ini, berarti Anda sudah menempuh langkah yang sangat baik.
+
+### Konseptual
+- [ ] Saya bisa menjelaskan apa itu random variable.
+- [ ] Saya bisa membedakan random variable diskrit dan kontinu.
+- [ ] Saya tahu perbedaan PMF, PDF, dan CDF.
+- [ ] Saya bisa menjelaskan ekspektasi dan variance dengan kata-kata sendiri.
+- [ ] Saya tahu arti joint, marginal, conditional, covariance, dan correlation.
+
+### Pemodelan
+- [ ] Saya bisa memilih distribusi diskrit yang tepat untuk konteks count data.
+- [ ] Saya bisa memilih distribusi kontinu yang masuk akal untuk waktu tunggu atau lifetime.
+- [ ] Saya bisa menjelaskan arti parameter suatu distribusi.
+- [ ] Saya bisa memodelkan output sebagai fungsi dari input acak.
+
+### Komputasional
+- [ ] Saya bisa mensimulasikan random variable dengan Python.
+- [ ] Saya bisa menggambar histogram, PMF, PDF, atau CDF.
+- [ ] Saya bisa memakai `numpy`, `scipy.stats`, dan `matplotlib`.
+- [ ] Saya bisa membandingkan hasil simulasi dengan model teoritis.
+
+### Keputusan
+- [ ] Saya bisa menggunakan peluang untuk menilai risiko.
+- [ ] Saya bisa menggunakan ekspektasi dan variance untuk membandingkan pilihan.
+- [ ] Saya bisa menjelaskan implikasi keputusan berdasarkan model probabilistik.
+
+## 6.6 Python sebagai Partner Belajar
+
+Sepanjang buku ini, Python hadir bukan sekadar sebagai aksesoris. Python dipakai karena ia memberi beberapa keuntungan penting.
+
+### 1. Python memberi quick wins
+Mahasiswa tidak perlu menunggu lama untuk merasakan bahwa konsep probabilitas benar-benar bekerja. Dengan beberapa baris kode, kita bisa:
+- mensimulasikan eksperimen,
+- membuat histogram,
+- menghitung mean dan variance,
+- membandingkan Monte Carlo dan teori.
+
+### 2. Python membantu membangun intuisi
+Sebelum semua definisi terasa nyaman, visualisasi dan simulasi sudah lebih dulu memberi “rasa” terhadap konsep.
+
+### 3. Python membantu mengecek asumsi
+Dalam praktik nyata, kita jarang tahu jawaban dengan pasti. Simulasi membantu memeriksa apakah intuisi kita masuk akal.
+
+### 4. Python membuat belajar lebih aktif
+Daripada hanya membaca rumus, mahasiswa bisa mengubah parameter, menjalankan ulang simulasi, dan melihat apa yang berubah. Ini membuat belajar menjadi proses eksplorasi, bukan hanya konsumsi.
+
+## 6.7 Dari Probabilitas ke Cara Berpikir Engineer
+
+Buku ini tidak hanya ingin mengajarkan isi mata kuliah. Buku ini juga ingin menanamkan kebiasaan berpikir yang lebih matang. Seorang engineer atau data scientist yang baik biasanya berpikir seperti ini:
+
+1. **Pahami konteksnya**
+2. **Tentukan apa yang acak**
+3. **Bangun random variable yang relevan**
+4. **Pilih model distribusi yang masuk akal**
+5. **Hitung ukuran yang penting**
+6. **Gunakan simulasi bila perlu**
+7. **Ambil keputusan dengan sadar akan asumsi dan risiko**
+
+Ini adalah pola berpikir yang jauh melampaui mata kuliah ini. Pola ini akan sangat berguna dalam:
+- machine learning,
+- analitik data,
+- reliability engineering,
+- keuangan,
+- quality control,
+- sistem antrian,
+- dan banyak bidang lain.
+
+## 6.8 Sebuah Catatan Tentang Ketidakpastian
+
+Ada satu pelajaran yang lebih filosofis di balik seluruh probabilitas.
+
+Kita hidup di dunia yang tidak sepenuhnya pasti. Kita sering harus bertindak tanpa mengetahui semua hal. Kadang hasilnya baik, kadang tidak. Probabilitas tidak memberi kita kuasa untuk mengendalikan masa depan sepenuhnya. Tetapi probabilitas memberi kita sesuatu yang sangat penting: **kerendahan hati dan keberanian**.
+
+- Rendah hati, karena kita tahu bahwa model kita tetap model, bukan kenyataan itu sendiri.
+- Berani, karena walaupun tidak tahu segalanya, kita tetap bisa membuat keputusan yang lebih baik daripada sekadar menebak.
+
+Dalam arti itu, probabilitas adalah latihan intelektual sekaligus latihan karakter.
+
+## 6.9 Arah Belajar Lanjut
+
+Setelah random variable, ada banyak topik lanjutan yang menunggu. Misalnya:
+
+### 1. Sampling distribution
+Bagaimana statistik dari sampel juga menjadi random variable.
+
+### 2. Estimasi
+Bagaimana menebak parameter populasi dari data.
+
+### 3. Uji hipotesis
+Bagaimana membuat keputusan formal dari data.
+
+### 4. Inferensi Bayesian
+Bagaimana memperbarui keyakinan saat data baru datang.
+
+### 5. Proses stokastik
+Bagaimana memodelkan ketidakpastian yang berkembang terhadap waktu.
+
+### 6. Machine learning probabilistik
+Bagaimana ide probabilitas dipakai dalam klasifikasi, prediksi, dan generative modeling.
+
+Dengan kata lain, random variable bukanlah akhir. Ia adalah pintu masuk ke wilayah yang jauh lebih luas.
+
+## 6.10 Sebuah Simulasi Penutup Kecil
+
+Untuk menutup, mari kembali ke ide paling dasar: jika dunia acak, kita tidak harus menyerah. Kita bisa mensimulasikan, melihat pola, lalu memahami.
+
+Misalkan kita bandingkan rata-rata dari sampel acak Normal saat ukuran sampel membesar.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(2026)
+
+true_mu = 100
+true_sigma = 15
+
+sample_sizes = [5, 10, 30, 100, 500]
+means = []
+
+for n in sample_sizes:
+    sample = rng.normal(loc=true_mu, scale=true_sigma, size=n)
+    means.append(sample.mean())
+
+print(list(zip(sample_sizes, means)))
+```
+
+```{python}
+plt.figure(figsize=(8,4))
+plt.plot(sample_sizes, means, marker='o', label='Sample mean')
+plt.axhline(true_mu, color='red', linestyle='--', label='True mean')
+plt.xlabel("Ukuran sampel")
+plt.ylabel("Rata-rata sampel")
+plt.title("Semakin banyak data, estimasi rata-rata cenderung stabil")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+```
+
+Simulasi kecil ini mengingatkan kita pada sesuatu yang sederhana tetapi penting:
+- ketidakpastian tidak hilang,
+- tetapi dengan model, data, dan perhitungan, kita bisa bergerak menuju pemahaman yang lebih stabil.
+
+## 6.11 Ringkasan Besar Buku
+
+Kalau seluruh buku ini harus diringkas dalam beberapa kalimat, mungkin bunyinya seperti ini:
+
+1. Dunia nyata penuh ketidakpastian.
+2. Random variable adalah cara memetakan ketidakpastian itu ke bilangan.
+3. Distribusi menjelaskan bagaimana peluang tersebar.
+4. Ekspektasi, variance, dan ukuran lain membantu kita menilai pilihan.
+5. Banyak keputusan nyata memerlukan lebih dari satu peubah acak.
+6. Python membuat konsep-konsep ini bisa dilihat, dicoba, dan diuji.
+7. Tujuan akhir probabilitas bukan sekadar menjawab soal, tetapi membantu kita **berpikir lebih jernih saat harus memilih**.
+
+## 6.12 Pesan untuk Mahasiswa
+
+Kalau Anda pernah merasa probabilitas itu sulit, itu wajar. Banyak orang merasakannya. Tetapi sulit bukan berarti mustahil. Sering kali yang dibutuhkan bukan hanya lebih banyak rumus, melainkan cara masuk yang tepat: konteks yang hidup, contoh yang relevan, visualisasi yang jelas, dan keberanian untuk mencoba.
+
+Semoga buku ini sudah memberi jalan masuk itu.
+
+Yang lebih penting lagi: semoga setelah mempelajari buku ini, Anda tidak hanya menjadi mahasiswa yang bisa menghitung peluang, tetapi juga seseorang yang lebih cermat dalam berpikir, lebih jujur terhadap asumsi, dan lebih bertanggung jawab saat mengambil keputusan.
+
+## 6.13 Ringkasan Poin Inti
+
+1. Probabilitas adalah alat berpikir di bawah ketidakpastian.
+2. Random variable adalah fondasi utama untuk memodelkan dunia acak.
+3. Distribusi, mean, variance, dan CDF membantu kita membuat keputusan yang lebih baik.
+4. Banyak persoalan nyata melibatkan joint behavior beberapa peubah acak.
+5. Fungsi dari peubah acak sering kali justru menjadi besaran yang paling relevan.
+6. Python membantu mengubah konsep menjadi pengalaman belajar yang konkret.
+7. Tujuan akhir belajar probabilitas bukan sekadar lulus ujian, tetapi bertumbuh dalam cara berpikir.
+
+## 6.14 Latihan Penutup
+
+### Reflektif
+1. Konsep apa yang paling mengubah cara Anda melihat probabilitas?
+2. Kasus mana dalam buku ini yang paling terasa relevan bagi Anda?
+3. Apa hubungan antara probabilitas dan tanggung jawab dalam mengambil keputusan?
+
+### Konseptual
+1. Mengapa random variable menjadi jembatan antara dunia acak dan matematika?
+2. Mengapa mean saja sering tidak cukup?
+3. Apa perbedaan penting antara korelasi dan independensi?
+
+### Komputasional
+1. Pilih satu distribusi diskrit dan satu distribusi kontinu dari buku ini, lalu buat simulasi dan visualisasi ulang dengan parameter pilihan Anda sendiri.
+2. Buat satu mini-case baru dan modelkan dengan random variable yang sesuai.
+
+## 6.15 Penutup Akhir
+
+Buku ini sendiri lahir dari sebuah keputusan: keputusan untuk mengajarkan probabilitas dan statistika bukan sebagai tumpukan simbol yang dingin, tetapi sebagai ilmu yang dekat dengan pilihan nyata, logika yang hidup, dan eksplorasi yang menyenangkan.
+
+Kalau setelah perjalanan ini Anda mulai melihat dunia dengan pertanyaan seperti:
+- “apa random variable-nya?”
+- “apa distribusinya?”
+- “berapa mean dan variance-nya?”
+- “apa risiko dari keputusan ini?”
+- “bisakah saya simulasikan dulu di Python?”
+
+maka buku ini sudah mencapai tujuannya.
+
+Selamat melanjutkan perjalanan belajar. Ketidakpastian tidak akan pernah hilang dari dunia nyata. Tetapi sekarang Anda sudah memiliki bahasa, alat, dan cara berpikir yang lebih kuat untuk menghadapinya.

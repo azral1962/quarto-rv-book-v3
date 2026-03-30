@@ -1,0 +1,83 @@
+---
+title: "Random Variable untuk Pengambilan Keputusan"
+subtitle: "Probabilitas Statistika untuk Mahasiswa II-2111 Probabilitas dan Statistika"
+author: "Armein Z. R. Langi"
+date: "31 Maret 2026"
+format: html
+---
+
+## Selamat Datang
+
+Buku ini ditulis untuk mendampingi mahasiswa **II-2111 Probabilitas Statistika** memahami topik **Random Variable** dengan cara yang lebih hidup, lebih aplikatif, dan lebih dekat dengan keputusan nyata.
+
+Alih-alih memulai dari definisi yang terasa jauh, buku ini mengajak pembaca masuk dari pertanyaan yang lebih akrab:
+
+- Bagaimana membuat keputusan ketika masa depan belum pasti?
+- Bagaimana membandingkan dua pilihan yang sama-sama mungkin menguntungkan?
+- Bagaimana memahami risiko, bukan hanya rata-rata?
+- Bagaimana menggunakan Python untuk melihat pola, mencoba simulasi, dan memeriksa logika?
+
+Buku ini dibangun dengan tiga semangat utama:
+
+1. **Decision-making oriented**  
+   Probabilitas dipelajari sebagai alat untuk memilih dengan lebih bijaksana.
+
+2. **Python first for intuition**  
+   Mahasiswa diajak mendapatkan *quick wins* lebih dulu melalui simulasi, visualisasi, dan eksperimen.
+
+3. **Logic with meaning**  
+   Definisi, rumus, dan teori tetap penting, tetapi selalu dihubungkan dengan makna dan konteks nyata.
+
+## Cara Menggunakan Buku Ini
+
+Setiap bab dalam buku ini dirancang agar bisa dipelajari dengan pola:
+
+1. **Mulai dari konteks masalah**
+2. **Lihat quick win dengan Python**
+3. **Bangun intuisi**
+4. **Masuk ke model formal**
+5. **Jawab pertanyaan berbasis model**
+6. **Tarik implikasi keputusan**
+
+Pola ini disebut pendekatan **KMQA**:
+
+- **K** — Konteks  
+- **M** — Model  
+- **Q** — Questions  
+- **A** — Apply  
+
+## Struktur Buku
+
+Buku ini terdiri dari enam bab utama:
+
+1. **Pendahuluan Pengambilan Keputusan**  
+   Mengaitkan probabilitas dengan keputusan nyata, risiko, dan Python.
+
+2. **Random Variable Umum**  
+   Fondasi formal: range, diskrit vs kontinu, PMF, CDF, PDF, ekspektasi, dan varians.
+
+3. **Distribusi Random Variable Diskrit**  
+   Uniform diskrit, Bernoulli, Binomial, Geometric, Poisson, dan distribusi empiris dari histogram.
+
+4. **Distribusi Random Variable Kontinu**  
+   Uniform kontinu, Normal, Gamma, Exponential, Erlang, Weibull, Pareto, Chi-Square, dan hubungan antardistribusi.
+
+5. **Random Variable Multivariat dan Fungsi Random Variable**  
+   Joint, marginal, conditional, covariance, correlation, independensi, dan transformasi peubah acak.
+
+6. **Penutup**  
+   Ringkasan ide besar buku, checklist kompetensi, dan peneguhan bahwa probabilitas adalah cara berpikir di bawah ketidakpastian.
+
+## Untuk Siapa Buku Ini
+
+Buku ini terutama ditujukan untuk mahasiswa tingkat dua, khususnya yang:
+- ingin memahami probabilitas secara konseptual,
+- ingin melihat contoh nyata dan relevan,
+- ingin belajar Python sambil tetap berpikir,
+- dan ingin merasakan bahwa statistika bukan sekadar soal ujian, tetapi alat untuk hidup dan bekerja dengan lebih cerdas.
+
+## Harapan
+
+Semoga buku ini membantu Anda mengalami sesuatu yang penting: bahwa probabilitas bukanlah kumpulan simbol yang dingin, melainkan bahasa yang sangat berguna saat kita harus berpikir, memilih, dan bertindak di dunia yang tidak sepenuhnya pasti.
+
+Silakan mulai dari **Kata Pengantar**, lalu masuk ke **Bab 1**.
