@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Bab 6. Penutup – Random Variable untuk Pengambilan Keputusan</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-random-variable-multivariat-dan-fungsi.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Tidak ada hasil",
+    "search-matching-documents-text": "dokumen cocok",
+    "search-copy-link-title": "Salin tautan untuk mencari",
+    "search-hide-matches-text": "Sembunyikan kecocokan lainnya",
+    "search-more-match-text": "kecocokan lainnya di dokumen ini",
+    "search-more-matches-text": "kecocokan lainnya di dokumen ini",
+    "search-clear-button-title": "Hapus",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Batal",
+    "search-submit-button-title": "Kirim",
+    "search-label": "Mencari"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-penutup.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bab 6. Penutup</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Mencari" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Random Variable untuk Pengambilan Keputusan</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Mencari"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Random Variable untuk Pengambilan Keputusan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-kata-pengantar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kata Pengantar</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-pendahuluan-pengambilan-keputusan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bab 1. Pendahuluan Pengambilan Keputusan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-random-variable-umum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-distribusi-diskrit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-distribusi-kontinu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bab 4. Distribusi Random Variable Kontinu</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-random-variable-multivariat-dan-fungsi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bab 5. Random Variable Multivariat dan Fungsi Random Variable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-penutup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bab 6. Penutup</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Daftar Isi</h2>
+   
+  <ul>
+  <li><a href="#tujuan-bab" id="toc-tujuan-bab" class="nav-link active" data-scroll-target="#tujuan-bab"><span class="header-section-number">8.1</span> Tujuan Bab</a></li>
+  <li><a href="#pembuka" id="toc-pembuka" class="nav-link" data-scroll-target="#pembuka"><span class="header-section-number">8.2</span> Pembuka</a></li>
+  <li><a href="#ide-besar-buku-ini" id="toc-ide-besar-buku-ini" class="nav-link" data-scroll-target="#ide-besar-buku-ini"><span class="header-section-number">8.3</span> 6.1 Ide Besar Buku Ini</a></li>
+  <li><a href="#apa-yang-sebenarnya-sudah-kita-kuasai" id="toc-apa-yang-sebenarnya-sudah-kita-kuasai" class="nav-link" data-scroll-target="#apa-yang-sebenarnya-sudah-kita-kuasai"><span class="header-section-number">8.4</span> 6.2 Apa yang Sebenarnya Sudah Kita Kuasai?</a>
+  <ul class="collapse">
+  <li><a href="#dari-ketidakpastian-ke-angka" id="toc-dari-ketidakpastian-ke-angka" class="nav-link" data-scroll-target="#dari-ketidakpastian-ke-angka"><span class="header-section-number">8.4.1</span> Dari ketidakpastian ke angka</a></li>
+  <li><a href="#dari-angka-ke-distribusi" id="toc-dari-angka-ke-distribusi" class="nav-link" data-scroll-target="#dari-angka-ke-distribusi"><span class="header-section-number">8.4.2</span> Dari angka ke distribusi</a></li>
+  <li><a href="#dari-mean-ke-risk" id="toc-dari-mean-ke-risk" class="nav-link" data-scroll-target="#dari-mean-ke-risk"><span class="header-section-number">8.4.3</span> Dari mean ke risk</a></li>
+  <li><a href="#dari-satu-peubah-ke-beberapa-peubah" id="toc-dari-satu-peubah-ke-beberapa-peubah" class="nav-link" data-scroll-target="#dari-satu-peubah-ke-beberapa-peubah"><span class="header-section-number">8.4.4</span> Dari satu peubah ke beberapa peubah</a></li>
+  <li><a href="#dari-teori-ke-eksperimen" id="toc-dari-teori-ke-eksperimen" class="nav-link" data-scroll-target="#dari-teori-ke-eksperimen"><span class="header-section-number">8.4.5</span> Dari teori ke eksperimen</a></li>
+  </ul></li>
+  <li><a href="#ringkasan-per-bab" id="toc-ringkasan-per-bab" class="nav-link" data-scroll-target="#ringkasan-per-bab"><span class="header-section-number">8.5</span> 6.3 Ringkasan Per Bab</a>
+  <ul class="collapse">
+  <li><a href="#bab-1-pendahuluan-pengambilan-keputusan" id="toc-bab-1-pendahuluan-pengambilan-keputusan" class="nav-link" data-scroll-target="#bab-1-pendahuluan-pengambilan-keputusan"><span class="header-section-number">8.5.1</span> Bab 1 — Pendahuluan: Pengambilan Keputusan</a></li>
+  <li><a href="#bab-2-random-variable-umum" id="toc-bab-2-random-variable-umum" class="nav-link" data-scroll-target="#bab-2-random-variable-umum"><span class="header-section-number">8.5.2</span> Bab 2 — Random Variable Umum</a></li>
+  <li><a href="#bab-3-distribusi-diskrit" id="toc-bab-3-distribusi-diskrit" class="nav-link" data-scroll-target="#bab-3-distribusi-diskrit"><span class="header-section-number">8.5.3</span> Bab 3 — Distribusi Diskrit</a></li>
+  <li><a href="#bab-4-distribusi-kontinu" id="toc-bab-4-distribusi-kontinu" class="nav-link" data-scroll-target="#bab-4-distribusi-kontinu"><span class="header-section-number">8.5.4</span> Bab 4 — Distribusi Kontinu</a></li>
+  <li><a href="#bab-5-multivariat-dan-fungsi-random-variable" id="toc-bab-5-multivariat-dan-fungsi-random-variable" class="nav-link" data-scroll-target="#bab-5-multivariat-dan-fungsi-random-variable"><span class="header-section-number">8.5.5</span> Bab 5 — Multivariat dan Fungsi Random Variable</a></li>
+  </ul></li>
+  <li><a href="#prinsip-prinsip-inti-yang-perlu-diingat" id="toc-prinsip-prinsip-inti-yang-perlu-diingat" class="nav-link" data-scroll-target="#prinsip-prinsip-inti-yang-perlu-diingat"><span class="header-section-number">8.6</span> 6.4 Prinsip-Prinsip Inti yang Perlu Diingat</a>
+  <ul class="collapse">
+  <li><a href="#mulai-dari-konteks-bukan-dari-rumus" id="toc-mulai-dari-konteks-bukan-dari-rumus" class="nav-link" data-scroll-target="#mulai-dari-konteks-bukan-dari-rumus"><span class="header-section-number">8.6.1</span> 1. Mulai dari konteks, bukan dari rumus</a></li>
+  <li><a href="#model-yang-baik-lebih-penting-daripada-rumus-yang-banyak" id="toc-model-yang-baik-lebih-penting-daripada-rumus-yang-banyak" class="nav-link" data-scroll-target="#model-yang-baik-lebih-penting-daripada-rumus-yang-banyak"><span class="header-section-number">8.6.2</span> 2. Model yang baik lebih penting daripada rumus yang banyak</a></li>
+  <li><a href="#ekspektasi-penting-tetapi-variance-juga-penting" id="toc-ekspektasi-penting-tetapi-variance-juga-penting" class="nav-link" data-scroll-target="#ekspektasi-penting-tetapi-variance-juga-penting"><span class="header-section-number">8.6.3</span> 3. Ekspektasi penting, tetapi variance juga penting</a></li>
+  <li><a href="#pdf-bukan-peluang" id="toc-pdf-bukan-peluang" class="nav-link" data-scroll-target="#pdf-bukan-peluang"><span class="header-section-number">8.6.4</span> 4. PDF bukan peluang</a></li>
+  <li><a href="#korelasi-bukan-sebab-akibat" id="toc-korelasi-bukan-sebab-akibat" class="nav-link" data-scroll-target="#korelasi-bukan-sebab-akibat"><span class="header-section-number">8.6.5</span> 5. Korelasi bukan sebab-akibat</a></li>
+  <li><a href="#python-membantu-belajar-bukan-menggantikan-berpikir" id="toc-python-membantu-belajar-bukan-menggantikan-berpikir" class="nav-link" data-scroll-target="#python-membantu-belajar-bukan-menggantikan-berpikir"><span class="header-section-number">8.6.6</span> 6. Python membantu belajar, bukan menggantikan berpikir</a></li>
+  <li><a href="#ketidakpastian-bisa-dimodelkan-meskipun-tidak-bisa-dihilangkan" id="toc-ketidakpastian-bisa-dimodelkan-meskipun-tidak-bisa-dihilangkan" class="nav-link" data-scroll-target="#ketidakpastian-bisa-dimodelkan-meskipun-tidak-bisa-dihilangkan"><span class="header-section-number">8.6.7</span> 7. Ketidakpastian bisa dimodelkan, meskipun tidak bisa dihilangkan</a></li>
+  </ul></li>
+  <li><a href="#checklist-kompetensi" id="toc-checklist-kompetensi" class="nav-link" data-scroll-target="#checklist-kompetensi"><span class="header-section-number">8.7</span> 6.5 Checklist Kompetensi</a>
+  <ul class="collapse">
+  <li><a href="#konseptual" id="toc-konseptual" class="nav-link" data-scroll-target="#konseptual"><span class="header-section-number">8.7.1</span> Konseptual</a></li>
+  <li><a href="#pemodelan" id="toc-pemodelan" class="nav-link" data-scroll-target="#pemodelan"><span class="header-section-number">8.7.2</span> Pemodelan</a></li>
+  <li><a href="#komputasional" id="toc-komputasional" class="nav-link" data-scroll-target="#komputasional"><span class="header-section-number">8.7.3</span> Komputasional</a></li>
+  <li><a href="#keputusan" id="toc-keputusan" class="nav-link" data-scroll-target="#keputusan"><span class="header-section-number">8.7.4</span> Keputusan</a></li>
+  </ul></li>
+  <li><a href="#python-sebagai-partner-belajar" id="toc-python-sebagai-partner-belajar" class="nav-link" data-scroll-target="#python-sebagai-partner-belajar"><span class="header-section-number">8.8</span> 6.6 Python sebagai Partner Belajar</a>
+  <ul class="collapse">
+  <li><a href="#python-memberi-quick-wins" id="toc-python-memberi-quick-wins" class="nav-link" data-scroll-target="#python-memberi-quick-wins"><span class="header-section-number">8.8.1</span> 1. Python memberi quick wins</a></li>
+  <li><a href="#python-membantu-membangun-intuisi" id="toc-python-membantu-membangun-intuisi" class="nav-link" data-scroll-target="#python-membantu-membangun-intuisi"><span class="header-section-number">8.8.2</span> 2. Python membantu membangun intuisi</a></li>
+  <li><a href="#python-membantu-mengecek-asumsi" id="toc-python-membantu-mengecek-asumsi" class="nav-link" data-scroll-target="#python-membantu-mengecek-asumsi"><span class="header-section-number">8.8.3</span> 3. Python membantu mengecek asumsi</a></li>
+  <li><a href="#python-membuat-belajar-lebih-aktif" id="toc-python-membuat-belajar-lebih-aktif" class="nav-link" data-scroll-target="#python-membuat-belajar-lebih-aktif"><span class="header-section-number">8.8.4</span> 4. Python membuat belajar lebih aktif</a></li>
+  </ul></li>
+  <li><a href="#dari-probabilitas-ke-cara-berpikir-engineer" id="toc-dari-probabilitas-ke-cara-berpikir-engineer" class="nav-link" data-scroll-target="#dari-probabilitas-ke-cara-berpikir-engineer"><span class="header-section-number">8.9</span> 6.7 Dari Probabilitas ke Cara Berpikir Engineer</a></li>
+  <li><a href="#sebuah-catatan-tentang-ketidakpastian" id="toc-sebuah-catatan-tentang-ketidakpastian" class="nav-link" data-scroll-target="#sebuah-catatan-tentang-ketidakpastian"><span class="header-section-number">8.10</span> 6.8 Sebuah Catatan Tentang Ketidakpastian</a></li>
+  <li><a href="#arah-belajar-lanjut" id="toc-arah-belajar-lanjut" class="nav-link" data-scroll-target="#arah-belajar-lanjut"><span class="header-section-number">8.11</span> 6.9 Arah Belajar Lanjut</a>
+  <ul class="collapse">
+  <li><a href="#sampling-distribution" id="toc-sampling-distribution" class="nav-link" data-scroll-target="#sampling-distribution"><span class="header-section-number">8.11.1</span> 1. Sampling distribution</a></li>
+  <li><a href="#estimasi" id="toc-estimasi" class="nav-link" data-scroll-target="#estimasi"><span class="header-section-number">8.11.2</span> 2. Estimasi</a></li>
+  <li><a href="#uji-hipotesis" id="toc-uji-hipotesis" class="nav-link" data-scroll-target="#uji-hipotesis"><span class="header-section-number">8.11.3</span> 3. Uji hipotesis</a></li>
+  <li><a href="#inferensi-bayesian" id="toc-inferensi-bayesian" class="nav-link" data-scroll-target="#inferensi-bayesian"><span class="header-section-number">8.11.4</span> 4. Inferensi Bayesian</a></li>
+  <li><a href="#proses-stokastik" id="toc-proses-stokastik" class="nav-link" data-scroll-target="#proses-stokastik"><span class="header-section-number">8.11.5</span> 5. Proses stokastik</a></li>
+  <li><a href="#machine-learning-probabilistik" id="toc-machine-learning-probabilistik" class="nav-link" data-scroll-target="#machine-learning-probabilistik"><span class="header-section-number">8.11.6</span> 6. Machine learning probabilistik</a></li>
+  </ul></li>
+  <li><a href="#sebuah-simulasi-penutup-kecil" id="toc-sebuah-simulasi-penutup-kecil" class="nav-link" data-scroll-target="#sebuah-simulasi-penutup-kecil"><span class="header-section-number">8.12</span> 6.10 Sebuah Simulasi Penutup Kecil</a></li>
+  <li><a href="#ringkasan-besar-buku" id="toc-ringkasan-besar-buku" class="nav-link" data-scroll-target="#ringkasan-besar-buku"><span class="header-section-number">8.13</span> 6.11 Ringkasan Besar Buku</a></li>
+  <li><a href="#pesan-untuk-mahasiswa" id="toc-pesan-untuk-mahasiswa" class="nav-link" data-scroll-target="#pesan-untuk-mahasiswa"><span class="header-section-number">8.14</span> 6.12 Pesan untuk Mahasiswa</a></li>
+  <li><a href="#ringkasan-poin-inti" id="toc-ringkasan-poin-inti" class="nav-link" data-scroll-target="#ringkasan-poin-inti"><span class="header-section-number">8.15</span> 6.13 Ringkasan Poin Inti</a></li>
+  <li><a href="#latihan-penutup" id="toc-latihan-penutup" class="nav-link" data-scroll-target="#latihan-penutup"><span class="header-section-number">8.16</span> 6.14 Latihan Penutup</a>
+  <ul class="collapse">
+  <li><a href="#reflektif" id="toc-reflektif" class="nav-link" data-scroll-target="#reflektif"><span class="header-section-number">8.16.1</span> Reflektif</a></li>
+  <li><a href="#konseptual-1" id="toc-konseptual-1" class="nav-link" data-scroll-target="#konseptual-1"><span class="header-section-number">8.16.2</span> Konseptual</a></li>
+  <li><a href="#komputasional-1" id="toc-komputasional-1" class="nav-link" data-scroll-target="#komputasional-1"><span class="header-section-number">8.16.3</span> Komputasional</a></li>
+  </ul></li>
+  <li><a href="#penutup-akhir" id="toc-penutup-akhir" class="nav-link" data-scroll-target="#penutup-akhir"><span class="header-section-number">8.17</span> 6.15 Penutup Akhir</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bab 6. Penutup</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="tujuan-bab" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="tujuan-bab"><span class="header-section-number">8.1</span> Tujuan Bab</h2>
+<p>Bab ini bertujuan untuk:</p>
+<ol type="1">
+<li>merangkum gagasan utama yang telah dipelajari sepanjang buku,</li>
+<li>menegaskan kembali hubungan antara <strong>random variable</strong>, <strong>probabilitas</strong>, <strong>Python</strong>, dan <strong>pengambilan keputusan</strong>,</li>
+<li>membantu mahasiswa melihat struktur besar dari seluruh materi,</li>
+<li>menutup perjalanan belajar ini dengan nada yang menguatkan, realistis, dan inspiratif.</li>
+</ol>
+</section>
+<section id="pembuka" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="pembuka"><span class="header-section-number">8.2</span> Pembuka</h2>
+<p>Kalau Anda sudah sampai pada bab ini, berarti Anda telah menempuh sebuah perjalanan intelektual yang cukup penting.</p>
+<p>Di awal, mungkin probabilitas dan statistika tampak seperti kumpulan rumus yang asing. Ada simbol, distribusi, integral, penjumlahan, dan notasi yang mudah terasa jauh dari kehidupan nyata. Tetapi sepanjang buku ini, kita berusaha menempuh jalan yang berbeda. Kita tidak memulai dari rumus demi rumus. Kita memulai dari <strong>pertanyaan nyata</strong>:</p>
+<ul>
+<li>bagaimana memilih keputusan ketika masa depan belum pasti?</li>
+<li>bagaimana membandingkan pilihan yang sama-sama mungkin untung?</li>
+<li>bagaimana menilai risiko?</li>
+<li>bagaimana memodelkan jumlah, waktu, umur hidup, profit, dan kegagalan?</li>
+<li>bagaimana menggunakan Python untuk melihat, mencoba, dan memahami?</li>
+</ul>
+<p>Bab ini adalah tempat kita berhenti sejenak, melihat ke belakang, lalu menyadari apa yang sebenarnya sudah kita pelajari.</p>
+</section>
+<section id="ide-besar-buku-ini" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="ide-besar-buku-ini"><span class="header-section-number">8.3</span> 6.1 Ide Besar Buku Ini</h2>
+<p>Ada satu ide besar yang mengikat seluruh buku ini:</p>
+<blockquote class="blockquote">
+<p><strong>Probabilitas dan statistika adalah alat berpikir untuk membuat keputusan di bawah ketidakpastian.</strong></p>
+</blockquote>
+<p>Di balik semua contoh, distribusi, simulasi, dan rumus, ada satu kebutuhan yang sama: kita ingin bertindak dengan lebih bijaksana meskipun kita tidak tahu masa depan secara pasti.</p>
+<p>Kita belajar bahwa: - masa depan sering kali tidak pasti, - tetapi ketidakpastian itu bukan alasan untuk menyerah, - justru dengan model yang tepat, kita bisa berpikir lebih jernih.</p>
+<p>Dan salah satu model terpenting yang kita pelajari adalah <strong>random variable</strong>.</p>
+</section>
+<section id="apa-yang-sebenarnya-sudah-kita-kuasai" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="apa-yang-sebenarnya-sudah-kita-kuasai"><span class="header-section-number">8.4</span> 6.2 Apa yang Sebenarnya Sudah Kita Kuasai?</h2>
+<p>Mari kita lihat ulang perjalanan kita.</p>
+<section id="dari-ketidakpastian-ke-angka" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="dari-ketidakpastian-ke-angka"><span class="header-section-number">8.4.1</span> Dari ketidakpastian ke angka</h3>
+<p>Kita belajar bahwa random variable adalah cara memetakan dunia acak ke bilangan. Ini adalah langkah yang sangat besar. Begitu hasil acak dipetakan menjadi angka, kita bisa: - menghitung peluang, - mencari rata-rata, - mengukur variasi, - membandingkan pilihan, - membangun simulasi, - dan merancang keputusan.</p>
+</section>
+<section id="dari-angka-ke-distribusi" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="dari-angka-ke-distribusi"><span class="header-section-number">8.4.2</span> Dari angka ke distribusi</h3>
+<p>Kita belajar bahwa satu angka tidak cukup. Yang lebih penting adalah <strong>bagaimana peluang tersebar</strong> pada nilai-nilai yang mungkin. Itulah distribusi.</p>
+<p>Distribusi membuat kita bertanya: - apa nilai yang mungkin? - seberapa mungkin? - seberapa besar peluang berada di bawah batas tertentu? - seberapa liar penyimpangannya?</p>
+</section>
+<section id="dari-mean-ke-risk" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="dari-mean-ke-risk"><span class="header-section-number">8.4.3</span> Dari mean ke risk</h3>
+<p>Kita belajar bahwa mean atau ekspektasi sangat penting, tetapi tidak cukup. Dua pilihan dengan rata-rata sama belum tentu sama baik. Variance, simpangan baku, dan bentuk distribusi ikut menentukan kualitas keputusan.</p>
+</section>
+<section id="dari-satu-peubah-ke-beberapa-peubah" class="level3" data-number="8.4.4">
+<h3 data-number="8.4.4" class="anchored" data-anchor-id="dari-satu-peubah-ke-beberapa-peubah"><span class="header-section-number">8.4.4</span> Dari satu peubah ke beberapa peubah</h3>
+<p>Kita belajar bahwa dunia nyata jarang hanya punya satu peubah acak. Sering kali kita perlu memikirkan pasangan atau kelompok peubah acak: - pelanggan dan revenue, - tinggi dan berat, - arus dan daya, - jumlah cacat dan biaya garansi.</p>
+<p>Dari situ kita belajar joint distribution, marginal, conditional, covariance, correlation, dan transformasi fungsi.</p>
+</section>
+<section id="dari-teori-ke-eksperimen" class="level3" data-number="8.4.5">
+<h3 data-number="8.4.5" class="anchored" data-anchor-id="dari-teori-ke-eksperimen"><span class="header-section-number">8.4.5</span> Dari teori ke eksperimen</h3>
+<p>Kita juga belajar bahwa Python bukan sekadar kalkulator. Python adalah laboratorium kecil yang memungkinkan kita: - mencoba ide, - melihat pola, - menjalankan simulasi Monte Carlo, - memverifikasi rumus, - dan membangun intuisi.</p>
+</section>
+</section>
+<section id="ringkasan-per-bab" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="ringkasan-per-bab"><span class="header-section-number">8.5</span> 6.3 Ringkasan Per Bab</h2>
+<section id="bab-1-pendahuluan-pengambilan-keputusan" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="bab-1-pendahuluan-pengambilan-keputusan"><span class="header-section-number">8.5.1</span> Bab 1 — Pendahuluan: Pengambilan Keputusan</h3>
+<p>Bab pertama menanamkan pesan utama buku ini: probabilitas bukan sekadar kumpulan rumus, tetapi cara berpikir saat masa depan belum pasti. Melalui contoh investasi, produk cacat, garansi, fungsi random variable, risiko bangkrut, dan klinik gigi, kita melihat bahwa probabilitas hidup dalam keputusan nyata.</p>
+</section>
+<section id="bab-2-random-variable-umum" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="bab-2-random-variable-umum"><span class="header-section-number">8.5.2</span> Bab 2 — Random Variable Umum</h3>
+<p>Bab kedua memberi fondasi formal: - random variable sebagai fungsi, - range, - diskrit dan kontinu, - PMF, CDF, PDF, - ekspektasi, - varians, - simpangan baku.</p>
+<p>Inilah kerangka dasar yang menopang semua bab sesudahnya.</p>
+</section>
+<section id="bab-3-distribusi-diskrit" class="level3" data-number="8.5.3">
+<h3 data-number="8.5.3" class="anchored" data-anchor-id="bab-3-distribusi-diskrit"><span class="header-section-number">8.5.3</span> Bab 3 — Distribusi Diskrit</h3>
+<p>Bab ketiga mengenalkan keluarga distribusi diskrit: - uniform diskrit, - Bernoulli, - Binomial, - Geometric, - Poisson, - serta distribusi kustom dari histogram.</p>
+<p>Di sini kita belajar memilih model untuk hitungan kejadian.</p>
+</section>
+<section id="bab-4-distribusi-kontinu" class="level3" data-number="8.5.4">
+<h3 data-number="8.5.4" class="anchored" data-anchor-id="bab-4-distribusi-kontinu"><span class="header-section-number">8.5.4</span> Bab 4 — Distribusi Kontinu</h3>
+<p>Bab keempat membawa kita ke dunia waktu, umur hidup, dan pengukuran: - uniform kontinu, - normal, - gamma, - exponential, - erlang, - weibull, - pareto, - chi-square, - serta hubungan antardistribusi.</p>
+<p>Di sini kita melihat bahwa banyak fenomena dunia nyata lebih nyaman dipandang kontinu.</p>
+</section>
+<section id="bab-5-multivariat-dan-fungsi-random-variable" class="level3" data-number="8.5.5">
+<h3 data-number="8.5.5" class="anchored" data-anchor-id="bab-5-multivariat-dan-fungsi-random-variable"><span class="header-section-number">8.5.5</span> Bab 5 — Multivariat dan Fungsi Random Variable</h3>
+<p>Bab kelima memperluas perspektif: - joint distribution, - marginal, - conditional, - independensi, - covariance, - correlation, - fungsi random variable.</p>
+<p>Di sini kita melihat bahwa ketidakpastian sering datang bersama-sama dan sering menghasilkan peubah turunan yang justru paling penting bagi keputusan.</p>
+</section>
+</section>
+<section id="prinsip-prinsip-inti-yang-perlu-diingat" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="prinsip-prinsip-inti-yang-perlu-diingat"><span class="header-section-number">8.6</span> 6.4 Prinsip-Prinsip Inti yang Perlu Diingat</h2>
+<p>Berikut adalah beberapa prinsip inti yang layak dibawa terus, bahkan setelah buku ini selesai dibaca.</p>
+<section id="mulai-dari-konteks-bukan-dari-rumus" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="mulai-dari-konteks-bukan-dari-rumus"><span class="header-section-number">8.6.1</span> 1. Mulai dari konteks, bukan dari rumus</h3>
+<p>Ketika menghadapi masalah baru, jangan buru-buru bertanya “rumus apa yang dipakai?”<br>
+Mulailah dari: - apa keputusannya, - apa yang tidak pasti, - apa random variable-nya, - apa ukuran yang perlu dihitung.</p>
+</section>
+<section id="model-yang-baik-lebih-penting-daripada-rumus-yang-banyak" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="model-yang-baik-lebih-penting-daripada-rumus-yang-banyak"><span class="header-section-number">8.6.2</span> 2. Model yang baik lebih penting daripada rumus yang banyak</h3>
+<p>Banyak kesalahan datang bukan karena salah menghitung, tetapi karena salah memodelkan. Distribusi yang salah akan menghasilkan keputusan yang salah.</p>
+</section>
+<section id="ekspektasi-penting-tetapi-variance-juga-penting" class="level3" data-number="8.6.3">
+<h3 data-number="8.6.3" class="anchored" data-anchor-id="ekspektasi-penting-tetapi-variance-juga-penting"><span class="header-section-number">8.6.3</span> 3. Ekspektasi penting, tetapi variance juga penting</h3>
+<p>Mean memberi arah, variance memberi ukuran ombaknya. Dalam banyak masalah nyata, survival, safety, dan reliability sangat dipengaruhi variance.</p>
+</section>
+<section id="pdf-bukan-peluang" class="level3" data-number="8.6.4">
+<h3 data-number="8.6.4" class="anchored" data-anchor-id="pdf-bukan-peluang"><span class="header-section-number">8.6.4</span> 4. PDF bukan peluang</h3>
+<p>Untuk random variable kontinu, peluang datang dari area, bukan dari tinggi kurva.</p>
+</section>
+<section id="korelasi-bukan-sebab-akibat" class="level3" data-number="8.6.5">
+<h3 data-number="8.6.5" class="anchored" data-anchor-id="korelasi-bukan-sebab-akibat"><span class="header-section-number">8.6.5</span> 5. Korelasi bukan sebab-akibat</h3>
+<p>Dua peubah bisa berkorelasi tanpa salah satunya menyebabkan yang lain. Statistik membantu melihat pola, tetapi interpretasi tetap membutuhkan akal sehat dan konteks.</p>
+</section>
+<section id="python-membantu-belajar-bukan-menggantikan-berpikir" class="level3" data-number="8.6.6">
+<h3 data-number="8.6.6" class="anchored" data-anchor-id="python-membantu-belajar-bukan-menggantikan-berpikir"><span class="header-section-number">8.6.6</span> 6. Python membantu belajar, bukan menggantikan berpikir</h3>
+<p>Kode yang baik bukan jalan pintas untuk menghindari pemahaman. Sebaliknya, Python memberi kita kesempatan untuk menguji pemahaman secara aktif.</p>
+</section>
+<section id="ketidakpastian-bisa-dimodelkan-meskipun-tidak-bisa-dihilangkan" class="level3" data-number="8.6.7">
+<h3 data-number="8.6.7" class="anchored" data-anchor-id="ketidakpastian-bisa-dimodelkan-meskipun-tidak-bisa-dihilangkan"><span class="header-section-number">8.6.7</span> 7. Ketidakpastian bisa dimodelkan, meskipun tidak bisa dihilangkan</h3>
+<p>Kita tidak akan pernah menghapus ketidakpastian dari hidup dan sistem nyata. Tetapi kita bisa menghadapinya dengan lebih terstruktur.</p>
+</section>
+</section>
+<section id="checklist-kompetensi" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="checklist-kompetensi"><span class="header-section-number">8.7</span> 6.5 Checklist Kompetensi</h2>
+<p>Berikut checklist sederhana. Jika Anda sudah mampu melakukan sebagian besar hal di bawah ini, berarti Anda sudah menempuh langkah yang sangat baik.</p>
+<section id="konseptual" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="konseptual"><span class="header-section-number">8.7.1</span> Konseptual</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Saya bisa menjelaskan apa itu random variable.</label></li>
+<li><label><input type="checkbox">Saya bisa membedakan random variable diskrit dan kontinu.</label></li>
+<li><label><input type="checkbox">Saya tahu perbedaan PMF, PDF, dan CDF.</label></li>
+<li><label><input type="checkbox">Saya bisa menjelaskan ekspektasi dan variance dengan kata-kata sendiri.</label></li>
+<li><label><input type="checkbox">Saya tahu arti joint, marginal, conditional, covariance, dan correlation.</label></li>
+</ul>
+</section>
+<section id="pemodelan" class="level3" data-number="8.7.2">
+<h3 data-number="8.7.2" class="anchored" data-anchor-id="pemodelan"><span class="header-section-number">8.7.2</span> Pemodelan</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Saya bisa memilih distribusi diskrit yang tepat untuk konteks count data.</label></li>
+<li><label><input type="checkbox">Saya bisa memilih distribusi kontinu yang masuk akal untuk waktu tunggu atau lifetime.</label></li>
+<li><label><input type="checkbox">Saya bisa menjelaskan arti parameter suatu distribusi.</label></li>
+<li><label><input type="checkbox">Saya bisa memodelkan output sebagai fungsi dari input acak.</label></li>
+</ul>
+</section>
+<section id="komputasional" class="level3" data-number="8.7.3">
+<h3 data-number="8.7.3" class="anchored" data-anchor-id="komputasional"><span class="header-section-number">8.7.3</span> Komputasional</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Saya bisa mensimulasikan random variable dengan Python.</label></li>
+<li><label><input type="checkbox">Saya bisa menggambar histogram, PMF, PDF, atau CDF.</label></li>
+<li><label><input type="checkbox">Saya bisa memakai <code>numpy</code>, <code>scipy.stats</code>, dan <code>matplotlib</code>.</label></li>
+<li><label><input type="checkbox">Saya bisa membandingkan hasil simulasi dengan model teoritis.</label></li>
+</ul>
+</section>
+<section id="keputusan" class="level3" data-number="8.7.4">
+<h3 data-number="8.7.4" class="anchored" data-anchor-id="keputusan"><span class="header-section-number">8.7.4</span> Keputusan</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Saya bisa menggunakan peluang untuk menilai risiko.</label></li>
+<li><label><input type="checkbox">Saya bisa menggunakan ekspektasi dan variance untuk membandingkan pilihan.</label></li>
+<li><label><input type="checkbox">Saya bisa menjelaskan implikasi keputusan berdasarkan model probabilistik.</label></li>
+</ul>
+</section>
+</section>
+<section id="python-sebagai-partner-belajar" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="python-sebagai-partner-belajar"><span class="header-section-number">8.8</span> 6.6 Python sebagai Partner Belajar</h2>
+<p>Sepanjang buku ini, Python hadir bukan sekadar sebagai aksesoris. Python dipakai karena ia memberi beberapa keuntungan penting.</p>
+<section id="python-memberi-quick-wins" class="level3" data-number="8.8.1">
+<h3 data-number="8.8.1" class="anchored" data-anchor-id="python-memberi-quick-wins"><span class="header-section-number">8.8.1</span> 1. Python memberi quick wins</h3>
+<p>Mahasiswa tidak perlu menunggu lama untuk merasakan bahwa konsep probabilitas benar-benar bekerja. Dengan beberapa baris kode, kita bisa: - mensimulasikan eksperimen, - membuat histogram, - menghitung mean dan variance, - membandingkan Monte Carlo dan teori.</p>
+</section>
+<section id="python-membantu-membangun-intuisi" class="level3" data-number="8.8.2">
+<h3 data-number="8.8.2" class="anchored" data-anchor-id="python-membantu-membangun-intuisi"><span class="header-section-number">8.8.2</span> 2. Python membantu membangun intuisi</h3>
+<p>Sebelum semua definisi terasa nyaman, visualisasi dan simulasi sudah lebih dulu memberi “rasa” terhadap konsep.</p>
+</section>
+<section id="python-membantu-mengecek-asumsi" class="level3" data-number="8.8.3">
+<h3 data-number="8.8.3" class="anchored" data-anchor-id="python-membantu-mengecek-asumsi"><span class="header-section-number">8.8.3</span> 3. Python membantu mengecek asumsi</h3>
+<p>Dalam praktik nyata, kita jarang tahu jawaban dengan pasti. Simulasi membantu memeriksa apakah intuisi kita masuk akal.</p>
+</section>
+<section id="python-membuat-belajar-lebih-aktif" class="level3" data-number="8.8.4">
+<h3 data-number="8.8.4" class="anchored" data-anchor-id="python-membuat-belajar-lebih-aktif"><span class="header-section-number">8.8.4</span> 4. Python membuat belajar lebih aktif</h3>
+<p>Daripada hanya membaca rumus, mahasiswa bisa mengubah parameter, menjalankan ulang simulasi, dan melihat apa yang berubah. Ini membuat belajar menjadi proses eksplorasi, bukan hanya konsumsi.</p>
+</section>
+</section>
+<section id="dari-probabilitas-ke-cara-berpikir-engineer" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="dari-probabilitas-ke-cara-berpikir-engineer"><span class="header-section-number">8.9</span> 6.7 Dari Probabilitas ke Cara Berpikir Engineer</h2>
+<p>Buku ini tidak hanya ingin mengajarkan isi mata kuliah. Buku ini juga ingin menanamkan kebiasaan berpikir yang lebih matang. Seorang engineer atau data scientist yang baik biasanya berpikir seperti ini:</p>
+<ol type="1">
+<li><strong>Pahami konteksnya</strong></li>
+<li><strong>Tentukan apa yang acak</strong></li>
+<li><strong>Bangun random variable yang relevan</strong></li>
+<li><strong>Pilih model distribusi yang masuk akal</strong></li>
+<li><strong>Hitung ukuran yang penting</strong></li>
+<li><strong>Gunakan simulasi bila perlu</strong></li>
+<li><strong>Ambil keputusan dengan sadar akan asumsi dan risiko</strong></li>
+</ol>
+<p>Ini adalah pola berpikir yang jauh melampaui mata kuliah ini. Pola ini akan sangat berguna dalam: - machine learning, - analitik data, - reliability engineering, - keuangan, - quality control, - sistem antrian, - dan banyak bidang lain.</p>
+</section>
+<section id="sebuah-catatan-tentang-ketidakpastian" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="sebuah-catatan-tentang-ketidakpastian"><span class="header-section-number">8.10</span> 6.8 Sebuah Catatan Tentang Ketidakpastian</h2>
+<p>Ada satu pelajaran yang lebih filosofis di balik seluruh probabilitas.</p>
+<p>Kita hidup di dunia yang tidak sepenuhnya pasti. Kita sering harus bertindak tanpa mengetahui semua hal. Kadang hasilnya baik, kadang tidak. Probabilitas tidak memberi kita kuasa untuk mengendalikan masa depan sepenuhnya. Tetapi probabilitas memberi kita sesuatu yang sangat penting: <strong>kerendahan hati dan keberanian</strong>.</p>
+<ul>
+<li>Rendah hati, karena kita tahu bahwa model kita tetap model, bukan kenyataan itu sendiri.</li>
+<li>Berani, karena walaupun tidak tahu segalanya, kita tetap bisa membuat keputusan yang lebih baik daripada sekadar menebak.</li>
+</ul>
+<p>Dalam arti itu, probabilitas adalah latihan intelektual sekaligus latihan karakter.</p>
+</section>
+<section id="arah-belajar-lanjut" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="arah-belajar-lanjut"><span class="header-section-number">8.11</span> 6.9 Arah Belajar Lanjut</h2>
+<p>Setelah random variable, ada banyak topik lanjutan yang menunggu. Misalnya:</p>
+<section id="sampling-distribution" class="level3" data-number="8.11.1">
+<h3 data-number="8.11.1" class="anchored" data-anchor-id="sampling-distribution"><span class="header-section-number">8.11.1</span> 1. Sampling distribution</h3>
+<p>Bagaimana statistik dari sampel juga menjadi random variable.</p>
+</section>
+<section id="estimasi" class="level3" data-number="8.11.2">
+<h3 data-number="8.11.2" class="anchored" data-anchor-id="estimasi"><span class="header-section-number">8.11.2</span> 2. Estimasi</h3>
+<p>Bagaimana menebak parameter populasi dari data.</p>
+</section>
+<section id="uji-hipotesis" class="level3" data-number="8.11.3">
+<h3 data-number="8.11.3" class="anchored" data-anchor-id="uji-hipotesis"><span class="header-section-number">8.11.3</span> 3. Uji hipotesis</h3>
+<p>Bagaimana membuat keputusan formal dari data.</p>
+</section>
+<section id="inferensi-bayesian" class="level3" data-number="8.11.4">
+<h3 data-number="8.11.4" class="anchored" data-anchor-id="inferensi-bayesian"><span class="header-section-number">8.11.4</span> 4. Inferensi Bayesian</h3>
+<p>Bagaimana memperbarui keyakinan saat data baru datang.</p>
+</section>
+<section id="proses-stokastik" class="level3" data-number="8.11.5">
+<h3 data-number="8.11.5" class="anchored" data-anchor-id="proses-stokastik"><span class="header-section-number">8.11.5</span> 5. Proses stokastik</h3>
+<p>Bagaimana memodelkan ketidakpastian yang berkembang terhadap waktu.</p>
+</section>
+<section id="machine-learning-probabilistik" class="level3" data-number="8.11.6">
+<h3 data-number="8.11.6" class="anchored" data-anchor-id="machine-learning-probabilistik"><span class="header-section-number">8.11.6</span> 6. Machine learning probabilistik</h3>
+<p>Bagaimana ide probabilitas dipakai dalam klasifikasi, prediksi, dan generative modeling.</p>
+<p>Dengan kata lain, random variable bukanlah akhir. Ia adalah pintu masuk ke wilayah yang jauh lebih luas.</p>
+</section>
+</section>
+<section id="sebuah-simulasi-penutup-kecil" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="sebuah-simulasi-penutup-kecil"><span class="header-section-number">8.12</span> 6.10 Sebuah Simulasi Penutup Kecil</h2>
+<p>Untuk menutup, mari kembali ke ide paling dasar: jika dunia acak, kita tidak harus menyerah. Kita bisa mensimulasikan, melihat pola, lalu memahami.</p>
+<p>Misalkan kita bandingkan rata-rata dari sampel acak Normal saat ukuran sampel membesar.</p>
+<div id="7a5c6fa6" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2026</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>true_mu <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>true_sigma <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">100</span>, <span class="dv">500</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> []</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> sample_sizes:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    sample <span class="op">=</span> rng.normal(loc<span class="op">=</span>true_mu, scale<span class="op">=</span>true_sigma, size<span class="op">=</span>n)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    means.append(sample.mean())</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">zip</span>(sample_sizes, means)))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[(5, np.float64(98.75556672945466)), (10, np.float64(100.67853136094531)), (30, np.float64(101.5093331179185)), (100, np.float64(100.4519454787968)), (500, np.float64(100.66502613594935))]</code></pre>
+</div>
+</div>
+<div id="ee7d59a2" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.plot(sample_sizes, means, marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Sample mean'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.axhline(true_mu, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'True mean'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Ukuran sampel"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Rata-rata sampel"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Semakin banyak data, estimasi rata-rata cenderung stabil"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06-penutup_files/figure-html/cell-3-output-1.png" width="680" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Simulasi kecil ini mengingatkan kita pada sesuatu yang sederhana tetapi penting: - ketidakpastian tidak hilang, - tetapi dengan model, data, dan perhitungan, kita bisa bergerak menuju pemahaman yang lebih stabil.</p>
+</section>
+<section id="ringkasan-besar-buku" class="level2" data-number="8.13">
+<h2 data-number="8.13" class="anchored" data-anchor-id="ringkasan-besar-buku"><span class="header-section-number">8.13</span> 6.11 Ringkasan Besar Buku</h2>
+<p>Kalau seluruh buku ini harus diringkas dalam beberapa kalimat, mungkin bunyinya seperti ini:</p>
+<ol type="1">
+<li>Dunia nyata penuh ketidakpastian.</li>
+<li>Random variable adalah cara memetakan ketidakpastian itu ke bilangan.</li>
+<li>Distribusi menjelaskan bagaimana peluang tersebar.</li>
+<li>Ekspektasi, variance, dan ukuran lain membantu kita menilai pilihan.</li>
+<li>Banyak keputusan nyata memerlukan lebih dari satu peubah acak.</li>
+<li>Python membuat konsep-konsep ini bisa dilihat, dicoba, dan diuji.</li>
+<li>Tujuan akhir probabilitas bukan sekadar menjawab soal, tetapi membantu kita <strong>berpikir lebih jernih saat harus memilih</strong>.</li>
+</ol>
+</section>
+<section id="pesan-untuk-mahasiswa" class="level2" data-number="8.14">
+<h2 data-number="8.14" class="anchored" data-anchor-id="pesan-untuk-mahasiswa"><span class="header-section-number">8.14</span> 6.12 Pesan untuk Mahasiswa</h2>
+<p>Kalau Anda pernah merasa probabilitas itu sulit, itu wajar. Banyak orang merasakannya. Tetapi sulit bukan berarti mustahil. Sering kali yang dibutuhkan bukan hanya lebih banyak rumus, melainkan cara masuk yang tepat: konteks yang hidup, contoh yang relevan, visualisasi yang jelas, dan keberanian untuk mencoba.</p>
+<p>Semoga buku ini sudah memberi jalan masuk itu.</p>
+<p>Yang lebih penting lagi: semoga setelah mempelajari buku ini, Anda tidak hanya menjadi mahasiswa yang bisa menghitung peluang, tetapi juga seseorang yang lebih cermat dalam berpikir, lebih jujur terhadap asumsi, dan lebih bertanggung jawab saat mengambil keputusan.</p>
+</section>
+<section id="ringkasan-poin-inti" class="level2" data-number="8.15">
+<h2 data-number="8.15" class="anchored" data-anchor-id="ringkasan-poin-inti"><span class="header-section-number">8.15</span> 6.13 Ringkasan Poin Inti</h2>
+<ol type="1">
+<li>Probabilitas adalah alat berpikir di bawah ketidakpastian.</li>
+<li>Random variable adalah fondasi utama untuk memodelkan dunia acak.</li>
+<li>Distribusi, mean, variance, dan CDF membantu kita membuat keputusan yang lebih baik.</li>
+<li>Banyak persoalan nyata melibatkan joint behavior beberapa peubah acak.</li>
+<li>Fungsi dari peubah acak sering kali justru menjadi besaran yang paling relevan.</li>
+<li>Python membantu mengubah konsep menjadi pengalaman belajar yang konkret.</li>
+<li>Tujuan akhir belajar probabilitas bukan sekadar lulus ujian, tetapi bertumbuh dalam cara berpikir.</li>
+</ol>
+</section>
+<section id="latihan-penutup" class="level2" data-number="8.16">
+<h2 data-number="8.16" class="anchored" data-anchor-id="latihan-penutup"><span class="header-section-number">8.16</span> 6.14 Latihan Penutup</h2>
+<section id="reflektif" class="level3" data-number="8.16.1">
+<h3 data-number="8.16.1" class="anchored" data-anchor-id="reflektif"><span class="header-section-number">8.16.1</span> Reflektif</h3>
+<ol type="1">
+<li>Konsep apa yang paling mengubah cara Anda melihat probabilitas?</li>
+<li>Kasus mana dalam buku ini yang paling terasa relevan bagi Anda?</li>
+<li>Apa hubungan antara probabilitas dan tanggung jawab dalam mengambil keputusan?</li>
+</ol>
+</section>
+<section id="konseptual-1" class="level3" data-number="8.16.2">
+<h3 data-number="8.16.2" class="anchored" data-anchor-id="konseptual-1"><span class="header-section-number">8.16.2</span> Konseptual</h3>
+<ol type="1">
+<li>Mengapa random variable menjadi jembatan antara dunia acak dan matematika?</li>
+<li>Mengapa mean saja sering tidak cukup?</li>
+<li>Apa perbedaan penting antara korelasi dan independensi?</li>
+</ol>
+</section>
+<section id="komputasional-1" class="level3" data-number="8.16.3">
+<h3 data-number="8.16.3" class="anchored" data-anchor-id="komputasional-1"><span class="header-section-number">8.16.3</span> Komputasional</h3>
+<ol type="1">
+<li>Pilih satu distribusi diskrit dan satu distribusi kontinu dari buku ini, lalu buat simulasi dan visualisasi ulang dengan parameter pilihan Anda sendiri.</li>
+<li>Buat satu mini-case baru dan modelkan dengan random variable yang sesuai.</li>
+</ol>
+</section>
+</section>
+<section id="penutup-akhir" class="level2" data-number="8.17">
+<h2 data-number="8.17" class="anchored" data-anchor-id="penutup-akhir"><span class="header-section-number">8.17</span> 6.15 Penutup Akhir</h2>
+<p>Buku ini sendiri lahir dari sebuah keputusan: keputusan untuk mengajarkan probabilitas dan statistika bukan sebagai tumpukan simbol yang dingin, tetapi sebagai ilmu yang dekat dengan pilihan nyata, logika yang hidup, dan eksplorasi yang menyenangkan.</p>
+<p>Kalau setelah perjalanan ini Anda mulai melihat dunia dengan pertanyaan seperti: - “apa random variable-nya?” - “apa distribusinya?” - “berapa mean dan variance-nya?” - “apa risiko dari keputusan ini?” - “bisakah saya simulasikan dulu di Python?”</p>
+<p>maka buku ini sudah mencapai tujuannya.</p>
+<p>Selamat melanjutkan perjalanan belajar. Ketidakpastian tidak akan pernah hilang dari dunia nyata. Tetapi sekarang Anda sudah memiliki bahasa, alat, dan cara berpikir yang lebih kuat untuk menghadapinya.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Disalin!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Disalin!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05-random-variable-multivariat-dan-fungsi.html" class="pagination-link" aria-label="Bab 5. Random Variable Multivariat dan Fungsi Random Variable">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bab 5. Random Variable Multivariat dan Fungsi Random Variable</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
