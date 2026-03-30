@@ -10,6 +10,8 @@ format: html
 
 Buku ini ditulis untuk mendampingi mahasiswa **II-2111 Probabilitas Statistika** memahami topik **Random Variable** dengan cara yang lebih hidup, lebih aplikatif, dan lebih dekat dengan keputusan nyata.
 
+![Random Variables](slides/memahami%20perubah%20acak.png)
+
 Alih-alih memulai dari definisi yang terasa jauh, buku ini mengajak pembaca masuk dari pertanyaan yang lebih akrab:
 
 - Bagaimana membuat keputusan ketika masa depan belum pasti?
@@ -68,6 +70,8 @@ Buku ini terdiri dari enam bab utama:
 6. **Penutup**  
    Ringkasan ide besar buku, checklist kompetensi, dan peneguhan bahwa probabilitas adalah cara berpikir di bawah ketidakpastian.
 
+![Aplikasi](slides/aplikasi_perubah_acak.png)
+
 ## Untuk Siapa Buku Ini
 
 Buku ini terutama ditujukan untuk mahasiswa tingkat dua, khususnya yang:
@@ -81,3 +85,17 @@ Buku ini terutama ditujukan untuk mahasiswa tingkat dua, khususnya yang:
 Semoga buku ini membantu Anda mengalami sesuatu yang penting: bahwa probabilitas bukanlah kumpulan simbol yang dingin, melainkan bahasa yang sangat berguna saat kita harus berpikir, memilih, dan bertindak di dunia yang tidak sepenuhnya pasti.
 
 Silakan mulai dari **Kata Pengantar**, lalu masuk ke **Bab 1**.
+
+## Slides
+   - [Download PDF Random Variable Essentials](slides/Random_Variable_Essentials.pdf)
+   
+   - [Download PDF Probability Architecture](slides/Probability_Architecture.pdf)
+   
+   - [Download PDF Discrete Distribution Blueprint](slides/Discrete_Distribution_Blueprint.pdf)
+
+   - [Download PDF Applied Probability Architecture](slides/Applied_Probability_Blueprint.pdf)
+
+   - [Download Berbentuk Buku](slides/Random-Variable-untuk-Pengambilan-Keputusan.pdf)
+
+   
+

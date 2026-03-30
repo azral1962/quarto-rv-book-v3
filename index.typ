@@ -467,6 +467,18 @@ Probabilitas Statistika untuk Mahasiswa II-2111 Probabilitas dan Statistika
 <selamat-datang>
 Buku ini ditulis untuk mendampingi mahasiswa #strong[II-2111 Probabilitas Statistika] memahami topik #strong[Random Variable] dengan cara yang lebih hidup, lebih aplikatif, dan lebih dekat dengan keputusan nyata.
 
+#figure([
+#box(image("slides/memahami perubah acak.png"))
+], caption: figure.caption(
+position: bottom, 
+[
+Random Variables
+]), 
+kind: "quarto-float-fig", 
+supplement: "Gambar", 
+)
+
+
 Alih-alih memulai dari definisi yang terasa jauh, buku ini mengajak pembaca masuk dari pertanyaan yang lebih akrab:
 
 - Bagaimana membuat keputusan ketika masa depan belum pasti?
@@ -525,6 +537,18 @@ Buku ini terdiri dari enam bab utama:
 + #strong[Penutup] \
   Ringkasan ide besar buku, checklist kompetensi, dan peneguhan bahwa probabilitas adalah cara berpikir di bawah ketidakpastian.
 
+#figure([
+#box(image("slides/aplikasi_perubah_acak.png"))
+], caption: figure.caption(
+position: bottom, 
+[
+Aplikasi
+]), 
+kind: "quarto-float-fig", 
+supplement: "Gambar", 
+)
+
+
 == Untuk Siapa Buku Ini
 <untuk-siapa-buku-ini>
 Buku ini terutama ditujukan untuk mahasiswa tingkat dua, khususnya yang: - ingin memahami probabilitas secara konseptual, - ingin melihat contoh nyata dan relevan, - ingin belajar Python sambil tetap berpikir, - dan ingin merasakan bahwa statistika bukan sekadar soal ujian, tetapi alat untuk hidup dan bekerja dengan lebih cerdas.
@@ -534,6 +558,18 @@ Buku ini terutama ditujukan untuk mahasiswa tingkat dua, khususnya yang: - ingin
 Semoga buku ini membantu Anda mengalami sesuatu yang penting: bahwa probabilitas bukanlah kumpulan simbol yang dingin, melainkan bahasa yang sangat berguna saat kita harus berpikir, memilih, dan bertindak di dunia yang tidak sepenuhnya pasti.
 
 Silakan mulai dari #strong[Kata Pengantar], lalu masuk ke #strong[Bab 1].
+
+== Slides
+<slides>
+- #link("slides/Random_Variable_Essentials.pdf")[Download PDF Random Variable Essentials]
+
+- #link("slides/Probability_Architecture.pdf")[Download PDF Probability Architecture]
+
+- #link("slides/Discrete_Distribution_Blueprint.pdf")[Download PDF Discrete Distribution Blueprint]
+
+- #link("slides/Applied_Probability_Blueprint.pdf")[Download PDF Applied Probability Architecture]
+
+- #link("slides/Random-Variable-untuk-Pengambilan-Keputusan.pdf")[Download Berbentuk Buku]
 
 = Kata Pengantar
 <kata-pengantar>
@@ -1277,10 +1313,10 @@ Kalau setelah membaca bab ini Anda merasa, “Ternyata probabilitas bukan sekada
 
 Di bab berikutnya, kita akan memperdalam apa sebenarnya random variable itu, bagaimana range-nya didefinisikan, dan bagaimana PMF, CDF, PDF, ekspektasi, serta varians menjadi fondasi seluruh analisis berikutnya.
 
-= Bab 2. Random Variable Umum
-<bab-2.-random-variable-umum>
-== Tujuan Bab
+= Tujuan Bab
 <tujuan-bab-1>
+title: "Bab 2. Random Variable Umum" format: html jupyter: python3
+
 Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
 
 + memahami #strong[random variable] sebagai pemetaan dari hasil acak ke bilangan,
@@ -1774,8 +1810,8 @@ Berikut beberapa alat Python yang sangat sering dipakai untuk random variable.
 [#NormalTok("sample_norm ");#OperatorTok("=");#NormalTok(" np.random.normal(loc");#OperatorTok("=");#DecValTok("0");#NormalTok(", scale");#OperatorTok("=");#DecValTok("1");#NormalTok(", size");#OperatorTok("=");#DecValTok("10");#NormalTok(")");],
 [],
 [#NormalTok("sample_binom, sample_norm[:");#DecValTok("5");#NormalTok("]");],));
-#Skylighting(([#NormalTok("(array([5, 5, 1, 5, 2, 4, 4, 1, 3, 3], dtype=int32),");],
-[#NormalTok(" array([-1.05393446,  0.89598177, -1.87687854, -1.58005177, -0.81141635]))");],));
+#Skylighting(([#NormalTok("(array([3, 4, 4, 3, 2, 1, 5, 4, 7, 3], dtype=int32),");],
+[#NormalTok(" array([-0.75163847, -0.68519153, -0.03686633, -0.3187016 , -1.21784512]))");],));
 === PMF / PDF / CDF dari SciPy
 <pmf-pdf-cdf-dari-scipy>
 #Skylighting(([#NormalTok("x_discrete ");#OperatorTok("=");#NormalTok(" np.arange(");#DecValTok("0");#NormalTok(", ");#DecValTok("11");#NormalTok(")");],
@@ -1871,10 +1907,230 @@ Bab ini mungkin terlihat “dasar”, tetapi fondasi yang kuat justru dibuat dar
 
 Di bab berikutnya, kita akan mulai memasuki keluarga-keluarga #strong[distribusi diskrit khusus] yang sangat sering dipakai dalam pemodelan: Bernoulli, Binomial, Geometric, Poisson, dan lainnya.
 
-= Bab 3. Distribusi Random Variable Diskrit
-<bab-3.-distribusi-random-variable-diskrit>
-== Tujuan Bab
+== Tambahan Soal
+<tambahan-soal>
+Sumber: "Problem Set 3: Probabilitas dan Statistik" author: "Dosen: Dimitri Mahayana"
+
+#strong[Soal 1] Misalkan $X$ adalah #emph[random variable] diskrit dengan Probability Mass Function (PMF):
+
+$ P \( X = x \) = cases(delim: "{", 0 \, 1 & upright("untuk ") x = 0 \, 2, 0 \, 2 & upright("untuk ") x = 0 \, 4, 0 \, 2 & upright("untuk ") x = 0 \, 5, 0 \, 3 & upright("untuk ") x = 0 \, 8, 0 \, 2 & upright("untuk ") x = 1, 0 & upright("lainnya")) $
+
+#block[
+#set enum(numbering: "a.", start: 1)
++ Tentukan $R_x$, range dari #emph[random variable] $X$!
++ Tentukan $P \( X lt.eq 0 \, 5 \)$!
++ Tentukan $P \( 0 \, 25 < X < 0 \, 75 \)$!
++ Tentukan $P \( X = 0 \, 2 divides X < 0 \, 6 \)$!
++ Tentukan $mu$ dan $sigma^2$!
+]
+
+#strong[Soal 2] Diketahui fungsi distribusi #emph[random variable] diskrit $X$ adalah:
+
+$ F \( x \) = cases(delim: "{", 0 \, & x < - 1, 0 \, 2 \, & - 1 lt.eq x < 0, 0 \, 5 \, & 0 lt.eq x < 1, 0 \, 8 \, & 1 lt.eq x < 3, 1 \, & x gt.eq 3) $
+
+#block[
+#set enum(numbering: "a.", start: 1)
++ Gambarkan grafik $F \( x \)$!
++ Tentukan fungsi massa probabilitas untuk $X$!
++ Hitung $P \( X < 1 \)$!
++ Hitung $P \( 0 < X lt.eq 3 \)$!
++ Hitung $P \( 0 lt.eq X < 3 \)$!
++ Hitung $P \( 0 < X < 3 \)$!
++ Hitung $P \( 0 lt.eq X lt.eq 3 \)$!
+]
+
+#strong[Soal 3] Misalkan #emph[random variable] $X$ mempunyai fungsi distribusi kumulatif:
+
+$ F \( x \) = cases(delim: "{", 0 & x lt.eq 0, 1 - e^(- x^2) & x > 0) $
+
+Berapa probabilitas $X$ melebihi 1?
+
+#strong[Soal 4] Tentukan range dari masing-masing #emph[random variable] berikut: a. Suatu timbangan elektrik menampilkan berat pada gram terdekatnya. Timbangan ini hanya menampilkan 5 digit saja. Semua berat yang lebih dari nilai tersebut (99999 g) akan ditampilkan sebagai 99999. #emph[Random variable] nya adalah berat yang ditampilkan. b. Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. #emph[Random variable] nya adalah jumlah part dari sampling sebanyak 5 part yang tidak sesuai dengan persyaratan pelanggan. c.~Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. Part tersebut dipilih secara acak, secara langsung tanpa pengembalian, sampai part yang tidak sesuai dengan syarat didapat. #emph[Random variable] nya adalah jumlah part yang terambil.
+
+#strong[Soal 5] Suatu sistem komunikasi untuk bisnis mempunyai 4 jalur eksternal. Pada waktu tertentu, sistem ini diobservasi. Misalkan #emph[random variable] $X$ melambangkan jumlah jalur yang digunakan. Asumsikan probabilitas suatu jalur sedang digunakan saat observasi adalah 0,8. Tentukan ruang sampel dari observasi tersebut! Gambarkan dalam tabel! Diasumsikan bahwa jalur satu sama lain adalah independen.
+
+#strong[Soal 6] Divisi Marketing memperkirakan bahwa sebuah alat baru untuk analisis sampel tanah akan sangat berhasil, berhasil, atau tidak berhasil dengan probabilitas 0,3; 0,6; dan 0,1 secara berurutan. Pendapatan tahunan berkaitan dengan produk yang sangat berhasil, berhasil, atau tidak berhasil adalah Rp. 100 milyar, Rp. 50 milyar, dan Rp. 10 milyar secara berurutan. Misalkan $X$ adalah #emph[random variable] yang menyatakan pendapatan tahunan dari produk tersebut. Tentukan PMF dari $X$!
+
+#strong[Soal 7] Sebuah perusahaan manufaktur disk drive memperkirakan bahwa dalam lima tahun, sebuah storage device dengan kapasitas 1TB, 500GB, dan 100GB akan terjual dengan probabilitas 0,5; 0,3; dan 0,2 dengan pendapatan tahunan sebesar Rp. 500 milyar, Rp. 250 milyar, dan Rp. 100 milyar secara berurutan. Misalkan $X$ adalah #emph[random variable] yang menyatakan pendapatan tahunan dari produk tersebut. Tentukan PMF dari $X$!
+
+#strong[Soal 8] Dalam proses manufaktur semikonduktor, 3 wafer diuji. Setiap wafer akan dinyatakan lolos uji atau gagal. Asumsi probabilitas sebuah wafer lolos uji adalah 0,8 dan wafer-wafer tersebut independen. a. Tentukan PMF dari jumlah wafer yang lolos uji! b. Tentukan CMF dari jumlah wafer yang lolos uji! c.~Tentukan mean dari #emph[random variable] tersebut! d.~Tentukan variansi dari #emph[random variable] tersebut!
+
+#strong[Soal 9] Maskapai penerbangan menjual 125 tiket untuk 120 penumpang. Probabilitas penumpang tidak datang adalah 0,1 dan penumpang berperilaku independen. a. Berapa probabilitas setiap penumpang yang datang bisa mendapatkan penerbangan? b. Berapa probabilitas penerbangan berangkat dengan kursi kosong?
+
+#strong[Soal 10] Jumlah panggilan telepon yang datang pada suatu operator selular sering dimodelkan sebagai #emph[random variable] yang mengikuti distribusi Poisson. Misalkan pada rata-ratanya, terdapat 10 panggilan per jam. a. Berapa probabilitas terdapat tepat 5 panggilan dalam 1 jam? b. Berapa probabilitas terdapat 3 atau kurang panggilan dalam 1 jam? c.~Berapa probabilitas terdapat tepat 15 panggilan dalam 2 jam? d.~Berapa probabilitas terdapat tepat 5 panggilan dalam 30 menit?
+
+#strong[Soal 11] Jumlah permukaan cacat pada panel plastik yang digunakan dalam interior mobil memiliki distribusi Poisson dengan mean 0,05 cacat per ft$""^2$. Asumsikan suatu interior mobil mengandung 10 ft$""^2$ panel plastik. a. Berapa probabilitas tidak terdapat cacat permukaan pada interior mobil? b. Jika sepuluh mobil dijual, berapa probabilitas dari sepuluh mobil tersebut tidak ada yang memiliki cacat permukaan? c.~Jika sepuluh mobil dijual, berapa probabilitas paling banyak satu mobil yang memiliki cacat permukaan? d.~Jika 100 Panel diperiksa, berapa probabilitas lebih sedikit dari 5 panel memiliki cacat permukaan?
+
+#strong[Soal 12] Sebuah bank berskala nasional merencanakan meletakkan 5 set infrastruktur hardware di 5 Data Center (Jakarta, Surabaya, Kalimantan, Batam, dan Papua) untuk menjalankan aplikasi #emph[Core Banking System] (CBS). Masing-masing set infrastruktur hardware memiliki probabilitas untuk bekerja dengan baik sebesar 0,8. Definisikan $X$ sebagai #emph[random variable] yang merepresentasikan jumlah Data Center yang bekerja dengan baik. a. Buatlah tabel distribusi probabilitas #emph[random variable] $X$! b. Gambarkan distribusi peluang #emph[random variable] $X$! c.~Gambarkan distribusi kumulatif #emph[random variable] $X$! d.~Dengan melihat gambar distribusi kumulatif, estimasikan suatu nilai $M$ sehingga $P \( X lt.eq M \) = 0 \, 5$. Nilai $M$ ini disebut nilai median! e. Tentukan mean dan variansi untuk #emph[random variable] $X$! f.~Tentukan probabilitas sistem down secara total! g. Tentukan probabilitas sistem nyaris down secara total (tinggal 1 Data Center yang bekerja dengan baik)! h. Tentukan probabilitas minimal 1 Data Center bekerja dengan baik!
+
+#strong[Soal 13] Sebuah komponen memiliki umur $L$ yang diukur dalam satuan hari, sedemikian sehingga $P \( L = n \)$ dari kegagalan pada hari ke-$n$ diberikan oleh distribusi geometrik, dan mengikuti $P \( L = n \) = \( 1 - b \) b^n$\; untuk $n = 0 \, 1 \, 2 \, 3 \, dots.h$. Bila $b = 0 \, 6$: a. Gambarkan distribusi peluang dari #emph[random variable] $L$! b. Gambarkan distribusi kumulatif dari #emph[random variable] $L$! c.~Estimasikan suatu nilai $M$ sehingga $P \( L lt.eq M \) = 0 \, 5$ (nilai median)! d.~Tentukan nilai ekspektasi (mean) untuk #emph[random variable] $L$! e. Tentukan peluang kejadian $F_i$, yaitu kejadian bahwa tidak terjadi failure (kerusakan) sebelum hari ke-$i$.
+
+#strong[Soal 14] Diketahui fungsi padat probabilitas (#emph[density function]) dari #emph[random variable] kontinu $X$ adalah:
+
+$ f \( x \) = cases(delim: "{", k x \, & 0 lt.eq x lt.eq 4, 0 \, & x upright(" lainnya")) $
+
+#block[
+#set enum(numbering: "a.", start: 1)
++ Hitung nilai $k$!
++ Gambar grafik $f \( x \)$!
++ Hitung $F \( x \)$!
++ Gambarkan grafik $F \( x \)$!
++ Hitung $P \( X < 1 \/ 2 \)$ dan $P \( 1 \/ 2 < X < 1 \)$!
+]
+
+#strong[Soal 15] Running time algoritma komputasi tertentu $R$ minimal adalah satu unit waktu ($v = 1$) dan peluang $R > 10$ unit waktu adalah 0,5. Hal ini dengan asumsi bahwa algoritma ini diinisiasi secara sebarang. Tentukan probabilitas bahwa running time melebihi 1000 unit waktu! Diasumsikan $R$ mengikuti distribusi Pareto:
+
+$ f \( r \) = frac(a r_m^a, r^(a + 1)) quad upright("dan") quad F \( r \) = 1 - (r_m / r)^a $
+
+#strong[Soal 16] Sebuah sesi #emph[file transfer protocol] (ftp) berdurasi $L$ memiliki waktu minimum $t_0$. Diketahui $P \( L > 2 t_0 \) = 4 P \( L > 4 t_0 \)$ dan probability density function $L$ adalah $f \( l \) = a t_0^a l^(- a - 1)$, $a > 0$ untuk $l gt.eq t_0$ dan nol untuk $l < t_0$. Tentukan probabilitas sebuah sesi akan melebihi $10 t_0$!
+
+#strong[Soal 17] Kereta Api tiba di stasiun setiap 15 menit dimulai pukul 07.00. Jika seorang penumpang tiba distasiun tersebut pukul 07.00 sampai 07.30 yang dianggap berdistribusi uniform, hitung peluang penumpang tersebut menunggu kereta api kurang dari 5 menit?
+
+#strong[Soal 18] Probabilitas fungsi kepadatan dari berat bersih (dalam pound) pada sebuah paket senyawa kimia herbisida adalah $f \( x \) = 2 \, 0$ untuk setiap nilai pada $49 \, 75 < x < 50 \, 25$ pounds. a. Tentukan probabilitas untuk paket tersebut memiliki berat lebih dari 50 pounds. b. Berapa banyak senyawa kimia yang terkandung dalam 90% dari keseluruhan paket?
+
+#strong[Soal 19] Diketahui fungsi distribusi #emph[random variable] kontinu $X$ adalah:
+
+$ F \( x \) = cases(delim: "{", 0 & x < 0, 0 \, 2 x & 0 lt.eq x < 4, 0 \, 04 x + 0 \, 64 & 4 lt.eq x < 9, 1 & 9 lt.eq x) $
+
+#block[
+#set enum(numbering: "a.", start: 1)
++ Tentukan nilai $E \( X \)$!
++ Tentukan nilai $P \( X gt.eq 6 \)$!
+]
+
+#strong[Soal 20] Jumlah kesalahan ketik dalam suatu buku teks mengikuti distribusi Poisson dengan mean 0,01 kesalahan/halaman. Berapa probabilitas terdapat kurang dari atau sama dengan tiga kesalahan dalam 100 halaman?
+
+#strong[Soal 21] Suatu persimpangan dengan lampu sinyal pada jalur berangkat pagi adalah 20% hijau pada waktu kamu melewatinya. Asumsikan setiap pagi adalah percobaan yang independen. a. Dalam 5 pagi (5 hari), berapa probabilitas lampunya hijau hanya pada satu pagi saja? b. Dalam 20 pagi, berapa probabilitas lampunya hijau tepat empat kali? c.~Dalam 20 minggu, berapa probabilitas lampunya hijau lebih dari empat kali?
+
+#strong[Soal 22] Suatu perusahaan menyimpan komponen yang didapat dari pemasok. Misalkan 2% dari komponen adalah cacat dan komponen yang cacat saling bebas satu sama lain. Berapa banyak komponen yang harus dipunya perusahaan sehingga 100 order dapat diselesaikan tanpa memesan komponen lagi mempunyai probabilitas paling tidak 0,95?
+
+#strong[Soal 23] Misalkan bahwa jumlah km suatu mobil bisa melaju sampai akinya habis adalah berdistribusi eksponensial dengan mean 10000 km. Jika seseorang ingin melakukan perjalanan 5000 km, berapa probabilitas dia bisa menyelesaikan perjalanannya tanpa harus mengganti akinya?
+
+Berikut adalah analisis dari setiap soal pada Problem Set 3 beserta prinsip probabilitas yang digunakan, solusinya, dan implementasi kode Python untuk memecahkannya.
+
+=== #strong[Prinsip-Prinsip Dasar yang Digunakan]
+<prinsip-prinsip-dasar-yang-digunakan>
+Berdasarkan materi kuliah #emph[Random Variable], berikut adalah prinsip utama untuk menyelesaikan Problem Set 3: 1. #strong[Random Variable Diskrit:] Memiliki himpunan nilai yang terhitung. Fungsi Probabilitas (PMF) dinotasikan dengan $f \( x \) = P \( X = x \)$ dengan syarat $sum f \( x \) = 1$. 2. #strong[Random Variable Kontinu:] Nilainya terdefinisi pada interval tak terhitung, dan probabilitas adalah luas area di bawah kurva Fungsi Kepadatan Probabilitas (PDF), dihitung dengan integral $P \( a < X < b \) = integral_a^b f \( x \) d x$. 3. #strong[Fungsi Distribusi Kumulatif (CDF):] CDF atau $F \( x \)$ adalah akumulasi probabilitas $P \( X lt.eq x \)$. Pada fungsi kontinu, $f \( x \)$ adalah turunan pertama dari CDF, yaitu $f \( x \) = d F \( x \) \/ d x$. 4. #strong[Nilai Harap (Mean/Ekspektasi) dan Variansi:] Mean ($mu$) menunjukkan pusat distribusi probabilitas, dihitung dengan $sum x f \( x \)$ untuk diskrit dan $integral x f \( x \) d x$ untuk kontinu. Variansi ($sigma^2$) mengukur penyebaran, dihitung dengan $E \( X^2 \) - mu^2$.
+
+#horizontalrule
+
+=== #strong[Solusi Bebrapa Soal Problem Set 3]
+<solusi-bebrapa-soal-problem-set-3>
+#strong[Soal 1: Analisis Distribusi Diskrit] \* #strong[Masalah:] Diketahui $X$ diskrit dengan $P \( 0 \, 2 \) = 0 \, 1 \; P \( 0 \, 4 \) = 0 \, 2 \; P \( 0 \, 5 \) = 0 \, 2 \; P \( 0 \, 8 \) = 0 \, 3 \; P \( 1 \) = 0 \, 2$. \* #strong[Solusi:] \* #strong[Range ($R_x$):] ${ 0 \, 2 \; #h(0em) 0 \, 4 \; #h(0em) 0 \, 5 \; #h(0em) 0 \, 8 \; #h(0em) 1 }$. \* #strong[$P \( X lt.eq 0 \, 5 \)$:] $0 \, 1 + 0 \, 2 + 0 \, 2 = upright(bold(0 \, 5))$. \* #strong[$P \( 0 \, 25 < X < 0 \, 75 \)$:] Nilai yang masuk hanyalah 0,4 dan 0,5. Jumlahnya $= 0 \, 2 + 0 \, 2 = upright(bold(0 \, 4))$ #emph[\(Catatan: Pada dokumen sumber terdapat ralat perhitungan manual di mana probabilitas $0 \, 8$ ikut ditambahkan sehingga menjadi $0 \, 7$)]. \* #strong[Probabilitas Bersyarat $P \( X = 0 \, 2 divides X < 0 \, 6 \)$:] $P \( X = 0 \, 2 \) \/ P \( X < 0 \, 6 \) = 0 \, 1 \/ \( 0 \, 1 + 0 \, 2 + 0 \, 2 \) = 0 \, 1 \/ 0 \, 5 = upright(bold(0 \, 2))$. \* #strong[Mean & Variansi:] $mu = sum x P \( x \) = upright(bold(0 \, 64))$. Variansi $sigma^2 = E \( X^2 \) - mu^2 = 0 \, 478 - 0 \, 64^2 = upright(bold(0 \, 0684))$.
+
+#strong[Soal 2: Fungsi Distribusi Kumulatif (CDF) Eksponensial Khusus] \* #strong[Masalah:] $F \( x \) = 1 - e^(- x^2)$ untuk $x > 0$. Berapa probabilitas $X > 1$?. \* #strong[Solusi:] $P \( X > 1 \) = 1 - P \( X lt.eq 1 \) = 1 - F \( 1 \) = 1 - \( 1 - e^(- 1) \) = e^(- 1) approx upright(bold(0 \, 3679))$.
+
+#strong[Soal 3 & 4: Pemodelan Fungsi Massa Probabilitas (PMF)] \* #strong[Masalah:] Menerjemahkan probabilitas kesuksesan produk menjadi fungsi PMF pendapatan $X$. \* #strong[Solusi:] \* #strong[Soal 3:] $f \( 10 M \) = 0 \, 1 \; #h(0em) f \( 50 M \) = 0 \, 6 \; #h(0em) f \( 100 M \) = 0 \, 3$. \* #strong[Soal 4:] $f \( 100 M \) = 0 \, 2 \; #h(0em) f \( 250 M \) = 0 \, 3 \; #h(0em) f \( 500 M \) = 0 \, 5$.
+
+#strong[Soal 5: PDF Berupa Garis Linear ($f \( x \) = k x$)] \* #strong[Masalah:] $f \( x \) = k x$ untuk $0 lt.eq x lt.eq 4$. Tentukan konstanta $k$, CDF, dan probabilitas pada rentang tertentu. \* #strong[Solusi:] \* #strong[Mencari $k$:] $integral_0^4 k x d x = 1 arrow.r.double.long 8 k = 1 arrow.r.double.long upright(bold(k = 1 \/ 8))$. \* #strong[Fungsi CDF ($F \( x \)$):] $integral_0^x 1 / 8 t d t = upright(bold(x^2 \/ 16))$. \* #strong[$P \( X < 1 \/ 2 \)$:] $F \( 1 \/ 2 \) = \( 1 \/ 2 \)^2 \/ 16 = upright(bold(1 \/ 64))$. \* #strong[$P \( 1 \/ 2 < X < 1 \)$:] $F \( 1 \) - F \( 1 \/ 2 \) = 1 / 16 - 1 / 64 = upright(bold(3 \/ 64))$.
+
+#strong[Soal 6: Distribusi Pareto (Waktu Komputasi Algoritma)] \* #strong[Masalah:] $F \( r \) = 1 - \( 1 \/ r \)^alpha$. Diketahui $P \( R > 10 \) = 0 \, 5$. Cari $P \( R > 1000 \)$. \* #strong[Solusi:] Substitusi $P \( R lt.eq 10 \) = 0 \, 5 arrow.r.double.long 1 - \( 1 \/ 10 \)^alpha = 0 \, 5 arrow.r.double.long 10^(- alpha) = 0 \, 5 arrow.r.double.long alpha = - log \( 0 \, 5 \)$. Lalu hitung target: $P \( R > 1000 \) = \( 1 \/ 1000 \)^(- log \( 0 \, 5 \)) = upright(bold(0 \, 125))$.
+
+#strong[Soal 7: Distribusi Seragam Senyawa Kimia] \* #strong[Masalah:] $f \( x \) = 2 \, 0$ pada interval $49 \, 75 < x < 50 \, 25$. Jika $Y$ melambangkan $90 %$ dari $X$, tentukan nilai batas intervalnya. \* #strong[Solusi:] $P \( X > 50 \) = integral_50^(50 \, 25) 2 \, 0 d x = upright(bold(0 \, 5))$. Transformasi $Y = 0 \, 9 X arrow.r.double.long X = Y \/ 0 \, 9 approx 1 \, 111 Y$. Maka interval batas baru $Y$ adalah $49 \, 75 < 1 \, 111 Y < 50 \, 25 arrow.r.double.long upright(bold(44 \, 775 < y < 47 \, 25))$.
+
+#strong[Soal 8: Ekstraksi PDF dari CDF Terpotong (Piecewise)] \* #strong[Masalah:] Diketahui CDF $F \( x \) = 0 \, 2 x$ (untuk $0 lt.eq x < 4$) dan $0 \, 04 x + 0 \, 64$ (untuk $4 lt.eq x < 9$). Hitung Ekspektasi $E \( X \)$ dan $P \( X gt.eq 6 \)$. \* #strong[Solusi:] \* Turunkan $F \( x \)$ untuk mendapat $f \( x \)$: Diperoleh $f \( x \) = 0 \, 2$ pada $x in \[ 0 \, 4 \)$ dan $f \( x \) = 0 \, 04$ pada $x in \[ 4 \, 9 \)$. \* #strong[Ekspektasi $E \( X \)$:] $integral_0^4 x \( 0 \, 2 \) d x + integral_4^9 x \( 0 \, 04 \) d x = 1 \, 6 + 1 \, 3 = upright(bold(2 \, 9))$. \* #strong[$P \( X gt.eq 6 \)$:] $1 - F \( 6 \) = 1 - \( 0 \, 04 \( 6 \) + 0 \, 64 \) = 1 - 0 \, 88 = upright(bold(0 \, 12))$.
+
+#horizontalrule
+
+=== #strong[Desain Kode Python (Class #NormalTok("ProbSet3Solver");)]
+<desain-kode-python-class-probset3solver>
+Kode berikut menyediakan alat matematis berbasis fungsi integrasi #NormalTok("scipy"); dan #NormalTok("numpy"); untuk menyelesaikan seluruh logika soal di atas secara #emph[reusable].
+
+#Skylighting(([#ImportTok("import");#NormalTok(" numpy ");#ImportTok("as");#NormalTok(" np");],
+[#ImportTok("import");#NormalTok(" scipy.integrate ");#ImportTok("as");#NormalTok(" integrate");],
+[#ImportTok("import");#NormalTok(" math");],
+[],
+[#KeywordTok("class");#NormalTok(" ProbSet3Solver:");],
+[#NormalTok("    ");#CommentTok("\"\"\"Class penyelesaian Problem Set 3 Probabilitas & Statistik\"\"\"");],
+[#NormalTok("    ");],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" discrete_stats(x_vals, p_vals):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Menghitung Mean dan Variansi Distribusi Diskrit (Soal 1)\"\"\"");],
+[#NormalTok("        mean ");#OperatorTok("=");#NormalTok(" ");#BuiltInTok("sum");#NormalTok("(x ");#OperatorTok("*");#NormalTok(" p ");#ControlFlowTok("for");#NormalTok(" x, p ");#KeywordTok("in");#NormalTok(" ");#BuiltInTok("zip");#NormalTok("(x_vals, p_vals))");],
+[#NormalTok("        e_x_square ");#OperatorTok("=");#NormalTok(" ");#BuiltInTok("sum");#NormalTok("((x");#OperatorTok("**");#DecValTok("2");#NormalTok(") ");#OperatorTok("*");#NormalTok(" p ");#ControlFlowTok("for");#NormalTok(" x, p ");#KeywordTok("in");#NormalTok(" ");#BuiltInTok("zip");#NormalTok("(x_vals, p_vals))");],
+[#NormalTok("        variance ");#OperatorTok("=");#NormalTok(" e_x_square ");#OperatorTok("-");#NormalTok(" (mean");#OperatorTok("**");#DecValTok("2");#NormalTok(")");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" mean, variance");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" discrete_conditional(x_vals, p_vals, target_x, condition_max):");],
+[#NormalTok("        ");#CommentTok("\"\"\"P(X = target_x | X < condition_max)\"\"\"");],
+[#NormalTok("        p_target ");#OperatorTok("=");#NormalTok(" p_vals[x_vals.index(target_x)]");],
+[#NormalTok("        p_condition ");#OperatorTok("=");#NormalTok(" ");#BuiltInTok("sum");#NormalTok("(p ");#ControlFlowTok("for");#NormalTok(" x, p ");#KeywordTok("in");#NormalTok(" ");#BuiltInTok("zip");#NormalTok("(x_vals, p_vals) ");#ControlFlowTok("if");#NormalTok(" x ");#OperatorTok("<");#NormalTok(" condition_max)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" p_target ");#OperatorTok("/");#NormalTok(" p_condition");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" continuous_cdf_exp_square(x):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Evaluasi F(x) = 1 - e^(-x^2) untuk mencari P(X > x) (Soal 2)\"\"\"");],
+[#NormalTok("        f_x ");#OperatorTok("=");#NormalTok(" ");#DecValTok("1");#NormalTok(" ");#OperatorTok("-");#NormalTok(" math.exp(");#OperatorTok("-");#NormalTok("(x");#OperatorTok("**");#DecValTok("2");#NormalTok("))");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" ");#DecValTok("1");#NormalTok(" ");#OperatorTok("-");#NormalTok(" f_x ");#CommentTok("# P(X > x)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" find_pdf_constant(func_template, a, b):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Mencari konstanta k agar Integral f(x) = 1 (Soal 5)\"\"\"");],
+[#NormalTok("        ");#CommentTok("# func_template adalah fungsi tanpa k, misal x -> x");],
+[#NormalTok("        integral_val, _ ");#OperatorTok("=");#NormalTok(" integrate.quad(func_template, a, b)");],
+[#NormalTok("        k ");#OperatorTok("=");#NormalTok(" ");#DecValTok("1");#NormalTok(" ");#OperatorTok("/");#NormalTok(" integral_val");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" k");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" pareto_probability(r_known, p_known_greater, r_target):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Menyelesaikan Soal Pareto dengan mencari alpha dari logaritma (Soal 6)\"\"\"");],
+[#NormalTok("        ");#CommentTok("# P(R > r_known) = p_known_greater  => (1/r_known)^alpha = p_known_greater");],
+[#NormalTok("        ");#CommentTok("# alpha * log(1/r_known) = log(p_known_greater)");],
+[#NormalTok("        alpha ");#OperatorTok("=");#NormalTok(" math.log(p_known_greater) ");#OperatorTok("/");#NormalTok(" math.log(");#DecValTok("1");#NormalTok(" ");#OperatorTok("/");#NormalTok(" r_known)");],
+[#NormalTok("        ");#CommentTok("# Menghitung probabilitas target P(R > r_target)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" (");#DecValTok("1");#NormalTok(" ");#OperatorTok("/");#NormalTok(" r_target)");#OperatorTok("**");#NormalTok("alpha");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" piecewise_expected_value(funcs, bounds):");],
+[#NormalTok("        ");#CommentTok("\"\"\"");],
+[#CommentTok("        Mencari E(X) dari fungsi terpotong (Piecewise) (Soal 8).");],
+[#CommentTok("        funcs = [f1(x), f2(x)], bounds = [(a,b), (c,d)]");],
+[#CommentTok("        \"\"\"");],
+[#NormalTok("        expected_value ");#OperatorTok("=");#NormalTok(" ");#DecValTok("0");],
+[#NormalTok("        ");#ControlFlowTok("for");#NormalTok(" f, (a, b) ");#KeywordTok("in");#NormalTok(" ");#BuiltInTok("zip");#NormalTok("(funcs, bounds):");],
+[#NormalTok("            val, _ ");#OperatorTok("=");#NormalTok(" integrate.quad(");#KeywordTok("lambda");#NormalTok(" x: x ");#OperatorTok("*");#NormalTok(" f(x), a, b)");],
+[#NormalTok("            expected_value ");#OperatorTok("+=");#NormalTok(" val");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" expected_value");],
+[],
+[#CommentTok("# ==========================================");],
+[#CommentTok("# EKSKUSI SOLUSI MENGGUNAKAN KELAS PYTHON");],
+[#CommentTok("# ==========================================");],
+[#ControlFlowTok("if");#NormalTok(" ");#VariableTok("__name__");#NormalTok(" ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"__main__\"");#NormalTok(":");],
+[#NormalTok("    solver ");#OperatorTok("=");#NormalTok(" ProbSet3Solver()");],
+[],
+[#NormalTok("    ");#CommentTok("# --- Soal 1 ---");],
+[#NormalTok("    x_vals ");#OperatorTok("=");#NormalTok(" [");#FloatTok("0.2");#NormalTok(", ");#FloatTok("0.4");#NormalTok(", ");#FloatTok("0.5");#NormalTok(", ");#FloatTok("0.8");#NormalTok(", ");#FloatTok("1.0");#NormalTok("]");],
+[#NormalTok("    p_vals ");#OperatorTok("=");#NormalTok(" [");#FloatTok("0.1");#NormalTok(", ");#FloatTok("0.2");#NormalTok(", ");#FloatTok("0.2");#NormalTok(", ");#FloatTok("0.3");#NormalTok(", ");#FloatTok("0.2");#NormalTok("]");],
+[#NormalTok("    mean_1, var_1 ");#OperatorTok("=");#NormalTok(" solver.discrete_stats(x_vals, p_vals)");],
+[#NormalTok("    p_cond ");#OperatorTok("=");#NormalTok(" solver.discrete_conditional(x_vals, p_vals, ");#FloatTok("0.2");#NormalTok(", ");#FloatTok("0.6");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 1 -> Mean: ");#SpecialCharTok("{");#NormalTok("mean_1");#SpecialCharTok(":.2f}");#SpecialStringTok(", Var: ");#SpecialCharTok("{");#NormalTok("var_1");#SpecialCharTok(":.4f}");#SpecialStringTok("\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 1 -> P(X=0.2 | X<0.6) = ");#SpecialCharTok("{");#NormalTok("p_cond");#SpecialCharTok(":.2f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# --- Soal 2 ---");],
+[#NormalTok("    p_gt_1 ");#OperatorTok("=");#NormalTok(" solver.continuous_cdf_exp_square(");#DecValTok("1");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 2 -> P(X > 1) = ");#SpecialCharTok("{");#NormalTok("p_gt_1");#SpecialCharTok(":.4f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# --- Soal 5 ---");],
+[#NormalTok("    ");#CommentTok("# f(x) = k*x dari 0 ke 4");],
+[#NormalTok("    k ");#OperatorTok("=");#NormalTok(" solver.find_pdf_constant(");#KeywordTok("lambda");#NormalTok(" x: x, ");#DecValTok("0");#NormalTok(", ");#DecValTok("4");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 5 -> Konstanta k = ");#SpecialCharTok("{");#NormalTok("k");#SpecialCharTok(":.3f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# --- Soal 6 ---");],
+[#NormalTok("    ");#CommentTok("# P(R > 10) = 0.5, cari P(R > 1000)");],
+[#NormalTok("    p_pareto ");#OperatorTok("=");#NormalTok(" solver.pareto_probability(");#DecValTok("10");#NormalTok(", ");#FloatTok("0.5");#NormalTok(", ");#DecValTok("1000");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 6 -> P(R > 1000) = ");#SpecialCharTok("{");#NormalTok("p_pareto");#SpecialCharTok(":.3f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# --- Soal 8 ---");],
+[#NormalTok("    ");#CommentTok("# f(x) = 0.2 (0 sampai 4), dan f(x) = 0.04 (4 sampai 9)");],
+[#NormalTok("    funcs ");#OperatorTok("=");#NormalTok(" [");#KeywordTok("lambda");#NormalTok(" x: ");#FloatTok("0.2");#NormalTok(", ");#KeywordTok("lambda");#NormalTok(" x: ");#FloatTok("0.04");#NormalTok("]");],
+[#NormalTok("    bounds ");#OperatorTok("=");#NormalTok(" [(");#DecValTok("0");#NormalTok(", ");#DecValTok("4");#NormalTok("), (");#DecValTok("4");#NormalTok(", ");#DecValTok("9");#NormalTok(")]");],
+[#NormalTok("    exp_8 ");#OperatorTok("=");#NormalTok(" solver.piecewise_expected_value(funcs, bounds)");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 8 -> E(X) = ");#SpecialCharTok("{");#NormalTok("exp_8");#SpecialCharTok(":.2f}");#SpecialStringTok("\"");#NormalTok(")");],));
+= Tujuan Bab
 <tujuan-bab-2>
+title: "Bab 3. Distribusi Random Variable Diskrit" format: html jupyter: python3
+
 Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
 
 + memahami apa yang dimaksud dengan #strong[distribusi random variable diskrit],
@@ -2599,10 +2855,145 @@ Kalau di bab sebelumnya kita baru belajar “apa itu random variable”, maka di
 
 Di bab berikutnya, kita akan beralih ke #strong[distribusi random variable kontinu]. Di sana, fokus kita tidak lagi pada hitungan kejadian, tetapi pada besaran seperti waktu, umur hidup, tinggi, jarak, dan banyak pengukuran lain yang lebih nyaman dipandang kontinu.
 
-= Bab 4. Distribusi Random Variable Kontinu
-<bab-4.-distribusi-random-variable-kontinu>
-== Tujuan Bab
+== Tambahan Soal
+<tambahan-soal-1>
+Sumber "Problem Set 4: Probabilitas dan Statistik" author: "Dosen: Dimitri Mahayana"
+
+#strong[Soal 1] Misalkan $X$ adalah peubah acak berdistribusi seragam dengan rentang bilangan bulat 0 sampai 9. Tentukan rataan (mean), variansi dan standar deviasi dari peubah acak $Y = 5 X$ dan bandingkan hasilnya dengan $X$!
+
+#strong[Soal 2] Jumlah panggilan telepon yang datang pada suatu operator selular sering dimodelkan sebagai random variable yang mengikuti distribusi Poisson. Misalkan pada rata-ratanya, terdapat 10 panggilan per jam. a. Berapa probabilitas terdapat tepat 5 panggilan dalam 1 jam? b. Berapa probabilitas terdapat 3 atau kurang panggilan dalam 1 jam? c.~Berapa probabilitas terdapat tepat 15 panggilan dalam 2 jam? d.~Berapa probabilitas terdapat tepat 5 panggilan dalam 30 menit?
+
+#strong[Soal 3] Jumlah permukaan cacat pada panel plastik yang digunakan dalam interior mobil memiliki distribusi Poisson dengan mean 0,05 cacat per $upright("ft")^2$. Asumsikan suatu interior mobil mengandung 10 $upright("ft")^2$ panel plastik. a. Berapa probabilitas tidak terdapat cacat permukaan pada interior mobil? b. Jika sepuluh mobil dijual, berapa probabilitas dari sepuluh mobil tersebut tidak ada yang memiliki cacat permukaan? c.~Jika sepuluh mobil dijual, berapa probabilitas paling banyak satu mobil yang memiliki cacat permukaan? d.~Jika 100 Panel diperiksa, berapa probabilitas lebih sedikit dari 5 panel memiliki cacat permukaan?
+
+#strong[Soal 4] Sebuah bank berskala nasional merencanakan meletakkan 5 set infrastruktur hardware di 5 data center untuk menjalankan aplikasi #emph[Core Banking System] (CBS) yang melayani para nasabah. 5 data center masing-masing dipilih di Jakarta, Surabaya, Kalimantan, Batam dan Papua. Tujuannya adalah untuk mencegah sistem down secara total bila terjadi bencana (disaster) di satu data center. Perencanaan juga bertujuan agar bank tetap bisa menjalankan operasi bisnis dan melayani pelanggan dengan baik bila terjadi bencana (disaster) yang melumpuhkan operasi di salah satu data center. Masing-masing set infrastruktur hardware memiliki probability untuk bekerja dengan baik sebesar 0,8. Definisikan $X$ sebagai random variable yang merepresentasikan jumlah Data Center yang bekerja dengan baik. a. Buatlah tabel distribusi probabilitas random variable $X$! b. Gambarkan distribusi probabilitas random variable $X$! c.~Gambarkan distribusi kumulatif random variable $X$! d.~Dengan melihat gambar distribusi kumulatif random variable $X$, estimasikan suatu nilai $M$ sehingga $P \( X lt.eq M \) = 0 \, 5$. Nilai $M$ ini disebut nilai median dari random variable $X$! e. Tentukan mean dan variansi untuk random variable $X$! f.~Tentukan probabilitas sistem down secara total! g. Tentukan probabilitas sistem nyaris down secara total, dalam arti tinggal 1 Data Center yang bekerja dengan baik! h. Tentukan probabilitas minimal 1 Data Center bekerja dengan baik!
+
+#strong[Soal 5] Sebuah komponen memiliki umur $L$ yang diukur dalam satuan hari, sedemikian sehingga $P \[ L = n \]$ dari kegagalan pada hari ke $n$ diberikan oleh distribusi geometrik, dan mengikuti $P \[ L = n \] = \( 1 dash.en b \) b^n$\; untuk $n = 0 \, 1 \, 2 \, 3 \, dots.h$. Bila $b = 0 \, 6$: a. Gambarkan distribusi probabilitas dari random variable $L$! b. Gambarkan distribusi kumulatif dari random variable $L$! c.~Dengan melihat gambar distribusi kumulatif random variable $L$, estimasikan suatu nilai $M$ sehingga $P \( X lt.eq M \) = 0 \, 5$. Nilai $M$ ini disebut nilai median dari random variable $L$! d.~Tentukan nilai ekspektasi (mean) untuk random variable $L$! e. Tentukan peluang kejadian $F_i$, yaitu kejadian bahwa tidak terjadi failure (kerusakan) sebelum hari ke-$i$.
+
+#strong[Soal 6] Tentukan range dari masing-masing random variable berikut. a. Suatu timbangan elektrik menampilkan berat pada gram terdekatnya. Timbangan ini hanya menampilkan 5 digit saja. Semua berat yang lebih dari nilai tersebut (99999 g) akan ditampilkan sebagai 99999. Random variablenya adalah berat yang ditampilkan. b. Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. Random variablenya adalah jumlah part dari sampling sebanyak 5 part yang tidak sesuai dengan persyaratan pelanggan. c.~Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. Part tersebut dipilih secara acak, secara langsung tanpa pengembalian, sampai part yang tidak sesuai dengan syarat didapat. Random variablenya adalah jumlah part yang terambil.
+
+#strong[Soal 7] Suatu sistem komunikasi untuk bisnis mempunyai 4 jalur eksternal. Pada waktu tertentu, sistem ini diobservasi. Misalkan random variable $X$ melambangkan jumlah jalur yang digunakan. Asumsikan probabilitas suatu jalur sedang digunakan saat observasi adalah 0,8. Tentukan ruang sampel dari observasi tersebut! Gambarkan dalam tabel! Diasumsikan bahwa jalur satu sama lain adalah independen.
+
+#strong[Soal 8] Dalam proses manufaktur semikonduktor, 3 wafer diuji. Setiap wafer akan dinyatakan lolos uji atau gagal. Asumsi probabilitas sebuah wafer lolos uji adalah 0,8 dan wafer-wafer tersebut independen. a. Tentukan PMF dari jumlah wafer yang lolos uji! Tentukan CMF dari jumlah wafer yang lolos uji! b. Tentukan mean dari random variable tersebut! c.~Tentukan variansi dari random variable tersebut!
+
+#strong[Soal 9] Jumlah kesalahan ketik dalam suatu buku teks mengikuti distribusi Poisson dengan mean 0,01 kesalahan/halaman. Berapa probabilitas terdapat kurang dari atau sama dengan tiga kesalahan dalam 100 halaman?
+
+#strong[Soal 10] Suatu persimpangan dengan lampu sinyal pada jalur berangkat pagi adalah 20% hijau pada waktu kamu melewatinya (tidak perlu menunggu lampu merah). Asumsikan setiap pagi adalah percobaan yang independen. a. Dalam 5 pagi (5 hari), berapa probabilitas lampunya hijau hanya pada satu pagi saja? b. Dalam 20 pagi, berapa probabilitas lampunya hijau tepat empat kali? c.~Dalam 20 minggu, berapa probabilitas lampunya hijau lebih dari empat kali?
+
+Berdasarkan dokumen sumber yang Anda berikan, yaitu materi kuliah dan #strong[Problem Set 4], fokus utamanya adalah pada keluarga #strong[Distribusi Probabilitas Diskrit], yang meliputi Distribusi Seragam Diskrit, Binomial, Geometrik, dan Poisson.
+
+Berikut adalah analisis prinsip, solusi lengkap untuk ke-10 soal pada dokumen tersebut, serta implementasi Python berbasis OOP (#emph[Object-Oriented Programming]) untuk menyelesaikannya.
+
+=== #strong[Analisis Soal dan Prinsip Probabilitas (Problem Set 4)]
+<analisis-soal-dan-prinsip-probabilitas-problem-set-4>
+#strong[Soal 1: Peubah Acak Seragam Diskrit] \* #strong[Masalah:] $X$ terdistribusi seragam dari 0 sampai 9. Cari mean, variansi, standar deviasi $X$ dan $Y = 5 X$. \* #strong[Prinsip:] #strong[Distribusi Seragam Diskrit & Linearitas.] Jika probabilitas setiap kejadian sama, rata-rata adalah nilai tengah $\( a + b \) \/ 2$ dan variansi dihitung dengan $\( \( b - a + 1 \)^2 - 1 \) \/ 12$. Sifat linear menyatakan $E \( a X \) = a E \( X \)$ dan $V a r \( a X \) = a^2 V a r \( X \)$. \* #strong[Solusi:] \* $E \( X \) = \( 9 + 0 \) \/ 2 = upright(bold(4 \, 5))$. \* $sigma_X^2 = \( \( 9 - 0 + 1 \)^2 - 1 \) \/ 12 = upright(bold(8 \, 25))$. \* $sigma_X = sqrt(8 \, 25) = upright(bold(2 \, 87))$. \* Untuk $Y = 5 X$: $E \( Y \) = 5 \( 4 \, 5 \) = upright(bold(22 \, 5))$\; $sigma_Y^2 = 5^2 \( 8 \, 25 \) = upright(bold(206 \, 25))$\; $sigma_Y = upright(bold(14 \, 36))$.
+
+#strong[Soal 2: Panggilan Telepon Operator] \* #strong[Masalah:] Panggilan masuk 10 per jam ($lambda = 10$). Hitung probabilitas kejadian pada berbagai interval waktu. \* #strong[Prinsip:] #strong[Proses Poisson.] Digunakan untuk menghitung probabilitas jumlah kejadian pada rentang waktu kontinu. Parameter $lambda$ (laju) harus disesuaikan proporsional dengan interval waktu $t$ ($mu = lambda t$). \* #strong[Solusi:] \* a) Tepat 5 panggilan (1 jam): $P \( X = 5 \; lambda = 10 \) = e^(- 10) 10^5 \/ 5 ! = upright(bold(0 \, 037833))$. \* b) $lt.eq 3$ panggilan (1 jam): $sum_(x = 0)^3 e^(- 10) 10^x \/ x ! = upright(bold(0 \, 010336))$. \* c) Tepat 15 (2 jam, $lambda t = 20$): $e^(- 20) 20^15 \/ 15 ! = upright(bold(0 \, 051649))$. \* d) Tepat 5 (0,5 jam, $lambda t = 5$): $e^(- 5) 5^5 \/ 5 ! = upright(bold(0 \, 175467))$.
+
+#strong[Soal 3: Cacat Panel Interior Mobil] \* #strong[Masalah:] Cacat Poisson 0,05/$f t^2$. 1 mobil = 10 $f t^2$. Hitung probabilitas cacat untuk 1 mobil dan 10 mobil. \* #strong[Prinsip:] #strong[Gabungan Poisson dan Binomial.] Poisson digunakan untuk mencari probabilitas dasar suatu barang cacat/tidak. Hasilnya diumpankan sebagai probabilitas sukses ($p$) ke model Binomial untuk menghitung distribusi pada kelompok sampel (misal 10 mobil). \* #strong[Solusi:] \* a) 1 mobil tanpa cacat ($mu = 0 \, 05 times 10 = 0 \, 5$): $P \( X = 0 \) = e^(- 0.5) \( 0.5 \)^0 \/ 0 ! = upright(bold(0 \, 60653))$. \* b) 10 mobil tanpa cacat: $b \( 0 \; 10 \, 0 \, 60653 \) = upright(bold(0 \, 006738))$. \* c) $lt.eq 1$ mobil cacat dari 10 mobil ($p_(c a c a t) = 1 - 0 \, 60653$): $P \( Y lt.eq 1 \) = upright(bold(0 \, 050448))$. \* d) 100 panel, $< 5$ cacat: Jika 1 panel=1 $f t^2$, $p = 0 \, 9512$, $P \( Y < 5 \) = upright(bold(0 \, 4583))$. Jika 1 panel=10 $f t^2$, $p = 0 \, 60653$, $P \( Y < 5 \) = upright(bold(1 \, 43 times 10^(- 16)))$.
+
+#strong[Soal 4: Keandalan Data Center] \* #strong[Masalah:] 5 Data Center, probabilitas ON = 0,8. Cari PMF, Median, Mean, Variansi, dan probabilitas kegagalan. \* #strong[Prinsip:] #strong[Eksperimen Bernoulli & Binomial.] Karena sistem hanya memiliki kondisi ON/OFF yang saling independen, ini adalah proses Bernoulli dengan $n = 5 \, p = 0 \, 8$. \* #strong[Solusi:] \* e) Rata-rata $mu = n p = 5 \( 0 \, 8 \) = upright(bold(4))$\; Variansi $sigma^2 = n p q = 5 \( 0 \, 8 \) \( 0 \, 2 \) = upright(bold(0 \, 8))$. \* d) Median $M = upright(bold(3))$ (karena probabilitas kumulatif melewati 0,5 pada titik ini). \* f) Sistem down total $P \( X = 0 \) = upright(bold(0 \, 00032))$. \* g) 1 yang ON $P \( X = 1 \) = upright(bold(0 \, 0064))$. \* h) Minimal 1 ON $P \( X gt.eq 1 \) = 1 - P \( X = 0 \) = upright(bold(0 \, 99968))$.
+
+#strong[Soal 5: Umur Komponen (Geometrik)] \* #strong[Masalah:] Kegagalan pada hari ke-$n$ mengikuti $P \[ L = n \] = \( 1 - b \) b^n$ dengan $b = 0 \, 6$. \* #strong[Prinsip:] #strong[Distribusi Geometrik.] Memodelkan jumlah percobaan sampai sukses (atau kegagalan) pertama didapatkan. Bentuk kumulatifnya menggunakan prinsip deret ukur tak hingga. \* #strong[Solusi:] \* c) Median $M = upright(bold(0))$. \* d) Ekspektasi $E \( L \) = \( 1 - b \) \/ \( 1 - b \) = upright(bold(1))$. \* e) Peluang tidak gagal sebelum hari ke-$i$ ($F_i$): Diperoleh dari $sum_(l = i)^oo \( 1 - b \) b^l = upright(bold(b^i))$.
+
+#strong[Soal 6: Range Ruang Sampel] \* #strong[Masalah:] Menentukan #emph[Sample Space] (Ruang Sampel) dari 3 eksperimen berbeda. \* #strong[Prinsip:] #strong[Definisi Ruang Sampel.] Memetakan semua kemungkinan hasil (#emph[outcomes]) yang logis dari suatu eksperimen acak. \* #strong[Solusi:] \* a) Timbangan 5 digit: $upright(bold(R_X = { 0 \, 1 \, 2 \, . . . \, 99999 }))$. \* b) Ambil 5 part: $upright(bold(R_X = { 0 \, 1 \, 2 \, 3 \, 4 \, 5 }))$ cacat. \* c) Tarik acak sampai dapat 1 cacat (total 500, 10 cacat): Jumlah maksimum tarikan gagal adalah 490 (karena 490 part baik). Tarikan ke-491 pasti cacat. Jadi $upright(bold(R_X = { 1 \, 2 \, . . . \, 491 }))$.
+
+#strong[Soal 7: Jalur Eksternal Komunikasi] \* #strong[Masalah:] 4 jalur observasi, probabilitas digunakan $p = 0 \, 8$. Tentukan ruang sampel dan PMF. \* #strong[Prinsip:] #strong[Binomial PMF.] Menggunakan rumus kombinasi $binom(n, x) p^x q^(n - x)$ untuk $n = 4 \, p = 0 \, 8$. \* #strong[Solusi:] Tabel probabilitas: $X = 0 arrow.r upright(bold(0 \, 0016))$, $X = 1 arrow.r upright(bold(0 \, 0256))$, $X = 2 arrow.r upright(bold(0 \, 1536))$, $X = 3 arrow.r upright(bold(0 \, 4096))$, $X = 4 arrow.r upright(bold(0 \, 4096))$.
+
+#strong[Soal 8: Uji Manufaktur Wafer] \* #strong[Masalah:] 3 wafer diuji, peluang lolos 0,8. Cari PMF, CMF, Mean, dan Variansi. \* #strong[Prinsip:] #strong[Sifat Lengkap Distribusi Binomial.] Menggunakan rumus dasar nilai harap $E \( X \) = n p$ dan variansi $sigma^2 = n p q$. \* #strong[Solusi:] \* a) PMF $x in { 0 \, 1 \, 2 \, 3 }$ secara berurutan: $upright(bold(0 \, 008 \; #h(0em) 0 \, 096 \; #h(0em) 0 \, 384 \; #h(0em) 0 \, 512))$. CMF: $upright(bold(0 \, 008 \; #h(0em) 0 \, 104 \; #h(0em) 0 \, 488 \; #h(0em) 1 \, 000))$. \* b) Mean $mu = 3 \( 0 \, 8 \) = upright(bold(2 \, 4))$. \* c) Variansi $sigma^2 = 3 \( 0 \, 8 \) \( 0 \, 2 \) = upright(bold(0 \, 48))$.
+
+#strong[Soal 9: Typo Buku Teks] \* #strong[Masalah:] Poisson mean 0,01 per halaman. Berapa $P \( lt.eq 3 \)$ untuk 100 halaman? \* #strong[Prinsip:] #strong[Proporsionalitas Interval Poisson.] Karena rentang diubah menjadi 100 halaman, laju $lambda$ dikalikan 100 menjadi $mu = 1$. \* #strong[Solusi:] $P \( X lt.eq 3 \) = sum_(x = 0)^3 e^(- 1) 1^x \/ x ! = upright(bold(0 \, 981))$.
+
+#strong[Soal 10: Lampu Sinyal Persimpangan] \* #strong[Masalah:] Peluang lampu hijau 0,2. Observasi untuk 5 hari, 20 hari, dan 140 hari. \* #strong[Prinsip:] #strong[Eksperimen Binomial Berulang.] Proses Bernoulli dapat diskalakan hanya dengan mengubah ukuran sampel observasi ($n$) tanpa merubah probabilitas $p$. \* #strong[Solusi:] \* a) $n = 5$, Tepat 1 kali ($X = 1$): $b \( 1 \; 5 \, 0 \, 2 \) = upright(bold(0 \, 4096))$. \* b) $n = 20$, Tepat 4 kali ($X = 4$): $b \( 4 \; 20 \, 0 \, 2 \) = upright(bold(0 \, 2182))$. \* c) $n = 140$, Tepat 4 kali ($X = 4$): $b \( 4 \; 140 \, 0 \, 2 \) = upright(bold(1 \, 6214 times 10^(- 9)))$ #emph[\(Catatan: Sumber teks soal tertulis 'lebih dari empat kali', namun rumus solusi di dokumen menghitung probabilitas tepat 4 kali, sehingga jawaban di atas mengikuti alur matematis dokumen sumber)].
+
+=== #strong[Implementasi Kode Python]
+<implementasi-kode-python>
+Berikut adalah kelas Python yang dapat didaur ulang (#emph[reusable]) menggunakan pustaka #NormalTok("scipy.stats"); untuk memecahkan semua persoalan di atas.
+
+#Skylighting(([#ImportTok("import");#NormalTok(" scipy.stats ");#ImportTok("as");#NormalTok(" stats");],
+[#ImportTok("import");#NormalTok(" math");],
+[],
+[#KeywordTok("class");#NormalTok(" DiscreteProbSolver:");],
+[#NormalTok("    ");#CommentTok("\"\"\"Toolkit Python untuk Menyelesaikan Problem Set Distribusi Diskrit Khusus\"\"\"");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" uniform_discrete_stats(a, b):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Menghitung Mean, Variansi, dan Standar Deviasi Distribusi Seragam (Soal 1)\"\"\"");],
+[#NormalTok("        mean ");#OperatorTok("=");#NormalTok(" (a ");#OperatorTok("+");#NormalTok(" b) ");#OperatorTok("/");#NormalTok(" ");#DecValTok("2");],
+[#NormalTok("        variance ");#OperatorTok("=");#NormalTok(" ((b ");#OperatorTok("-");#NormalTok(" a ");#OperatorTok("+");#NormalTok(" ");#DecValTok("1");#NormalTok(")");#OperatorTok("**");#DecValTok("2");#NormalTok(" ");#OperatorTok("-");#NormalTok(" ");#DecValTok("1");#NormalTok(") ");#OperatorTok("/");#NormalTok(" ");#DecValTok("12");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" mean, variance, math.sqrt(variance)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" poisson_prob(rate, time_multiplier, x, prob_type");#OperatorTok("=");#StringTok("\"exact\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Menghitung probabilitas Poisson dengan penyesuaian interval waktu (Soal 2, 3, 9)\"\"\"");],
+[#NormalTok("        mu ");#OperatorTok("=");#NormalTok(" rate ");#OperatorTok("*");#NormalTok(" time_multiplier");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"exact\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.poisson.pmf(x, mu)");],
+[#NormalTok("        ");#ControlFlowTok("elif");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"less_equal\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.poisson.cdf(x, mu)");],
+[#NormalTok("        ");#ControlFlowTok("elif");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"greater_equal\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.poisson.sf(x ");#OperatorTok("-");#NormalTok(" ");#DecValTok("1");#NormalTok(", mu) ");#CommentTok("# 1 - CDF(x-1)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" binomial_prob(n, p, x, prob_type");#OperatorTok("=");#StringTok("\"exact\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Menghitung probabilitas Binomial (Soal 3, 4, 7, 8, 10)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"exact\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.binom.pmf(x, n, p)");],
+[#NormalTok("        ");#ControlFlowTok("elif");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"less_equal\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.binom.cdf(x, n, p)");],
+[#NormalTok("        ");#ControlFlowTok("elif");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"greater_equal\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.binom.sf(x ");#OperatorTok("-");#NormalTok(" ");#DecValTok("1");#NormalTok(", n, p) ");#CommentTok("# 1 - CDF(x-1)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" binomial_stats(n, p):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Menghitung Mean dan Variansi Distribusi Binomial (Soal 4, 8)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" n ");#OperatorTok("*");#NormalTok(" p, n ");#OperatorTok("*");#NormalTok(" p ");#OperatorTok("*");#NormalTok(" (");#DecValTok("1");#NormalTok(" ");#OperatorTok("-");#NormalTok(" p)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" custom_geometric_survival(b, i):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Fungsi spesifik kelangsungan hidup komponen dari P(L=n) = (1-b)*b^n (Soal 5)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" b ");#OperatorTok("**");#NormalTok(" i");],
+[],
+[#CommentTok("# ==========================================");],
+[#CommentTok("# ");#AlertTok("TEST");#CommentTok(" CASE: MENGUJI METODE UNTUK PROBLEM SET 4");],
+[#CommentTok("# ==========================================");],
+[#ControlFlowTok("if");#NormalTok(" ");#VariableTok("__name__");#NormalTok(" ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"__main__\"");#NormalTok(":");],
+[#NormalTok("    solver ");#OperatorTok("=");#NormalTok(" DiscreteProbSolver()");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 1: Seragam Diskrit dan Transformasi Y = 5X");],
+[#NormalTok("    mean_X, var_X, std_X ");#OperatorTok("=");#NormalTok(" solver.uniform_discrete_stats(");#DecValTok("0");#NormalTok(", ");#DecValTok("9");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 1 - Mean Y: ");#SpecialCharTok("{");#DecValTok("5");#NormalTok(" ");#OperatorTok("*");#NormalTok(" mean_X");#SpecialCharTok("}");#SpecialStringTok(", Variansi Y: ");#SpecialCharTok("{");#DecValTok("25");#NormalTok(" ");#OperatorTok("*");#NormalTok(" var_X");#SpecialCharTok("}");#SpecialStringTok(", Std Y: ");#SpecialCharTok("{");#DecValTok("5");#NormalTok(" ");#OperatorTok("*");#NormalTok(" std_X");#SpecialCharTok(":.2f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 2: Panggilan Telepon (Poisson)");],
+[#NormalTok("    prob_2c ");#OperatorTok("=");#NormalTok(" solver.poisson_prob(rate");#OperatorTok("=");#DecValTok("10");#NormalTok(", time_multiplier");#OperatorTok("=");#DecValTok("2");#NormalTok(", x");#OperatorTok("=");#DecValTok("15");#NormalTok(", prob_type");#OperatorTok("=");#StringTok("\"exact\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 2c - P(15 panggilan dalam 2 jam): ");#SpecialCharTok("{");#NormalTok("prob_2c");#SpecialCharTok(":.6f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 3: Cacat Panel (Poisson -> Binomial)");],
+[#NormalTok("    p_no_defect_1car ");#OperatorTok("=");#NormalTok(" solver.poisson_prob(rate");#OperatorTok("=");#FloatTok("0.05");#NormalTok(", time_multiplier");#OperatorTok("=");#DecValTok("10");#NormalTok(", x");#OperatorTok("=");#DecValTok("0");#NormalTok(", prob_type");#OperatorTok("=");#StringTok("\"exact\"");#NormalTok(")");],
+[#NormalTok("    p_max_1_defect_10cars ");#OperatorTok("=");#NormalTok(" solver.binomial_prob(");#DecValTok("10");#NormalTok(", ");#DecValTok("1");#NormalTok(" ");#OperatorTok("-");#NormalTok(" p_no_defect_1car, ");#DecValTok("1");#NormalTok(", prob_type");#OperatorTok("=");#StringTok("\"less_equal\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 3c - P(Maks 1 mobil cacat dari 10): ");#SpecialCharTok("{");#NormalTok("p_max_1_defect_10cars");#SpecialCharTok(":.6f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 4: Data Center (Binomial)");],
+[#NormalTok("    prob_4h ");#OperatorTok("=");#NormalTok(" solver.binomial_prob(n");#OperatorTok("=");#DecValTok("5");#NormalTok(", p");#OperatorTok("=");#FloatTok("0.8");#NormalTok(", x");#OperatorTok("=");#DecValTok("1");#NormalTok(", prob_type");#OperatorTok("=");#StringTok("\"greater_equal\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 4h - P(Minimal 1 Server ON): ");#SpecialCharTok("{");#NormalTok("prob_4h");#SpecialCharTok(":.5f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 5: Komponen Geometrik");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 5e - P(Bertahan sampai hari ke-2 dengan b=0.6): ");#SpecialCharTok("{");#NormalTok("solver");#SpecialCharTok(".");#NormalTok("custom_geometric_survival(");#FloatTok("0.6");#NormalTok(", ");#DecValTok("2");#NormalTok(")");#SpecialCharTok(":.4f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 8: Uji Wafer (Binomial Stats)");],
+[#NormalTok("    mean_8, var_8 ");#OperatorTok("=");#NormalTok(" solver.binomial_stats(n");#OperatorTok("=");#DecValTok("3");#NormalTok(", p");#OperatorTok("=");#FloatTok("0.8");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 8 - Mean Wafer Lolos: ");#SpecialCharTok("{");#NormalTok("mean_8");#SpecialCharTok(":.1f}");#SpecialStringTok(", Variansi: ");#SpecialCharTok("{");#NormalTok("var_8");#SpecialCharTok(":.2f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 9: Typo Buku (Poisson)");],
+[#NormalTok("    prob_9 ");#OperatorTok("=");#NormalTok(" solver.poisson_prob(rate");#OperatorTok("=");#FloatTok("0.01");#NormalTok(", time_multiplier");#OperatorTok("=");#DecValTok("100");#NormalTok(", x");#OperatorTok("=");#DecValTok("3");#NormalTok(", prob_type");#OperatorTok("=");#StringTok("\"less_equal\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 9 - P(<=3 typo di 100 hal): ");#SpecialCharTok("{");#NormalTok("prob_9");#SpecialCharTok(":.3f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 10: Lampu Lalu Lintas (Binomial)");],
+[#NormalTok("    prob_10c ");#OperatorTok("=");#NormalTok(" solver.binomial_prob(n");#OperatorTok("=");#DecValTok("140");#NormalTok(", p");#OperatorTok("=");#FloatTok("0.2");#NormalTok(", x");#OperatorTok("=");#DecValTok("4");#NormalTok(", prob_type");#OperatorTok("=");#StringTok("\"exact\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 10c - P(Tepat 4 kali hijau dalam 140 hari): ");#SpecialCharTok("{");#NormalTok("prob_10c");#SpecialCharTok(":.4e}");#SpecialStringTok("\"");#NormalTok(")");],));
+= Tujuan Bab
 <tujuan-bab-3>
+title: "Bab 4. Distribusi Random Variable Kontinu" format: html jupyter: python3
+
 Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
 
 + memahami perbedaan mendasar antara random variable diskrit dan kontinu,
@@ -3455,10 +3846,190 @@ Kalau bab sebelumnya mengajarkan kita menghitung kejadian yang berupa hitungan, 
 
 Di bab berikutnya, kita akan memperluas pandangan lagi: dunia nyata jarang hanya punya satu peubah acak. Kita akan mulai melihat #strong[lebih dari satu random variable sekaligus], hubungan di antaranya, serta apa yang terjadi ketika satu random variable menjadi fungsi dari yang lain.
 
-= Bab 5. Random Variable Multivariat dan Fungsi Random Variable
-<bab-5.-random-variable-multivariat-dan-fungsi-random-variable>
-== Tujuan Bab
+== Soal Tambahan
+<soal-tambahan>
+Sumber: "Problem Set 5: Probabilitas dan Statistik" author: "Dosen: Dimitri Mahayana"
+
+#strong[Soal 1] Probabilitas fungsi distribusi waktu untuk mengalami kegagalan pada sebuah komponen elektronik pada sebuah mesin foto kopi (dalam satuan waktu jam) adalah $f \( x \) = e^(- x \/ 1000) / 1000$ untuk setiap nilai $x > 0$. Hitung probabilitas dari: a. Komponen bertahan lebih dari 3000 jam sebelum akhirnya mengalami kegagalan. b. Komponen gagal dalam rentang 1000 hingga 2000 jam. c.~Komponen gagal sebelum 1000 jam. d.~Hitung jumlah jam saat 10% dari seluruh komponen yang ada mengalami kegagalan.
+
+#strong[Soal 2] Lebar gap merupakan properti yang penting pada suatu kepala rekaman magnetik. Dalam satuan #emph[coded], jika lebar yang dimaksud merupakan sebuah variabel yang #emph[random] secara kontinu pada rentang nilai $0 < x < 2$, dengan $f \( x \) = 0 \, 5 x$. Tentukan fungsi distribusi kumulatif dari variabel lebar gap.
+
+#strong[Soal 3] Ketebalan sebuah #emph[conductive coating] dalam satuan mikrometer memiliki fungsi kepadatan $f \( x \) = 600 x^(- 2)$ untuk setiap nilai $100 < x < 120$ mikrometer, dan 0 di lainnya. a. Tentukan nilai rata-rata dan variansi dari ketebalan #emph[conductive coating] tersebut. b. Jika proses #emph[coating] membutuhkan biaya \$0,50 per mikrometer ketebalan pada setiap bagian, berapa biaya rata-rata yang diperlukan untuk melakukan proses #emph[coating] per bagiannya?
+
+#strong[Soal 4] Asumsikan ukuran sebuah partikel kontaminasi (dalam satuan mikrometer) dapat dimodelkan seperti berikut, $f \( x \) = 2 x^(- 3)$ untuk setiap nilai $1 < x$. Tentukan nilai rata-rata dari $X$.
+
+#strong[Soal 5] Berat bersih (dalam pound) pada sebuah paket senyawa kimia herbisida seragam pada interval $49 \, 75 < x < 50 \, 25$ pounds. a. Tentukan nilai rata-rata dan variansi dari berat paket tersebut. b. Tentukan fungsi distribusi kumulatif dari berat paket tersebut. c.~Tentukan $P \( X < 50 \, 1 \)$. d.~Tentukan $P \( 49 \, 9 < X < 50 \)$.
+
+#strong[Soal 6] Ketebalan sebuah #emph[photoresist] yang diterapkan pada plat semiconductor manufaktur pada setiap bagian plat terdistribusi secara seragam antara 0,205 hingga 0,215 mikrometer. a. Tentukan fungsi distribusi kumulatif dari ketebalan #emph[photoresist] tersebut. b. Tentukan proporsi dari plat tersebut yang memiliki ketebalan #emph[photoresist] lebih besar dari 0,2125 mikrometer. c.~Berapa nilai ketebalan yang memiliki proporsi lebih besar dari 10% plat tersebut? d.~Tentukan nilai rata-rata dan variansi dari ketebalan #emph[photoresist] tersebut.
+
+#strong[Soal 7] Waktu yang dibutuhkan untuk sebuah sel melakukan pembelahan diri (mitosis) adalah terdistribusi normal pada sebuah rentang waktu 1 jam dengan standar deviasi 5 menit. (#emph[Gunakan tabel distribusi normal atau kalkulator]) a. Berapa probabilitas sebuah sel membelah dalam waktu kurang dari 45 menit? b. Berapa probabilitas sebuah sel membelah dengan membutuhkan waktu lebih dari 65 menit? c.~Berapa waktu yang dibutuhkan oleh setidaknya untuk 99% sel untuk melakukan mitosis secara sempurna?
+
+#strong[Soal 8] Kekuatan komprehensif dari sampel semen dapat dimodelkan dalam sebuah distribusi normal dengan nilai rata-rata 6.000 $upright("kg/cm")^2$ dan standar deviasi sebesar 100 $upright("kg/cm")^2$. a. Berapa probabilitas untuk kekuatan sampel tersebut kurang dari 6250 $upright("kg/cm")^2$? b. Berapa probabilitas untuk kekuatan sampel tersebut di antara 5800 hingga 5900 $upright("kg/cm")^2$? c.~Berapa kekuatan yang dimiliki oleh lebih dari 95% sampel semen tersebut?
+
+#strong[Soal 9] Sebuah proses manufaktur #emph[chip] semikonduktor memproduksi setidaknya 2% #emph[chip] yang cacat. Asumsikan setiap #emph[chip] independen. Dari 1000 #emph[chip]: (gunakan pendekatan normal untuk binomial) a. Perkirakan probabilitas bahwa lebih dari 25 #emph[chips] cacat. b. Perkirakan probabilitas bahwa #emph[chip] yang cacat berjumlah antara 20 hingga 30 #emph[chip].
+
+#strong[Soal 10] Misalkan jumlah partikel asbes dalam sampel 1 sentimeter kuadrat debu adalah random variable Poisson dengan nilai rata-rata 1000. Berapa probabilitas bahwa 10 sentimeter kuadrat debu mengandung lebih dari 10.000 partikel? Gunakan pendekatan normal!
+
+#strong[Soal 11] Umur dari regulator voltase mobil memiliki distribusi eksponensial dengan umur rata-rata 6 tahun. Misalkan kamu membeli sebuah mobil dengan umur tepat 6 tahun, dengan regulator voltase yang terus bekerja, dan kamu merencanakan untuk menggunakan mobil itu hingga 6 tahun ke depan. a. Berapa probabilitas untuk regulator voltase mobil tersebut mengalami kegagalan pada saat dalam kepemilikanmu? b. Jika regulatormu mengalami kegagalan setelah 3 tahun kepemilikanmu dan kemudian diganti, berapa rata-rata waktu hingga kegagalan selanjutnya?
+
+#strong[Soal 12] Waktu untuk mengalami kegagalan (dalam satuan jam) sebuah kipas pada PC dapat dimodelkan dengan distribusi eksponensial dengan nilai $lambda = 0 \, 0003$. a. Berapa proporsi dari probabilitas kipas tersebut akan bertahan setidaknya 10.000 jam? b. Berapa proporsi dari probabilitas kipas tersebut akan bertahan paling lama 7.000 jam saja?
+
+#strong[Soal 13] Waktu antara kegagalan sebuah laser dalam mesin sitogenik terdistribusi secara eksponensial dengan rata-rata 25.000 jam. a. Tentukan variansi dari waktu antara kegagalan sebuah laser! b. Berapa prakiraan waktu hingga kegagalan kedua? c.~Berapa probabilitas bahwa waktu hingga mencapai kegagalan ketiga lebih dari 50.000 jam?
+
+#strong[Soal 14] Error yang diakibatkan oleh kontaminasi pada kepingan optik muncul dengan kecepatan 1 error setiap $10^5$ bits. Asumsikan nilai error mengikuti distribusi Poisson. a. Berapa nilai rata-rata bilangan bit hingga 5 error muncul? b. Berapa standar deviasi dari bilangan bit hingga 5 error muncul? c.~Kode koreksi error kemungkinan tidak akan efektif jika ada 3 atau lebih error dalam rentang $10^5$ bit. Berapa besar probabilitas terjadinya momen ini?
+
+#strong[Soal 15] Asumsikan umur dari paket keping magnetik terkena gas korosif memiliki distribusi Weibull dengan nilai $beta = 0 \, 5$ dan rata-rata umurnya ialah 600 jam. a. Tentukan probabilitas bahwa paket kepingan tersebut bertahan setidaknya 500 jam. b. Tentukan probabilitas bahwa paket kepingan tersebut mengalami kegagalan sebelum 400 jam.
+
+#strong[Soal 16] Jika $X$ adalah variabel random Weibull dengan $beta = 1$ dan $sigma = 1000$, apa nama lain dari distribusi variabel $X$ dan berapa nilai mean dari $X$?
+
+#strong[Soal 17] Misalkan bahwa jumlah km suatu mobil bisa melaju sampai akinya habis adalah berdistribusi eksponensial dengan mean 10.000 km. Jika seseorang ingin melakukan perjalanan 5.000 km, berapa probabilitas dia bisa menyelesaikan perjalanannya tanpa harus mengganti akinya?
+
+Berikut adalah solusi lengkap dari setiap soal pada #strong[Problem Set 5] berdasarkan dokumen sumber yang disediakan. Di bagian akhir, saya juga menyertakan desain kode Python berbasis #emph[Object-Oriented Programming (Class)] yang #emph[reusable] untuk memecahkan seluruh masalah tersebut.
+
+=== #strong[Bagian 1: Solusi Analitis Problem Set 5]
+<bagian-1-solusi-analitis-problem-set-5>
+#strong[\1. Komponen Mesin Fotokopi (Distribusi Eksponensial)] Fungsi probabilitas: $f \( x \) = e^(- x \/ 1000) / 1000$ untuk $x > 0$. \* #strong[a. Bertahan \> 3000 jam:] $P \( X > 3000 \) = 1 - P \( X lt.eq 3000 \) = e^(- 3000 \/ 1000) = e^(- 3) approx upright(bold(0 \, 049787))$. \* #strong[b. Gagal antara 1000-2000 jam:] $P \( 1000 < X < 2000 \) = F \( 2000 \) - F \( 1000 \) = \( 1 - e^(- 2) \) - \( 1 - e^(- 1) \) approx upright(bold(0 \, 232544))$. \* #strong[c.~Gagal \< 1000 jam:] $P \( X < 1000 \) = 1 - e^(- 1) approx upright(bold(0 \, 63212))$. \* #strong[d.~Waktu saat 10% gagal:] $P \( X < x \) = 0 \, 1 arrow.r.double.long 1 - e^(- x \/ 1000) = 0 \, 1 arrow.r.double.long e^(- x \/ 1000) = 0 \, 9 arrow.r.double.long x = - 1000 ln \( 0 \, 9 \) approx upright(bold(105 \, 36 upright(" jam")))$.
+
+#strong[\2. Lebar Gap Kepala Rekaman Magnetik (Distribusi Kontinu Acak)] Fungsi: $f \( x \) = 0 \, 5 x$ untuk $0 < x < 2$. \* #strong[Fungsi Distribusi Kumulatif (CDF):] Diperoleh dari integral $f \( x \)$: $F \( x \) = 0$ untuk $x lt.eq 0$\; $F \( x \) = upright(bold(0 \, 25 x^2))$ untuk $0 < x < 2$\; $F \( x \) = 1$ untuk $x gt.eq 2$.
+
+#strong[\3. Ketebalan Conductive Coating] Fungsi: $f \( x \) = 600 x^(- 2)$ untuk $100 < x < 120$. \* #strong[a. Rata-rata & Variansi:] $mu = E \( X \) = integral_100^120 x \( 600 x^(- 2) \) d x = integral_100^120 600 / x d x = 600 ln \( 1.2 \) approx upright(bold(109 \, 39))$. $sigma^2 = integral_100^120 \( x - 109 \, 39 \)^2 600 x^(- 2) d x approx upright(bold(33 \, 186))$. \* #strong[b. Biaya rata-rata (\$0,50/mikrometer):] $E \( 0 \, 5 X \) = 0 \, 5 times 109 \, 39 = upright(bold(\$ 54 \, 69))$.
+
+#strong[\4. Partikel Kontaminasi] Fungsi: $f \( x \) = 2 x^(- 3)$ untuk $x > 1$. \* #strong[Rata-rata:] $mu = integral_1^oo x \( 2 x^(- 3) \) d x = integral_1^oo 2 x^(- 2) d x = \[ - 2 x^(- 1) \]_1^oo = upright(bold(2))$.
+
+#strong[\5. Senyawa Kimia (Distribusi Seragam)] Interval: $49 \, 75 < x < 50 \, 25$. \* #strong[a. Rata-rata & Variansi:] $mu = frac(49 \, 75 + 50 \, 25, 2) = upright(bold(50))$. Variansi $sigma^2 = frac(\( 50 \, 25 - 49 \, 75 \)^2, 12) approx upright(bold(0 \, 02083))$. \* #strong[b. CDF:] $F \( x \) = frac(x - 49 \, 75, 50 \, 25 - 49 \, 75) = upright(bold(2 \( x - 49 \, 75 \)))$. \* #strong[c.~$P \( X < 50 \, 1 \)$:] $F \( 50 \, 1 \) = 2 \( 50 \, 1 - 49 \, 75 \) = upright(bold(0 \, 7))$. \* #strong[d.~$P \( 49 \, 9 < X < 50 \)$:] $F \( 50 \) - F \( 49 \, 9 \) = 0 \, 5 - 0 \, 3 = upright(bold(0 \, 2))$.
+
+#strong[\6. Plat Semiconductor (Distribusi Seragam)] Interval: $0 \, 205 < x < 0 \, 215$. \* #strong[a. CDF:] $F \( x \) = frac(x - 0 \, 205, 0 \, 215 - 0 \, 205) = upright(bold(100 \( x - 0 \, 205 \)))$. \* #strong[b. $P \( X > 0 \, 2125 \)$:] $1 - F \( 0 \, 2125 \) = 1 - 0 \, 75 = upright(bold(0 \, 25))$. \* #strong[c.~Lebih dari 10%:] Jika $P \( X > x \) = 0 \, 9 arrow.r.double.long upright(bold(x = 0 \, 206))$. Jika $P \( X > x \) = 0 \, 1 arrow.r.double.long upright(bold(x = 0 \, 214))$. \* #strong[d.~Rata-rata & Variansi:] $mu = upright(bold(0 \, 210))$, $sigma^2 = frac(\( 0 \, 215 - 0 \, 205 \)^2, 12) = upright(bold(8 \, 333 times 10^(- 6)))$.
+
+#strong[\7. Pembelahan Sel (Distribusi Normal)] $mu = 60$ menit, $sigma = 5$ menit. \* #strong[a. $P \( X < 45 \)$:] $P \( Z < - 3 \) approx upright(bold(0 \, 00135))$. \* #strong[b. $P \( X > 65 \)$:] $P \( Z > 1 \) = 1 - 0 \, 8413 = upright(bold(0 \, 158655))$. \* #strong[c.~Waktu 99%:] $P \( Z < 2 \, 326 \) = 0 \, 99 arrow.r.double.long x = 60 + 5 \( 2 \, 326 \) = upright(bold(71 \, 63 upright(" menit")))$ #emph[\(Catatan: Dokumen sumber salah cetak menggunakan pengali 45 sehingga tertulis 164,67 menit)].
+
+#strong[\8. Sampel Semen (Distribusi Normal)] $mu = 6000$, $sigma = 100$. \* #strong[a. $P \( X < 6250 \)$:] $P \( Z < 2 \, 5 \) = upright(bold(0 \, 99379))$. \* #strong[b. $P \( 5800 < X < 5900 \)$:] $P \( - 2 < Z < - 1 \) = upright(bold(0 \, 135905))$. \* #strong[c.~95% Sampel:] $P \( Z > - 1 \, 644 \) = 0 \, 95 arrow.r.double.long x = 6000 + 100 \( - 1 \, 644 \) = upright(bold(5835 \, 515 upright(" kg/cm")^2))$.
+
+#strong[\9. Chip Semikonduktor (Pendekatan Normal ke Binomial)] $n = 1000 \, p = 0 \, 02 arrow.r.double.long mu = 20 \, sigma = sqrt(1000 times 0 \, 02 times 0 \, 98) = 4 \, 427$. \* #strong[a. $P \( X > 25 \)$:] $P \( Z > frac(25 - 20, 4 \, 427) \) = upright(bold(0 \, 399322))$. \* #strong[b. $P \( 20 < X < 30 \)$:] $P \( 0 < Z < frac(30 - 20, 4 \, 427) \) = upright(bold(0 \, 195046))$.
+
+#strong[\10. Partikel Asbes (Pendekatan Normal ke Poisson)] $lambda = 1000 \/ upright("cm")^2$. Untuk 10 cm$""^2$, $mu = 10000 arrow.r.double.long sigma = sqrt(10000) = 100$. \* $P \( X > 10000 \) = P \( Z > 0 \) = upright(bold(0 \, 5))$.
+
+#strong[\11. Regulator Voltase (Distribusi Eksponensial)] $beta = 6$ tahun. \* #strong[a. Peluang gagal:] Tidak memiliki memori, $P \( X < 6 \) = 1 - e^(- 6 \/ 6) = upright(bold(0 \, 63212))$. \* #strong[b. Prakiraan gagal selanjutnya:] Karena #emph[memoryless], rata-rata waktunya tetap $upright(bold(6 upright(" tahun")))$.
+
+#strong[\12. Kipas PC (Distribusi Eksponensial)] $lambda = 0 \, 0003$. \* #strong[a. Bertahan \> 10.000 jam:] $P \( X > 10000 \) = e^(- 0 \, 0003 times 10000) = e^(- 3) approx upright(bold(0 \, 04979))$. \* #strong[b. Bertahan $lt.eq$ 7000 jam:] $P \( X lt.eq 7000 \) = 1 - e^(- 0 \, 0003 times 7000) approx upright(bold(0 \, 87754))$.
+
+#strong[\13. Laser Mesin (Distribusi Eksponensial & Erlang)] $mu = 25000$. \* #strong[a. Variansi:] $sigma^2 = mu^2 = upright(bold(6 \, 25 times 10^8))$. \* #strong[b. Kegagalan kedua:] $E \( X_1 + X_2 \) = 25000 + 25000 = upright(bold(50.000 upright(" jam")))$. \* #strong[c.~Kegagalan ketiga \> 50.000 jam (Erlang):] $P \( X_1 + X_2 + X_3 > 50000 \) = 1 - 0 \, 323324 = upright(bold(0 \, 676676))$.
+
+#strong[\14. Error Optik (Distribusi Poisson / Erlang)] $1 upright(" error per ") 10^5 upright(" bits") arrow.r.double.long lambda = 10^(- 5)$. \* #strong[a. Rata-rata bit ke 5 error:] $r / lambda = 5 / 10^(- 5) = upright(bold(5 times 10^5 upright(" bits")))$. \* #strong[b. Standar deviasi:] $sqrt(r \/ lambda^2) = sqrt(5 times 10^10) upright(" bits")$. #emph[\(Dokumen memberikan nilai variansi $5 times 10^10$)]. \* #strong[c.~$gt.eq$ 3 error dalam $10^5$ bit ($mu = 1$):] $P \( X gt.eq 3 \) = 1 - P \( X < 3 \) = 1 - 0 \, 9197 = upright(bold(0 \, 0803))$.
+
+#strong[\15. Keping Magnetik (Distribusi Weibull)] $beta = 0 \, 5 \, mu = 600 arrow.r.double.long alpha approx 0 \, 05773$. \* #strong[a. Bertahan \> 500 jam:] $P \( X > 500 \) = e^(- 0 \, 05773 times sqrt(500)) = upright(bold(0 \, 275028))$. \* #strong[b. Gagal \< 400 jam:] $P \( X < 400 \) = 1 - e^(- 0 \, 05773 times sqrt(400)) = upright(bold(0 \, 684816))$.
+
+#strong[16 & 17. Konsep Weibull Khusus & Eksponensial Lanjutan] \* #strong[No.~16:] Weibull dengan $beta = 1$ adalah #strong[Distribusi Eksponensial] dengan rata-rata $mu = sigma = upright(bold(1000))$. \* #strong[No.~17:] Eksponensial (mean 10.000). $P \( X > 5000 \) = e^(- 5000 \/ 10000) approx upright(bold(0 \, 60653))$.
+
+#horizontalrule
+
+=== #strong[Bagian 2: Solusi Kode Python (Berbasis Class)]
+<bagian-2-solusi-kode-python-berbasis-class>
+Kode di bawah ini membungkus penyelesaian semua soal probabilitas kontinu di atas menjadi #NormalTok("class ContinuousDistributions"); yang dapat di-#emph[reuse].
+
+#Skylighting(([#ImportTok("import");#NormalTok(" scipy.stats ");#ImportTok("as");#NormalTok(" stats");],
+[#ImportTok("import");#NormalTok(" scipy.integrate ");#ImportTok("as");#NormalTok(" integrate");],
+[#ImportTok("import");#NormalTok(" math");],
+[],
+[#KeywordTok("class");#NormalTok(" ContinuousDistributions:");],
+[#NormalTok("    ");#CommentTok("\"\"\"Class toolkit untuk menyelesaikan Problem Set 5 Probabilitas & Statistik\"\"\"");],
+[#NormalTok("    ");],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" exponential_prob(mean, x, prob_type");#OperatorTok("=");#StringTok("\"less_than\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Distribusi Eksponensial (Soal 1, 11, 12, 17)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"less_than\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.expon.cdf(x, scale");#OperatorTok("=");#NormalTok("mean)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" stats.expon.sf(x, scale");#OperatorTok("=");#NormalTok("mean)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" uniform_stats(a, b):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Mean dan Variansi Distribusi Seragam (Soal 5, 6)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" (a ");#OperatorTok("+");#NormalTok(" b) ");#OperatorTok("/");#NormalTok(" ");#DecValTok("2");#NormalTok(", ((b ");#OperatorTok("-");#NormalTok(" a)");#OperatorTok("**");#DecValTok("2");#NormalTok(") ");#OperatorTok("/");#NormalTok(" ");#DecValTok("12");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" uniform_prob(a, b, x, prob_type");#OperatorTok("=");#StringTok("\"less_than\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Distribusi Seragam Kontinu (Soal 5, 6)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"less_than\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.uniform.cdf(x, loc");#OperatorTok("=");#NormalTok("a, scale");#OperatorTok("=");#NormalTok("b");#OperatorTok("-");#NormalTok("a)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" stats.uniform.sf(x, loc");#OperatorTok("=");#NormalTok("a, scale");#OperatorTok("=");#NormalTok("b");#OperatorTok("-");#NormalTok("a)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" custom_pdf_stats(pdf_func, a, b):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Kalkulasi mean & variansi untuk PDF kustom via integrasi (Soal 3, 4)\"\"\"");],
+[#NormalTok("        mean, _ ");#OperatorTok("=");#NormalTok(" integrate.quad(");#KeywordTok("lambda");#NormalTok(" x: x ");#OperatorTok("*");#NormalTok(" pdf_func(x), a, b)");],
+[#NormalTok("        var_raw, _ ");#OperatorTok("=");#NormalTok(" integrate.quad(");#KeywordTok("lambda");#NormalTok(" x: (x");#OperatorTok("**");#DecValTok("2");#NormalTok(") ");#OperatorTok("*");#NormalTok(" pdf_func(x), a, b)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" mean, var_raw ");#OperatorTok("-");#NormalTok(" (mean");#OperatorTok("**");#DecValTok("2");#NormalTok(")");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" normal_prob(mu, sigma, x, prob_type");#OperatorTok("=");#StringTok("\"less_than\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Distribusi Normal (Soal 7, 8, 9, 10)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"less_than\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.norm.cdf(x, loc");#OperatorTok("=");#NormalTok("mu, scale");#OperatorTok("=");#NormalTok("sigma)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" stats.norm.sf(x, loc");#OperatorTok("=");#NormalTok("mu, scale");#OperatorTok("=");#NormalTok("sigma)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" normal_inverse(mu, sigma, p, prob_type");#OperatorTok("=");#StringTok("\"less_than\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Pencarian batas X pada probabilitas Normal tertentu (Soal 7c, 8c)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"less_than\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.norm.ppf(p, loc");#OperatorTok("=");#NormalTok("mu, scale");#OperatorTok("=");#NormalTok("sigma)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" stats.norm.isf(p, loc");#OperatorTok("=");#NormalTok("mu, scale");#OperatorTok("=");#NormalTok("sigma)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" erlang_prob(r, lam, x, prob_type");#OperatorTok("=");#StringTok("\"greater_than\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Distribusi Erlang/Gamma untuk r kejadian (Soal 13c)\"\"\"");],
+[#NormalTok("        scale ");#OperatorTok("=");#NormalTok(" ");#DecValTok("1");#NormalTok(" ");#OperatorTok("/");#NormalTok(" lam");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"greater_than\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.erlang.sf(x, r, scale");#OperatorTok("=");#NormalTok("scale)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" stats.erlang.cdf(x, r, scale");#OperatorTok("=");#NormalTok("scale)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" weibull_prob(alpha, beta, x, prob_type");#OperatorTok("=");#StringTok("\"less_than\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Distribusi Weibull (Soal 15)\"\"\"");],
+[#NormalTok("        ");#CommentTok("# Konversi scipy weibull parameters");],
+[#NormalTok("        scale ");#OperatorTok("=");#NormalTok(" alpha ");#OperatorTok("**");#NormalTok(" (");#OperatorTok("-");#DecValTok("1");#NormalTok(" ");#OperatorTok("/");#NormalTok(" beta)");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"less_than\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.weibull_min.cdf(x, c");#OperatorTok("=");#NormalTok("beta, scale");#OperatorTok("=");#NormalTok("scale)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" stats.weibull_min.sf(x, c");#OperatorTok("=");#NormalTok("beta, scale");#OperatorTok("=");#NormalTok("scale)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" poisson_prob(mu, x, prob_type");#OperatorTok("=");#StringTok("\"greater_equal\"");#NormalTok("):");],
+[#NormalTok("        ");#CommentTok("\"\"\"Distribusi Poisson diskrit standar (Soal 14c)\"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" prob_type ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"greater_equal\"");#NormalTok(":");],
+[#NormalTok("            ");#ControlFlowTok("return");#NormalTok(" stats.poisson.sf(x");#OperatorTok("-");#DecValTok("1");#NormalTok(", mu)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" stats.poisson.cdf(x, mu)");],
+[],
+[],
+[#CommentTok("# ==========================================");],
+[#CommentTok("# ");#AlertTok("TEST");#CommentTok(" CASE: MENGUJI METODE UNTUK PROBLEM SET 5");],
+[#CommentTok("# ==========================================");],
+[#ControlFlowTok("if");#NormalTok(" ");#VariableTok("__name__");#NormalTok(" ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"__main__\"");#NormalTok(":");],
+[#NormalTok("    ps5 ");#OperatorTok("=");#NormalTok(" ContinuousDistributions()");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 1: Eksponensial");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"Soal 1a (Exp P>3000):\"");#NormalTok(", ps5.exponential_prob(");#DecValTok("1000");#NormalTok(", ");#DecValTok("3000");#NormalTok(", ");#StringTok("\"greater_than\"");#NormalTok("))");],
+[#NormalTok("    ");],
+[#NormalTok("    ");#CommentTok("# Soal 3: Custom Integral f(x) = 600x^-2");],
+[#NormalTok("    f_coat ");#OperatorTok("=");#NormalTok(" ");#KeywordTok("lambda");#NormalTok(" x: ");#DecValTok("600");#NormalTok(" ");#OperatorTok("*");#NormalTok(" (x");#OperatorTok("**-");#DecValTok("2");#NormalTok(")");],
+[#NormalTok("    mean3, var3 ");#OperatorTok("=");#NormalTok(" ps5.custom_pdf_stats(f_coat, ");#DecValTok("100");#NormalTok(", ");#DecValTok("120");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Soal 3a (Custom PDF): Mean = ");#SpecialCharTok("{");#NormalTok("mean3");#SpecialCharTok(":.2f}");#SpecialStringTok(", Variansi = ");#SpecialCharTok("{");#NormalTok("var3");#SpecialCharTok(":.3f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 5: Seragam 49.75 < x < 50.25");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"Soal 5c (Uniform P<50.1):\"");#NormalTok(", ps5.uniform_prob(");#FloatTok("49.75");#NormalTok(", ");#FloatTok("50.25");#NormalTok(", ");#FloatTok("50.1");#NormalTok("))");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 7: Normal");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"Soal 7b (Normal P>65):\"");#NormalTok(", ps5.normal_prob(");#DecValTok("60");#NormalTok(", ");#DecValTok("5");#NormalTok(", ");#DecValTok("65");#NormalTok(", ");#StringTok("\"greater_than\"");#NormalTok("))");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"Soal 7c (Normal Inv 99%):\"");#NormalTok(", ps5.normal_inverse(");#DecValTok("60");#NormalTok(", ");#DecValTok("5");#NormalTok(", ");#FloatTok("0.99");#NormalTok("))");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 13: Erlang ");],
+[#NormalTok("    ");#CommentTok("# Waktu sampai 3 kegagalan > 50000, rate = 1/25000");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"Soal 13c (Erlang P>50000):\"");#NormalTok(", ps5.erlang_prob(");#DecValTok("3");#NormalTok(", ");#DecValTok("1");#OperatorTok("/");#DecValTok("25000");#NormalTok(", ");#DecValTok("50000");#NormalTok(", ");#StringTok("\"greater_than\"");#NormalTok("))");],
+[],
+[#NormalTok("    ");#CommentTok("# Soal 15: Weibull");],
+[#NormalTok("    alpha_15 ");#OperatorTok("=");#NormalTok(" ");#DecValTok("1");#NormalTok(" ");#OperatorTok("/");#NormalTok(" (");#DecValTok("10");#NormalTok(" ");#OperatorTok("*");#NormalTok(" math.sqrt(");#DecValTok("3");#NormalTok("))");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"Soal 15a (Weibull P>500):\"");#NormalTok(", ps5.weibull_prob(alpha_15, ");#FloatTok("0.5");#NormalTok(", ");#DecValTok("500");#NormalTok(", ");#StringTok("\"greater_than\"");#NormalTok("))");],));
+= Tujuan Bab
 <tujuan-bab-4>
+title: "Bab 5. Random Variable Multivariat dan Fungsi Random Variable" format: html jupyter: python3
+
 Setelah mempelajari bab ini, mahasiswa diharapkan mampu:
 
 + memahami bahwa banyak masalah nyata melibatkan #strong[lebih dari satu random variable],
@@ -3595,15 +4166,10 @@ $ p_(X \, Y) \( x \, y \) $
 
 dengan $X in { 0 \, 1 \, 2 }$ dan $Y in { 0 \, 1 }$:
 
-#table(
-  columns: 3,
-  align: (auto,right,right,),
-  table.header([$x without y$], [0], [1],),
-  table.hline(),
-  [0], [0.10], [0.20],
-  [1], [0.15], [0.25],
-  [2], [0.10], [0.20],
-)
+$x without y$ | 0 | 1 |
+
+||:|:| | 0 | 0.10 | 0.20 | | 1 | 0.15 | 0.25 | | 2 | 0.10 | 0.20 |
+
 Total = 1.
 
 === Python representation
@@ -4278,6 +4844,254 @@ Dengan bab ini, Anda sudah punya salah satu kemampuan yang sangat penting dalam 
 
 Di bab terakhir, kita akan menutup perjalanan ini dengan merangkum prinsip-prinsip utamanya: bagaimana random variable, distribusi, Python, dan pengambilan keputusan menyatu menjadi satu cara berpikir yang kuat.
 
+== Soal Tambahan
+<soal-tambahan-1>
+Sumber: "Problem Set 6: Probabilitas dan Statistik" "Distribusi Probabilitas Gabungan (Multivariat)" Author: Dimitri Mahayana
+
+#strong[Petunjuk:] Kerjakan soal-soal berikut dengan teliti dan kumpulkan!
+
+#strong[Soal 1] Tunjukkan bahwa suatu fungsi tertentu memenuhi sifat-sifat dari fungsi massa probabilitas gabungan! #emph[\(Catatan: Asumsikan terdapat tabel distribusi probabilitas f(x,y) yang menyertai soal ini).]
+
+#strong[Soal 2] Tentukan nilai $c$ yang dapat membuat fungsi $f \( x \, y \) = c \( x + y \)$ menjadi sebuah distribusi probabilitas gabungan pada sembilan titik dengan $x = 1 \, 2 \, 3$ dan $y = 1 \, 2 \, 3$.
+
+#strong[Soal 3] Empat printer elektronik dipilih dari sejumlah printer rusak. Setiap printer diperiksa dan kemudian diklasifikasikan kedalam dua kelas, yakni cacat berat dan cacat ringan. Anggap sebuah #emph[random variable] $X$ dan $Y$ masing-masing menunjukkan jumlah dari printer dengan keadaan cacat berat dan cacat ringan. Tentukan rentang distribusi probabilitas gabungan dari $X$ dan $Y$.
+
+#strong[Soal 4] Sebuah #emph[website] bisnis kecil berisikan 100 #emph[webpages] dengan 60%, 30% dan 10% dari #emph[webpages] tersebut, merupakan #emph[webpages] yang berisikan konten dengan grafik rendah, sedang dan tinggi, secara berurutan. Sampel dari 4 #emph[webpages] dipilih tanpa penggantian, serta $X$ dan $Y$ menunjukkan jumlah #emph[webpages] dengan output grafik sedang dan tinggi pada sampel. Tentukan: a. $f_(X Y) \( x \, y \)$ b. $f_X \( x \)$ c.~$E \( X \)$ d.~$f_(Y \| 3) \( y \)$ e. $E \( Y \| X = 3 \)$ f.~$V \( Y \| X = 3 \)$ g. Apakah $X$ dan $Y$ independen?
+
+#strong[Soal 5] Anggap bahwa variabel random $X$, $Y$, dan $Z$ memiliki distribusi probabilitas gabungan yang terdefinisi pada sebuah tabel (merujuk pada soal sebelumnya). Tentukan: a. $P \( X = 2 \)$ b. $P \( Z < 1 \, 5 \)$ c.~$E \( X \)$ d.~$P \( X = 1 \, Y = 2 \)$ e. $P \( X = 1 upright(" atau ") Z = 2 \)$
+
+#strong[Soal 6] Empat oven elektronik yang terjatuh pada saat proses pengiriman diperiksa dan diklasifikasikan menjadi kedalam tiga kelas, yakni cacat berat, cacat ringan dan tidak cacat sama sekali. Pada pengalaman sebelumnya, setidaknya 60% dari oven yang terjatuh pada proses pengiriman akan mengalami cacat berat, 30% akan mengalami cacat ringan dan sekitar 10%-nya tidak akan mengalami kecacatan sama sekali. Asumsikan bahwa kecacatan pada empat oven muncul secara independen. a. Apakah distribusi probabilitas dari jumlah oven pada setiap kategori bersifat multinomial? Mengapa demikian/mengapa tidak demikian? b. Berapa probabilitas terjadinya kondisi dimana empat oven yang terjatuh, 2 diantaranya mengalami cacat berat dan 2 lainnya mengalami cacat ringan? c.~Berapa probabilitas terjadinya kondisi dimana tidak ada dari empat oven yang terjatuh tersebut yang mengalami cacat?
+
+#strong[Soal 7] Pada sebuah transmisi informasi digital, probabilitas dimana bit mengalami distorsi tinggi, sedang dan rendah, secara berurutan, adalah 0,01; 0,04 dan 0,95. Anggap bahwa tiga bit ditransmisikan dan setiap muatan distorsi pada setiap bit diasumsikan independen. a. Berapa probabilitas terjadinya kondisi dimana dua bit memiliki distorsi tinggi dan satu lainnya mengalami distorsi sedang? b. Berapa probabilitas terjadinya kondisi dimana ketiga bit memiliki distorsi rendah?
+
+#strong[Soal 8] Tentukan nilai $c$ yang dapat membuat fungsi $f \( x \, y \) = c x y$ menjadi fungsi padat probabilitas gabungan pada rentang $0 < x < 3$ dan $0 < y < 3$.
+
+#strong[Soal 9] Lanjutan dari soal 8, tentukan hal-hal berikut: a. $P \( X < 1 \, Y < 2 \)$ b. $P \( 1 < X < 2 \)$ c.~$P \( Y > 1 \)$ d.~$P \( X < 2 \, Y < 2 \)$ e. $E \( X \)$ f.~$E \( Y \)$
+
+#strong[Soal 10] Dua metode dalam mengukur kehalusan permukaan digunakan dalam mengevaluasi sebuah produk kertas. Pengukuran tersebut direkam sebagai deviasi dari nominal kehalusan permukaan dalam satuan terkodifikasi. Distribusi probabilitas gabungan dari dua pengukuran adalah distribusi seragam pada wilayah rentang $0 < x < 4$, $0 < y$, dan $x - 1 < y < x + 1$ dengan fungsi $f_(X Y) \( x \, y \) = c$ berlaku pada wilayah rentang tersebut. Tentukan nilai $c$ sedemikian rupa sehingga $f_(X Y) \( x \, y \)$ merupakan fungsi distribusi probabilitas gabungan.
+
+#strong[Soal 11] Sebuah bisnis manufaktur pakaian populer menerima pesanan #emph[online] dari dua #emph[routing system] yang berbeda. Rentang waktu antara setiap pesanan untuk setiap #emph[routing system] pada hari biasa diketahui terdistribusi secara eksponensial dengan rata-rata selama 3,2 menit. Setiap sistem diasumsikan beroperasi secara independen. Tentukan: a. Berapa probabilitas terjadinya kondisi tidak ada pesanan yang diterima hingga periode waktu 5 menit dari pesanan terakhir? b. Berapa probabilitas untuk keadaan tidak ada pesanan yang diterima hingga periode waktu 10 menit? c.~Berapa probabilitas terjadinya keadaan kedua sistem menerima dua pesanan pada rentang 10 dan 15 menit setelah situs pemesanan baru dibuka? d.~Mengapa distribusi probabilitas gabungan tidak dibutuhkan untuk menjawab pertanyaan sebelumnya?
+
+#strong[Soal 12] Anggap variabel random $X$, $Y$, dan $Z$ memiliki fungsi padat probabilitas gabungan $f \( x \, y \, z \) = 8 x y z$ untuk setiap $0 < x < 1$, $0 < y < 1$ dan $0 < z < 1$. Tentukan hal-hal berikut: a. $P \( X < 0 \, 5 \)$ b. $P \( X < 0 \, 5 \, Y < 0 \, 5 \)$ c.~$P \( Z < 2 \)$ d.~$P \( X < 0 \, 5 \, Z < 2 \)$ e. $E \( X \)$
+
+#strong[Soal 13] Tentukan nilai $c$ yang dapat membuat fungsi $f_(X Y Z) \( x \, y \, z \) = c$ menjadi fungsi padat probabilitas gabungan pada wilayah rentang $x > 0$, $y > 0$, $z > 0$, dan $x + y + z < 1$.
+
+#strong[Soal 14] Sebuah manufaktur lampu elektroluminesen mengetahui bahwa jumlah tinta luminesen yang terkandung dalam setiap satu produknya ialah terdistribusi secara normal dengan nilai rata-rata 1,2 gram dan standar deviasi 0,03 gram. Setiap lampu yang memiliki kurang dari 1,14 gram tinta luminesen akan gagal dalam memenuhi spesifikasi pelanggan. Sampel random sejumlah 25 lampu diambil dan kandungan massa tinta luminesen yang terkandung pada setiap sampel lampu tersebut diukur. Tentukan: a. Berapa probabilitas bahwa setidaknya 1 lampu gagal memenuhi spesifikasi? b. Berapa probabilitas bahwa 5 lampu atau kurang gagal memenuhi spesifikasi? c.~Berapa probabilitas bahwa seluruh sampel lampu tersebut memenuhi spesifikasi? d.~Mengapa distribusi probabilitas gabungan dari kasus sampel 25 lampu tidak dibutuhkan untuk menjawab pertanyaan sebelumnya?
+
+#strong[Soal 15] Tentukan nilai $c$ serta nilai kovarian dan korelasi untuk fungsi massa probabilitas gabungan $f_(X Y) \( x \, y \) = c \( x + y \)$ untuk setiap nilai $x = 1 \, 2 \, 3$ dan $y = 1 \, 2 \, 3$.
+
+#strong[Soal 16] Anggap sebuah korelasi antara $X$ dan $Y$ adalah $rho$. Untuk konstanta $a$, $b$, $c$, dan $d$, apa korelasi antara variabel random $U = a X + b$ dan $V = c Y + d$?
+
+#strong[Soal 17] Anggap $X$ dan $Y$ merepresentasikan konsentrasi dan viskositas dari sebuah produk kimia. Kemudian, anggap $X$ dan $Y$ memiliki distribusi normal bivariat dengan $sigma_x = 4$, $sigma_y = 1$, $mu_x = 2$ dan $mu_y = 1$. Gambarlah plot kontur kasar dari fungsi padat probabilitas gabungan untuk setiap nilai $rho$: a. $rho = 0$ b. $rho = - 0 \, 8$ c.~$rho = 0 \, 8$
+
+#strong[Soal 18] Pada sebuah manufaktur lampu elektroluminesen, beberapa lapis berbeda dari tinta dimasukkan kedalam plastik substrat. Ketebalan dari #emph[layer] ini sangat vital dalam memenuhi spesifikasi warna akhir dan intensitas cahaya yang dihasilkan dari lampu. Anggap $X$ dan $Y$ menunjukkan ketebalan dari 2 lapisan tinta yang berbeda. Diketahui bahwa $X$ terdistribusi secara normal dengan nilai rata-rata 0,1 milimeter dan standar deviasi sebesar 0,00031 milimeter. $Y$ juga terdistribusi secara normal dengan nilai rata-rata 0,23 milimeter dan standar deviasi sebesar 0,00017 milimeter. Nilai $rho$ pada kedua variabel tersebut sama dengan 0.
+
+Agar memenuhi spesifikasi, ketebalan tinta pada lapisan $X$ harus berada pada rentang 0,099535 hingga 0,100465 milimeter serta ketebalan tinta pada lapisan $Y$ harus berada pada rentang 0,22966 hingga 0,23034 milimeter. Berapa probabilitas didapatkannya sebuah lampu yang dipilih secara acak akan sesuai dengan spesifikasi?
+
+#strong[Soal 19] Jika terdapat $X$ dan $Y$, yang mana $X$ dan $Y$ memiliki distribusi normal bivariat dengan nilai $rho = 0$, maka tunjukkan bahwa $X$ dan $Y$ independen!
+
+#strong[Soal 20] Jika terdapat $X$ dan $Y$, yang mana $X$ dan $Y$ independen dan merupakan variabel random normal dengan $E \( X \) = 0$, $V \( X \) = 4$, $E \( Y \) = 10$, dan $V \( Y \) = 9$. Tentukan hal-hal berikut: a. $E \( 2 X + 3 Y \)$ b. $V \( 2 X + 3 Y \)$ c.~$P \( 2 X + 3 Y < 30 \)$ d.~$P \( 2 X + 3 Y < 40 \)$
+
+#strong[Soal 21] Anggap sebuah variabel random $X$ merepresentasikan panjang sebuah bagian yang dilubangi dalam centimeter. Kemudian anggap variabel random $Y$ merupakan panjang dari bagian tersebut dalam satuan millimeter. Jika $E \( X \) = 5$ dan $V \( X \) = 0 \, 25$, maka berapa nilai rata-rata dan variansi dari variabel $Y$?
+
+#strong[Soal 22] Sebuah #emph[casing] plastik untuk sebuah piringan magnetik tersusun dari 2 bagian. Ketebalan dari setiap bagian terdistribusi secara normal dengan nilai rata-rata 2 milimeter dan dengan standar deviasi sebesar 0,1 milimeter serta setiap bagian saling independen. a. Tentukan nilai rata-rata dan standar deviasi dari ketebalan total dari kedua bagian #emph[casing] plastik tersebut. b. Berapa probabilitas ketebalan total dari kedua bagian #emph[casing] plastik tersebut lebih besar dari 4,3 milimeter.
+
+#strong[Soal 23] Sebuah komponen berbentuk U terbentuk dari 3 bagian, A, B dan C. Panjang dari A terdistribusi normal dengan nilai rata-rata 10 milimeter dan dengan standar deviasi sebesar 0,1 milimeter. Kemudian, ketebalan bagian B dan C terdistribusi secara normal dengan nilai rata-rata 2 milimeter dan dengan standar deviasi sebesar 0,05 milimeter. Asumsikan semua dimensi independen. a. Tentukan nilai rata-rata dan standar deviasi dari panjang gap D. #emph[\(Diasumsikan gap $D = A - B - C$)]. b. Berapa probabilitas bahwa gap D memiliki panjang kurang dari 5,9 milimeter.
+
+#strong[Soal 24] Persentase orang yang diberi obat antirheumatoid yang menderita efek samping parah, sedang dan ringan secara berurutan ialah 10%, 20% dan 70%. Asumsikan bahwa orang bereaksi secara independen dan misalkan 20 orang diberikan obat. Tentukan hal-hal berikut: a. Probabilitas bahwa 2, 4 dan 14 orang secara berurutan akan menderita efek samping parah, sedang dan rendah. b. Probabilitas bahwa tidak ada seorang pun yang menderita efek samping yang parah. c.~Nilai rata-rata dan variansi dari jumlah orang yang menderita efek samping parah. d.~Tentukan distribusi probabilitas bersyarat dari jumlah orang yang menderita efek samping parah ketika 19 orang menderita efek samping ringan. e. Tentukan nilai mean bersyarat $mu_(Y \| X)$ dari jumlah orang yang menderita efek samping parah ketika 19 orang menderita efek samping ringan.
+
+#strong[Soal 25] Tentukan nilai $c$ sedemikian rupa sehingga fungsi $f \( x \, y \) = c x^2 y$ untuk setiap nilai $0 < x < 3$ dan $0 < y < 2$ memenuhi sifat-sifat fungsi padat probabilitas gabungan!
+
+#strong[Soal 26] Sebuah distribusi gabungan dari variabel random kontinu $X$, $Y$, dan $Z$ adalah konstan pada wilayah $x^2 + y^2 lt.eq 1$ dan $0 < z < 4$. a. Tentukan $P \( X^2 + Y^2 lt.eq 0 \, 5 \)$. b. Tentukan $P \( X^2 + Y^2 lt.eq 0 \, 5 \, Z < 2 \)$. c.~Bagaimana fungsi padat probabilitas gabungan bersyarat dari $X$ dan $Y$ ketika nilai $Z = 1$? d.~Bagaimana fungsi probabilitas kepadatan marginal $X$? e. Tentukan nilai rata-rata bersyarat dari $Z$ ketika nilai $X = 0$ dan $Y = 0$. f.~Secara umum, tentukan nilai rata-rata bersyarat dari $Z$ ketika nilai $X = x$ dan $Y = y$.
+
+#strong[Soal 27] Umur dari 6 komponen utama pada mesin fotokopi merupakan variabel random dengan nilai rata-rata secara berurutan yakni 8.000, 10.000, 10.000, 20.000, 20.000 dan 25.000 jam. Tentukan: a. Berapa probabilitas umur dari seluruh komponen tersebut lebih besar dari 5.000 jam? b. Berapa probabilitas umur dari setidaknya satu komponen dari keenam komponen tersebut lebih besar dari 25.000 jam?
+
+#strong[Soal 28] Jika $f_(X Y) \( x \, y \) = frac(1, 1 \, 2 pi) exp { - \[ 0 \, 72 \( x - 1 \)^2 - 1 \, 6 \( x - 1 \) \( y - 2 \) + \( y - 2 \)^2 \] }$. Tentukan $E \( X \)$, $E \( Y \)$, $V \( X \)$, $V \( Y \)$ dan juga $rho$ dengan mengatur ulang parameter dalam fungsi padat probabilitas gabungan.
+
+#strong[Soal 29] Sebuah perusahaan kecil akan melakukan pengambilan keputusan untuk menentukan investasi apa yang akan digunakan untuk uang tunai yang dihasilkan dari operasi. Setiap investasi memiliki nilai rata-rata dan standar deviasi yang terkait dengan persentase kenaikan. Keamanan pertama memiliki persentase kenaikan nilai rata-rata 5% dengan standar deviasi 2%, dan keamanan kedua memberikan nilai rata-rata yang sama 5% dengan standar deviasi 4%. Sekuritas memiliki korelasi -0,5, sehingga ada korelasi negatif antara persentase pengembalian.
+
+Jika perusahaan menginvestasikan dua juta dolar dengan setengah di setiap keamanan (keamanan pertama dan kedua), berapa rata-rata dan standar deviasi dari persentase pengembalian? Bandingkan standar deviasi dari strategi ini dengan strategi yang menginvestasikan dua juta dolar hanya pada keamanan pertama dan kemudian interpretasikan!
+
+== Ringkasan Solusi
+<ringkasan-solusi>
+Berikut adalah lembar jawaban komprehensif yang berisi penyelesaian sistematis untuk soal-soal pada Problem Set 6 (Distribusi Probabilitas Gabungan / Multivariat) berdasarkan prinsip probabilitas dan statistika:
+
+=== #strong[LEMBAR JAWABAN: PROBLEM SET 6]
+<lembar-jawaban-problem-set-6>
+#strong[Soal 1: Pembuktian Fungsi Massa Probabilitas Gabungan] Syarat PMF Gabungan adalah $f \( x \, y \) gt.eq 0$ dan $sum sum f \( x \, y \) = 1$. Berdasarkan tabel distribusi pada sumber: $f \( x \, y \) = 1 / 4 + 1 / 8 + 1 / 4 + 1 / 4 + 1 / 8 = 8 / 8 = upright(bold(1))$. Karena totalnya tepat 1 dan tidak ada probabilitas negatif, fungsi tersebut terbukti memenuhi sifat PMF gabungan.
+
+#strong[Soal 2: Konstanta Distribusi Probabilitas] $sum_(x = 1)^3 sum_(y = 1)^3 c \( x + y \) = 1$ $c \[ \( 1 + 1 \) + \( 1 + 2 \) + \( 1 + 3 \) + \( 2 + 1 \) + \( 2 + 2 \) + \( 2 + 3 \) + \( 3 + 1 \) + \( 3 + 2 \) + \( 3 + 3 \) \] = 1$ $c \[ 2 + 3 + 4 + 3 + 4 + 5 + 4 + 5 + 6 \] = 36 c = 1 arrow.r.double.long upright(bold(c = 1 \/ 36))$
+
+#strong[Soal 3: Rentang Distribusi Printer Cacat] $X$ (cacat berat), $Y$ (cacat ringan) dari total sampel $n = 4$. Karena jumlah $X$ dan $Y$ tidak mungkin melebihi sampel, rentang distribusinya adalah: $upright(bold(x in { 0 \, 1 \, 2 \, 3 \, 4 }))$ dan $upright(bold(y in { 0 \, 1 \, 2 \, 3 \, 4 }))$ dengan syarat mutlak $upright(bold(x + y lt.eq 4))$.
+
+#strong[Soal 4: Website Bisnis (Distribusi Hipergeometrik Bivariat)] Diketahui 100 pages: 60 (Rendah), 30 ($X$/Sedang), 10 ($Y$/Tinggi). Ambil $n = 4$ tanpa pengembalian. a. $f_(X Y) \( x \, y \) = frac(binom(30, x) binom(10, y) binom(60, 4 - x - y), binom(100, 4))$ b. $f_X \( x \) = frac(binom(30, x) binom(70, 4 - x), binom(100, 4))$ c.~$E \( X \) = n dot.op p_x = 4 times \( 30 / 100 \) = upright(bold(1 \, 2))$ d.~$f_(Y \| 3) \( y \) = P \( Y = y \| X = 3 \) = frac(f_(X Y) \( 3 \, y \), f_X \( 3 \)) = frac(binom(10, y) binom(60, 1 - y), binom(70, 1))$ untuk $y in { 0 \, 1 }$ e. $E \( Y \| X = 3 \) = sum y dot.op f_(Y \| 3) \( y \) = 1 dot.op \( 10 / 70 \) = upright(bold(1 \/ 7))$ f.~$V \( Y \| X = 3 \) = E \( Y^2 \) - \( E \( Y \) \)^2 = 1 / 7 - \( 1 / 7 \)^2 = upright(bold(6 \/ 49))$ g. #strong[Tidak Independen], karena rentang $Y$ bergantung langsung pada nilai $X$ ($x + y lt.eq 4$).
+
+#strong[Soal 5: Evaluasi Tabel Probabilitas Z] Berdasarkan data probabilitas gabungan $f \( x \, y \, z \)$: a. $P \( X = 2 \) = 0 \, 20 + 0 \, 15 + 0 \, 10 + 0 \, 05 = upright(bold(0 \, 50))$ b. $P \( Z < 1 \, 5 \) arrow.r.double.long P \( Z = 1 \) = 0 \, 05 + 0 \, 15 + 0 \, 20 + 0 \, 10 = upright(bold(0 \, 50))$ c.~$E \( X \) = 1 \( 0 \, 50 \) + 2 \( 0 \, 50 \) = upright(bold(1 \, 5))$ d.~$P \( X = 1 \, Y = 2 \) = 0 \, 15 + 0 \, 20 = upright(bold(0 \, 35))$ e. $P \( X = 1 union Z = 2 \) = P \( X = 1 \) + P \( Z = 2 \) - P \( X = 1 sect Z = 2 \) = 0 \, 50 + 0 \, 50 - \( 0 \, 10 + 0 \, 20 \) = upright(bold(0 \, 70))$
+
+#strong[Soal 6 & 7: Distribusi Multinomial Oven & Transmisi Bit] #strong[Oven:] $n = 4$, $p_1 \( b e r a t \) = 0 \, 6$, $p_2 \( r i n g a n \) = 0 \, 3$, $p_3 \( t i d a k \) = 0 \, 1$. \* a. #strong[Ya, bersifat multinomial] karena pengujian bersifat independen, kategori \> 2 dan probabilitas konstan. \* b. $P \( 2 upright(" berat") \, 2 upright(" ringan") \, 0 upright(" tidak") \) = frac(4 !, 2 ! 2 ! 0 !) \( 0 \, 6 \)^2 \( 0 \, 3 \)^2 \( 0 \, 1 \)^0 = 6 times 0 \, 36 times 0 \, 09 = upright(bold(0 \, 1944))$ \* c.~$P \( 0 upright(" cacat") \) = frac(4 !, 0 ! 0 ! 4 !) \( 0 \, 1 \)^4 = upright(bold(0 \, 0001))$
+
+#strong[Transmisi Bit:] $n = 3$, $p_T = 0 \, 01$, $p_S = 0 \, 04$, $p_R = 0 \, 95$. \* a. $P \( 2 upright(" Tinggi") \, 1 upright(" Sedang") \) = frac(3 !, 2 ! 1 ! 0 !) \( 0 \, 01 \)^2 \( 0 \, 04 \)^1 \( 0 \, 95 \)^0 = 3 times 0 \, 0001 times 0 \, 04 = upright(bold(0 \, 000012))$ \* b. $P \( 3 upright(" Rendah") \) = \( 0 \, 95 \)^3 = upright(bold(0 \, 857375))$
+
+#strong[Soal 8 & 9: PDF Kontinu Gabungan f(x,y) = cxy] \* #strong[Nilai c:] $integral_0^3 integral_0^3 c x y thin d x thin d y = c \[ x^2 / 2 \]_0^3 \[ y^2 / 2 \]_0^3 = c \( 81 / 4 \) = 1 arrow.r.double.long upright(bold(c = 4 \/ 81))$ \* a. $P \( X < 1 \, Y < 2 \) = integral_0^2 integral_0^1 4 / 81 x y thin d x thin d y = 4 / 81 \( 1 / 2 \) \( 2 \) = upright(bold(4 \/ 81))$ \* b. $P \( 1 < X < 2 \) = integral_0^3 integral_1^2 4 / 81 x y thin d x thin d y = 4 / 81 \( 3 / 2 \) \( 9 / 2 \) = upright(bold(1 \/ 3))$ \* c.~$P \( Y > 1 \) = integral_1^3 integral_0^3 4 / 81 x y thin d x thin d y = 4 / 81 \( 9 / 2 \) \( 4 \) = upright(bold(8 \/ 9))$ \* d.~$P \( X < 2 \, Y < 2 \) = integral_0^2 integral_0^2 4 / 81 x y thin d x thin d y = 4 / 81 \( 2 \) \( 2 \) = upright(bold(16 \/ 81))$ \* e. $E \( X \) = integral_0^3 integral_0^3 x \( 4 / 81 x y \) thin d x thin d y = 4 / 81 \( 9 \) \( 9 / 2 \) = upright(bold(2))$ \* f.~$E \( Y \) = upright(bold(2))$ (karena fungsi simetris)
+
+#strong[Soal 10: Pengukuran Kertas Seragam] Luas area rentang = $integral_0^4 \( x + 1 \) - \( x - 1 \) d x = integral_0^4 2 d x = 8$. Agar volume $integral.double f \( x \, y \) d x d y = 1$, maka $upright(bold(c = 1 \/ 8))$.
+
+#strong[Soal 11: Sistem Pemesanan Independen (Eksponensial)] Laju $lambda = 1 \/ 3 \, 2 = 0 \, 3125$ pesanan/menit. \* a. Prob(0 pesanan dlm 5 mnt, 1 sistem) = $e^(- 5 \/ 3 \, 2) approx 0 \, 2096$. Jika kedua sistem = $\( 0 \, 2096 \)^2 approx upright(bold(0 \, 0439))$. \* b. Prob(0 pesanan dlm 10 mnt, 2 sistem) = $\( e^(- 10 \/ 3 \, 2) \)^2 approx upright(bold(0 \, 00193))$. \* c.~Menggunakan Poisson interval $mu = 5 \/ 3 \, 2 = 1 \, 5625$. $P \( X = 2 \) = e^(- 1 \, 5625) frac(1 \, 5625^2, 2) approx 0 \, 2558$. Jika kedua sistem = $\( 0 \, 2558 \)^2 approx upright(bold(0 \, 0654))$. \* d.~Distribusi gabungan #strong[tidak dibutuhkan] karena kedua #emph[routing system] telah secara eksplisit dideklarasikan beroperasi secara independen.
+
+#strong[Soal 12: Fungsi 3 Variabel f(x,y,z) = 8xyz] Variabel independen pada batas $0 < x \, y \, z < 1$. \* a. $P \( X < 0 \, 5 \) = integral_0^(0 \, 5) 2 x d x = upright(bold(0 \, 25))$ \* b. $P \( X < 0 \, 5 \, Y < 0 \, 5 \) = P \( X < 0 \, 5 \) dot.op P \( Y < 0 \, 5 \) = 0 \, 25 times 0 \, 25 = upright(bold(0 \, 0625))$ \* c.~$P \( Z < 2 \) = upright(bold(1))$ (Batas maksimal fungsi adalah 1) \* d.~$P \( X < 0 \, 5 \, Z < 2 \) = 0 \, 25 times 1 = upright(bold(0 \, 25))$ \* e. $E \( X \) = integral_0^1 x \( 2 x \) d x = upright(bold(2 \/ 3))$
+
+#strong[Soal 13: Fungsi f(x,y,z) = c] Batas adalah simplex ruang 3D $x + y + z lt.eq 1$. Volume dari struktur bangun datar ini adalah $integral_0^1 integral_0^(1 - x) integral_0^(1 - x - y) 1 thin d z thin d y thin d x = 1 \/ 6$. Agar probabilitas bernilai 1, maka $upright(bold(c = 6))$.
+
+#strong[Soal 14: Manufaktur Lampu (Normal)] $mu = 1 \, 2$, $sigma = 0 \, 03$. Gagal $< 1 \, 14$. $Z = frac(1 \, 14 - 1 \, 2, 0 \, 03) = - 2$. $P \( g a g a l \) = P \( Z < - 2 \) = 0 \, 02275$. Total sampel $n = 25$ (Distribusi Binomial). \* a. $P \( gt.eq 1 g a g a l \) = 1 - P \( 0 g a g a l \) = 1 - \( 1 - 0 \, 02275 \)^25 approx upright(bold(0 \, 438))$ \* b. $P \( lt.eq 5 g a g a l \) = sum_(x = 0)^5 b \( x \; 25 \; 0 \, 02275 \) approx upright(bold(0 \, 9999))$ \* c.~$P \( s e l u r u h m e m e n u h i \/ 0 g a g a l \) = upright(bold(0 \, 562))$ \* d.~#strong[Tidak dibutuhkan], karena setiap sampel lampu yang ditarik bersifat independen dari lampu lainnya (distribusi marginal Binomial dapat menangani skenario independen).
+
+#strong[Soal 15: Kovariansi dan Korelasi f(x,y) = c(x+y)] Telah dibuktikan $upright(bold(c = 1 \/ 36))$. Distribusi Marginal (simetris): $E \( X \) = E \( Y \) = 13 \/ 6$. Variansi $V \( X \) = 23 \/ 36$. Ekspektasi gabungan $E \( X Y \) = sum x y dot.op frac(x + y, 36) = 168 \/ 36 = upright(bold(14 \/ 3))$. Kovariansi: $C o v \( X \, Y \) = E \( X Y \) - E \( X \) E \( Y \) = 168 / 36 - \( 13 / 6 \)^2 = upright(bold(- 1 \/ 36))$. Korelasi: $rho = frac(C o v \( X \, Y \), sigma_X sigma_Y) = frac(- 1 \/ 36, 23 \/ 36) = upright(bold(- 1 \/ 23))$.
+
+#strong[Soal 16: Perubahan Korelasi Linier] Korelasi $U = a X + b$ dan $V = c Y + d$ bebas dari pergeseran ($b \, d$). Korelasinya tetap sebesar $upright(bold(rho))$ jika tanda perkalian $a$ dan $c$ positif (searah), dan $upright(bold(- rho))$ jika perkalian $a$ dan $c$ bernilai negatif (berlawanan arah).
+
+#strong[Soal 17: Plot Kontur Normal Bivariat] \* a. $rho = 0$: Kontur elips sejajar sumbu tegak/datar karena variansi $sigma_x eq.not sigma_y$. \* b. $rho = - 0 \, 8$: Kontur elips condong memanjang dari kiri-atas ke kanan-bawah. \* c.~$rho = 0 \, 8$: Kontur elips condong memanjang dari kiri-bawah ke kanan-atas.
+
+#strong[Soal 18: Tinta Lapis Bivariat Spesifikasi] Karena $rho = 0$, $X$ dan $Y$ adalah independen. $Z_X = frac(0 \, 100465 - 0 \, 1, 0 \, 00031) = plus.minus 1 \, 5 arrow.r.double.long P \( S p e c s X \) = P \( - 1 \, 5 < Z < 1 \, 5 \) = 0 \, 8664$. $Z_Y = frac(0 \, 23034 - 0 \, 23, 0 \, 00017) = plus.minus 2 \, 0 arrow.r.double.long P \( S p e c s Y \) = P \( - 2 < Z < 2 \) = 0 \, 9545$. Probabilitas lulus kedua #emph[specs]: $0 \, 8664 times 0 \, 9545 = upright(bold(0 \, 827))$.
+
+#strong[Soal 19: Pembuktian Independensi ρ = 0] Pada distribusi normal bivariat eksak, jika $rho = 0$, eksponensial dari fungsi padat gabungan $\( x - mu_x \) \( y - mu_y \)$ bernilai nol, sehingga persamaannya dapat dipecah sempurna secara aljabar menjadi $f \( x \, y \) = f \( x \) dot.op f \( y \)$. Ini adalah bukti matematis absolut bahwa mereka independen.
+
+#strong[Soal 20: Kombinasi Variabel Normal (E(X)=0, V(X)=4, E(Y)=10, V(Y)=9)] Asumsikan $W = 2 X + 3 Y$. \* a. $E \( W \) = 2 \( 0 \) + 3 \( 10 \) = upright(bold(30))$ \* b. $V \( W \) = 2^2 \( 4 \) + 3^2 \( 9 \) = 16 + 81 = upright(bold(97))$ \* c.~$P \( W < 30 \) = P \( Z < frac(30 - 30, sqrt(97)) \) = P \( Z < 0 \) = upright(bold(0 \, 50))$ \* d.~$P \( W < 40 \) = P \( Z < frac(40 - 30, sqrt(97)) \) = P \( Z < 1 \, 015 \) = upright(bold(0 \, 8449))$
+
+#strong[Soal 21: Transformasi Satuan (cm ke mm)] Variabel berubah linear dengan fungsi $Y = 10 X$. Rata-rata: $E \( Y \) = 10 dot.op E \( X \) = 10 \( 5 \) = upright(bold(50 upright(" mm")))$. Variansi: $V \( Y \) = 10^2 dot.op V \( X \) = 100 \( 0 \, 25 \) = upright(bold(25 upright(" mm")^2))$.
+
+#strong[Soal 22 & 23: Kombinasi Linier Komponen Geometris] #strong[Casing (T = X1 + X2):] $mu = 2$, $sigma = 0 \, 1$. \* a. Rata-rata $mu_T = 2 + 2 = upright(bold(4 upright(" mm")))$. Standar deviasi $sigma_T = sqrt(0 \, 1^2 + 0 \, 1^2) = sqrt(0 \, 02) approx upright(bold(0 \, 1414 upright(" mm")))$. \* b. $P \( T > 4 \, 3 \) = P \( Z > frac(4 \, 3 - 4, 0 \, 1414) \) = P \( Z > 2 \, 12 \) = upright(bold(0 \, 017))$.
+
+#strong[Gap (D = A - B - C):] $mu_A = 10 \, sigma_A = 0 \, 1$, $mu_(B \, C) = 2 \, sigma_(B \, C) = 0 \, 05$. \* a. $mu_D = 10 - 2 - 2 = upright(bold(6 upright(" mm")))$. $sigma_D = sqrt(0 \, 1^2 + \( - 1 \)^2 \( 0 \, 05 \)^2 + \( - 1 \)^2 \( 0 \, 05 \)^2) = sqrt(0 \, 015) approx upright(bold(0 \, 1225 upright(" mm")))$. \* b. $P \( D < 5 \, 9 \) = P \( Z < frac(5 \, 9 - 6, 0 \, 1225) \) = P \( Z < - 0 \, 816 \) = upright(bold(0 \, 207))$.
+
+#strong[Soal 24: Reaksi Obat Antirheumatoid (Bersyarat)] 20 orang: 10% Parah ($Y$), 20% Sedang, 70% Ringan ($X$). \* a. $P \( 2 P \, 4 S \, 14 R \) = frac(20 !, 2 ! 4 ! 14 !) \( 0 \, 1 \)^2 \( 0 \, 2 \)^4 \( 0 \, 7 \)^14 = upright(bold(0 \, 016))$. \* b. $P \( 0 P \) = \( 1 - 0 \, 1 \)^20 = 0 \, 9^20 = upright(bold(0 \, 1216))$. \* c.~Mean $Y = 20 \( 0 \, 1 \) = upright(bold(2))$. Variansi $Y = 20 \( 0 \, 1 \) \( 0 \, 9 \) = upright(bold(1 \, 8))$. \* d.~Jika 19 Ringan ($X = 19$), tersisa $n = 1$ orang. Rasio normalisasi probabilitas bersyarat parah: $p' = frac(0 \, 1, 0 \, 1 + 0 \, 2) = 1 \/ 3$. Distribusinya adalah binomial dengan $n = 1 \, p = 1 \/ 3$. \* e. $mu_(Y \| X = 19) = n dot.op p' = 1 dot.op \( 1 \/ 3 \) = upright(bold(1 \/ 3))$.
+
+#strong[Soal 25 & 26: Fungsi Terdistribusi Lingkaran Gabungan] \* #strong[Soal 25:] $integral_0^3 integral_0^2 c x^2 y thin d y thin d x = 1 arrow.r.double.long c \[ 3^3 / 3 \] \[ 2^2 / 2 \] = 18 c = 1 arrow.r.double.long upright(bold(c = 1 \/ 18))$. \* #strong[Soal 26:] $f \( x \, y \, z \)$ pada $x^2 + y^2 lt.eq 1$ dan $0 < z < 4$. Area silinder $4 pi$. Densitas konstan = $frac(1, 4 pi)$. \* a. $P \( X^2 + Y^2 lt.eq 0 \, 5 \) = frac(pi \( 0 \, 5 \), pi \( 1 \)) = upright(bold(0 \, 5))$. \* b. $P \( Z < 2 sect r^2 lt.eq 0 \, 5 \) = 0 \, 5 times 2 / 4 = upright(bold(0 \, 25))$. \* c.~$f \( x \, y \| Z = 1 \) = upright(bold(1 \/ pi))$ (Distribusi seragam piringan penuh terlepas dari $Z$). \* d.~$f_X \( x \) = integral integral frac(1, 4 pi) d y d z = upright(bold(frac(2 sqrt(1 - x^2), pi)))$. \* e & f.~$E \( Z \| x \, y \) = upright(bold(2))$ untuk segala kombinasi (karena Z menyebar seragam dari 0 hingga 4 dan independen dari penampang XY).
+
+#strong[Soal 27: Keandalan 6 Mesin Fotokopi (Eksponensial)] \* a. $P \( upright("seluruh") > 5.000 \) = product e^(- 5000 \/ mu_i) = e^(- 5 \/ 8) e^(- 5 \/ 10) e^(- 5 \/ 10) e^(- 5 \/ 20) e^(- 5 \/ 20) e^(- 5 \/ 25) = e^(- 2 \, 325) = upright(bold(0 \, 0977))$. \* b. $P \( upright("setidaknya 1") > 25.000 \) = 1 - P \( upright("seluruh") lt.eq 25.000 \) = 1 - product \( 1 - e^(- 25000 \/ mu_i) \)$.
+
+#strong[Soal 28 & 29: Normal Bivariat Eksponensial & Portofolio] \* #strong[Soal 28:] Membandingkan matriks kuadratik pada ekspresi $exp { - dots.h }$ dengan kernel standar normal bivariat menunjukkan nilai pemusatan sentral $E \( X \) = upright(bold(1))$ dan $E \( Y \) = upright(bold(2))$. \* #strong[Soal 29:] $X_1$ (mean 5, sd 2), $X_2$ (mean 5, sd 4), $rho = - 0 \, 5$, Bobot investasi $w = 0 \, 5$. \* Return Rata-rata = $0 \, 5 \( 5 \) + 0 \, 5 \( 5 \) = upright(bold(5 %))$. \* Variansi Total = $w^2 sigma_1^2 + w^2 sigma_2^2 + 2 w^2 rho sigma_1 sigma_2 = 0 \, 25 \( 4 \) + 0 \, 25 \( 16 \) + 2 \( 0 \, 25 \) \( - 0 \, 5 \) \( 2 \) \( 4 \) = 1 + 4 - 2 = 3$. \* Standar Deviasi (Risiko) = $upright(bold(sqrt(3) approx 1 \, 732 %))$. \* #strong[Interpretasi:] Diversifikasi ke instrumen dengan korelasi negatif efektif menurunkan rasio risiko gabungan ($1 \, 732 %$) menjadi jauh lebih rendah dibandingkan dengan berinvestasi tunggal pada instrumen teraman pertama sekalipun ($2 %$).
+
+== Konsep Solusi
+<konsep-solusi>
+=== #strong[Kategori 1: Distribusi Multinomial (Diskrit Gabungan)]
+<kategori-1-distribusi-multinomial-diskrit-gabungan>
+#strong[Prinsip yang Digunakan:] Distribusi Multinomial adalah perluasan dari distribusi Binomial. Distribusi ini digunakan ketika sebuah eksperimen memiliki lebih dari dua kemungkinan hasil (mutually exclusive) pada setiap percobaannya, dan percobaan tersebut dilakukan sebanyak $n$ kali secara independen. Rumusnya: $P \( X_1 = x_1 \, . . . \, X_k = x_k \) = frac(n !, x_1 ! . . . x_k !) p_1^(x_1) . . . p_k^(x_k)$
+
+#strong[Soal & Solusi Representatif:] \* #strong[Kasus Oven Cacat:] 4 oven jatuh. Probabilitas cacat berat ($p_1 = 0 \, 6$), ringan ($p_2 = 0 \, 3$), tidak cacat ($p_3 = 0 \, 1$). \* #emph[P(2 berat, 2 ringan, 0 tidak cacat):] $frac(4 !, 2 ! 2 ! 0 !) \( 0 \, 6 \)^2 \( 0 \, 3 \)^2 \( 0 \, 1 \)^0 = 6 times 0 \, 36 times 0 \, 09 = upright(bold(0 \, 1944))$. \* #emph[P(0 cacat dari 4 oven):] $frac(4 !, 0 ! 0 ! 4 !) \( 0 \, 6 \)^0 \( 0 \, 3 \)^0 \( 0 \, 1 \)^4 = upright(bold(0 \, 0001))$. \* #strong[Kasus Efek Samping Obat:] 20 orang. Parah ($p_1 = 0 \, 1$), sedang ($p_2 = 0 \, 2$), ringan ($p_3 = 0 \, 7$). \* #emph[P(2 parah, 4 sedang, 14 ringan):] $frac(20 !, 2 ! 4 ! 14 !) \( 0 \, 1 \)^2 \( 0 \, 2 \)^4 \( 0 \, 7 \)^14 approx upright(bold(0 \, 016))$. \* #emph[Mean efek parah:] $E \( X_1 \) = n p_1 = 20 times 0 \, 1 = upright(bold(2 upright(" orang")))$. \* #emph[Variansi efek parah:] $V \( X_1 \) = n p_1 \( 1 - p_1 \) = 20 \( 0 \, 1 \) \( 0 \, 9 \) = upright(bold(1 \, 8))$.
+
+=== #strong[Kategori 2: Distribusi Gabungan Kontinu & Penentuan Konstanta ($c$)]
+<kategori-2-distribusi-gabungan-kontinu-penentuan-konstanta-c>
+#strong[Prinsip yang Digunakan:] Untuk fungsi padat probabilitas (PDF) gabungan kontinu $f \( x \, y \)$, total volume di bawah kurva (integral lipat dua pada seluruh rentang) harus sama dengan 1 ($integral.double f \( x \, y \) d x d y = 1$). Probabilitas kejadian tertentu dihitung dengan mengintegralkan fungsi tersebut pada batas wilayah kejadiannya.
+
+#strong[Soal & Solusi Representatif:] \* #strong[Kasus Variabel $f \( x \, y \) = c x y$:] Rentang $0 < x < 3$ dan $0 < y < 3$. \* #emph[Menentukan c:] $integral_0^3 integral_0^3 c x y thin d y thin d x = c \[ x^2 / 2 \]_0^3 \[ y^2 / 2 \]_0^3 = c \( 9 / 2 \) \( 9 / 2 \) = frac(81 c, 4) = 1$. Maka $upright(bold(c = 4 \/ 81))$. \* #emph[Menentukan E(X):] $E \( X \) = integral.double x dot.op f \( x \, y \) d x d y = integral_0^3 integral_0^3 x \( 4 / 81 x y \) d y d x = upright(bold(2))$. \* #strong[Kasus Evaluasi Kehalusan Permukaan Kertas:] Rentang $0 < x < 4$ dan $x - 1 < y < x + 1$ dengan $f \( x \, y \) = c$. \* Luas area batas: $integral_0^4 \( \( x + 1 \) - \( x - 1 \) \) d x = integral_0^4 2 d x = 8$. Agar integral = 1, maka $upright(bold(c = 1 \/ 8))$.
+
+=== #strong[Kategori 3: Kombinasi Linear Variabel Random Independen]
+<kategori-3-kombinasi-linear-variabel-random-independen>
+#strong[Prinsip yang Digunakan:] Jika $X_1 \, X_2 \, dots.h$ adalah variabel random independen berdistribusi normal, maka kombinasi linear mereka $Y = a_1 X_1 + a_2 X_2 + dots.h$ juga akan terdistribusi normal . \* Mean: $mu_Y = a_1 mu_1 + a_2 mu_2 + dots.h$ \* Variansi: $sigma_Y^2 = a_1^2 sigma_1^2 + a_2^2 sigma_2^2 + dots.h$
+
+#strong[Soal & Solusi Representatif:] \* #strong[Kasus Casing Plastik Magnetik:] Terdiri dari 2 bagian independen, masing-masing $mu = 2 \, sigma = 0 \, 1$. \* #emph[Total Ketebalan ($T = X_1 + X_2$):] $mu_T = 2 + 2 = upright(bold(4 upright(" mm")))$. Variansi $sigma_T^2 = 0 \, 1^2 + 0 \, 1^2 = 0 \, 02$. Standar deviasi $sigma_T = upright(bold(sqrt(0 \, 02) approx 0 \, 1414 upright(" mm")))$. \* #emph[P(T \> 4,3):] Transformasi ke Z: $Z = frac(4 \, 3 - 4, 0 \, 1414) = 2 \, 12$. Nilai $P \( Z > 2 \, 12 \) approx upright(bold(0 \, 017))$. \* #strong[Kasus Komponen Berbentuk U:] Gap $D = A - B - C$. $A tilde.op N \( 10 \; 0 \, 1^2 \)$, $B \, C tilde.op N \( 2 \; 0 \, 05^2 \)$. \* #emph[Mean gap D:] $10 - 2 - 2 = upright(bold(6 upright(" mm")))$. \* #emph[Variansi D:] $V \( A \) + V \( - B \) + V \( - C \) = 0 \, 1^2 + \( - 1 \)^2 \( 0 \, 05 \)^2 + \( - 1 \)^2 \( 0 \, 05 \)^2 = 0 \, 01 + 0 \, 0025 + 0 \, 0025 = upright(bold(0 \, 015))$. Standar deviasi $approx 0 \, 1225$. \* #emph[P(D \< 5,9):] $P \( Z < frac(5 \, 9 - 6, 0 \, 1225) \) = P \( Z < - 0.816 \) approx upright(bold(0 \, 207))$. \* #strong[Kasus Portofolio Investasi:] $X_1$ (Keamanan 1): $mu = 5 % \, sigma = 2 %$. $X_2$ (Keamanan 2): $mu = 5 % \, sigma = 4 %$. Korelasi $rho = - 0 \, 5$. Investasi dibagi rata 50:50. \* $R = 0 \, 5 X_1 + 0 \, 5 X_2$. \* #emph[Rata-rata Return:] $0 \, 5 \( 5 \) + 0 \, 5 \( 5 \) = upright(bold(5 %))$. \* #emph[Variansi dengan korelasi:] $sigma_R^2 = a^2 sigma_1^2 + b^2 sigma_2^2 + 2 a b dot.op C o v \( X_1 \, X_2 \)$ di mana $C o v = rho sigma_1 sigma_2$. $sigma_R^2 = \( 0 \, 5^2 \) \( 2^2 \) + \( 0 \, 5^2 \) \( 4^2 \) + 2 \( 0 \, 5 \) \( 0 \, 5 \) \( - 0 \, 5 \) \( 2 \) \( 4 \) = 1 + 4 - 2 = upright(bold(3))$. \* #emph[Standar deviasi:] $upright(bold(sqrt(3) approx 1 \, 732 %))$. Nilai ini lebih rendah dibanding investasi hanya pada keamanan pertama (2%), menunjukkan prinsip diversifikasi meminimalkan risiko.
+
+=== #strong[Kategori 4: Kovariansi, Korelasi, dan Normal Bivariat]
+<kategori-4-kovariansi-korelasi-dan-normal-bivariat>
+#strong[Prinsip yang Digunakan:] Kovariansi mengukur hubungan linear antara dua variabel, dan Korelasi ($rho$) menyelaraskan skala kovariansi ke rentang $- 1 lt.eq rho lt.eq 1$. Jika $rho = 0$ pada distribusi normal bivariat, maka kedua variabel dipastikan independen.
+
+#strong[Soal & Solusi Representatif:] \* #strong[Kasus Spesifikasi Tinta Luminesen:] $X tilde.op N \( 0 \, 1 \; 0 \, 00031^2 \)$, $Y tilde.op N \( 0 \, 23 \; 0 \, 00017^2 \)$, $rho = 0$. Spesifikasi: $0 \, 099535 < X < 0 \, 100465$ dan $0 \, 22966 < Y < 0 \, 23034$. \* Karena $rho = 0$, kejadian $X$ dan $Y$ independen. Kita bisa menghitung probabilitas total sebagai $P \( S p e c s X \) times P \( S p e c s Y \)$. \* $Z_(X 1) = frac(0 \, 099535 - 0 \, 1, 0 \, 00031) = - 1 \, 5$ dan $Z_(X 2) = 1 \, 5$. Area $P \( - 1 \, 5 < Z < 1 \, 5 \) approx 0 \, 8664$. \* $Z_(Y 1) = frac(0 \, 22966 - 0 \, 23, 0 \, 00017) = - 2$ dan $Z_(Y 2) = 2$. Area $P \( - 2 < Z < 2 \) approx 0 \, 9545$. \* #emph[Probabilitas lampu lulus uji:] $0 \, 8664 times 0 \, 9545 approx upright(bold(0 \, 827))$.
+
+=== #strong[Desain Kelas Python Multivariat (Reusable)]
+<desain-kelas-python-multivariat-reusable>
+Skrip di bawah ini dirancang menggunakan #NormalTok("scipy.integrate"); dan #NormalTok("scipy.stats"); untuk menjawab setiap keluarga masalah di atas.
+
+#Skylighting(([#ImportTok("import");#NormalTok(" numpy ");#ImportTok("as");#NormalTok(" np");],
+[#ImportTok("import");#NormalTok(" scipy.stats ");#ImportTok("as");#NormalTok(" stats");],
+[#ImportTok("import");#NormalTok(" scipy.integrate ");#ImportTok("as");#NormalTok(" integrate");],
+[#ImportTok("import");#NormalTok(" math");],
+[],
+[#KeywordTok("class");#NormalTok(" MultivariateSolver:");],
+[#NormalTok("    ");],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" multinomial_prob(n, x_list, p_list):");],
+[#NormalTok("        ");#CommentTok("\"\"\"");],
+[#CommentTok("        Menghitung Probabilitas Distribusi Multinomial (Kasus Oven Cacat, Obat)");],
+[#CommentTok("        x_list: list jumlah observasi untuk tiap kategori");],
+[#CommentTok("        p_list: list probabilitas untuk tiap kategori");],
+[#CommentTok("        \"\"\"");],
+[#NormalTok("        prob ");#OperatorTok("=");#NormalTok(" math.factorial(n)");],
+[#NormalTok("        ");#ControlFlowTok("for");#NormalTok(" x ");#KeywordTok("in");#NormalTok(" x_list:");],
+[#NormalTok("            prob ");#OperatorTok("/=");#NormalTok(" math.factorial(x)");],
+[#NormalTok("        ");#ControlFlowTok("for");#NormalTok(" x, p ");#KeywordTok("in");#NormalTok(" ");#BuiltInTok("zip");#NormalTok("(x_list, p_list):");],
+[#NormalTok("            prob ");#OperatorTok("*=");#NormalTok(" (p ");#OperatorTok("**");#NormalTok(" x)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" prob");],
+[#NormalTok("    ");],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" find_continuous_constant_2D(f_xy, x_bounds, y_bounds):");],
+[#NormalTok("        ");#CommentTok("\"\"\"");],
+[#CommentTok("        Mencari konstanta 'c' agar integral f(x,y) = 1");],
+[#CommentTok("        x_bounds: list [min, max], y_bounds: list [min, max] atau fungsi lambda");],
+[#CommentTok("        \"\"\"");],
+[#NormalTok("        ");#ControlFlowTok("if");#NormalTok(" ");#BuiltInTok("callable");#NormalTok("(y_bounds): ");#CommentTok("# Jika batas Y bergantung pada X");],
+[#NormalTok("            integral_val, _ ");#OperatorTok("=");#NormalTok(" integrate.dblquad(f_xy, x_bounds, x_bounds, y_bounds, y_bounds)");],
+[#NormalTok("        ");#ControlFlowTok("else");#NormalTok(":");],
+[#NormalTok("            integral_val, _ ");#OperatorTok("=");#NormalTok(" integrate.dblquad(f_xy, x_bounds, x_bounds, ");#KeywordTok("lambda");#NormalTok(" x: y_bounds, ");#KeywordTok("lambda");#NormalTok(" x: y_bounds)");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" ");#DecValTok("1");#NormalTok(" ");#OperatorTok("/");#NormalTok(" integral_val");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" linear_combination_normal(means, std_devs, weights):");],
+[#NormalTok("        ");#CommentTok("\"\"\"");],
+[#CommentTok("        Menghitung distribusi Y = a1*X1 + a2*X2 ... dari variabel Normal Independen");],
+[#CommentTok("        (Kasus Casing Plastik, Komponen U-Shape)");],
+[#CommentTok("        \"\"\"");],
+[#NormalTok("        mu_Y ");#OperatorTok("=");#NormalTok(" ");#BuiltInTok("sum");#NormalTok("(w ");#OperatorTok("*");#NormalTok(" m ");#ControlFlowTok("for");#NormalTok(" w, m ");#KeywordTok("in");#NormalTok(" ");#BuiltInTok("zip");#NormalTok("(weights, means))");],
+[#NormalTok("        var_Y ");#OperatorTok("=");#NormalTok(" ");#BuiltInTok("sum");#NormalTok("((w");#OperatorTok("**");#DecValTok("2");#NormalTok(") ");#OperatorTok("*");#NormalTok(" (s");#OperatorTok("**");#DecValTok("2");#NormalTok(") ");#ControlFlowTok("for");#NormalTok(" w, s ");#KeywordTok("in");#NormalTok(" ");#BuiltInTok("zip");#NormalTok("(weights, std_devs))");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" mu_Y, math.sqrt(var_Y)");],
+[],
+[#NormalTok("    ");#AttributeTok("@staticmethod");],
+[#NormalTok("    ");#KeywordTok("def");#NormalTok(" portfolio_risk(w1, w2, mu1, mu2, std1, std2, corr):");],
+[#NormalTok("        ");#CommentTok("\"\"\"");],
+[#CommentTok("        Kalkulasi E(R) dan Var(R) untuk kombinasi Linear Dependent (Kasus Portofolio Investasi)");],
+[#CommentTok("        \"\"\"");],
+[#NormalTok("        exp_return ");#OperatorTok("=");#NormalTok(" w1");#OperatorTok("*");#NormalTok("mu1 ");#OperatorTok("+");#NormalTok(" w2");#OperatorTok("*");#NormalTok("mu2");],
+[#NormalTok("        covariance ");#OperatorTok("=");#NormalTok(" corr ");#OperatorTok("*");#NormalTok(" std1 ");#OperatorTok("*");#NormalTok(" std2");],
+[#NormalTok("        variance ");#OperatorTok("=");#NormalTok(" (w1");#OperatorTok("**");#DecValTok("2");#NormalTok(")");#OperatorTok("*");#NormalTok("(std1");#OperatorTok("**");#DecValTok("2");#NormalTok(") ");#OperatorTok("+");#NormalTok(" (w2");#OperatorTok("**");#DecValTok("2");#NormalTok(")");#OperatorTok("*");#NormalTok("(std2");#OperatorTok("**");#DecValTok("2");#NormalTok(") ");#OperatorTok("+");#NormalTok(" ");#DecValTok("2");#OperatorTok("*");#NormalTok("w1");#OperatorTok("*");#NormalTok("w2");#OperatorTok("*");#NormalTok("covariance");],
+[#NormalTok("        ");#ControlFlowTok("return");#NormalTok(" exp_return, math.sqrt(variance)");],
+[],
+[#CommentTok("# ==========================================");],
+[#CommentTok("# EKSUSI KODE UNTUK MEMECAHKAN KASUS");],
+[#CommentTok("# ==========================================");],
+[#ControlFlowTok("if");#NormalTok(" ");#VariableTok("__name__");#NormalTok(" ");#OperatorTok("==");#NormalTok(" ");#StringTok("\"__main__\"");#NormalTok(":");],
+[#NormalTok("    solver ");#OperatorTok("=");#NormalTok(" MultivariateSolver()");],
+[],
+[#NormalTok("    ");#CommentTok("# 1. Penyelesaian Kasus Multinomial Oven Cacat");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\" Kasus Multinomial Oven \"");#NormalTok(")");],
+[#NormalTok("    prob_oven ");#OperatorTok("=");#NormalTok(" solver.multinomial_prob(");#DecValTok("4");#NormalTok(",, [");#FloatTok("0.6");#NormalTok(", ");#FloatTok("0.3");#NormalTok(", ");#FloatTok("0.1");#NormalTok("])");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Probabilitas(2 berat, 2 ringan): ");#SpecialCharTok("{");#NormalTok("prob_oven");#SpecialCharTok(":.4f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# 2. Penyelesaian Konstanta C untuk f(x,y) = c * x * y");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"");#CharTok("\\n");#StringTok(" Kasus Integral Konstanta c \"");#NormalTok(")");],
+[#NormalTok("    f_xy_dummy ");#OperatorTok("=");#NormalTok(" ");#KeywordTok("lambda");#NormalTok(" y, x: x ");#OperatorTok("*");#NormalTok(" y ");#CommentTok("# dblquad expects y then x");],
+[#NormalTok("    c_val ");#OperatorTok("=");#NormalTok(" solver.find_continuous_constant_2D(f_xy_dummy,)");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Nilai c yang memenuhi adalah: ");#SpecialCharTok("{");#NormalTok("c_val");#SpecialCharTok(":.4f}");#SpecialStringTok(" (Ekspektasi: 0.0494 atau 4/81)\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# 3. Penyelesaian Kombinasi Linear (Komponen U-Shape D = A - B - C)");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"");#CharTok("\\n");#StringTok(" Kasus Komponen U-Shape \"");#NormalTok(")");],
+[#NormalTok("    mu_D, std_D ");#OperatorTok("=");#NormalTok(" solver.linear_combination_normal(");],
+[#NormalTok("        means");#OperatorTok("=");#NormalTok(", ");],
+[#NormalTok("        std_devs");#OperatorTok("=");#NormalTok("[");#FloatTok("0.1");#NormalTok(", ");#FloatTok("0.05");#NormalTok(", ");#FloatTok("0.05");#NormalTok("], ");],
+[#NormalTok("        weights");#OperatorTok("=");#NormalTok("[");#DecValTok("1");#NormalTok(", ");#OperatorTok("-");#DecValTok("1");#NormalTok(", ");#OperatorTok("-");#DecValTok("1");#NormalTok("] ");#CommentTok("# D = A - B - C");],
+[#NormalTok("    )");],
+[#NormalTok("    ");#CommentTok("# P(D < 5.9)");],
+[#NormalTok("    p_less_5_9 ");#OperatorTok("=");#NormalTok(" stats.norm.cdf(");#FloatTok("5.9");#NormalTok(", loc");#OperatorTok("=");#NormalTok("mu_D, scale");#OperatorTok("=");#NormalTok("std_D)");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Mean Gap D: ");#SpecialCharTok("{");#NormalTok("mu_D");#SpecialCharTok("}");#SpecialStringTok(", Std Dev: ");#SpecialCharTok("{");#NormalTok("std_D");#SpecialCharTok(":.4f}");#SpecialStringTok("\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Probabilitas Gap < 5.9mm: ");#SpecialCharTok("{");#NormalTok("p_less_5_9");#SpecialCharTok(":.4f}");#SpecialStringTok("\"");#NormalTok(")");],
+[],
+[#NormalTok("    ");#CommentTok("# 4. Penyelesaian Portofolio Investasi dengan Korelasi");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#StringTok("\"");#CharTok("\\n");#StringTok(" Kasus Portofolio Investasi \"");#NormalTok(")");],
+[#NormalTok("    ret, risk ");#OperatorTok("=");#NormalTok(" solver.portfolio_risk(");],
+[#NormalTok("        w1");#OperatorTok("=");#FloatTok("0.5");#NormalTok(", w2");#OperatorTok("=");#FloatTok("0.5");#NormalTok(", ");],
+[#NormalTok("        mu1");#OperatorTok("=");#DecValTok("5");#NormalTok(", mu2");#OperatorTok("=");#DecValTok("5");#NormalTok(", ");],
+[#NormalTok("        std1");#OperatorTok("=");#DecValTok("2");#NormalTok(", std2");#OperatorTok("=");#DecValTok("4");#NormalTok(", ");],
+[#NormalTok("        corr");#OperatorTok("=-");#FloatTok("0.5");],
+[#NormalTok("    )");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Rata-rata Return: ");#SpecialCharTok("{");#NormalTok("ret");#SpecialCharTok("}");#SpecialStringTok("%\"");#NormalTok(")");],
+[#NormalTok("    ");#BuiltInTok("print");#NormalTok("(");#SpecialStringTok("f\"Standar Deviasi (Risiko): ");#SpecialCharTok("{");#NormalTok("risk");#SpecialCharTok(":.4f}");#SpecialStringTok("%\"");#NormalTok(")");],));
 = Bab 6. Penutup
 <bab-6.-penutup>
 == Tujuan Bab

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Bab 4. Distribusi Random Variable Kontinu – Random Variable untuk Pengambilan Keputusan</title>
+<title>6&nbsp; Tujuan Bab – Random Variable untuk Pengambilan Keputusan</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-distribusi-kontinu.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bab 4. Distribusi Random Variable Kontinu</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-distribusi-kontinu.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Mencari" onclick="window.quartoOpenSearch();">
@@ -198,25 +198,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-random-variable-umum.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-distribusi-diskrit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-distribusi-kontinu.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bab 4. Distribusi Random Variable Kontinu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-random-variable-multivariat-dan-fungsi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bab 5. Random Variable Multivariat dan Fungsi Random Variable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -235,125 +235,129 @@ window.Quarto = {
     <h2 id="toc-title">Daftar Isi</h2>
    
   <ul>
-  <li><a href="#tujuan-bab" id="toc-tujuan-bab" class="nav-link active" data-scroll-target="#tujuan-bab"><span class="header-section-number">6.1</span> Tujuan Bab</a></li>
-  <li><a href="#pembuka" id="toc-pembuka" class="nav-link" data-scroll-target="#pembuka"><span class="header-section-number">6.2</span> Pembuka</a></li>
-  <li><a href="#quick-win-mengapa-pdf-bukan-peluang-langsung" id="toc-quick-win-mengapa-pdf-bukan-peluang-langsung" class="nav-link" data-scroll-target="#quick-win-mengapa-pdf-bukan-peluang-langsung"><span class="header-section-number">6.3</span> 4.1 Quick Win: Mengapa PDF Bukan Peluang Langsung?</a></li>
-  <li><a href="#distribusi-kontinu-kustom-dari-tabel-selang-trapezoid" id="toc-distribusi-kontinu-kustom-dari-tabel-selang-trapezoid" class="nav-link" data-scroll-target="#distribusi-kontinu-kustom-dari-tabel-selang-trapezoid"><span class="header-section-number">6.4</span> 4.2 Distribusi Kontinu Kustom dari Tabel Selang / Trapezoid</a>
+  <li><a href="#pembuka" id="toc-pembuka" class="nav-link active" data-scroll-target="#pembuka"><span class="header-section-number">6.1</span> Pembuka</a></li>
+  <li><a href="#quick-win-mengapa-pdf-bukan-peluang-langsung" id="toc-quick-win-mengapa-pdf-bukan-peluang-langsung" class="nav-link" data-scroll-target="#quick-win-mengapa-pdf-bukan-peluang-langsung"><span class="header-section-number">6.2</span> 4.1 Quick Win: Mengapa PDF Bukan Peluang Langsung?</a></li>
+  <li><a href="#distribusi-kontinu-kustom-dari-tabel-selang-trapezoid" id="toc-distribusi-kontinu-kustom-dari-tabel-selang-trapezoid" class="nav-link" data-scroll-target="#distribusi-kontinu-kustom-dari-tabel-selang-trapezoid"><span class="header-section-number">6.3</span> 4.2 Distribusi Kontinu Kustom dari Tabel Selang / Trapezoid</a>
   <ul class="collapse">
-  <li><a href="#k-konteks" id="toc-k-konteks" class="nav-link" data-scroll-target="#k-konteks"><span class="header-section-number">6.4.1</span> K — Konteks</a></li>
-  <li><a href="#m-model" id="toc-m-model" class="nav-link" data-scroll-target="#m-model"><span class="header-section-number">6.4.2</span> M — Model</a></li>
-  <li><a href="#q-questions" id="toc-q-questions" class="nav-link" data-scroll-target="#q-questions"><span class="header-section-number">6.4.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply" id="toc-a-apply" class="nav-link" data-scroll-target="#a-apply"><span class="header-section-number">6.4.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks" id="toc-k-konteks" class="nav-link" data-scroll-target="#k-konteks"><span class="header-section-number">6.3.1</span> K — Konteks</a></li>
+  <li><a href="#m-model" id="toc-m-model" class="nav-link" data-scroll-target="#m-model"><span class="header-section-number">6.3.2</span> M — Model</a></li>
+  <li><a href="#q-questions" id="toc-q-questions" class="nav-link" data-scroll-target="#q-questions"><span class="header-section-number">6.3.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply" id="toc-a-apply" class="nav-link" data-scroll-target="#a-apply"><span class="header-section-number">6.3.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#uniform-kontinu" id="toc-uniform-kontinu" class="nav-link" data-scroll-target="#uniform-kontinu"><span class="header-section-number">6.5</span> 4.3 Uniform Kontinu</a>
+  <li><a href="#uniform-kontinu" id="toc-uniform-kontinu" class="nav-link" data-scroll-target="#uniform-kontinu"><span class="header-section-number">6.4</span> 4.3 Uniform Kontinu</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-1" id="toc-k-konteks-1" class="nav-link" data-scroll-target="#k-konteks-1"><span class="header-section-number">6.5.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-1" id="toc-m-model-1" class="nav-link" data-scroll-target="#m-model-1"><span class="header-section-number">6.5.2</span> M — Model</a></li>
-  <li><a href="#q-questions-1" id="toc-q-questions-1" class="nav-link" data-scroll-target="#q-questions-1"><span class="header-section-number">6.5.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-1" id="toc-a-apply-1" class="nav-link" data-scroll-target="#a-apply-1"><span class="header-section-number">6.5.4</span> A — Apply</a></li>
-  <li><a href="#latihan-singkat" id="toc-latihan-singkat" class="nav-link" data-scroll-target="#latihan-singkat"><span class="header-section-number">6.5.5</span> Latihan singkat</a></li>
+  <li><a href="#k-konteks-1" id="toc-k-konteks-1" class="nav-link" data-scroll-target="#k-konteks-1"><span class="header-section-number">6.4.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-1" id="toc-m-model-1" class="nav-link" data-scroll-target="#m-model-1"><span class="header-section-number">6.4.2</span> M — Model</a></li>
+  <li><a href="#q-questions-1" id="toc-q-questions-1" class="nav-link" data-scroll-target="#q-questions-1"><span class="header-section-number">6.4.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-1" id="toc-a-apply-1" class="nav-link" data-scroll-target="#a-apply-1"><span class="header-section-number">6.4.4</span> A — Apply</a></li>
+  <li><a href="#latihan-singkat" id="toc-latihan-singkat" class="nav-link" data-scroll-target="#latihan-singkat"><span class="header-section-number">6.4.5</span> Latihan singkat</a></li>
   </ul></li>
-  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">6.6</span> 4.4 Normal Distribution</a>
+  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">6.5</span> 4.4 Normal Distribution</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-2" id="toc-k-konteks-2" class="nav-link" data-scroll-target="#k-konteks-2"><span class="header-section-number">6.6.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-2" id="toc-m-model-2" class="nav-link" data-scroll-target="#m-model-2"><span class="header-section-number">6.6.2</span> M — Model</a></li>
-  <li><a href="#q-questions-2" id="toc-q-questions-2" class="nav-link" data-scroll-target="#q-questions-2"><span class="header-section-number">6.6.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-2" id="toc-a-apply-2" class="nav-link" data-scroll-target="#a-apply-2"><span class="header-section-number">6.6.4</span> A — Apply</a></li>
-  <li><a href="#latihan-singkat-1" id="toc-latihan-singkat-1" class="nav-link" data-scroll-target="#latihan-singkat-1"><span class="header-section-number">6.6.5</span> Latihan singkat</a></li>
+  <li><a href="#k-konteks-2" id="toc-k-konteks-2" class="nav-link" data-scroll-target="#k-konteks-2"><span class="header-section-number">6.5.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-2" id="toc-m-model-2" class="nav-link" data-scroll-target="#m-model-2"><span class="header-section-number">6.5.2</span> M — Model</a></li>
+  <li><a href="#q-questions-2" id="toc-q-questions-2" class="nav-link" data-scroll-target="#q-questions-2"><span class="header-section-number">6.5.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-2" id="toc-a-apply-2" class="nav-link" data-scroll-target="#a-apply-2"><span class="header-section-number">6.5.4</span> A — Apply</a></li>
+  <li><a href="#latihan-singkat-1" id="toc-latihan-singkat-1" class="nav-link" data-scroll-target="#latihan-singkat-1"><span class="header-section-number">6.5.5</span> Latihan singkat</a></li>
   </ul></li>
-  <li><a href="#gamma-distribution" id="toc-gamma-distribution" class="nav-link" data-scroll-target="#gamma-distribution"><span class="header-section-number">6.7</span> 4.5 Gamma Distribution</a>
+  <li><a href="#gamma-distribution" id="toc-gamma-distribution" class="nav-link" data-scroll-target="#gamma-distribution"><span class="header-section-number">6.6</span> 4.5 Gamma Distribution</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-3" id="toc-k-konteks-3" class="nav-link" data-scroll-target="#k-konteks-3"><span class="header-section-number">6.7.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-3" id="toc-m-model-3" class="nav-link" data-scroll-target="#m-model-3"><span class="header-section-number">6.7.2</span> M — Model</a></li>
-  <li><a href="#q-questions-3" id="toc-q-questions-3" class="nav-link" data-scroll-target="#q-questions-3"><span class="header-section-number">6.7.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-3" id="toc-a-apply-3" class="nav-link" data-scroll-target="#a-apply-3"><span class="header-section-number">6.7.4</span> A — Apply</a></li>
-  <li><a href="#interpretasi-1" id="toc-interpretasi-1" class="nav-link" data-scroll-target="#interpretasi-1"><span class="header-section-number">6.7.5</span> Interpretasi</a></li>
+  <li><a href="#k-konteks-3" id="toc-k-konteks-3" class="nav-link" data-scroll-target="#k-konteks-3"><span class="header-section-number">6.6.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-3" id="toc-m-model-3" class="nav-link" data-scroll-target="#m-model-3"><span class="header-section-number">6.6.2</span> M — Model</a></li>
+  <li><a href="#q-questions-3" id="toc-q-questions-3" class="nav-link" data-scroll-target="#q-questions-3"><span class="header-section-number">6.6.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-3" id="toc-a-apply-3" class="nav-link" data-scroll-target="#a-apply-3"><span class="header-section-number">6.6.4</span> A — Apply</a></li>
+  <li><a href="#interpretasi-1" id="toc-interpretasi-1" class="nav-link" data-scroll-target="#interpretasi-1"><span class="header-section-number">6.6.5</span> Interpretasi</a></li>
   </ul></li>
-  <li><a href="#exponential-distribution" id="toc-exponential-distribution" class="nav-link" data-scroll-target="#exponential-distribution"><span class="header-section-number">6.8</span> 4.6 Exponential Distribution</a>
+  <li><a href="#exponential-distribution" id="toc-exponential-distribution" class="nav-link" data-scroll-target="#exponential-distribution"><span class="header-section-number">6.7</span> 4.6 Exponential Distribution</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-4" id="toc-k-konteks-4" class="nav-link" data-scroll-target="#k-konteks-4"><span class="header-section-number">6.8.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-4" id="toc-m-model-4" class="nav-link" data-scroll-target="#m-model-4"><span class="header-section-number">6.8.2</span> M — Model</a></li>
-  <li><a href="#q-questions-4" id="toc-q-questions-4" class="nav-link" data-scroll-target="#q-questions-4"><span class="header-section-number">6.8.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-4" id="toc-a-apply-4" class="nav-link" data-scroll-target="#a-apply-4"><span class="header-section-number">6.8.4</span> A — Apply</a></li>
-  <li><a href="#latihan-singkat-2" id="toc-latihan-singkat-2" class="nav-link" data-scroll-target="#latihan-singkat-2"><span class="header-section-number">6.8.5</span> Latihan singkat</a></li>
+  <li><a href="#k-konteks-4" id="toc-k-konteks-4" class="nav-link" data-scroll-target="#k-konteks-4"><span class="header-section-number">6.7.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-4" id="toc-m-model-4" class="nav-link" data-scroll-target="#m-model-4"><span class="header-section-number">6.7.2</span> M — Model</a></li>
+  <li><a href="#q-questions-4" id="toc-q-questions-4" class="nav-link" data-scroll-target="#q-questions-4"><span class="header-section-number">6.7.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-4" id="toc-a-apply-4" class="nav-link" data-scroll-target="#a-apply-4"><span class="header-section-number">6.7.4</span> A — Apply</a></li>
+  <li><a href="#latihan-singkat-2" id="toc-latihan-singkat-2" class="nav-link" data-scroll-target="#latihan-singkat-2"><span class="header-section-number">6.7.5</span> Latihan singkat</a></li>
   </ul></li>
-  <li><a href="#erlang-distribution" id="toc-erlang-distribution" class="nav-link" data-scroll-target="#erlang-distribution"><span class="header-section-number">6.9</span> 4.7 Erlang Distribution</a>
+  <li><a href="#erlang-distribution" id="toc-erlang-distribution" class="nav-link" data-scroll-target="#erlang-distribution"><span class="header-section-number">6.8</span> 4.7 Erlang Distribution</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-5" id="toc-k-konteks-5" class="nav-link" data-scroll-target="#k-konteks-5"><span class="header-section-number">6.9.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-5" id="toc-m-model-5" class="nav-link" data-scroll-target="#m-model-5"><span class="header-section-number">6.9.2</span> M — Model</a></li>
-  <li><a href="#q-questions-5" id="toc-q-questions-5" class="nav-link" data-scroll-target="#q-questions-5"><span class="header-section-number">6.9.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-5" id="toc-a-apply-5" class="nav-link" data-scroll-target="#a-apply-5"><span class="header-section-number">6.9.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-5" id="toc-k-konteks-5" class="nav-link" data-scroll-target="#k-konteks-5"><span class="header-section-number">6.8.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-5" id="toc-m-model-5" class="nav-link" data-scroll-target="#m-model-5"><span class="header-section-number">6.8.2</span> M — Model</a></li>
+  <li><a href="#q-questions-5" id="toc-q-questions-5" class="nav-link" data-scroll-target="#q-questions-5"><span class="header-section-number">6.8.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-5" id="toc-a-apply-5" class="nav-link" data-scroll-target="#a-apply-5"><span class="header-section-number">6.8.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#weibull-distribution" id="toc-weibull-distribution" class="nav-link" data-scroll-target="#weibull-distribution"><span class="header-section-number">6.10</span> 4.8 Weibull Distribution</a>
+  <li><a href="#weibull-distribution" id="toc-weibull-distribution" class="nav-link" data-scroll-target="#weibull-distribution"><span class="header-section-number">6.9</span> 4.8 Weibull Distribution</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-6" id="toc-k-konteks-6" class="nav-link" data-scroll-target="#k-konteks-6"><span class="header-section-number">6.10.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-6" id="toc-m-model-6" class="nav-link" data-scroll-target="#m-model-6"><span class="header-section-number">6.10.2</span> M — Model</a></li>
-  <li><a href="#q-questions-6" id="toc-q-questions-6" class="nav-link" data-scroll-target="#q-questions-6"><span class="header-section-number">6.10.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-6" id="toc-a-apply-6" class="nav-link" data-scroll-target="#a-apply-6"><span class="header-section-number">6.10.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-6" id="toc-k-konteks-6" class="nav-link" data-scroll-target="#k-konteks-6"><span class="header-section-number">6.9.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-6" id="toc-m-model-6" class="nav-link" data-scroll-target="#m-model-6"><span class="header-section-number">6.9.2</span> M — Model</a></li>
+  <li><a href="#q-questions-6" id="toc-q-questions-6" class="nav-link" data-scroll-target="#q-questions-6"><span class="header-section-number">6.9.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-6" id="toc-a-apply-6" class="nav-link" data-scroll-target="#a-apply-6"><span class="header-section-number">6.9.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#pareto-distribution" id="toc-pareto-distribution" class="nav-link" data-scroll-target="#pareto-distribution"><span class="header-section-number">6.11</span> 4.9 Pareto Distribution</a>
+  <li><a href="#pareto-distribution" id="toc-pareto-distribution" class="nav-link" data-scroll-target="#pareto-distribution"><span class="header-section-number">6.10</span> 4.9 Pareto Distribution</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-7" id="toc-k-konteks-7" class="nav-link" data-scroll-target="#k-konteks-7"><span class="header-section-number">6.11.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-7" id="toc-m-model-7" class="nav-link" data-scroll-target="#m-model-7"><span class="header-section-number">6.11.2</span> M — Model</a></li>
-  <li><a href="#q-questions-7" id="toc-q-questions-7" class="nav-link" data-scroll-target="#q-questions-7"><span class="header-section-number">6.11.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-7" id="toc-a-apply-7" class="nav-link" data-scroll-target="#a-apply-7"><span class="header-section-number">6.11.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-7" id="toc-k-konteks-7" class="nav-link" data-scroll-target="#k-konteks-7"><span class="header-section-number">6.10.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-7" id="toc-m-model-7" class="nav-link" data-scroll-target="#m-model-7"><span class="header-section-number">6.10.2</span> M — Model</a></li>
+  <li><a href="#q-questions-7" id="toc-q-questions-7" class="nav-link" data-scroll-target="#q-questions-7"><span class="header-section-number">6.10.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-7" id="toc-a-apply-7" class="nav-link" data-scroll-target="#a-apply-7"><span class="header-section-number">6.10.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#chi-square-distribution" id="toc-chi-square-distribution" class="nav-link" data-scroll-target="#chi-square-distribution"><span class="header-section-number">6.12</span> 4.10 Chi-Square Distribution</a>
+  <li><a href="#chi-square-distribution" id="toc-chi-square-distribution" class="nav-link" data-scroll-target="#chi-square-distribution"><span class="header-section-number">6.11</span> 4.10 Chi-Square Distribution</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-8" id="toc-k-konteks-8" class="nav-link" data-scroll-target="#k-konteks-8"><span class="header-section-number">6.12.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-8" id="toc-m-model-8" class="nav-link" data-scroll-target="#m-model-8"><span class="header-section-number">6.12.2</span> M — Model</a></li>
-  <li><a href="#q-questions-8" id="toc-q-questions-8" class="nav-link" data-scroll-target="#q-questions-8"><span class="header-section-number">6.12.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-8" id="toc-a-apply-8" class="nav-link" data-scroll-target="#a-apply-8"><span class="header-section-number">6.12.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-8" id="toc-k-konteks-8" class="nav-link" data-scroll-target="#k-konteks-8"><span class="header-section-number">6.11.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-8" id="toc-m-model-8" class="nav-link" data-scroll-target="#m-model-8"><span class="header-section-number">6.11.2</span> M — Model</a></li>
+  <li><a href="#q-questions-8" id="toc-q-questions-8" class="nav-link" data-scroll-target="#q-questions-8"><span class="header-section-number">6.11.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-8" id="toc-a-apply-8" class="nav-link" data-scroll-target="#a-apply-8"><span class="header-section-number">6.11.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#hubungan-antardistribusi" id="toc-hubungan-antardistribusi" class="nav-link" data-scroll-target="#hubungan-antardistribusi"><span class="header-section-number">6.13</span> 4.11 Hubungan Antardistribusi</a>
+  <li><a href="#hubungan-antardistribusi" id="toc-hubungan-antardistribusi" class="nav-link" data-scroll-target="#hubungan-antardistribusi"><span class="header-section-number">6.12</span> 4.11 Hubungan Antardistribusi</a>
   <ul class="collapse">
-  <li><a href="#exponential-poisson-process" id="toc-exponential-poisson-process" class="nav-link" data-scroll-target="#exponential-poisson-process"><span class="header-section-number">6.13.1</span> Exponential ↔︎ Poisson Process</a></li>
-  <li><a href="#erlang-exponential" id="toc-erlang-exponential" class="nav-link" data-scroll-target="#erlang-exponential"><span class="header-section-number">6.13.2</span> Erlang ↔︎ Exponential</a></li>
-  <li><a href="#gamma-erlang" id="toc-gamma-erlang" class="nav-link" data-scroll-target="#gamma-erlang"><span class="header-section-number">6.13.3</span> Gamma ↔︎ Erlang</a></li>
-  <li><a href="#normal-binomial" id="toc-normal-binomial" class="nav-link" data-scroll-target="#normal-binomial"><span class="header-section-number">6.13.4</span> Normal ↔︎ Binomial</a></li>
-  <li><a href="#chi-square-gamma" id="toc-chi-square-gamma" class="nav-link" data-scroll-target="#chi-square-gamma"><span class="header-section-number">6.13.5</span> Chi-Square ↔︎ Gamma</a></li>
+  <li><a href="#exponential-poisson-process" id="toc-exponential-poisson-process" class="nav-link" data-scroll-target="#exponential-poisson-process"><span class="header-section-number">6.12.1</span> Exponential ↔︎ Poisson Process</a></li>
+  <li><a href="#erlang-exponential" id="toc-erlang-exponential" class="nav-link" data-scroll-target="#erlang-exponential"><span class="header-section-number">6.12.2</span> Erlang ↔︎ Exponential</a></li>
+  <li><a href="#gamma-erlang" id="toc-gamma-erlang" class="nav-link" data-scroll-target="#gamma-erlang"><span class="header-section-number">6.12.3</span> Gamma ↔︎ Erlang</a></li>
+  <li><a href="#normal-binomial" id="toc-normal-binomial" class="nav-link" data-scroll-target="#normal-binomial"><span class="header-section-number">6.12.4</span> Normal ↔︎ Binomial</a></li>
+  <li><a href="#chi-square-gamma" id="toc-chi-square-gamma" class="nav-link" data-scroll-target="#chi-square-gamma"><span class="header-section-number">6.12.5</span> Chi-Square ↔︎ Gamma</a></li>
   </ul></li>
-  <li><a href="#mini-case-kmqa-1-garansi-produk" id="toc-mini-case-kmqa-1-garansi-produk" class="nav-link" data-scroll-target="#mini-case-kmqa-1-garansi-produk"><span class="header-section-number">6.14</span> 4.12 Mini-Case KMQA 1 — Garansi Produk</a>
+  <li><a href="#mini-case-kmqa-1-garansi-produk" id="toc-mini-case-kmqa-1-garansi-produk" class="nav-link" data-scroll-target="#mini-case-kmqa-1-garansi-produk"><span class="header-section-number">6.13</span> 4.12 Mini-Case KMQA 1 — Garansi Produk</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-9" id="toc-k-konteks-9" class="nav-link" data-scroll-target="#k-konteks-9"><span class="header-section-number">6.14.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-9" id="toc-m-model-9" class="nav-link" data-scroll-target="#m-model-9"><span class="header-section-number">6.14.2</span> M — Model</a></li>
-  <li><a href="#q-questions-9" id="toc-q-questions-9" class="nav-link" data-scroll-target="#q-questions-9"><span class="header-section-number">6.14.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-9" id="toc-a-apply-9" class="nav-link" data-scroll-target="#a-apply-9"><span class="header-section-number">6.14.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-9" id="toc-k-konteks-9" class="nav-link" data-scroll-target="#k-konteks-9"><span class="header-section-number">6.13.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-9" id="toc-m-model-9" class="nav-link" data-scroll-target="#m-model-9"><span class="header-section-number">6.13.2</span> M — Model</a></li>
+  <li><a href="#q-questions-9" id="toc-q-questions-9" class="nav-link" data-scroll-target="#q-questions-9"><span class="header-section-number">6.13.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-9" id="toc-a-apply-9" class="nav-link" data-scroll-target="#a-apply-9"><span class="header-section-number">6.13.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#mini-case-kmqa-2-waktu-antar-kedatangan-pasien" id="toc-mini-case-kmqa-2-waktu-antar-kedatangan-pasien" class="nav-link" data-scroll-target="#mini-case-kmqa-2-waktu-antar-kedatangan-pasien"><span class="header-section-number">6.15</span> 4.13 Mini-Case KMQA 2 — Waktu Antar Kedatangan Pasien</a>
+  <li><a href="#mini-case-kmqa-2-waktu-antar-kedatangan-pasien" id="toc-mini-case-kmqa-2-waktu-antar-kedatangan-pasien" class="nav-link" data-scroll-target="#mini-case-kmqa-2-waktu-antar-kedatangan-pasien"><span class="header-section-number">6.14</span> 4.13 Mini-Case KMQA 2 — Waktu Antar Kedatangan Pasien</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-10" id="toc-k-konteks-10" class="nav-link" data-scroll-target="#k-konteks-10"><span class="header-section-number">6.15.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-10" id="toc-m-model-10" class="nav-link" data-scroll-target="#m-model-10"><span class="header-section-number">6.15.2</span> M — Model</a></li>
-  <li><a href="#q-questions-10" id="toc-q-questions-10" class="nav-link" data-scroll-target="#q-questions-10"><span class="header-section-number">6.15.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-10" id="toc-a-apply-10" class="nav-link" data-scroll-target="#a-apply-10"><span class="header-section-number">6.15.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-10" id="toc-k-konteks-10" class="nav-link" data-scroll-target="#k-konteks-10"><span class="header-section-number">6.14.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-10" id="toc-m-model-10" class="nav-link" data-scroll-target="#m-model-10"><span class="header-section-number">6.14.2</span> M — Model</a></li>
+  <li><a href="#q-questions-10" id="toc-q-questions-10" class="nav-link" data-scroll-target="#q-questions-10"><span class="header-section-number">6.14.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-10" id="toc-a-apply-10" class="nav-link" data-scroll-target="#a-apply-10"><span class="header-section-number">6.14.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#mini-case-kmqa-3-tiga-sub-layanan-berantai" id="toc-mini-case-kmqa-3-tiga-sub-layanan-berantai" class="nav-link" data-scroll-target="#mini-case-kmqa-3-tiga-sub-layanan-berantai"><span class="header-section-number">6.16</span> 4.14 Mini-Case KMQA 3 — Tiga Sub-Layanan Berantai</a>
+  <li><a href="#mini-case-kmqa-3-tiga-sub-layanan-berantai" id="toc-mini-case-kmqa-3-tiga-sub-layanan-berantai" class="nav-link" data-scroll-target="#mini-case-kmqa-3-tiga-sub-layanan-berantai"><span class="header-section-number">6.15</span> 4.14 Mini-Case KMQA 3 — Tiga Sub-Layanan Berantai</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-11" id="toc-k-konteks-11" class="nav-link" data-scroll-target="#k-konteks-11"><span class="header-section-number">6.16.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-11" id="toc-m-model-11" class="nav-link" data-scroll-target="#m-model-11"><span class="header-section-number">6.16.2</span> M — Model</a></li>
-  <li><a href="#q-questions-11" id="toc-q-questions-11" class="nav-link" data-scroll-target="#q-questions-11"><span class="header-section-number">6.16.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-11" id="toc-a-apply-11" class="nav-link" data-scroll-target="#a-apply-11"><span class="header-section-number">6.16.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-11" id="toc-k-konteks-11" class="nav-link" data-scroll-target="#k-konteks-11"><span class="header-section-number">6.15.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-11" id="toc-m-model-11" class="nav-link" data-scroll-target="#m-model-11"><span class="header-section-number">6.15.2</span> M — Model</a></li>
+  <li><a href="#q-questions-11" id="toc-q-questions-11" class="nav-link" data-scroll-target="#q-questions-11"><span class="header-section-number">6.15.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-11" id="toc-a-apply-11" class="nav-link" data-scroll-target="#a-apply-11"><span class="header-section-number">6.15.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#python-toolbox-untuk-distribusi-kontinu" id="toc-python-toolbox-untuk-distribusi-kontinu" class="nav-link" data-scroll-target="#python-toolbox-untuk-distribusi-kontinu"><span class="header-section-number">6.17</span> 4.15 Python Toolbox untuk Distribusi Kontinu</a>
+  <li><a href="#python-toolbox-untuk-distribusi-kontinu" id="toc-python-toolbox-untuk-distribusi-kontinu" class="nav-link" data-scroll-target="#python-toolbox-untuk-distribusi-kontinu"><span class="header-section-number">6.16</span> 4.15 Python Toolbox untuk Distribusi Kontinu</a>
   <ul class="collapse">
-  <li><a href="#normal" id="toc-normal" class="nav-link" data-scroll-target="#normal"><span class="header-section-number">6.17.1</span> Normal</a></li>
-  <li><a href="#exponential" id="toc-exponential" class="nav-link" data-scroll-target="#exponential"><span class="header-section-number">6.17.2</span> Exponential</a></li>
-  <li><a href="#gamma" id="toc-gamma" class="nav-link" data-scroll-target="#gamma"><span class="header-section-number">6.17.3</span> Gamma</a></li>
-  <li><a href="#weibull" id="toc-weibull" class="nav-link" data-scroll-target="#weibull"><span class="header-section-number">6.17.4</span> Weibull</a></li>
-  <li><a href="#pareto" id="toc-pareto" class="nav-link" data-scroll-target="#pareto"><span class="header-section-number">6.17.5</span> Pareto</a></li>
-  <li><a href="#chi-square" id="toc-chi-square" class="nav-link" data-scroll-target="#chi-square"><span class="header-section-number">6.17.6</span> Chi-Square</a></li>
+  <li><a href="#normal" id="toc-normal" class="nav-link" data-scroll-target="#normal"><span class="header-section-number">6.16.1</span> Normal</a></li>
+  <li><a href="#exponential" id="toc-exponential" class="nav-link" data-scroll-target="#exponential"><span class="header-section-number">6.16.2</span> Exponential</a></li>
+  <li><a href="#gamma" id="toc-gamma" class="nav-link" data-scroll-target="#gamma"><span class="header-section-number">6.16.3</span> Gamma</a></li>
+  <li><a href="#weibull" id="toc-weibull" class="nav-link" data-scroll-target="#weibull"><span class="header-section-number">6.16.4</span> Weibull</a></li>
+  <li><a href="#pareto" id="toc-pareto" class="nav-link" data-scroll-target="#pareto"><span class="header-section-number">6.16.5</span> Pareto</a></li>
+  <li><a href="#chi-square" id="toc-chi-square" class="nav-link" data-scroll-target="#chi-square"><span class="header-section-number">6.16.6</span> Chi-Square</a></li>
   </ul></li>
-  <li><a href="#kesalahan-umum-yang-harus-dihindari" id="toc-kesalahan-umum-yang-harus-dihindari" class="nav-link" data-scroll-target="#kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">6.18</span> 4.16 Kesalahan Umum yang Harus Dihindari</a></li>
-  <li><a href="#menyimpulkan-bab-ini" id="toc-menyimpulkan-bab-ini" class="nav-link" data-scroll-target="#menyimpulkan-bab-ini"><span class="header-section-number">6.19</span> 4.17 Menyimpulkan Bab Ini</a></li>
-  <li><a href="#ringkasan-poin-inti" id="toc-ringkasan-poin-inti" class="nav-link" data-scroll-target="#ringkasan-poin-inti"><span class="header-section-number">6.20</span> 4.18 Ringkasan Poin Inti</a></li>
-  <li><a href="#latihan-bab-4" id="toc-latihan-bab-4" class="nav-link" data-scroll-target="#latihan-bab-4"><span class="header-section-number">6.21</span> 4.19 Latihan Bab 4</a>
+  <li><a href="#kesalahan-umum-yang-harus-dihindari" id="toc-kesalahan-umum-yang-harus-dihindari" class="nav-link" data-scroll-target="#kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">6.17</span> 4.16 Kesalahan Umum yang Harus Dihindari</a></li>
+  <li><a href="#menyimpulkan-bab-ini" id="toc-menyimpulkan-bab-ini" class="nav-link" data-scroll-target="#menyimpulkan-bab-ini"><span class="header-section-number">6.18</span> 4.17 Menyimpulkan Bab Ini</a></li>
+  <li><a href="#ringkasan-poin-inti" id="toc-ringkasan-poin-inti" class="nav-link" data-scroll-target="#ringkasan-poin-inti"><span class="header-section-number">6.19</span> 4.18 Ringkasan Poin Inti</a></li>
+  <li><a href="#latihan-bab-4" id="toc-latihan-bab-4" class="nav-link" data-scroll-target="#latihan-bab-4"><span class="header-section-number">6.20</span> 4.19 Latihan Bab 4</a>
   <ul class="collapse">
-  <li><a href="#a.-konseptual" id="toc-a.-konseptual" class="nav-link" data-scroll-target="#a.-konseptual"><span class="header-section-number">6.21.1</span> A. Konseptual</a></li>
-  <li><a href="#b.-hitungan" id="toc-b.-hitungan" class="nav-link" data-scroll-target="#b.-hitungan"><span class="header-section-number">6.21.2</span> B. Hitungan</a></li>
-  <li><a href="#c.-python" id="toc-c.-python" class="nav-link" data-scroll-target="#c.-python"><span class="header-section-number">6.21.3</span> C. Python</a></li>
-  <li><a href="#d.-aplikatif" id="toc-d.-aplikatif" class="nav-link" data-scroll-target="#d.-aplikatif"><span class="header-section-number">6.21.4</span> D. Aplikatif</a></li>
+  <li><a href="#a.-konseptual" id="toc-a.-konseptual" class="nav-link" data-scroll-target="#a.-konseptual"><span class="header-section-number">6.20.1</span> A. Konseptual</a></li>
+  <li><a href="#b.-hitungan" id="toc-b.-hitungan" class="nav-link" data-scroll-target="#b.-hitungan"><span class="header-section-number">6.20.2</span> B. Hitungan</a></li>
+  <li><a href="#c.-python" id="toc-c.-python" class="nav-link" data-scroll-target="#c.-python"><span class="header-section-number">6.20.3</span> C. Python</a></li>
+  <li><a href="#d.-aplikatif" id="toc-d.-aplikatif" class="nav-link" data-scroll-target="#d.-aplikatif"><span class="header-section-number">6.20.4</span> D. Aplikatif</a></li>
   </ul></li>
-  <li><a href="#penutup-kecil" id="toc-penutup-kecil" class="nav-link" data-scroll-target="#penutup-kecil"><span class="header-section-number">6.22</span> 4.20 Penutup Kecil</a></li>
+  <li><a href="#penutup-kecil" id="toc-penutup-kecil" class="nav-link" data-scroll-target="#penutup-kecil"><span class="header-section-number">6.21</span> 4.20 Penutup Kecil</a></li>
+  <li><a href="#soal-tambahan" id="toc-soal-tambahan" class="nav-link" data-scroll-target="#soal-tambahan"><span class="header-section-number">6.22</span> Soal Tambahan</a>
+  <ul class="collapse">
+  <li><a href="#bagian-1-solusi-analitis-problem-set-5" id="toc-bagian-1-solusi-analitis-problem-set-5" class="nav-link" data-scroll-target="#bagian-1-solusi-analitis-problem-set-5"><span class="header-section-number">6.22.1</span> <strong>Bagian 1: Solusi Analitis Problem Set 5</strong></a></li>
+  <li><a href="#bagian-2-solusi-kode-python-berbasis-class" id="toc-bagian-2-solusi-kode-python-berbasis-class" class="nav-link" data-scroll-target="#bagian-2-solusi-kode-python-berbasis-class"><span class="header-section-number">6.22.2</span> <strong>Bagian 2: Solusi Kode Python (Berbasis Class)</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -362,7 +366,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bab 4. Distribusi Random Variable Kontinu</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></h1>
 </div>
 
 
@@ -379,8 +383,7 @@ window.Quarto = {
 </header>
 
 
-<section id="tujuan-bab" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="tujuan-bab"><span class="header-section-number">6.1</span> Tujuan Bab</h2>
+<p>title: “Bab 4. Distribusi Random Variable Kontinu” format: html jupyter: python3</p>
 <p>Setelah mempelajari bab ini, mahasiswa diharapkan mampu:</p>
 <ol type="1">
 <li>memahami perbedaan mendasar antara random variable diskrit dan kontinu,</li>
@@ -400,22 +403,21 @@ window.Quarto = {
 <li>menggunakan Python untuk simulasi, visualisasi PDF/CDF, dan perhitungan peluang,</li>
 <li>menghubungkan distribusi kontinu dengan keputusan nyata di bidang teknik, layanan, bisnis, dan reliability.</li>
 </ol>
-</section>
-<section id="pembuka" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="pembuka"><span class="header-section-number">6.2</span> Pembuka</h2>
+<section id="pembuka" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="pembuka"><span class="header-section-number">6.1</span> Pembuka</h2>
 <p>Di bab sebelumnya, kita banyak berurusan dengan besaran yang berupa <strong>hitungan</strong>: - jumlah cacat, - jumlah pelanggan, - jumlah sukses, - jumlah percobaan.</p>
 <p>Sekarang kita beralih ke dunia yang sedikit berbeda: dunia <strong>pengukuran</strong>.</p>
 <p>Kita akan memodelkan besaran seperti: - waktu tunggu, - umur hidup lampu, - tinggi badan, - error pengukuran, - besar permintaan, - lama layanan, - dan waktu antar kedatangan.</p>
 <p>Pada banyak situasi seperti ini, lebih masuk akal memodelkan nilai sebagai <strong>kontinu</strong>. Nilainya tidak sekadar 0, 1, 2, 3, tetapi berada pada rentang yang halus di garis bilangan.</p>
 </section>
-<section id="quick-win-mengapa-pdf-bukan-peluang-langsung" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="quick-win-mengapa-pdf-bukan-peluang-langsung"><span class="header-section-number">6.3</span> 4.1 Quick Win: Mengapa PDF Bukan Peluang Langsung?</h2>
+<section id="quick-win-mengapa-pdf-bukan-peluang-langsung" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="quick-win-mengapa-pdf-bukan-peluang-langsung"><span class="header-section-number">6.2</span> 4.1 Quick Win: Mengapa PDF Bukan Peluang Langsung?</h2>
 <p>Mari ambil contoh yang sederhana. Misalkan <span class="math inline">\(X\)</span> adalah random variable kontinu yang uniform pada interval [0, 1]. Kita tahu PDF-nya adalah:</p>
 <p><span class="math display">\[
 f(x)=1 \quad \text{untuk } 0 \le x \le 1
 \]</span></p>
 <p>Sekarang pertanyaannya: - berapa <span class="math inline">\(P(X=0.5)\)</span>? - berapa <span class="math inline">\(P(0.4 \le X \le 0.6)\)</span>?</p>
-<div id="079abe08" class="cell" data-execution_count="1">
+<div id="5b9a86da" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -428,7 +430,7 @@ f(x)=1 \quad \text{untuk } 0 \le x \le 1
 P(0.4 &lt;= X &lt;= 0.6) = 0.19999999999999996</code></pre>
 </div>
 </div>
-<div id="9f38d4b7" class="cell" data-execution_count="2">
+<div id="cd22dbdf" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.2</span>, <span class="dv">400</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> np.where((x <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (x <span class="op">&lt;=</span> <span class="dv">1</span>), <span class="fl">1.0</span>, <span class="fl">0.0</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -453,27 +455,27 @@ P(0.4 &lt;= X &lt;= 0.6) = 0.19999999999999996</code></pre>
 <p>Untuk random variable kontinu, peluang tidak datang dari tinggi titik, tetapi dari <strong>luas area di bawah kurva PDF</strong>.</p>
 </blockquote>
 </section>
-<section id="distribusi-kontinu-kustom-dari-tabel-selang-trapezoid" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="distribusi-kontinu-kustom-dari-tabel-selang-trapezoid"><span class="header-section-number">6.4</span> 4.2 Distribusi Kontinu Kustom dari Tabel Selang / Trapezoid</h2>
-<section id="k-konteks" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="k-konteks"><span class="header-section-number">6.4.1</span> K — Konteks</h3>
+<section id="distribusi-kontinu-kustom-dari-tabel-selang-trapezoid" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="distribusi-kontinu-kustom-dari-tabel-selang-trapezoid"><span class="header-section-number">6.3</span> 4.2 Distribusi Kontinu Kustom dari Tabel Selang / Trapezoid</h2>
+<section id="k-konteks" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="k-konteks"><span class="header-section-number">6.3.1</span> K — Konteks</h3>
 <p>Kadang kita tidak mulai dari distribusi terkenal seperti Normal atau Exponential. Kita hanya punya perkiraan bentuk dari domain expert atau dari tabel interval. Misalnya: - permintaan produk kemungkinan besar di tengah, menurun di tepi, - usia layanan komponen diperkirakan lebih padat pada interval tertentu, - waktu tempuh berada dalam rentang tertentu dengan perubahan kerapatan yang kasar.</p>
 </section>
-<section id="m-model" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="m-model"><span class="header-section-number">6.4.2</span> M — Model</h3>
+<section id="m-model" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="m-model"><span class="header-section-number">6.3.2</span> M — Model</h3>
 <p>Kita dapat membentuk PDF kustom dari titik-titik <span class="math inline">\((x_i, f_i)\)</span>, lalu menggunakan interpolasi linier atau pendekatan trapezoid. Selama luas totalnya dinormalisasi menjadi 1, fungsi itu dapat dipakai sebagai PDF.</p>
 </section>
-<section id="q-questions" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="q-questions"><span class="header-section-number">6.4.3</span> Q — Questions</h3>
+<section id="q-questions" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="q-questions"><span class="header-section-number">6.3.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Bagaimana membangun PDF kontinu dari tabel?</li>
 <li>Bagaimana memastikan luas total = 1?</li>
 <li>Bagaimana menghitung peluang interval secara numerik?</li>
 </ol>
 </section>
-<section id="a-apply" class="level3" data-number="6.4.4">
-<h3 data-number="6.4.4" class="anchored" data-anchor-id="a-apply"><span class="header-section-number">6.4.4</span> A — Apply</h3>
-<div id="d88401cb" class="cell" data-execution_count="3">
+<section id="a-apply" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="a-apply"><span class="header-section-number">6.3.4</span> A — Apply</h3>
+<div id="15501a75" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Titik-titik pembentuk "density" mentah</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x_pts <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y_raw <span class="op">=</span> np.array([<span class="fl">0.0</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.2</span>, <span class="fl">0.08</span>, <span class="fl">0.0</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
@@ -485,7 +487,7 @@ P(0.4 &lt;= X &lt;= 0.6) = 0.19999999999999996</code></pre>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>x_grid <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">500</span>)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>y_grid <span class="op">=</span> np.interp(x_grid, x_pts, y)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f4154425" class="cell" data-execution_count="4">
+<div id="e8f24cde" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x_grid, y_grid, label<span class="op">=</span><span class="st">"PDF kustom (interpolasi linier)"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(x_pts, y, color<span class="op">=</span><span class="st">'red'</span>)</span>
@@ -503,7 +505,7 @@ P(0.4 &lt;= X &lt;= 0.6) = 0.19999999999999996</code></pre>
 </div>
 </div>
 </div>
-<div id="5556f00a" class="cell" data-execution_count="5">
+<div id="14c79bc4" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Peluang interval [3, 7]</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (x_grid <span class="op">&gt;=</span> <span class="dv">3</span>) <span class="op">&amp;</span> (x_grid <span class="op">&lt;=</span> <span class="dv">7</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>prob_3_7 <span class="op">=</span> np.trapezoid(y_grid[mask], x_grid[mask])</span>
@@ -520,20 +522,20 @@ Mean ~ 4.825378851610921
 Variance ~ 3.92183354068992</code></pre>
 </div>
 </div>
-<section id="interpretasi" class="level4" data-number="6.4.4.1">
-<h4 data-number="6.4.4.1" class="anchored" data-anchor-id="interpretasi"><span class="header-section-number">6.4.4.1</span> Interpretasi</h4>
+<section id="interpretasi" class="level4" data-number="6.3.4.1">
+<h4 data-number="6.3.4.1" class="anchored" data-anchor-id="interpretasi"><span class="header-section-number">6.3.4.1</span> Interpretasi</h4>
 <p>Distribusi kontinu kustom penting ketika: - data atau pengetahuan domain belum cukup untuk memilih distribusi tertutup tertentu, - kita tetap ingin menghitung peluang, mean, variance, dan quantile, - pendekatan numerik lebih realistis daripada memaksakan model yang belum tentu cocok.</p>
 </section>
 </section>
 </section>
-<section id="uniform-kontinu" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="uniform-kontinu"><span class="header-section-number">6.5</span> 4.3 Uniform Kontinu</h2>
-<section id="k-konteks-1" class="level3" data-number="6.5.1">
-<h3 data-number="6.5.1" class="anchored" data-anchor-id="k-konteks-1"><span class="header-section-number">6.5.1</span> K — Konteks</h3>
+<section id="uniform-kontinu" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="uniform-kontinu"><span class="header-section-number">6.4</span> 4.3 Uniform Kontinu</h2>
+<section id="k-konteks-1" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="k-konteks-1"><span class="header-section-number">6.4.1</span> K — Konteks</h3>
 <p>Distribusi uniform kontinu cocok ketika nilai dianggap tersebar merata pada sebuah interval. Misalnya: - waktu kedatangan acak di antara dua titik waktu, - lokasi acak pada segmen garis, - nilai acak yang dipilih secara merata dari suatu rentang.</p>
 </section>
-<section id="m-model-1" class="level3" data-number="6.5.2">
-<h3 data-number="6.5.2" class="anchored" data-anchor-id="m-model-1"><span class="header-section-number">6.5.2</span> M — Model</h3>
+<section id="m-model-1" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="m-model-1"><span class="header-section-number">6.4.2</span> M — Model</h3>
 <p>Jika: <span class="math display">\[
 X \sim \mathrm{Uniform}(a,b)
 \]</span> maka PDF-nya:</p>
@@ -542,17 +544,17 @@ f(x)=\frac{1}{b-a}, \qquad a \le x \le b
 \]</span></p>
 <p>dan nol di luar interval tersebut.</p>
 </section>
-<section id="q-questions-1" class="level3" data-number="6.5.3">
-<h3 data-number="6.5.3" class="anchored" data-anchor-id="q-questions-1"><span class="header-section-number">6.5.3</span> Q — Questions</h3>
+<section id="q-questions-1" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="q-questions-1"><span class="header-section-number">6.4.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Berapa peluang <span class="math inline">\(X\)</span> berada pada sub-interval tertentu?</li>
 <li>Berapa mean dan variance?</li>
 <li>Kapan asumsi “semua nilai di interval sama padat” masuk akal?</li>
 </ol>
 </section>
-<section id="a-apply-1" class="level3" data-number="6.5.4">
-<h3 data-number="6.5.4" class="anchored" data-anchor-id="a-apply-1"><span class="header-section-number">6.5.4</span> A — Apply</h3>
-<div id="ce0ee696" class="cell" data-execution_count="6">
+<section id="a-apply-1" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="a-apply-1"><span class="header-section-number">6.4.4</span> A — Apply</h3>
+<div id="05f37d2c" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">2</span>, <span class="dv">8</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> np.where((x <span class="op">&gt;=</span> a) <span class="op">&amp;</span> (x <span class="op">&lt;=</span> b), <span class="dv">1</span><span class="op">/</span>(b<span class="op">-</span>a), <span class="fl">0.0</span>)</span>
@@ -573,7 +575,7 @@ f(x)=\frac{1}{b-a}, \qquad a \le x \le b
 </div>
 </div>
 </div>
-<div id="0739c465" class="cell" data-execution_count="7">
+<div id="94426971" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(3 &lt;= X &lt;= 5) ="</span>, (<span class="dv">5</span><span class="op">-</span><span class="dv">3</span>)<span class="op">/</span>(<span class="dv">8</span><span class="op">-</span><span class="dv">2</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean ="</span>, (a<span class="op">+</span>b)<span class="op">/</span><span class="dv">2</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variance ="</span>, (b<span class="op">-</span>a)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> <span class="dv">12</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -583,8 +585,8 @@ Mean = 5.0
 Variance = 3.0</code></pre>
 </div>
 </div>
-<section id="hasil-teoritis" class="level4" data-number="6.5.4.1">
-<h4 data-number="6.5.4.1" class="anchored" data-anchor-id="hasil-teoritis"><span class="header-section-number">6.5.4.1</span> Hasil teoritis</h4>
+<section id="hasil-teoritis" class="level4" data-number="6.4.4.1">
+<h4 data-number="6.4.4.1" class="anchored" data-anchor-id="hasil-teoritis"><span class="header-section-number">6.4.4.1</span> Hasil teoritis</h4>
 <p><span class="math display">\[
 E[X]=\frac{a+b}{2}
 \]</span></p>
@@ -593,8 +595,8 @@ E[X]=\frac{a+b}{2}
 \]</span></p>
 </section>
 </section>
-<section id="latihan-singkat" class="level3" data-number="6.5.5">
-<h3 data-number="6.5.5" class="anchored" data-anchor-id="latihan-singkat"><span class="header-section-number">6.5.5</span> Latihan singkat</h3>
+<section id="latihan-singkat" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="latihan-singkat"><span class="header-section-number">6.4.5</span> Latihan singkat</h3>
 <ol type="1">
 <li>Jika <span class="math inline">\(X \sim \mathrm{Uniform}(10,20)\)</span>, hitung <span class="math inline">\(P(12 \le X \le 15)\)</span>.</li>
 <li>Hitung mean dan variance-nya.</li>
@@ -602,14 +604,14 @@ E[X]=\frac{a+b}{2}
 </ol>
 </section>
 </section>
-<section id="normal-distribution" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">6.6</span> 4.4 Normal Distribution</h2>
-<section id="k-konteks-2" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="k-konteks-2"><span class="header-section-number">6.6.1</span> K — Konteks</h3>
+<section id="normal-distribution" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">6.5</span> 4.4 Normal Distribution</h2>
+<section id="k-konteks-2" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="k-konteks-2"><span class="header-section-number">6.5.1</span> K — Konteks</h3>
 <p>Normal adalah salah satu distribusi paling terkenal karena sering muncul pada: - error pengukuran, - tinggi badan, - berat badan, - hasil agregasi banyak pengaruh kecil, - noise sensor.</p>
 </section>
-<section id="m-model-2" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="m-model-2"><span class="header-section-number">6.6.2</span> M — Model</h3>
+<section id="m-model-2" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="m-model-2"><span class="header-section-number">6.5.2</span> M — Model</h3>
 <p>Jika: <span class="math display">\[
 X \sim \mathcal{N}(\mu, \sigma^2)
 \]</span> maka PDF-nya:</p>
@@ -618,17 +620,17 @@ f(x)=\frac{1}{\sigma \sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 \]</span></p>
 <p>Parameter: - <span class="math inline">\(\mu\)</span>: pusat distribusi, - <span class="math inline">\(\sigma\)</span>: skala penyebaran.</p>
 </section>
-<section id="q-questions-2" class="level3" data-number="6.6.3">
-<h3 data-number="6.6.3" class="anchored" data-anchor-id="q-questions-2"><span class="header-section-number">6.6.3</span> Q — Questions</h3>
+<section id="q-questions-2" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="q-questions-2"><span class="header-section-number">6.5.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Berapa peluang <span class="math inline">\(X\)</span> kurang dari nilai tertentu?</li>
 <li>Berapa peluang <span class="math inline">\(X\)</span> berada dalam interval tertentu?</li>
 <li>Bagaimana pengaruh <span class="math inline">\(\mu\)</span> dan <span class="math inline">\(\sigma\)</span> pada bentuk kurva?</li>
 </ol>
 </section>
-<section id="a-apply-2" class="level3" data-number="6.6.4">
-<h3 data-number="6.6.4" class="anchored" data-anchor-id="a-apply-2"><span class="header-section-number">6.6.4</span> A — Apply</h3>
-<div id="ab061885" class="cell" data-execution_count="8">
+<section id="a-apply-2" class="level3" data-number="6.5.4">
+<h3 data-number="6.5.4" class="anchored" data-anchor-id="a-apply-2"><span class="header-section-number">6.5.4</span> A — Apply</h3>
+<div id="c1cfc9e4" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> <span class="dv">100</span>, <span class="dv">15</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">40</span>, <span class="dv">160</span>, <span class="dv">500</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> stats.norm.pdf(x, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma)</span>
@@ -648,7 +650,7 @@ f(x)=\frac{1}{\sigma \sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 </div>
 </div>
 </div>
-<div id="fc692c9b" class="cell" data-execution_count="9">
+<div id="e6b2cbac" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(X &lt; 90) ="</span>, stats.norm.cdf(<span class="dv">90</span>, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(90 &lt;= X &lt;= 110) ="</span>, stats.norm.cdf(<span class="dv">110</span>, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma) <span class="op">-</span> stats.norm.cdf(<span class="dv">90</span>, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -656,15 +658,15 @@ f(x)=\frac{1}{\sigma \sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 P(90 &lt;= X &lt;= 110) = 0.4950149249061542</code></pre>
 </div>
 </div>
-<section id="hubungan-dengan-binomial" class="level4" data-number="6.6.4.1">
-<h4 data-number="6.6.4.1" class="anchored" data-anchor-id="hubungan-dengan-binomial"><span class="header-section-number">6.6.4.1</span> Hubungan dengan Binomial</h4>
+<section id="hubungan-dengan-binomial" class="level4" data-number="6.5.4.1">
+<h4 data-number="6.5.4.1" class="anchored" data-anchor-id="hubungan-dengan-binomial"><span class="header-section-number">6.5.4.1</span> Hubungan dengan Binomial</h4>
 <p>Jika: - <span class="math inline">\(X \sim \mathrm{Binomial}(n,p)\)</span>, - <span class="math inline">\(n\)</span> besar,</p>
 <p>maka Binomial dapat didekati oleh Normal dengan:</p>
 <p><span class="math display">\[
 \mu = np, \qquad \sigma^2 = np(1-p)
 \]</span></p>
 <p>Mari lihat contoh.</p>
-<div id="174fd0c8" class="cell" data-execution_count="10">
+<div id="a340918a" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>n, p <span class="op">=</span> <span class="dv">100</span>, <span class="fl">0.4</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mu_bin <span class="op">=</span> n<span class="op">*</span>p</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>sigma_bin <span class="op">=</span> np.sqrt(n<span class="op">*</span>p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p))</span>
@@ -693,13 +695,13 @@ P(90 &lt;= X &lt;= 110) = 0.4950149249061542</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretasi-keputusan" class="level4" data-number="6.6.4.2">
-<h4 data-number="6.6.4.2" class="anchored" data-anchor-id="interpretasi-keputusan"><span class="header-section-number">6.6.4.2</span> Interpretasi keputusan</h4>
+<section id="interpretasi-keputusan" class="level4" data-number="6.5.4.2">
+<h4 data-number="6.5.4.2" class="anchored" data-anchor-id="interpretasi-keputusan"><span class="header-section-number">6.5.4.2</span> Interpretasi keputusan</h4>
 <p>Normal sering dipakai untuk: - menetapkan toleransi manufaktur, - menghitung peluang deviasi pengukuran, - mengevaluasi performa relatif terhadap target.</p>
 </section>
 </section>
-<section id="latihan-singkat-1" class="level3" data-number="6.6.5">
-<h3 data-number="6.6.5" class="anchored" data-anchor-id="latihan-singkat-1"><span class="header-section-number">6.6.5</span> Latihan singkat</h3>
+<section id="latihan-singkat-1" class="level3" data-number="6.5.5">
+<h3 data-number="6.5.5" class="anchored" data-anchor-id="latihan-singkat-1"><span class="header-section-number">6.5.5</span> Latihan singkat</h3>
 <ol type="1">
 <li>Jika <span class="math inline">\(X \sim \mathcal{N}(70,10^2)\)</span>, hitung <span class="math inline">\(P(X &lt; 60)\)</span>.</li>
 <li>Hitung <span class="math inline">\(P(65 \le X \le 80)\)</span>.</li>
@@ -707,14 +709,14 @@ P(90 &lt;= X &lt;= 110) = 0.4950149249061542</code></pre>
 </ol>
 </section>
 </section>
-<section id="gamma-distribution" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="gamma-distribution"><span class="header-section-number">6.7</span> 4.5 Gamma Distribution</h2>
-<section id="k-konteks-3" class="level3" data-number="6.7.1">
-<h3 data-number="6.7.1" class="anchored" data-anchor-id="k-konteks-3"><span class="header-section-number">6.7.1</span> K — Konteks</h3>
+<section id="gamma-distribution" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="gamma-distribution"><span class="header-section-number">6.6</span> 4.5 Gamma Distribution</h2>
+<section id="k-konteks-3" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="k-konteks-3"><span class="header-section-number">6.6.1</span> K — Konteks</h3>
 <p>Distribusi Gamma sangat berguna untuk memodelkan: - waktu tunggu sampai beberapa kejadian terjadi, - lifetime positif dengan bentuk fleksibel, - akumulasi beberapa waktu tunggu eksponensial.</p>
 </section>
-<section id="m-model-3" class="level3" data-number="6.7.2">
-<h3 data-number="6.7.2" class="anchored" data-anchor-id="m-model-3"><span class="header-section-number">6.7.2</span> M — Model</h3>
+<section id="m-model-3" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="m-model-3"><span class="header-section-number">6.6.2</span> M — Model</h3>
 <p>Salah satu parametrisasinya: <span class="math display">\[
 X \sim \mathrm{Gamma}(\alpha, \theta)
 \]</span></p>
@@ -724,17 +726,17 @@ X \sim \mathrm{Gamma}(\alpha, \theta)
 f(x)=\frac{1}{\Gamma(\alpha)\theta^\alpha}x^{\alpha-1}e^{-x/\theta}, \qquad x&gt;0
 \]</span></p>
 </section>
-<section id="q-questions-3" class="level3" data-number="6.7.3">
-<h3 data-number="6.7.3" class="anchored" data-anchor-id="q-questions-3"><span class="header-section-number">6.7.3</span> Q — Questions</h3>
+<section id="q-questions-3" class="level3" data-number="6.6.3">
+<h3 data-number="6.6.3" class="anchored" data-anchor-id="q-questions-3"><span class="header-section-number">6.6.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Apa pengaruh shape dan scale?</li>
 <li>Kapan Gamma lebih cocok daripada Exponential?</li>
 <li>Bagaimana menghitung peluang waktu selesai sebelum batas tertentu?</li>
 </ol>
 </section>
-<section id="a-apply-3" class="level3" data-number="6.7.4">
-<h3 data-number="6.7.4" class="anchored" data-anchor-id="a-apply-3"><span class="header-section-number">6.7.4</span> A — Apply</h3>
-<div id="7266e731" class="cell" data-execution_count="11">
+<section id="a-apply-3" class="level3" data-number="6.6.4">
+<h3 data-number="6.6.4" class="anchored" data-anchor-id="a-apply-3"><span class="header-section-number">6.6.4</span> A — Apply</h3>
+<div id="d9a036a1" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alpha, theta <span class="op">=</span> <span class="dv">3</span>, <span class="dv">2</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">500</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> stats.gamma.pdf(x, a<span class="op">=</span>alpha, scale<span class="op">=</span>theta)</span>
@@ -754,7 +756,7 @@ f(x)=\frac{1}{\Gamma(\alpha)\theta^\alpha}x^{\alpha-1}e^{-x/\theta}, \qquad x&gt
 </div>
 </div>
 </div>
-<div id="ca1e8a0a" class="cell" data-execution_count="12">
+<div id="2f954192" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean ="</span>, alpha <span class="op">*</span> theta)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variance ="</span>, alpha <span class="op">*</span> theta<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(X &lt;= 8) ="</span>, stats.gamma.cdf(<span class="dv">8</span>, a<span class="op">=</span>alpha, scale<span class="op">=</span>theta))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -764,8 +766,8 @@ Variance = 12
 P(X &lt;= 8) = 0.7618966944464556</code></pre>
 </div>
 </div>
-<section id="hasil-teoritis-1" class="level4" data-number="6.7.4.1">
-<h4 data-number="6.7.4.1" class="anchored" data-anchor-id="hasil-teoritis-1"><span class="header-section-number">6.7.4.1</span> Hasil teoritis</h4>
+<section id="hasil-teoritis-1" class="level4" data-number="6.6.4.1">
+<h4 data-number="6.6.4.1" class="anchored" data-anchor-id="hasil-teoritis-1"><span class="header-section-number">6.6.4.1</span> Hasil teoritis</h4>
 <p><span class="math display">\[
 E[X]=\alpha\theta
 \]</span></p>
@@ -774,19 +776,19 @@ E[X]=\alpha\theta
 \]</span></p>
 </section>
 </section>
-<section id="interpretasi-1" class="level3" data-number="6.7.5">
-<h3 data-number="6.7.5" class="anchored" data-anchor-id="interpretasi-1"><span class="header-section-number">6.7.5</span> Interpretasi</h3>
+<section id="interpretasi-1" class="level3" data-number="6.6.5">
+<h3 data-number="6.6.5" class="anchored" data-anchor-id="interpretasi-1"><span class="header-section-number">6.6.5</span> Interpretasi</h3>
 <p>Gamma cocok untuk waktu positif yang tidak memoryless dan memiliki bentuk yang bisa semakin “membukit” saat shape membesar.</p>
 </section>
 </section>
-<section id="exponential-distribution" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="exponential-distribution"><span class="header-section-number">6.8</span> 4.6 Exponential Distribution</h2>
-<section id="k-konteks-4" class="level3" data-number="6.8.1">
-<h3 data-number="6.8.1" class="anchored" data-anchor-id="k-konteks-4"><span class="header-section-number">6.8.1</span> K — Konteks</h3>
+<section id="exponential-distribution" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="exponential-distribution"><span class="header-section-number">6.7</span> 4.6 Exponential Distribution</h2>
+<section id="k-konteks-4" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="k-konteks-4"><span class="header-section-number">6.7.1</span> K — Konteks</h3>
 <p>Distribusi Exponential sangat terkenal untuk memodelkan: - waktu antar kedatangan pada Poisson process, - waktu sampai kegagalan pertama pada sistem memoryless, - waktu tunggu hingga kejadian berikutnya.</p>
 </section>
-<section id="m-model-4" class="level3" data-number="6.8.2">
-<h3 data-number="6.8.2" class="anchored" data-anchor-id="m-model-4"><span class="header-section-number">6.8.2</span> M — Model</h3>
+<section id="m-model-4" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="m-model-4"><span class="header-section-number">6.7.2</span> M — Model</h3>
 <p>Jika: <span class="math display">\[
 X \sim \mathrm{Exponential}(\lambda)
 \]</span> maka PDF-nya:</p>
@@ -798,17 +800,17 @@ f(x)=\lambda e^{-\lambda x}, \qquad x \ge 0
 F(x)=1-e^{-\lambda x}
 \]</span></p>
 </section>
-<section id="q-questions-4" class="level3" data-number="6.8.3">
-<h3 data-number="6.8.3" class="anchored" data-anchor-id="q-questions-4"><span class="header-section-number">6.8.3</span> Q — Questions</h3>
+<section id="q-questions-4" class="level3" data-number="6.7.3">
+<h3 data-number="6.7.3" class="anchored" data-anchor-id="q-questions-4"><span class="header-section-number">6.7.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Berapa peluang menunggu kurang dari <span class="math inline">\(t\)</span>?</li>
 <li>Mengapa distribusi ini memoryless?</li>
 <li>Bagaimana hubungannya dengan Poisson process?</li>
 </ol>
 </section>
-<section id="a-apply-4" class="level3" data-number="6.8.4">
-<h3 data-number="6.8.4" class="anchored" data-anchor-id="a-apply-4"><span class="header-section-number">6.8.4</span> A — Apply</h3>
-<div id="b8d60356" class="cell" data-execution_count="13">
+<section id="a-apply-4" class="level3" data-number="6.7.4">
+<h3 data-number="6.7.4" class="anchored" data-anchor-id="a-apply-4"><span class="header-section-number">6.7.4</span> A — Apply</h3>
+<div id="6b08c133" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="fl">0.5</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">500</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> stats.expon.pdf(x, scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>lam)</span>
@@ -828,7 +830,7 @@ F(x)=1-e^{-\lambda x}
 </div>
 </div>
 </div>
-<div id="8e40423e" class="cell" data-execution_count="14">
+<div id="9ad8468e" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean ="</span>, <span class="dv">1</span><span class="op">/</span>lam)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variance ="</span>, <span class="dv">1</span><span class="op">/</span>lam<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(X &lt;= 3) ="</span>, stats.expon.cdf(<span class="dv">3</span>, scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>lam))</span>
@@ -840,18 +842,18 @@ P(X &lt;= 3) = 0.7768698398515702
 P(X &gt; 5) = 0.08208499862389884</code></pre>
 </div>
 </div>
-<section id="sifat-memoryless" class="level4" data-number="6.8.4.1">
-<h4 data-number="6.8.4.1" class="anchored" data-anchor-id="sifat-memoryless"><span class="header-section-number">6.8.4.1</span> Sifat memoryless</h4>
+<section id="sifat-memoryless" class="level4" data-number="6.7.4.1">
+<h4 data-number="6.7.4.1" class="anchored" data-anchor-id="sifat-memoryless"><span class="header-section-number">6.7.4.1</span> Sifat memoryless</h4>
 <p><span class="math display">\[
 P(X&gt;s+t \mid X&gt;s)=P(X&gt;t)
 \]</span></p>
 <p>Distribusi Exponential adalah versi kontinu dari ide memoryless yang di dunia diskrit dimiliki distribusi Geometric.</p>
 </section>
-<section id="hubungan-dengan-poisson-process" class="level4" data-number="6.8.4.2">
-<h4 data-number="6.8.4.2" class="anchored" data-anchor-id="hubungan-dengan-poisson-process"><span class="header-section-number">6.8.4.2</span> Hubungan dengan Poisson process</h4>
+<section id="hubungan-dengan-poisson-process" class="level4" data-number="6.7.4.2">
+<h4 data-number="6.7.4.2" class="anchored" data-anchor-id="hubungan-dengan-poisson-process"><span class="header-section-number">6.7.4.2</span> Hubungan dengan Poisson process</h4>
 <p>Jika jumlah kejadian per interval mengikuti Poisson process dengan rate <span class="math inline">\(\lambda\)</span>, maka waktu antar kedatangan mengikuti Exponential(<span class="math inline">\(\lambda\)</span>).</p>
 <p>Mari simulasikan.</p>
-<div id="74b24460" class="cell" data-execution_count="15">
+<div id="551e5868" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">123</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="fl">2.0</span>  <span class="co">## rata-rata 2 kejadian per satuan waktu</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -879,8 +881,8 @@ P(X&gt;s+t \mid X&gt;s)=P(X&gt;t)
 </div>
 </section>
 </section>
-<section id="latihan-singkat-2" class="level3" data-number="6.8.5">
-<h3 data-number="6.8.5" class="anchored" data-anchor-id="latihan-singkat-2"><span class="header-section-number">6.8.5</span> Latihan singkat</h3>
+<section id="latihan-singkat-2" class="level3" data-number="6.7.5">
+<h3 data-number="6.7.5" class="anchored" data-anchor-id="latihan-singkat-2"><span class="header-section-number">6.7.5</span> Latihan singkat</h3>
 <ol type="1">
 <li>Jika rata-rata waktu tunggu 10 menit, berapa rate <span class="math inline">\(\lambda\)</span>?</li>
 <li>Hitung peluang waktu tunggu kurang dari 5 menit.</li>
@@ -888,14 +890,14 @@ P(X&gt;s+t \mid X&gt;s)=P(X&gt;t)
 </ol>
 </section>
 </section>
-<section id="erlang-distribution" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="erlang-distribution"><span class="header-section-number">6.9</span> 4.7 Erlang Distribution</h2>
-<section id="k-konteks-5" class="level3" data-number="6.9.1">
-<h3 data-number="6.9.1" class="anchored" data-anchor-id="k-konteks-5"><span class="header-section-number">6.9.1</span> K — Konteks</h3>
+<section id="erlang-distribution" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="erlang-distribution"><span class="header-section-number">6.8</span> 4.7 Erlang Distribution</h2>
+<section id="k-konteks-5" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="k-konteks-5"><span class="header-section-number">6.8.1</span> K — Konteks</h3>
 <p>Erlang muncul ketika kita menjumlahkan beberapa waktu tunggu Eksponensial independen dengan rate yang sama. Misalnya: - total waktu layanan yang melewati beberapa tahap berurutan, - waktu sampai <span class="math inline">\(k\)</span> kejadian dalam Poisson process.</p>
 </section>
-<section id="m-model-5" class="level3" data-number="6.9.2">
-<h3 data-number="6.9.2" class="anchored" data-anchor-id="m-model-5"><span class="header-section-number">6.9.2</span> M — Model</h3>
+<section id="m-model-5" class="level3" data-number="6.8.2">
+<h3 data-number="6.8.2" class="anchored" data-anchor-id="m-model-5"><span class="header-section-number">6.8.2</span> M — Model</h3>
 <p>Jika: <span class="math display">\[
 X = X_1 + X_2 + \cdots + X_k
 \]</span> dengan tiap <span class="math inline">\(X_i \sim \text{Exponential}(\lambda)\)</span> independen, maka:</p>
@@ -904,17 +906,17 @@ X \sim \text{Erlang}(k,\lambda)
 \]</span></p>
 <p>Erlang adalah kasus khusus Gamma dengan shape integer.</p>
 </section>
-<section id="q-questions-5" class="level3" data-number="6.9.3">
-<h3 data-number="6.9.3" class="anchored" data-anchor-id="q-questions-5"><span class="header-section-number">6.9.3</span> Q — Questions</h3>
+<section id="q-questions-5" class="level3" data-number="6.8.3">
+<h3 data-number="6.8.3" class="anchored" data-anchor-id="q-questions-5"><span class="header-section-number">6.8.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Bagaimana bentuk distribusinya dibanding Exponential?</li>
 <li>Bagaimana pengaruh <span class="math inline">\(k\)</span>?</li>
 <li>Apa arti praktis “jumlah beberapa tahap layanan”?</li>
 </ol>
 </section>
-<section id="a-apply-5" class="level3" data-number="6.9.4">
-<h3 data-number="6.9.4" class="anchored" data-anchor-id="a-apply-5"><span class="header-section-number">6.9.4</span> A — Apply</h3>
-<div id="0cb303e1" class="cell" data-execution_count="16">
+<section id="a-apply-5" class="level3" data-number="6.8.4">
+<h3 data-number="6.8.4" class="anchored" data-anchor-id="a-apply-5"><span class="header-section-number">6.8.4</span> A — Apply</h3>
+<div id="a60c6fbb" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="fl">0.5</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -936,7 +938,7 @@ X \sim \text{Erlang}(k,\lambda)
 </div>
 </div>
 </div>
-<div id="5b43dfd9" class="cell" data-execution_count="17">
+<div id="907e6151" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean ="</span>, k<span class="op">/</span>lam)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variance ="</span>, k<span class="op">/</span>(lam<span class="op">**</span><span class="dv">2</span>))</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(X &lt;= 8) ="</span>, stats.gamma.cdf(<span class="dv">8</span>, a<span class="op">=</span>k, scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>lam))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -946,20 +948,20 @@ Variance = 12.0
 P(X &lt;= 8) = 0.7618966944464556</code></pre>
 </div>
 </div>
-<section id="interpretasi-2" class="level4" data-number="6.9.4.1">
-<h4 data-number="6.9.4.1" class="anchored" data-anchor-id="interpretasi-2"><span class="header-section-number">6.9.4.1</span> Interpretasi</h4>
+<section id="interpretasi-2" class="level4" data-number="6.8.4.1">
+<h4 data-number="6.8.4.1" class="anchored" data-anchor-id="interpretasi-2"><span class="header-section-number">6.8.4.1</span> Interpretasi</h4>
 <p>Jika suatu proses terdiri dari 3 tahap memoryless independen, maka total waktunya tidak lagi Exponential, tetapi Erlang-3.</p>
 </section>
 </section>
 </section>
-<section id="weibull-distribution" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="weibull-distribution"><span class="header-section-number">6.10</span> 4.8 Weibull Distribution</h2>
-<section id="k-konteks-6" class="level3" data-number="6.10.1">
-<h3 data-number="6.10.1" class="anchored" data-anchor-id="k-konteks-6"><span class="header-section-number">6.10.1</span> K — Konteks</h3>
+<section id="weibull-distribution" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="weibull-distribution"><span class="header-section-number">6.9</span> 4.8 Weibull Distribution</h2>
+<section id="k-konteks-6" class="level3" data-number="6.9.1">
+<h3 data-number="6.9.1" class="anchored" data-anchor-id="k-konteks-6"><span class="header-section-number">6.9.1</span> K — Konteks</h3>
 <p>Weibull sangat populer dalam reliability engineering karena dapat memodelkan berbagai pola kegagalan: - kegagalan awal, - kegagalan acak, - kegagalan akibat keausan.</p>
 </section>
-<section id="m-model-6" class="level3" data-number="6.10.2">
-<h3 data-number="6.10.2" class="anchored" data-anchor-id="m-model-6"><span class="header-section-number">6.10.2</span> M — Model</h3>
+<section id="m-model-6" class="level3" data-number="6.9.2">
+<h3 data-number="6.9.2" class="anchored" data-anchor-id="m-model-6"><span class="header-section-number">6.9.2</span> M — Model</h3>
 <p>Jika: <span class="math display">\[
 X \sim \text{Weibull}(k,\lambda)
 \]</span> dengan: - <span class="math inline">\(k\)</span> = shape, - <span class="math inline">\(\lambda\)</span> = scale,</p>
@@ -968,17 +970,17 @@ X \sim \text{Weibull}(k,\lambda)
 f(x)=\frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1}e^{-(x/\lambda)^k}, \qquad x \ge 0
 \]</span></p>
 </section>
-<section id="q-questions-6" class="level3" data-number="6.10.3">
-<h3 data-number="6.10.3" class="anchored" data-anchor-id="q-questions-6"><span class="header-section-number">6.10.3</span> Q — Questions</h3>
+<section id="q-questions-6" class="level3" data-number="6.9.3">
+<h3 data-number="6.9.3" class="anchored" data-anchor-id="q-questions-6"><span class="header-section-number">6.9.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Bagaimana shape <span class="math inline">\(k\)</span> memengaruhi hazard?</li>
 <li>Kapan Weibull lebih realistis daripada Exponential?</li>
 <li>Bagaimana peluang komponen gagal sebelum waktu tertentu?</li>
 </ol>
 </section>
-<section id="a-apply-6" class="level3" data-number="6.10.4">
-<h3 data-number="6.10.4" class="anchored" data-anchor-id="a-apply-6"><span class="header-section-number">6.10.4</span> A — Apply</h3>
-<div id="883ad052" class="cell" data-execution_count="18">
+<section id="a-apply-6" class="level3" data-number="6.9.4">
+<h3 data-number="6.9.4" class="anchored" data-anchor-id="a-apply-6"><span class="header-section-number">6.9.4</span> A — Apply</h3>
+<div id="12489293" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>k_shape <span class="op">=</span> <span class="fl">2.0</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>lam_scale <span class="op">=</span> <span class="fl">10.0</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1000,26 +1002,26 @@ f(x)=\frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1}e^{-(x/\lambda)^k}, \q
 </div>
 </div>
 </div>
-<div id="4c17dc4f" class="cell" data-execution_count="19">
+<div id="70d3961c" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(X &lt;= 8) ="</span>, stats.weibull_min.cdf(<span class="dv">8</span>, c<span class="op">=</span>k_shape, scale<span class="op">=</span>lam_scale))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X &lt;= 8) = 0.47270757595695145</code></pre>
 </div>
 </div>
-<section id="interpretasi-3" class="level4" data-number="6.10.4.1">
-<h4 data-number="6.10.4.1" class="anchored" data-anchor-id="interpretasi-3"><span class="header-section-number">6.10.4.1</span> Interpretasi</h4>
+<section id="interpretasi-3" class="level4" data-number="6.9.4.1">
+<h4 data-number="6.9.4.1" class="anchored" data-anchor-id="interpretasi-3"><span class="header-section-number">6.9.4.1</span> Interpretasi</h4>
 <p>Weibull lebih fleksibel daripada Exponential. Ia sangat berguna saat laju kegagalan tidak konstan.</p>
 </section>
 </section>
 </section>
-<section id="pareto-distribution" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="pareto-distribution"><span class="header-section-number">6.11</span> 4.9 Pareto Distribution</h2>
-<section id="k-konteks-7" class="level3" data-number="6.11.1">
-<h3 data-number="6.11.1" class="anchored" data-anchor-id="k-konteks-7"><span class="header-section-number">6.11.1</span> K — Konteks</h3>
+<section id="pareto-distribution" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="pareto-distribution"><span class="header-section-number">6.10</span> 4.9 Pareto Distribution</h2>
+<section id="k-konteks-7" class="level3" data-number="6.10.1">
+<h3 data-number="6.10.1" class="anchored" data-anchor-id="k-konteks-7"><span class="header-section-number">6.10.1</span> K — Konteks</h3>
 <p>Pareto dipakai untuk fenomena heavy-tail, misalnya: - kekayaan, - ukuran file, - kerugian ekstrem, - pendapatan segelintir pihak yang sangat besar.</p>
 </section>
-<section id="m-model-7" class="level3" data-number="6.11.2">
-<h3 data-number="6.11.2" class="anchored" data-anchor-id="m-model-7"><span class="header-section-number">6.11.2</span> M — Model</h3>
+<section id="m-model-7" class="level3" data-number="6.10.2">
+<h3 data-number="6.10.2" class="anchored" data-anchor-id="m-model-7"><span class="header-section-number">6.10.2</span> M — Model</h3>
 <p>Jika: <span class="math display">\[
 X \sim \text{Pareto}(x_m,\alpha)
 \]</span> maka untuk <span class="math inline">\(x \ge x_m\)</span>:</p>
@@ -1027,17 +1029,17 @@ X \sim \text{Pareto}(x_m,\alpha)
 f(x)=\alpha \frac{x_m^\alpha}{x^{\alpha+1}}
 \]</span></p>
 </section>
-<section id="q-questions-7" class="level3" data-number="6.11.3">
-<h3 data-number="6.11.3" class="anchored" data-anchor-id="q-questions-7"><span class="header-section-number">6.11.3</span> Q — Questions</h3>
+<section id="q-questions-7" class="level3" data-number="6.10.3">
+<h3 data-number="6.10.3" class="anchored" data-anchor-id="q-questions-7"><span class="header-section-number">6.10.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Mengapa Pareto menghasilkan peluang ekstrem yang lebih besar?</li>
 <li>Kapan model heavy-tail penting dalam keputusan?</li>
 <li>Mengapa mean/variance bisa bermasalah untuk parameter tertentu?</li>
 </ol>
 </section>
-<section id="a-apply-7" class="level3" data-number="6.11.4">
-<h3 data-number="6.11.4" class="anchored" data-anchor-id="a-apply-7"><span class="header-section-number">6.11.4</span> A — Apply</h3>
-<div id="24b66d01" class="cell" data-execution_count="20">
+<section id="a-apply-7" class="level3" data-number="6.10.4">
+<h3 data-number="6.10.4" class="anchored" data-anchor-id="a-apply-7"><span class="header-section-number">6.10.4</span> A — Apply</h3>
+<div id="23cf3634" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">3.0</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>xm <span class="op">=</span> <span class="fl">1.0</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1059,26 +1061,26 @@ f(x)=\alpha \frac{x_m^\alpha}{x^{\alpha+1}}
 </div>
 </div>
 </div>
-<div id="314ccba1" class="cell" data-execution_count="21">
+<div id="7e0fb5c4" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(X &gt; 3) ="</span>, <span class="dv">1</span> <span class="op">-</span> stats.pareto.cdf(<span class="dv">3</span>, b<span class="op">=</span>alpha, scale<span class="op">=</span>xm))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X &gt; 3) = 0.03703703703703698</code></pre>
 </div>
 </div>
-<section id="interpretasi-4" class="level4" data-number="6.11.4.1">
-<h4 data-number="6.11.4.1" class="anchored" data-anchor-id="interpretasi-4"><span class="header-section-number">6.11.4.1</span> Interpretasi</h4>
+<section id="interpretasi-4" class="level4" data-number="6.10.4.1">
+<h4 data-number="6.10.4.1" class="anchored" data-anchor-id="interpretasi-4"><span class="header-section-number">6.10.4.1</span> Interpretasi</h4>
 <p>Pareto penting ketika kejadian ekstrem tidak boleh diabaikan. Dalam pengambilan keputusan risiko, tail tebal bisa sangat menentukan.</p>
 </section>
 </section>
 </section>
-<section id="chi-square-distribution" class="level2" data-number="6.12">
-<h2 data-number="6.12" class="anchored" data-anchor-id="chi-square-distribution"><span class="header-section-number">6.12</span> 4.10 Chi-Square Distribution</h2>
-<section id="k-konteks-8" class="level3" data-number="6.12.1">
-<h3 data-number="6.12.1" class="anchored" data-anchor-id="k-konteks-8"><span class="header-section-number">6.12.1</span> K — Konteks</h3>
+<section id="chi-square-distribution" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="chi-square-distribution"><span class="header-section-number">6.11</span> 4.10 Chi-Square Distribution</h2>
+<section id="k-konteks-8" class="level3" data-number="6.11.1">
+<h3 data-number="6.11.1" class="anchored" data-anchor-id="k-konteks-8"><span class="header-section-number">6.11.1</span> K — Konteks</h3>
 <p>Chi-Square muncul dalam: - inferensi statistik, - goodness-of-fit, - analisis varians, - penjumlahan kuadrat peubah normal baku.</p>
 </section>
-<section id="m-model-8" class="level3" data-number="6.12.2">
-<h3 data-number="6.12.2" class="anchored" data-anchor-id="m-model-8"><span class="header-section-number">6.12.2</span> M — Model</h3>
+<section id="m-model-8" class="level3" data-number="6.11.2">
+<h3 data-number="6.11.2" class="anchored" data-anchor-id="m-model-8"><span class="header-section-number">6.11.2</span> M — Model</h3>
 <p>Jika: <span class="math display">\[
 Z_1, Z_2, \dots, Z_k \sim \mathcal{N}(0,1)
 \]</span> independen, maka:</p>
@@ -1088,17 +1090,17 @@ X = Z_1^2 + Z_2^2 + \cdots + Z_k^2
 \]</span></p>
 <p>Distribusi ini adalah kasus khusus Gamma.</p>
 </section>
-<section id="q-questions-8" class="level3" data-number="6.12.3">
-<h3 data-number="6.12.3" class="anchored" data-anchor-id="q-questions-8"><span class="header-section-number">6.12.3</span> Q — Questions</h3>
+<section id="q-questions-8" class="level3" data-number="6.11.3">
+<h3 data-number="6.11.3" class="anchored" data-anchor-id="q-questions-8"><span class="header-section-number">6.11.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Mengapa bentuknya hanya pada nilai non-negatif?</li>
 <li>Apa hubungan Chi-Square dengan Normal?</li>
 <li>Mengapa distribusi ini penting di statistika?</li>
 </ol>
 </section>
-<section id="a-apply-8" class="level3" data-number="6.12.4">
-<h3 data-number="6.12.4" class="anchored" data-anchor-id="a-apply-8"><span class="header-section-number">6.12.4</span> A — Apply</h3>
-<div id="d9f9ad3f" class="cell" data-execution_count="22">
+<section id="a-apply-8" class="level3" data-number="6.11.4">
+<h3 data-number="6.11.4" class="anchored" data-anchor-id="a-apply-8"><span class="header-section-number">6.11.4</span> A — Apply</h3>
+<div id="02ae1b2f" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">500</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> stats.chi2.pdf(x, df<span class="op">=</span>df)</span>
@@ -1118,7 +1120,7 @@ X = Z_1^2 + Z_2^2 + \cdots + Z_k^2
 </div>
 </div>
 </div>
-<div id="63c2fdcd" class="cell" data-execution_count="23">
+<div id="61fc7f0f" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean ="</span>, df)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variance ="</span>, <span class="dv">2</span><span class="op">*</span>df)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(X &lt;= 7) ="</span>, stats.chi2.cdf(<span class="dv">7</span>, df<span class="op">=</span>df))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1130,27 +1132,27 @@ P(X &lt;= 7) = 0.7793596920632894</code></pre>
 </div>
 </section>
 </section>
-<section id="hubungan-antardistribusi" class="level2" data-number="6.13">
-<h2 data-number="6.13" class="anchored" data-anchor-id="hubungan-antardistribusi"><span class="header-section-number">6.13</span> 4.11 Hubungan Antardistribusi</h2>
+<section id="hubungan-antardistribusi" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="hubungan-antardistribusi"><span class="header-section-number">6.12</span> 4.11 Hubungan Antardistribusi</h2>
 <p>Bagian ini penting karena membantu mahasiswa melihat probabilitas sebagai jaringan ide, bukan daftar rumus terpisah.</p>
-<section id="exponential-poisson-process" class="level3" data-number="6.13.1">
-<h3 data-number="6.13.1" class="anchored" data-anchor-id="exponential-poisson-process"><span class="header-section-number">6.13.1</span> Exponential ↔︎ Poisson Process</h3>
+<section id="exponential-poisson-process" class="level3" data-number="6.12.1">
+<h3 data-number="6.12.1" class="anchored" data-anchor-id="exponential-poisson-process"><span class="header-section-number">6.12.1</span> Exponential ↔︎ Poisson Process</h3>
 <p>Jika banyak kejadian dalam interval mengikuti Poisson process dengan rate <span class="math inline">\(\lambda\)</span>, maka waktu antar kedatangan mengikuti Exponential(<span class="math inline">\(\lambda\)</span>).</p>
 </section>
-<section id="erlang-exponential" class="level3" data-number="6.13.2">
-<h3 data-number="6.13.2" class="anchored" data-anchor-id="erlang-exponential"><span class="header-section-number">6.13.2</span> Erlang ↔︎ Exponential</h3>
+<section id="erlang-exponential" class="level3" data-number="6.12.2">
+<h3 data-number="6.12.2" class="anchored" data-anchor-id="erlang-exponential"><span class="header-section-number">6.12.2</span> Erlang ↔︎ Exponential</h3>
 <p>Erlang adalah jumlah beberapa random variable Exponential independen dengan rate sama.</p>
 </section>
-<section id="gamma-erlang" class="level3" data-number="6.13.3">
-<h3 data-number="6.13.3" class="anchored" data-anchor-id="gamma-erlang"><span class="header-section-number">6.13.3</span> Gamma ↔︎ Erlang</h3>
+<section id="gamma-erlang" class="level3" data-number="6.12.3">
+<h3 data-number="6.12.3" class="anchored" data-anchor-id="gamma-erlang"><span class="header-section-number">6.12.3</span> Gamma ↔︎ Erlang</h3>
 <p>Erlang adalah kasus khusus Gamma dengan parameter shape berupa bilangan bulat positif.</p>
 </section>
-<section id="normal-binomial" class="level3" data-number="6.13.4">
-<h3 data-number="6.13.4" class="anchored" data-anchor-id="normal-binomial"><span class="header-section-number">6.13.4</span> Normal ↔︎ Binomial</h3>
+<section id="normal-binomial" class="level3" data-number="6.12.4">
+<h3 data-number="6.12.4" class="anchored" data-anchor-id="normal-binomial"><span class="header-section-number">6.12.4</span> Normal ↔︎ Binomial</h3>
 <p>Binomial dengan <span class="math inline">\(n\)</span> besar sering dapat didekati oleh Normal.</p>
 </section>
-<section id="chi-square-gamma" class="level3" data-number="6.13.5">
-<h3 data-number="6.13.5" class="anchored" data-anchor-id="chi-square-gamma"><span class="header-section-number">6.13.5</span> Chi-Square ↔︎ Gamma</h3>
+<section id="chi-square-gamma" class="level3" data-number="6.12.5">
+<h3 data-number="6.12.5" class="anchored" data-anchor-id="chi-square-gamma"><span class="header-section-number">6.12.5</span> Chi-Square ↔︎ Gamma</h3>
 <p>Chi-Square adalah kasus khusus Gamma.</p>
 <p>Mari buat diagram singkat dengan Mermaid.</p>
 <div class="cell" data-layout-align="default">
@@ -1178,27 +1180,27 @@ P(X &lt;= 7) = 0.7793596920632894</code></pre>
 </div>
 </section>
 </section>
-<section id="mini-case-kmqa-1-garansi-produk" class="level2" data-number="6.14">
-<h2 data-number="6.14" class="anchored" data-anchor-id="mini-case-kmqa-1-garansi-produk"><span class="header-section-number">6.14</span> 4.12 Mini-Case KMQA 1 — Garansi Produk</h2>
-<section id="k-konteks-9" class="level3" data-number="6.14.1">
-<h3 data-number="6.14.1" class="anchored" data-anchor-id="k-konteks-9"><span class="header-section-number">6.14.1</span> K — Konteks</h3>
+<section id="mini-case-kmqa-1-garansi-produk" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="mini-case-kmqa-1-garansi-produk"><span class="header-section-number">6.13</span> 4.12 Mini-Case KMQA 1 — Garansi Produk</h2>
+<section id="k-konteks-9" class="level3" data-number="6.13.1">
+<h3 data-number="6.13.1" class="anchored" data-anchor-id="k-konteks-9"><span class="header-section-number">6.13.1</span> K — Konteks</h3>
 <p>Umur hidup lampu memengaruhi kebijakan garansi. Jika garansi terlalu panjang, biaya klaim meningkat. Jika terlalu pendek, pelanggan kecewa.</p>
 </section>
-<section id="m-model-9" class="level3" data-number="6.14.2">
-<h3 data-number="6.14.2" class="anchored" data-anchor-id="m-model-9"><span class="header-section-number">6.14.2</span> M — Model</h3>
+<section id="m-model-9" class="level3" data-number="6.13.2">
+<h3 data-number="6.13.2" class="anchored" data-anchor-id="m-model-9"><span class="header-section-number">6.13.2</span> M — Model</h3>
 <p>Misalkan umur hidup <span class="math inline">\(X \sim \mathcal{N}(900,50^2)\)</span>.</p>
 </section>
-<section id="q-questions-9" class="level3" data-number="6.14.3">
-<h3 data-number="6.14.3" class="anchored" data-anchor-id="q-questions-9"><span class="header-section-number">6.14.3</span> Q — Questions</h3>
+<section id="q-questions-9" class="level3" data-number="6.13.3">
+<h3 data-number="6.13.3" class="anchored" data-anchor-id="q-questions-9"><span class="header-section-number">6.13.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Berapa peluang rusak sebelum 800 jam?</li>
 <li>Berapa jika garansi 850 atau 900 jam?</li>
 <li>Kebijakan mana yang lebih konservatif?</li>
 </ol>
 </section>
-<section id="a-apply-9" class="level3" data-number="6.14.4">
-<h3 data-number="6.14.4" class="anchored" data-anchor-id="a-apply-9"><span class="header-section-number">6.14.4</span> A — Apply</h3>
-<div id="b029fe07" class="cell" data-execution_count="24">
+<section id="a-apply-9" class="level3" data-number="6.13.4">
+<h3 data-number="6.13.4" class="anchored" data-anchor-id="a-apply-9"><span class="header-section-number">6.13.4</span> A — Apply</h3>
+<div id="7bd31c3a" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> <span class="dv">900</span>, <span class="dv">50</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T <span class="kw">in</span> [<span class="dv">800</span>, <span class="dv">850</span>, <span class="dv">900</span>]:</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"P(X &lt; </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">) ="</span>, stats.norm.cdf(T, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1208,34 +1210,34 @@ P(X &lt; 850) = 0.15865525393145707
 P(X &lt; 900) = 0.5</code></pre>
 </div>
 </div>
-<section id="interpretasi-5" class="level4" data-number="6.14.4.1">
-<h4 data-number="6.14.4.1" class="anchored" data-anchor-id="interpretasi-5"><span class="header-section-number">6.14.4.1</span> Interpretasi</h4>
+<section id="interpretasi-5" class="level4" data-number="6.13.4.1">
+<h4 data-number="6.13.4.1" class="anchored" data-anchor-id="interpretasi-5"><span class="header-section-number">6.13.4.1</span> Interpretasi</h4>
 <p>CDF langsung memberi estimasi proporsi klaim garansi.</p>
 </section>
 </section>
 </section>
-<section id="mini-case-kmqa-2-waktu-antar-kedatangan-pasien" class="level2" data-number="6.15">
-<h2 data-number="6.15" class="anchored" data-anchor-id="mini-case-kmqa-2-waktu-antar-kedatangan-pasien"><span class="header-section-number">6.15</span> 4.13 Mini-Case KMQA 2 — Waktu Antar Kedatangan Pasien</h2>
-<section id="k-konteks-10" class="level3" data-number="6.15.1">
-<h3 data-number="6.15.1" class="anchored" data-anchor-id="k-konteks-10"><span class="header-section-number">6.15.1</span> K — Konteks</h3>
+<section id="mini-case-kmqa-2-waktu-antar-kedatangan-pasien" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="mini-case-kmqa-2-waktu-antar-kedatangan-pasien"><span class="header-section-number">6.14</span> 4.13 Mini-Case KMQA 2 — Waktu Antar Kedatangan Pasien</h2>
+<section id="k-konteks-10" class="level3" data-number="6.14.1">
+<h3 data-number="6.14.1" class="anchored" data-anchor-id="k-konteks-10"><span class="header-section-number">6.14.1</span> K — Konteks</h3>
 <p>Sebuah klinik menerima pasien secara acak. Kita ingin memodelkan selang waktu antar kedatangan.</p>
 </section>
-<section id="m-model-10" class="level3" data-number="6.15.2">
-<h3 data-number="6.15.2" class="anchored" data-anchor-id="m-model-10"><span class="header-section-number">6.15.2</span> M — Model</h3>
+<section id="m-model-10" class="level3" data-number="6.14.2">
+<h3 data-number="6.14.2" class="anchored" data-anchor-id="m-model-10"><span class="header-section-number">6.14.2</span> M — Model</h3>
 <p>Jika kedatangan mengikuti Poisson process dengan rate <span class="math inline">\(\lambda\)</span>, maka interarrival time: <span class="math display">\[
 X \sim \mathrm{Exponential}(\lambda)
 \]</span></p>
 </section>
-<section id="q-questions-10" class="level3" data-number="6.15.3">
-<h3 data-number="6.15.3" class="anchored" data-anchor-id="q-questions-10"><span class="header-section-number">6.15.3</span> Q — Questions</h3>
+<section id="q-questions-10" class="level3" data-number="6.14.3">
+<h3 data-number="6.14.3" class="anchored" data-anchor-id="q-questions-10"><span class="header-section-number">6.14.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Berapa peluang pasien berikut datang dalam 10 menit?</li>
 <li>Berapa rata-rata selang tunggu?</li>
 </ol>
 </section>
-<section id="a-apply-10" class="level3" data-number="6.15.4">
-<h3 data-number="6.15.4" class="anchored" data-anchor-id="a-apply-10"><span class="header-section-number">6.15.4</span> A — Apply</h3>
-<div id="6c298878" class="cell" data-execution_count="25">
+<section id="a-apply-10" class="level3" data-number="6.14.4">
+<h3 data-number="6.14.4" class="anchored" data-anchor-id="a-apply-10"><span class="header-section-number">6.14.4</span> A — Apply</h3>
+<div id="a5a28daf" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">## rate 2 pasien/jam =&gt; 1 pasien setiap 30 menit rata-rata</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>lam_per_hour <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>lam_per_minute <span class="op">=</span> lam_per_hour <span class="op">/</span> <span class="dv">60</span></span>
@@ -1249,29 +1251,29 @@ P(datang dalam 10 menit) = 0.28346868942621073</code></pre>
 </div>
 </section>
 </section>
-<section id="mini-case-kmqa-3-tiga-sub-layanan-berantai" class="level2" data-number="6.16">
-<h2 data-number="6.16" class="anchored" data-anchor-id="mini-case-kmqa-3-tiga-sub-layanan-berantai"><span class="header-section-number">6.16</span> 4.14 Mini-Case KMQA 3 — Tiga Sub-Layanan Berantai</h2>
-<section id="k-konteks-11" class="level3" data-number="6.16.1">
-<h3 data-number="6.16.1" class="anchored" data-anchor-id="k-konteks-11"><span class="header-section-number">6.16.1</span> K — Konteks</h3>
+<section id="mini-case-kmqa-3-tiga-sub-layanan-berantai" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="mini-case-kmqa-3-tiga-sub-layanan-berantai"><span class="header-section-number">6.15</span> 4.14 Mini-Case KMQA 3 — Tiga Sub-Layanan Berantai</h2>
+<section id="k-konteks-11" class="level3" data-number="6.15.1">
+<h3 data-number="6.15.1" class="anchored" data-anchor-id="k-konteks-11"><span class="header-section-number">6.15.1</span> K — Konteks</h3>
 <p>Sebuah layanan terdiri dari tiga tahap berurutan, masing-masing memoryless dan independen.</p>
 </section>
-<section id="m-model-11" class="level3" data-number="6.16.2">
-<h3 data-number="6.16.2" class="anchored" data-anchor-id="m-model-11"><span class="header-section-number">6.16.2</span> M — Model</h3>
+<section id="m-model-11" class="level3" data-number="6.15.2">
+<h3 data-number="6.15.2" class="anchored" data-anchor-id="m-model-11"><span class="header-section-number">6.15.2</span> M — Model</h3>
 <p>Masing-masing tahap <span class="math inline">\(X_i \sim \mathrm{Exponential}(\lambda)\)</span>, maka total: <span class="math display">\[
 T = X_1 + X_2 + X_3 \sim \text{Erlang}(3,\lambda)
 \]</span></p>
 </section>
-<section id="q-questions-11" class="level3" data-number="6.16.3">
-<h3 data-number="6.16.3" class="anchored" data-anchor-id="q-questions-11"><span class="header-section-number">6.16.3</span> Q — Questions</h3>
+<section id="q-questions-11" class="level3" data-number="6.15.3">
+<h3 data-number="6.15.3" class="anchored" data-anchor-id="q-questions-11"><span class="header-section-number">6.15.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Berapa mean total durasi?</li>
 <li>Mengapa totalnya tidak lagi Exponential?</li>
 <li>Bagaimana histogram Monte Carlo dibanding PDF Erlang?</li>
 </ol>
 </section>
-<section id="a-apply-11" class="level3" data-number="6.16.4">
-<h3 data-number="6.16.4" class="anchored" data-anchor-id="a-apply-11"><span class="header-section-number">6.16.4</span> A — Apply</h3>
-<div id="2ef1246a" class="cell" data-execution_count="26">
+<section id="a-apply-11" class="level3" data-number="6.15.4">
+<h3 data-number="6.15.4" class="anchored" data-anchor-id="a-apply-11"><span class="header-section-number">6.15.4</span> A — Apply</h3>
+<div id="2eac4868" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">42</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="fl">0.5</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100000</span></span>
@@ -1303,61 +1305,61 @@ T = X_1 + X_2 + X_3 \sim \text{Erlang}(3,\lambda)
 </div>
 </section>
 </section>
-<section id="python-toolbox-untuk-distribusi-kontinu" class="level2" data-number="6.17">
-<h2 data-number="6.17" class="anchored" data-anchor-id="python-toolbox-untuk-distribusi-kontinu"><span class="header-section-number">6.17</span> 4.15 Python Toolbox untuk Distribusi Kontinu</h2>
-<div id="e4ce305d" class="cell" data-execution_count="27">
+<section id="python-toolbox-untuk-distribusi-kontinu" class="level2" data-number="6.16">
+<h2 data-number="6.16" class="anchored" data-anchor-id="python-toolbox-untuk-distribusi-kontinu"><span class="header-section-number">6.16</span> 4.15 Python Toolbox untuk Distribusi Kontinu</h2>
+<div id="ededbe9e" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="normal" class="level3" data-number="6.17.1">
-<h3 data-number="6.17.1" class="anchored" data-anchor-id="normal"><span class="header-section-number">6.17.1</span> Normal</h3>
-<div id="5279f2cb" class="cell" data-execution_count="28">
+<section id="normal" class="level3" data-number="6.16.1">
+<h3 data-number="6.16.1" class="anchored" data-anchor-id="normal"><span class="header-section-number">6.16.1</span> Normal</h3>
+<div id="65f80ca4" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>stats.norm.pdf(<span class="dv">0</span>, loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>), stats.norm.cdf(<span class="fl">1.96</span>, loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>(np.float64(0.3989422804014327), np.float64(0.9750021048517795))</code></pre>
 </div>
 </div>
 </section>
-<section id="exponential" class="level3" data-number="6.17.2">
-<h3 data-number="6.17.2" class="anchored" data-anchor-id="exponential"><span class="header-section-number">6.17.2</span> Exponential</h3>
-<div id="dc29f67f" class="cell" data-execution_count="29">
+<section id="exponential" class="level3" data-number="6.16.2">
+<h3 data-number="6.16.2" class="anchored" data-anchor-id="exponential"><span class="header-section-number">6.16.2</span> Exponential</h3>
+<div id="b3a8a43a" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>stats.expon.pdf(<span class="dv">2</span>, scale<span class="op">=</span><span class="dv">3</span>), stats.expon.cdf(<span class="dv">2</span>, scale<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>(np.float64(0.17113903967753066), np.float64(0.486582880967408))</code></pre>
 </div>
 </div>
 </section>
-<section id="gamma" class="level3" data-number="6.17.3">
-<h3 data-number="6.17.3" class="anchored" data-anchor-id="gamma"><span class="header-section-number">6.17.3</span> Gamma</h3>
-<div id="b971a41a" class="cell" data-execution_count="30">
+<section id="gamma" class="level3" data-number="6.16.3">
+<h3 data-number="6.16.3" class="anchored" data-anchor-id="gamma"><span class="header-section-number">6.16.3</span> Gamma</h3>
+<div id="6dafdd57" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>stats.gamma.pdf(<span class="dv">4</span>, a<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">2</span>), stats.gamma.cdf(<span class="dv">4</span>, a<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>(np.float64(0.1353352832366127), np.float64(0.32332358381693654))</code></pre>
 </div>
 </div>
 </section>
-<section id="weibull" class="level3" data-number="6.17.4">
-<h3 data-number="6.17.4" class="anchored" data-anchor-id="weibull"><span class="header-section-number">6.17.4</span> Weibull</h3>
-<div id="aee618c9" class="cell" data-execution_count="31">
+<section id="weibull" class="level3" data-number="6.16.4">
+<h3 data-number="6.16.4" class="anchored" data-anchor-id="weibull"><span class="header-section-number">6.16.4</span> Weibull</h3>
+<div id="2e15ab0d" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>stats.weibull_min.pdf(<span class="dv">4</span>, c<span class="op">=</span><span class="dv">2</span>, scale<span class="op">=</span><span class="dv">10</span>), stats.weibull_min.cdf(<span class="dv">4</span>, c<span class="op">=</span><span class="dv">2</span>, scale<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>(np.float64(0.06817150311729692), np.float64(0.14785621103378868))</code></pre>
 </div>
 </div>
 </section>
-<section id="pareto" class="level3" data-number="6.17.5">
-<h3 data-number="6.17.5" class="anchored" data-anchor-id="pareto"><span class="header-section-number">6.17.5</span> Pareto</h3>
-<div id="79c2a9aa" class="cell" data-execution_count="32">
+<section id="pareto" class="level3" data-number="6.16.5">
+<h3 data-number="6.16.5" class="anchored" data-anchor-id="pareto"><span class="header-section-number">6.16.5</span> Pareto</h3>
+<div id="a170a76d" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>stats.pareto.pdf(<span class="dv">2</span>, b<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">1</span>), stats.pareto.cdf(<span class="dv">2</span>, b<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>(np.float64(0.1875), np.float64(0.875))</code></pre>
 </div>
 </div>
 </section>
-<section id="chi-square" class="level3" data-number="6.17.6">
-<h3 data-number="6.17.6" class="anchored" data-anchor-id="chi-square"><span class="header-section-number">6.17.6</span> Chi-Square</h3>
-<div id="bd0553b2" class="cell" data-execution_count="33">
+<section id="chi-square" class="level3" data-number="6.16.6">
+<h3 data-number="6.16.6" class="anchored" data-anchor-id="chi-square"><span class="header-section-number">6.16.6</span> Chi-Square</h3>
+<div id="5ee8736b" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>stats.chi2.pdf(<span class="dv">5</span>, df<span class="op">=</span><span class="dv">4</span>), stats.chi2.cdf(<span class="dv">5</span>, df<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>(np.float64(0.10260624827987348), np.float64(0.7127025048163542))</code></pre>
@@ -1365,8 +1367,8 @@ T = X_1 + X_2 + X_3 \sim \text{Erlang}(3,\lambda)
 </div>
 </section>
 </section>
-<section id="kesalahan-umum-yang-harus-dihindari" class="level2" data-number="6.18">
-<h2 data-number="6.18" class="anchored" data-anchor-id="kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">6.18</span> 4.16 Kesalahan Umum yang Harus Dihindari</h2>
+<section id="kesalahan-umum-yang-harus-dihindari" class="level2" data-number="6.17">
+<h2 data-number="6.17" class="anchored" data-anchor-id="kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">6.17</span> 4.16 Kesalahan Umum yang Harus Dihindari</h2>
 <ol type="1">
 <li><p><strong>Menganggap tinggi PDF adalah peluang</strong><br>
 Tidak. Peluang adalah area di bawah kurva.</p></li>
@@ -1380,14 +1382,14 @@ Pilih model sesuai konteks.</p></li>
 Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, variance, dan implikasinya.</p></li>
 </ol>
 </section>
-<section id="menyimpulkan-bab-ini" class="level2" data-number="6.19">
-<h2 data-number="6.19" class="anchored" data-anchor-id="menyimpulkan-bab-ini"><span class="header-section-number">6.19</span> 4.17 Menyimpulkan Bab Ini</h2>
+<section id="menyimpulkan-bab-ini" class="level2" data-number="6.18">
+<h2 data-number="6.18" class="anchored" data-anchor-id="menyimpulkan-bab-ini"><span class="header-section-number">6.18</span> 4.17 Menyimpulkan Bab Ini</h2>
 <p>Distribusi kontinu memberi kita bahasa untuk memodelkan banyak besaran dunia nyata yang berupa pengukuran, waktu, umur hidup, dan nilai-nilai positif yang berubah halus.</p>
 <p>Kita telah melihat: - <strong>uniform kontinu</strong> untuk interval yang merata, - <strong>normal</strong> untuk fenomena simetris dan agregatif, - <strong>gamma</strong> untuk waktu tunggu positif yang fleksibel, - <strong>exponential</strong> untuk memoryless waiting time, - <strong>erlang</strong> untuk jumlah beberapa exponential, - <strong>weibull</strong> untuk reliability yang lebih fleksibel, - <strong>pareto</strong> untuk heavy-tail, - <strong>chi-square</strong> untuk inferensi statistik dan hubungan dengan normal.</p>
 <p>Di samping itu, hubungan antardistribusi membantu kita melihat probabilitas sebagai sistem ide yang saling terhubung.</p>
 </section>
-<section id="ringkasan-poin-inti" class="level2" data-number="6.20">
-<h2 data-number="6.20" class="anchored" data-anchor-id="ringkasan-poin-inti"><span class="header-section-number">6.20</span> 4.18 Ringkasan Poin Inti</h2>
+<section id="ringkasan-poin-inti" class="level2" data-number="6.19">
+<h2 data-number="6.19" class="anchored" data-anchor-id="ringkasan-poin-inti"><span class="header-section-number">6.19</span> 4.18 Ringkasan Poin Inti</h2>
 <ol type="1">
 <li>Untuk random variable kontinu, peluang diperoleh dari <strong>area</strong> di bawah PDF.</li>
 <li>Distribusi kontinu kustom bisa dibangun dari tabel atau interpolasi numerik.</li>
@@ -1401,10 +1403,10 @@ Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, v
 <li>Memahami hubungan antardistribusi membantu membangun intuisi yang lebih dalam.</li>
 </ol>
 </section>
-<section id="latihan-bab-4" class="level2" data-number="6.21">
-<h2 data-number="6.21" class="anchored" data-anchor-id="latihan-bab-4"><span class="header-section-number">6.21</span> 4.19 Latihan Bab 4</h2>
-<section id="a.-konseptual" class="level3" data-number="6.21.1">
-<h3 data-number="6.21.1" class="anchored" data-anchor-id="a.-konseptual"><span class="header-section-number">6.21.1</span> A. Konseptual</h3>
+<section id="latihan-bab-4" class="level2" data-number="6.20">
+<h2 data-number="6.20" class="anchored" data-anchor-id="latihan-bab-4"><span class="header-section-number">6.20</span> 4.19 Latihan Bab 4</h2>
+<section id="a.-konseptual" class="level3" data-number="6.20.1">
+<h3 data-number="6.20.1" class="anchored" data-anchor-id="a.-konseptual"><span class="header-section-number">6.20.1</span> A. Konseptual</h3>
 <ol type="1">
 <li>Mengapa peluang titik tunggal pada RV kontinu bernilai nol?</li>
 <li>Apa perbedaan utama antara PDF dan CDF?</li>
@@ -1412,8 +1414,8 @@ Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, v
 <li>Mengapa Weibull sering lebih realistis daripada Exponential untuk data kegagalan?</li>
 </ol>
 </section>
-<section id="b.-hitungan" class="level3" data-number="6.21.2">
-<h3 data-number="6.21.2" class="anchored" data-anchor-id="b.-hitungan"><span class="header-section-number">6.21.2</span> B. Hitungan</h3>
+<section id="b.-hitungan" class="level3" data-number="6.20.2">
+<h3 data-number="6.20.2" class="anchored" data-anchor-id="b.-hitungan"><span class="header-section-number">6.20.2</span> B. Hitungan</h3>
 <ol type="1">
 <li>Jika <span class="math inline">\(X \sim \mathrm{Uniform}(2,8)\)</span>, hitung <span class="math inline">\(P(3 \le X \le 5)\)</span>.</li>
 <li>Jika <span class="math inline">\(X \sim \mathcal{N}(100,15^2)\)</span>, hitung <span class="math inline">\(P(X&lt;90)\)</span>.</li>
@@ -1421,8 +1423,8 @@ Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, v
 <li>Jika <span class="math inline">\(X \sim \mathrm{Gamma}(3,2)\)</span>, hitung <span class="math inline">\(E[X]\)</span> dan <span class="math inline">\(\mathrm{Var}(X)\)</span>.</li>
 </ol>
 </section>
-<section id="c.-python" class="level3" data-number="6.21.3">
-<h3 data-number="6.21.3" class="anchored" data-anchor-id="c.-python"><span class="header-section-number">6.21.3</span> C. Python</h3>
+<section id="c.-python" class="level3" data-number="6.20.3">
+<h3 data-number="6.20.3" class="anchored" data-anchor-id="c.-python"><span class="header-section-number">6.20.3</span> C. Python</h3>
 <ol type="1">
 <li>Simulasikan 10000 sampel Uniform(0,1) dan bandingkan histogram dengan PDF.</li>
 <li>Simulasikan Normal dan bandingkan histogram dengan PDF.</li>
@@ -1430,8 +1432,8 @@ Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, v
 <li>Simulasikan jumlah tiga Exponential dan bandingkan dengan Erlang teoritis.</li>
 </ol>
 </section>
-<section id="d.-aplikatif" class="level3" data-number="6.21.4">
-<h3 data-number="6.21.4" class="anchored" data-anchor-id="d.-aplikatif"><span class="header-section-number">6.21.4</span> D. Aplikatif</h3>
+<section id="d.-aplikatif" class="level3" data-number="6.20.4">
+<h3 data-number="6.20.4" class="anchored" data-anchor-id="d.-aplikatif"><span class="header-section-number">6.20.4</span> D. Aplikatif</h3>
 <ol type="1">
 <li>Pilih model yang paling cocok untuk:
 <ul>
@@ -1445,12 +1447,158 @@ Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, v
 </ol>
 </section>
 </section>
-<section id="penutup-kecil" class="level2" data-number="6.22">
-<h2 data-number="6.22" class="anchored" data-anchor-id="penutup-kecil"><span class="header-section-number">6.22</span> 4.20 Penutup Kecil</h2>
+<section id="penutup-kecil" class="level2" data-number="6.21">
+<h2 data-number="6.21" class="anchored" data-anchor-id="penutup-kecil"><span class="header-section-number">6.21</span> 4.20 Penutup Kecil</h2>
 <p>Kalau bab sebelumnya mengajarkan kita menghitung kejadian yang berupa hitungan, maka bab ini mengajarkan kita berpikir tentang besaran yang mengalir: waktu, umur hidup, pengukuran, dan intensitas.</p>
 <p>Di bab berikutnya, kita akan memperluas pandangan lagi: dunia nyata jarang hanya punya satu peubah acak. Kita akan mulai melihat <strong>lebih dari satu random variable sekaligus</strong>, hubungan di antaranya, serta apa yang terjadi ketika satu random variable menjadi fungsi dari yang lain.</p>
+</section>
+<section id="soal-tambahan" class="level2" data-number="6.22">
+<h2 data-number="6.22" class="anchored" data-anchor-id="soal-tambahan"><span class="header-section-number">6.22</span> Soal Tambahan</h2>
+<p>Sumber: “Problem Set 5: Probabilitas dan Statistik” author: “Dosen: Dimitri Mahayana”</p>
+<p><strong>Soal 1</strong> Probabilitas fungsi distribusi waktu untuk mengalami kegagalan pada sebuah komponen elektronik pada sebuah mesin foto kopi (dalam satuan waktu jam) adalah <span class="math inline">\(f(x) = \frac{e^{-x/1000}}{1000}\)</span> untuk setiap nilai <span class="math inline">\(x &gt; 0\)</span>. Hitung probabilitas dari: a. Komponen bertahan lebih dari 3000 jam sebelum akhirnya mengalami kegagalan. b. Komponen gagal dalam rentang 1000 hingga 2000 jam. c.&nbsp;Komponen gagal sebelum 1000 jam. d.&nbsp;Hitung jumlah jam saat 10% dari seluruh komponen yang ada mengalami kegagalan.</p>
+<p><strong>Soal 2</strong> Lebar gap merupakan properti yang penting pada suatu kepala rekaman magnetik. Dalam satuan <em>coded</em>, jika lebar yang dimaksud merupakan sebuah variabel yang <em>random</em> secara kontinu pada rentang nilai <span class="math inline">\(0 &lt; x &lt; 2\)</span>, dengan <span class="math inline">\(f(x) = 0,5x\)</span>. Tentukan fungsi distribusi kumulatif dari variabel lebar gap.</p>
+<p><strong>Soal 3</strong> Ketebalan sebuah <em>conductive coating</em> dalam satuan mikrometer memiliki fungsi kepadatan <span class="math inline">\(f(x) = 600x^{-2}\)</span> untuk setiap nilai <span class="math inline">\(100 &lt; x &lt; 120\)</span> mikrometer, dan 0 di lainnya. a. Tentukan nilai rata-rata dan variansi dari ketebalan <em>conductive coating</em> tersebut. b. Jika proses <em>coating</em> membutuhkan biaya $0,50 per mikrometer ketebalan pada setiap bagian, berapa biaya rata-rata yang diperlukan untuk melakukan proses <em>coating</em> per bagiannya?</p>
+<p><strong>Soal 4</strong> Asumsikan ukuran sebuah partikel kontaminasi (dalam satuan mikrometer) dapat dimodelkan seperti berikut, <span class="math inline">\(f(x) = 2x^{-3}\)</span> untuk setiap nilai <span class="math inline">\(1 &lt; x\)</span>. Tentukan nilai rata-rata dari <span class="math inline">\(X\)</span>.</p>
+<p><strong>Soal 5</strong> Berat bersih (dalam pound) pada sebuah paket senyawa kimia herbisida seragam pada interval <span class="math inline">\(49,75 &lt; x &lt; 50,25\)</span> pounds. a. Tentukan nilai rata-rata dan variansi dari berat paket tersebut. b. Tentukan fungsi distribusi kumulatif dari berat paket tersebut. c.&nbsp;Tentukan <span class="math inline">\(P(X &lt; 50,1)\)</span>. d.&nbsp;Tentukan <span class="math inline">\(P(49,9 &lt; X &lt; 50)\)</span>.</p>
+<p><strong>Soal 6</strong> Ketebalan sebuah <em>photoresist</em> yang diterapkan pada plat semiconductor manufaktur pada setiap bagian plat terdistribusi secara seragam antara 0,205 hingga 0,215 mikrometer. a. Tentukan fungsi distribusi kumulatif dari ketebalan <em>photoresist</em> tersebut. b. Tentukan proporsi dari plat tersebut yang memiliki ketebalan <em>photoresist</em> lebih besar dari 0,2125 mikrometer. c.&nbsp;Berapa nilai ketebalan yang memiliki proporsi lebih besar dari 10% plat tersebut? d.&nbsp;Tentukan nilai rata-rata dan variansi dari ketebalan <em>photoresist</em> tersebut.</p>
+<p><strong>Soal 7</strong> Waktu yang dibutuhkan untuk sebuah sel melakukan pembelahan diri (mitosis) adalah terdistribusi normal pada sebuah rentang waktu 1 jam dengan standar deviasi 5 menit. (<em>Gunakan tabel distribusi normal atau kalkulator</em>) a. Berapa probabilitas sebuah sel membelah dalam waktu kurang dari 45 menit? b. Berapa probabilitas sebuah sel membelah dengan membutuhkan waktu lebih dari 65 menit? c.&nbsp;Berapa waktu yang dibutuhkan oleh setidaknya untuk 99% sel untuk melakukan mitosis secara sempurna?</p>
+<p><strong>Soal 8</strong> Kekuatan komprehensif dari sampel semen dapat dimodelkan dalam sebuah distribusi normal dengan nilai rata-rata 6.000 <span class="math inline">\(\text{kg/cm}^2\)</span> dan standar deviasi sebesar 100 <span class="math inline">\(\text{kg/cm}^2\)</span>. a. Berapa probabilitas untuk kekuatan sampel tersebut kurang dari 6250 <span class="math inline">\(\text{kg/cm}^2\)</span>? b. Berapa probabilitas untuk kekuatan sampel tersebut di antara 5800 hingga 5900 <span class="math inline">\(\text{kg/cm}^2\)</span>? c.&nbsp;Berapa kekuatan yang dimiliki oleh lebih dari 95% sampel semen tersebut?</p>
+<p><strong>Soal 9</strong> Sebuah proses manufaktur <em>chip</em> semikonduktor memproduksi setidaknya 2% <em>chip</em> yang cacat. Asumsikan setiap <em>chip</em> independen. Dari 1000 <em>chip</em>: (gunakan pendekatan normal untuk binomial) a. Perkirakan probabilitas bahwa lebih dari 25 <em>chips</em> cacat. b. Perkirakan probabilitas bahwa <em>chip</em> yang cacat berjumlah antara 20 hingga 30 <em>chip</em>.</p>
+<p><strong>Soal 10</strong> Misalkan jumlah partikel asbes dalam sampel 1 sentimeter kuadrat debu adalah random variable Poisson dengan nilai rata-rata 1000. Berapa probabilitas bahwa 10 sentimeter kuadrat debu mengandung lebih dari 10.000 partikel? Gunakan pendekatan normal!</p>
+<p><strong>Soal 11</strong> Umur dari regulator voltase mobil memiliki distribusi eksponensial dengan umur rata-rata 6 tahun. Misalkan kamu membeli sebuah mobil dengan umur tepat 6 tahun, dengan regulator voltase yang terus bekerja, dan kamu merencanakan untuk menggunakan mobil itu hingga 6 tahun ke depan. a. Berapa probabilitas untuk regulator voltase mobil tersebut mengalami kegagalan pada saat dalam kepemilikanmu? b. Jika regulatormu mengalami kegagalan setelah 3 tahun kepemilikanmu dan kemudian diganti, berapa rata-rata waktu hingga kegagalan selanjutnya?</p>
+<p><strong>Soal 12</strong> Waktu untuk mengalami kegagalan (dalam satuan jam) sebuah kipas pada PC dapat dimodelkan dengan distribusi eksponensial dengan nilai <span class="math inline">\(\lambda = 0,0003\)</span>. a. Berapa proporsi dari probabilitas kipas tersebut akan bertahan setidaknya 10.000 jam? b. Berapa proporsi dari probabilitas kipas tersebut akan bertahan paling lama 7.000 jam saja?</p>
+<p><strong>Soal 13</strong> Waktu antara kegagalan sebuah laser dalam mesin sitogenik terdistribusi secara eksponensial dengan rata-rata 25.000 jam. a. Tentukan variansi dari waktu antara kegagalan sebuah laser! b. Berapa prakiraan waktu hingga kegagalan kedua? c.&nbsp;Berapa probabilitas bahwa waktu hingga mencapai kegagalan ketiga lebih dari 50.000 jam?</p>
+<p><strong>Soal 14</strong> Error yang diakibatkan oleh kontaminasi pada kepingan optik muncul dengan kecepatan 1 error setiap <span class="math inline">\(10^5\)</span> bits. Asumsikan nilai error mengikuti distribusi Poisson. a. Berapa nilai rata-rata bilangan bit hingga 5 error muncul? b. Berapa standar deviasi dari bilangan bit hingga 5 error muncul? c.&nbsp;Kode koreksi error kemungkinan tidak akan efektif jika ada 3 atau lebih error dalam rentang <span class="math inline">\(10^5\)</span> bit. Berapa besar probabilitas terjadinya momen ini?</p>
+<p><strong>Soal 15</strong> Asumsikan umur dari paket keping magnetik terkena gas korosif memiliki distribusi Weibull dengan nilai <span class="math inline">\(\beta = 0,5\)</span> dan rata-rata umurnya ialah 600 jam. a. Tentukan probabilitas bahwa paket kepingan tersebut bertahan setidaknya 500 jam. b. Tentukan probabilitas bahwa paket kepingan tersebut mengalami kegagalan sebelum 400 jam.</p>
+<p><strong>Soal 16</strong> Jika <span class="math inline">\(X\)</span> adalah variabel random Weibull dengan <span class="math inline">\(\beta = 1\)</span> dan <span class="math inline">\(\sigma = 1000\)</span>, apa nama lain dari distribusi variabel <span class="math inline">\(X\)</span> dan berapa nilai mean dari <span class="math inline">\(X\)</span>?</p>
+<p><strong>Soal 17</strong> Misalkan bahwa jumlah km suatu mobil bisa melaju sampai akinya habis adalah berdistribusi eksponensial dengan mean 10.000 km. Jika seseorang ingin melakukan perjalanan 5.000 km, berapa probabilitas dia bisa menyelesaikan perjalanannya tanpa harus mengganti akinya?</p>
+<p>Berikut adalah solusi lengkap dari setiap soal pada <strong>Problem Set 5</strong> berdasarkan dokumen sumber yang disediakan. Di bagian akhir, saya juga menyertakan desain kode Python berbasis <em>Object-Oriented Programming (Class)</em> yang <em>reusable</em> untuk memecahkan seluruh masalah tersebut.</p>
+<section id="bagian-1-solusi-analitis-problem-set-5" class="level3" data-number="6.22.1">
+<h3 data-number="6.22.1" class="anchored" data-anchor-id="bagian-1-solusi-analitis-problem-set-5"><span class="header-section-number">6.22.1</span> <strong>Bagian 1: Solusi Analitis Problem Set 5</strong></h3>
+<p><strong>1. Komponen Mesin Fotokopi (Distribusi Eksponensial)</strong> Fungsi probabilitas: <span class="math inline">\(f(x) = \frac{e^{-x/1000}}{1000}\)</span> untuk <span class="math inline">\(x &gt; 0\)</span>. * <strong>a. Bertahan &gt; 3000 jam:</strong> <span class="math inline">\(P(X &gt; 3000) = 1 - P(X \le 3000) = e^{-3000/1000} = e^{-3} \approx \mathbf{0,049787}\)</span>. * <strong>b. Gagal antara 1000-2000 jam:</strong> <span class="math inline">\(P(1000 &lt; X &lt; 2000) = F(2000) - F(1000) = (1 - e^{-2}) - (1 - e^{-1}) \approx \mathbf{0,232544}\)</span>. * <strong>c.&nbsp;Gagal &lt; 1000 jam:</strong> <span class="math inline">\(P(X &lt; 1000) = 1 - e^{-1} \approx \mathbf{0,63212}\)</span>. * <strong>d.&nbsp;Waktu saat 10% gagal:</strong> <span class="math inline">\(P(X &lt; x) = 0,1 \implies 1 - e^{-x/1000} = 0,1 \implies e^{-x/1000} = 0,9 \implies x = -1000 \ln(0,9) \approx \mathbf{105,36 \text{ jam}}\)</span>.</p>
+<p><strong>2. Lebar Gap Kepala Rekaman Magnetik (Distribusi Kontinu Acak)</strong> Fungsi: <span class="math inline">\(f(x) = 0,5x\)</span> untuk <span class="math inline">\(0 &lt; x &lt; 2\)</span>. * <strong>Fungsi Distribusi Kumulatif (CDF):</strong> Diperoleh dari integral <span class="math inline">\(f(x)\)</span>: <span class="math inline">\(F(x) = 0\)</span> untuk <span class="math inline">\(x \le 0\)</span>; <span class="math inline">\(F(x) = \mathbf{0,25x^2}\)</span> untuk <span class="math inline">\(0 &lt; x &lt; 2\)</span>; <span class="math inline">\(F(x) = 1\)</span> untuk <span class="math inline">\(x \ge 2\)</span>.</p>
+<p><strong>3. Ketebalan Conductive Coating</strong> Fungsi: <span class="math inline">\(f(x) = 600x^{-2}\)</span> untuk <span class="math inline">\(100 &lt; x &lt; 120\)</span>. * <strong>a. Rata-rata &amp; Variansi:</strong> <span class="math inline">\(\mu = E(X) = \int_{100}^{120} x(600x^{-2}) dx = \int_{100}^{120} \frac{600}{x} dx = 600 \ln(1.2) \approx \mathbf{109,39}\)</span>. <span class="math inline">\(\sigma^2 = \int_{100}^{120} (x - 109,39)^2 600x^{-2} dx \approx \mathbf{33,186}\)</span>. * <strong>b. Biaya rata-rata ($0,50/mikrometer):</strong> <span class="math inline">\(E(0,5X) = 0,5 \times 109,39 = \mathbf{\$54,69}\)</span>.</p>
+<p><strong>4. Partikel Kontaminasi</strong> Fungsi: <span class="math inline">\(f(x) = 2x^{-3}\)</span> untuk <span class="math inline">\(x &gt; 1\)</span>. * <strong>Rata-rata:</strong> <span class="math inline">\(\mu = \int_{1}^{\infty} x(2x^{-3}) dx = \int_{1}^{\infty} 2x^{-2} dx = [-2x^{-1}]_1^\infty = \mathbf{2}\)</span>.</p>
+<p><strong>5. Senyawa Kimia (Distribusi Seragam)</strong> Interval: <span class="math inline">\(49,75 &lt; x &lt; 50,25\)</span>. * <strong>a. Rata-rata &amp; Variansi:</strong> <span class="math inline">\(\mu = \frac{49,75 + 50,25}{2} = \mathbf{50}\)</span>. Variansi <span class="math inline">\(\sigma^2 = \frac{(50,25 - 49,75)^2}{12} \approx \mathbf{0,02083}\)</span>. * <strong>b. CDF:</strong> <span class="math inline">\(F(x) = \frac{x - 49,75}{50,25 - 49,75} = \mathbf{2(x - 49,75)}\)</span>. * <strong>c.&nbsp;<span class="math inline">\(P(X &lt; 50,1)\)</span>:</strong> <span class="math inline">\(F(50,1) = 2(50,1 - 49,75) = \mathbf{0,7}\)</span>. * <strong>d.&nbsp;<span class="math inline">\(P(49,9 &lt; X &lt; 50)\)</span>:</strong> <span class="math inline">\(F(50) - F(49,9) = 0,5 - 0,3 = \mathbf{0,2}\)</span>.</p>
+<p><strong>6. Plat Semiconductor (Distribusi Seragam)</strong> Interval: <span class="math inline">\(0,205 &lt; x &lt; 0,215\)</span>. * <strong>a. CDF:</strong> <span class="math inline">\(F(x) = \frac{x - 0,205}{0,215 - 0,205} = \mathbf{100(x - 0,205)}\)</span>. * <strong>b. <span class="math inline">\(P(X &gt; 0,2125)\)</span>:</strong> <span class="math inline">\(1 - F(0,2125) = 1 - 0,75 = \mathbf{0,25}\)</span>. * <strong>c.&nbsp;Lebih dari 10%:</strong> Jika <span class="math inline">\(P(X &gt; x) = 0,9 \implies \mathbf{x = 0,206}\)</span>. Jika <span class="math inline">\(P(X &gt; x) = 0,1 \implies \mathbf{x = 0,214}\)</span>. * <strong>d.&nbsp;Rata-rata &amp; Variansi:</strong> <span class="math inline">\(\mu = \mathbf{0,210}\)</span>, <span class="math inline">\(\sigma^2 = \frac{(0,215 - 0,205)^2}{12} = \mathbf{8,333 \times 10^{-6}}\)</span>.</p>
+<p><strong>7. Pembelahan Sel (Distribusi Normal)</strong> <span class="math inline">\(\mu = 60\)</span> menit, <span class="math inline">\(\sigma = 5\)</span> menit. * <strong>a. <span class="math inline">\(P(X &lt; 45)\)</span>:</strong> <span class="math inline">\(P(Z &lt; -3) \approx \mathbf{0,00135}\)</span>. * <strong>b. <span class="math inline">\(P(X &gt; 65)\)</span>:</strong> <span class="math inline">\(P(Z &gt; 1) = 1 - 0,8413 = \mathbf{0,158655}\)</span>. * <strong>c.&nbsp;Waktu 99%:</strong> <span class="math inline">\(P(Z &lt; 2,326) = 0,99 \implies x = 60 + 5(2,326) = \mathbf{71,63 \text{ menit}}\)</span> <em>(Catatan: Dokumen sumber salah cetak menggunakan pengali 45 sehingga tertulis 164,67 menit)</em>.</p>
+<p><strong>8. Sampel Semen (Distribusi Normal)</strong> <span class="math inline">\(\mu = 6000\)</span>, <span class="math inline">\(\sigma = 100\)</span>. * <strong>a. <span class="math inline">\(P(X &lt; 6250)\)</span>:</strong> <span class="math inline">\(P(Z &lt; 2,5) = \mathbf{0,99379}\)</span>. * <strong>b. <span class="math inline">\(P(5800 &lt; X &lt; 5900)\)</span>:</strong> <span class="math inline">\(P(-2 &lt; Z &lt; -1) = \mathbf{0,135905}\)</span>. * <strong>c.&nbsp;95% Sampel:</strong> <span class="math inline">\(P(Z &gt; -1,644) = 0,95 \implies x = 6000 + 100(-1,644) = \mathbf{5835,515 \text{ kg/cm}^2}\)</span>.</p>
+<p><strong>9. Chip Semikonduktor (Pendekatan Normal ke Binomial)</strong> <span class="math inline">\(n = 1000, p = 0,02 \implies \mu = 20, \sigma = \sqrt{1000 \times 0,02 \times 0,98} = 4,427\)</span>. * <strong>a. <span class="math inline">\(P(X &gt; 25)\)</span>:</strong> <span class="math inline">\(P(Z &gt; \frac{25-20}{4,427}) = \mathbf{0,399322}\)</span>. * <strong>b. <span class="math inline">\(P(20 &lt; X &lt; 30)\)</span>:</strong> <span class="math inline">\(P(0 &lt; Z &lt; \frac{30-20}{4,427}) = \mathbf{0,195046}\)</span>.</p>
+<p><strong>10. Partikel Asbes (Pendekatan Normal ke Poisson)</strong> <span class="math inline">\(\lambda = 1000/\text{cm}^2\)</span>. Untuk 10 cm<span class="math inline">\(^2\)</span>, <span class="math inline">\(\mu = 10000 \implies \sigma = \sqrt{10000} = 100\)</span>. * <span class="math inline">\(P(X &gt; 10000) = P(Z &gt; 0) = \mathbf{0,5}\)</span>.</p>
+<p><strong>11. Regulator Voltase (Distribusi Eksponensial)</strong> <span class="math inline">\(\beta = 6\)</span> tahun. * <strong>a. Peluang gagal:</strong> Tidak memiliki memori, <span class="math inline">\(P(X &lt; 6) = 1 - e^{-6/6} = \mathbf{0,63212}\)</span>. * <strong>b. Prakiraan gagal selanjutnya:</strong> Karena <em>memoryless</em>, rata-rata waktunya tetap <span class="math inline">\(\mathbf{6 \text{ tahun}}\)</span>.</p>
+<p><strong>12. Kipas PC (Distribusi Eksponensial)</strong> <span class="math inline">\(\lambda = 0,0003\)</span>. * <strong>a. Bertahan &gt; 10.000 jam:</strong> <span class="math inline">\(P(X &gt; 10000) = e^{-0,0003 \times 10000} = e^{-3} \approx \mathbf{0,04979}\)</span>. * <strong>b. Bertahan <span class="math inline">\(\le\)</span> 7000 jam:</strong> <span class="math inline">\(P(X \le 7000) = 1 - e^{-0,0003 \times 7000} \approx \mathbf{0,87754}\)</span>.</p>
+<p><strong>13. Laser Mesin (Distribusi Eksponensial &amp; Erlang)</strong> <span class="math inline">\(\mu = 25000\)</span>. * <strong>a. Variansi:</strong> <span class="math inline">\(\sigma^2 = \mu^2 = \mathbf{6,25 \times 10^8}\)</span>. * <strong>b. Kegagalan kedua:</strong> <span class="math inline">\(E(X_1 + X_2) = 25000 + 25000 = \mathbf{50.000 \text{ jam}}\)</span>. * <strong>c.&nbsp;Kegagalan ketiga &gt; 50.000 jam (Erlang):</strong> <span class="math inline">\(P(X_1+X_2+X_3 &gt; 50000) = 1 - 0,323324 = \mathbf{0,676676}\)</span>.</p>
+<p><strong>14. Error Optik (Distribusi Poisson / Erlang)</strong> <span class="math inline">\(1 \text{ error per } 10^5 \text{ bits} \implies \lambda = 10^{-5}\)</span>. * <strong>a. Rata-rata bit ke 5 error:</strong> <span class="math inline">\(\frac{r}{\lambda} = \frac{5}{10^{-5}} = \mathbf{5 \times 10^5 \text{ bits}}\)</span>. * <strong>b. Standar deviasi:</strong> <span class="math inline">\(\sqrt{r/\lambda^2} = \sqrt{5 \times 10^{10}} \text{ bits}\)</span>. <em>(Dokumen memberikan nilai variansi <span class="math inline">\(5 \times 10^{10}\)</span>)</em>. * <strong>c.&nbsp;<span class="math inline">\(\ge\)</span> 3 error dalam <span class="math inline">\(10^5\)</span> bit (<span class="math inline">\(\mu = 1\)</span>):</strong> <span class="math inline">\(P(X \ge 3) = 1 - P(X &lt; 3) = 1 - 0,9197 = \mathbf{0,0803}\)</span>.</p>
+<p><strong>15. Keping Magnetik (Distribusi Weibull)</strong> <span class="math inline">\(\beta = 0,5, \mu = 600 \implies \alpha \approx 0,05773\)</span>. * <strong>a. Bertahan &gt; 500 jam:</strong> <span class="math inline">\(P(X &gt; 500) = e^{-0,05773 \times \sqrt{500}} = \mathbf{0,275028}\)</span>. * <strong>b. Gagal &lt; 400 jam:</strong> <span class="math inline">\(P(X &lt; 400) = 1 - e^{-0,05773 \times \sqrt{400}} = \mathbf{0,684816}\)</span>.</p>
+<p><strong>16 &amp; 17. Konsep Weibull Khusus &amp; Eksponensial Lanjutan</strong> * <strong>No.&nbsp;16:</strong> Weibull dengan <span class="math inline">\(\beta = 1\)</span> adalah <strong>Distribusi Eksponensial</strong> dengan rata-rata <span class="math inline">\(\mu = \sigma = \mathbf{1000}\)</span>. * <strong>No.&nbsp;17:</strong> Eksponensial (mean 10.000). <span class="math inline">\(P(X &gt; 5000) = e^{-5000/10000} \approx \mathbf{0,60653}\)</span>.</p>
+<hr>
+</section>
+<section id="bagian-2-solusi-kode-python-berbasis-class" class="level3" data-number="6.22.2">
+<h3 data-number="6.22.2" class="anchored" data-anchor-id="bagian-2-solusi-kode-python-berbasis-class"><span class="header-section-number">6.22.2</span> <strong>Bagian 2: Solusi Kode Python (Berbasis Class)</strong></h3>
+<p>Kode di bawah ini membungkus penyelesaian semua soal probabilitas kontinu di atas menjadi <code>class ContinuousDistributions</code> yang dapat di-<em>reuse</em>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.integrate <span class="im">as</span> integrate</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContinuousDistributions:</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Class toolkit untuk menyelesaikan Problem Set 5 Probabilitas &amp; Statistik"""</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> exponential_prob(mean, x, prob_type<span class="op">=</span><span class="st">"less_than"</span>):</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Distribusi Eksponensial (Soal 1, 11, 12, 17)"""</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prob_type <span class="op">==</span> <span class="st">"less_than"</span>:</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> stats.expon.cdf(x, scale<span class="op">=</span>mean)</span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stats.expon.sf(x, scale<span class="op">=</span>mean)</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> uniform_stats(a, b):</span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Mean dan Variansi Distribusi Seragam (Soal 5, 6)"""</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="dv">2</span>, ((b <span class="op">-</span> a)<span class="op">**</span><span class="dv">2</span>) <span class="op">/</span> <span class="dv">12</span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> uniform_prob(a, b, x, prob_type<span class="op">=</span><span class="st">"less_than"</span>):</span>
+<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Distribusi Seragam Kontinu (Soal 5, 6)"""</span></span>
+<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prob_type <span class="op">==</span> <span class="st">"less_than"</span>:</span>
+<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> stats.uniform.cdf(x, loc<span class="op">=</span>a, scale<span class="op">=</span>b<span class="op">-</span>a)</span>
+<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stats.uniform.sf(x, loc<span class="op">=</span>a, scale<span class="op">=</span>b<span class="op">-</span>a)</span>
+<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> custom_pdf_stats(pdf_func, a, b):</span>
+<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Kalkulasi mean &amp; variansi untuk PDF kustom via integrasi (Soal 3, 4)"""</span></span>
+<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a>        mean, _ <span class="op">=</span> integrate.quad(<span class="kw">lambda</span> x: x <span class="op">*</span> pdf_func(x), a, b)</span>
+<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a>        var_raw, _ <span class="op">=</span> integrate.quad(<span class="kw">lambda</span> x: (x<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> pdf_func(x), a, b)</span>
+<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> mean, var_raw <span class="op">-</span> (mean<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> normal_prob(mu, sigma, x, prob_type<span class="op">=</span><span class="st">"less_than"</span>):</span>
+<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Distribusi Normal (Soal 7, 8, 9, 10)"""</span></span>
+<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prob_type <span class="op">==</span> <span class="st">"less_than"</span>:</span>
+<span id="cb53-38"><a href="#cb53-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> stats.norm.cdf(x, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma)</span>
+<span id="cb53-39"><a href="#cb53-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stats.norm.sf(x, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma)</span>
+<span id="cb53-40"><a href="#cb53-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-41"><a href="#cb53-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-42"><a href="#cb53-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> normal_inverse(mu, sigma, p, prob_type<span class="op">=</span><span class="st">"less_than"</span>):</span>
+<span id="cb53-43"><a href="#cb53-43" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Pencarian batas X pada probabilitas Normal tertentu (Soal 7c, 8c)"""</span></span>
+<span id="cb53-44"><a href="#cb53-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prob_type <span class="op">==</span> <span class="st">"less_than"</span>:</span>
+<span id="cb53-45"><a href="#cb53-45" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> stats.norm.ppf(p, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma)</span>
+<span id="cb53-46"><a href="#cb53-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stats.norm.isf(p, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma)</span>
+<span id="cb53-47"><a href="#cb53-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-48"><a href="#cb53-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-49"><a href="#cb53-49" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> erlang_prob(r, lam, x, prob_type<span class="op">=</span><span class="st">"greater_than"</span>):</span>
+<span id="cb53-50"><a href="#cb53-50" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Distribusi Erlang/Gamma untuk r kejadian (Soal 13c)"""</span></span>
+<span id="cb53-51"><a href="#cb53-51" aria-hidden="true" tabindex="-1"></a>        scale <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> lam</span>
+<span id="cb53-52"><a href="#cb53-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prob_type <span class="op">==</span> <span class="st">"greater_than"</span>:</span>
+<span id="cb53-53"><a href="#cb53-53" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> stats.erlang.sf(x, r, scale<span class="op">=</span>scale)</span>
+<span id="cb53-54"><a href="#cb53-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stats.erlang.cdf(x, r, scale<span class="op">=</span>scale)</span>
+<span id="cb53-55"><a href="#cb53-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-56"><a href="#cb53-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-57"><a href="#cb53-57" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> weibull_prob(alpha, beta, x, prob_type<span class="op">=</span><span class="st">"less_than"</span>):</span>
+<span id="cb53-58"><a href="#cb53-58" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Distribusi Weibull (Soal 15)"""</span></span>
+<span id="cb53-59"><a href="#cb53-59" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Konversi scipy weibull parameters</span></span>
+<span id="cb53-60"><a href="#cb53-60" aria-hidden="true" tabindex="-1"></a>        scale <span class="op">=</span> alpha <span class="op">**</span> (<span class="op">-</span><span class="dv">1</span> <span class="op">/</span> beta)</span>
+<span id="cb53-61"><a href="#cb53-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prob_type <span class="op">==</span> <span class="st">"less_than"</span>:</span>
+<span id="cb53-62"><a href="#cb53-62" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> stats.weibull_min.cdf(x, c<span class="op">=</span>beta, scale<span class="op">=</span>scale)</span>
+<span id="cb53-63"><a href="#cb53-63" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stats.weibull_min.sf(x, c<span class="op">=</span>beta, scale<span class="op">=</span>scale)</span>
+<span id="cb53-64"><a href="#cb53-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-65"><a href="#cb53-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb53-66"><a href="#cb53-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> poisson_prob(mu, x, prob_type<span class="op">=</span><span class="st">"greater_equal"</span>):</span>
+<span id="cb53-67"><a href="#cb53-67" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Distribusi Poisson diskrit standar (Soal 14c)"""</span></span>
+<span id="cb53-68"><a href="#cb53-68" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prob_type <span class="op">==</span> <span class="st">"greater_equal"</span>:</span>
+<span id="cb53-69"><a href="#cb53-69" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> stats.poisson.sf(x<span class="op">-</span><span class="dv">1</span>, mu)</span>
+<span id="cb53-70"><a href="#cb53-70" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stats.poisson.cdf(x, mu)</span>
+<span id="cb53-71"><a href="#cb53-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-72"><a href="#cb53-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-73"><a href="#cb53-73" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb53-74"><a href="#cb53-74" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TEST</span><span class="co"> CASE: MENGUJI METODE UNTUK PROBLEM SET 5</span></span>
+<span id="cb53-75"><a href="#cb53-75" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb53-76"><a href="#cb53-76" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb53-77"><a href="#cb53-77" aria-hidden="true" tabindex="-1"></a>    ps5 <span class="op">=</span> ContinuousDistributions()</span>
+<span id="cb53-78"><a href="#cb53-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-79"><a href="#cb53-79" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Soal 1: Eksponensial</span></span>
+<span id="cb53-80"><a href="#cb53-80" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Soal 1a (Exp P&gt;3000):"</span>, ps5.exponential_prob(<span class="dv">1000</span>, <span class="dv">3000</span>, <span class="st">"greater_than"</span>))</span>
+<span id="cb53-81"><a href="#cb53-81" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-82"><a href="#cb53-82" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Soal 3: Custom Integral f(x) = 600x^-2</span></span>
+<span id="cb53-83"><a href="#cb53-83" aria-hidden="true" tabindex="-1"></a>    f_coat <span class="op">=</span> <span class="kw">lambda</span> x: <span class="dv">600</span> <span class="op">*</span> (x<span class="op">**-</span><span class="dv">2</span>)</span>
+<span id="cb53-84"><a href="#cb53-84" aria-hidden="true" tabindex="-1"></a>    mean3, var3 <span class="op">=</span> ps5.custom_pdf_stats(f_coat, <span class="dv">100</span>, <span class="dv">120</span>)</span>
+<span id="cb53-85"><a href="#cb53-85" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soal 3a (Custom PDF): Mean = </span><span class="sc">{</span>mean3<span class="sc">:.2f}</span><span class="ss">, Variansi = </span><span class="sc">{</span>var3<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb53-86"><a href="#cb53-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-87"><a href="#cb53-87" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Soal 5: Seragam 49.75 &lt; x &lt; 50.25</span></span>
+<span id="cb53-88"><a href="#cb53-88" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Soal 5c (Uniform P&lt;50.1):"</span>, ps5.uniform_prob(<span class="fl">49.75</span>, <span class="fl">50.25</span>, <span class="fl">50.1</span>))</span>
+<span id="cb53-89"><a href="#cb53-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-90"><a href="#cb53-90" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Soal 7: Normal</span></span>
+<span id="cb53-91"><a href="#cb53-91" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Soal 7b (Normal P&gt;65):"</span>, ps5.normal_prob(<span class="dv">60</span>, <span class="dv">5</span>, <span class="dv">65</span>, <span class="st">"greater_than"</span>))</span>
+<span id="cb53-92"><a href="#cb53-92" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Soal 7c (Normal Inv 99%):"</span>, ps5.normal_inverse(<span class="dv">60</span>, <span class="dv">5</span>, <span class="fl">0.99</span>))</span>
+<span id="cb53-93"><a href="#cb53-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-94"><a href="#cb53-94" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Soal 13: Erlang </span></span>
+<span id="cb53-95"><a href="#cb53-95" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Waktu sampai 3 kegagalan &gt; 50000, rate = 1/25000</span></span>
+<span id="cb53-96"><a href="#cb53-96" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Soal 13c (Erlang P&gt;50000):"</span>, ps5.erlang_prob(<span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">25000</span>, <span class="dv">50000</span>, <span class="st">"greater_than"</span>))</span>
+<span id="cb53-97"><a href="#cb53-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-98"><a href="#cb53-98" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Soal 15: Weibull</span></span>
+<span id="cb53-99"><a href="#cb53-99" aria-hidden="true" tabindex="-1"></a>    alpha_15 <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">10</span> <span class="op">*</span> math.sqrt(<span class="dv">3</span>))</span>
+<span id="cb53-100"><a href="#cb53-100" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Soal 15a (Weibull P&gt;500):"</span>, ps5.weibull_prob(alpha_15, <span class="fl">0.5</span>, <span class="dv">500</span>, <span class="st">"greater_than"</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1856,13 +2004,13 @@ Yang penting bukan sekadar nama distribusinya, tetapi arti shape, scale, mean, v
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-distribusi-diskrit.html" class="pagination-link" aria-label="Bab 3. Distribusi Random Variable Diskrit">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span>
+      <a href="./03-distribusi-diskrit.html" class="pagination-link" aria-label="Tujuan Bab">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-random-variable-multivariat-dan-fungsi.html" class="pagination-link" aria-label="Bab 5. Random Variable Multivariat dan Fungsi Random Variable">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bab 5. Random Variable Multivariat dan Fungsi Random Variable</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-random-variable-multivariat-dan-fungsi.html" class="pagination-link" aria-label="Tujuan Bab">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

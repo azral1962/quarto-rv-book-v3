@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Bab 2. Random Variable Umum – Random Variable untuk Pengambilan Keputusan</title>
+<title>4&nbsp; Tujuan Bab – Random Variable untuk Pengambilan Keputusan</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -149,7 +149,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-random-variable-umum.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-random-variable-umum.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Mencari" onclick="window.quartoOpenSearch();">
@@ -195,25 +195,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-random-variable-umum.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-distribusi-diskrit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-distribusi-kontinu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bab 4. Distribusi Random Variable Kontinu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-random-variable-multivariat-dan-fungsi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bab 5. Random Variable Multivariat dan Fungsi Random Variable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -232,91 +232,96 @@ window.Quarto = {
     <h2 id="toc-title">Daftar Isi</h2>
    
   <ul>
-  <li><a href="#tujuan-bab" id="toc-tujuan-bab" class="nav-link active" data-scroll-target="#tujuan-bab"><span class="header-section-number">4.1</span> Tujuan Bab</a></li>
-  <li><a href="#pembuka" id="toc-pembuka" class="nav-link" data-scroll-target="#pembuka"><span class="header-section-number">4.2</span> Pembuka</a></li>
-  <li><a href="#quick-win-dari-dunia-acak-ke-garis-bilangan" id="toc-quick-win-dari-dunia-acak-ke-garis-bilangan" class="nav-link" data-scroll-target="#quick-win-dari-dunia-acak-ke-garis-bilangan"><span class="header-section-number">4.3</span> 2.1 Quick Win: Dari Dunia Acak ke Garis Bilangan</a></li>
-  <li><a href="#k-konteks-mengapa-kita-perlu-random-variable" id="toc-k-konteks-mengapa-kita-perlu-random-variable" class="nav-link" data-scroll-target="#k-konteks-mengapa-kita-perlu-random-variable"><span class="header-section-number">4.4</span> 2.2 K — Konteks: Mengapa Kita Perlu Random Variable?</a></li>
-  <li><a href="#m-model-definisi-random-variable" id="toc-m-model-definisi-random-variable" class="nav-link" data-scroll-target="#m-model-definisi-random-variable"><span class="header-section-number">4.5</span> 2.3 M — Model: Definisi Random Variable</a>
+  <li><a href="#pembuka" id="toc-pembuka" class="nav-link active" data-scroll-target="#pembuka"><span class="header-section-number">4.1</span> Pembuka</a></li>
+  <li><a href="#quick-win-dari-dunia-acak-ke-garis-bilangan" id="toc-quick-win-dari-dunia-acak-ke-garis-bilangan" class="nav-link" data-scroll-target="#quick-win-dari-dunia-acak-ke-garis-bilangan"><span class="header-section-number">4.2</span> 2.1 Quick Win: Dari Dunia Acak ke Garis Bilangan</a></li>
+  <li><a href="#k-konteks-mengapa-kita-perlu-random-variable" id="toc-k-konteks-mengapa-kita-perlu-random-variable" class="nav-link" data-scroll-target="#k-konteks-mengapa-kita-perlu-random-variable"><span class="header-section-number">4.3</span> 2.2 K — Konteks: Mengapa Kita Perlu Random Variable?</a></li>
+  <li><a href="#m-model-definisi-random-variable" id="toc-m-model-definisi-random-variable" class="nav-link" data-scroll-target="#m-model-definisi-random-variable"><span class="header-section-number">4.4</span> 2.3 M — Model: Definisi Random Variable</a>
   <ul class="collapse">
-  <li><a href="#catatan-penting" id="toc-catatan-penting" class="nav-link" data-scroll-target="#catatan-penting"><span class="header-section-number">4.5.1</span> Catatan penting</a></li>
+  <li><a href="#catatan-penting" id="toc-catatan-penting" class="nav-link" data-scroll-target="#catatan-penting"><span class="header-section-number">4.4.1</span> Catatan penting</a></li>
   </ul></li>
-  <li><a href="#event-vs-nilai-random-variable" id="toc-event-vs-nilai-random-variable" class="nav-link" data-scroll-target="#event-vs-nilai-random-variable"><span class="header-section-number">4.6</span> 2.4 Event vs Nilai Random Variable</a></li>
-  <li><a href="#range-nilai-nilai-yang-mungkin" id="toc-range-nilai-nilai-yang-mungkin" class="nav-link" data-scroll-target="#range-nilai-nilai-yang-mungkin"><span class="header-section-number">4.7</span> 2.5 Range: Nilai-Nilai yang Mungkin</a>
+  <li><a href="#event-vs-nilai-random-variable" id="toc-event-vs-nilai-random-variable" class="nav-link" data-scroll-target="#event-vs-nilai-random-variable"><span class="header-section-number">4.5</span> 2.4 Event vs Nilai Random Variable</a></li>
+  <li><a href="#range-nilai-nilai-yang-mungkin" id="toc-range-nilai-nilai-yang-mungkin" class="nav-link" data-scroll-target="#range-nilai-nilai-yang-mungkin"><span class="header-section-number">4.6</span> 2.5 Range: Nilai-Nilai yang Mungkin</a>
   <ul class="collapse">
-  <li><a href="#diskrit-vs-kontinu" id="toc-diskrit-vs-kontinu" class="nav-link" data-scroll-target="#diskrit-vs-kontinu"><span class="header-section-number">4.7.1</span> Diskrit vs Kontinu</a></li>
+  <li><a href="#diskrit-vs-kontinu" id="toc-diskrit-vs-kontinu" class="nav-link" data-scroll-target="#diskrit-vs-kontinu"><span class="header-section-number">4.6.1</span> Diskrit vs Kontinu</a></li>
   </ul></li>
-  <li><a href="#pmf-untuk-random-variable-diskrit" id="toc-pmf-untuk-random-variable-diskrit" class="nav-link" data-scroll-target="#pmf-untuk-random-variable-diskrit"><span class="header-section-number">4.8</span> 2.6 PMF untuk Random Variable Diskrit</a>
+  <li><a href="#pmf-untuk-random-variable-diskrit" id="toc-pmf-untuk-random-variable-diskrit" class="nav-link" data-scroll-target="#pmf-untuk-random-variable-diskrit"><span class="header-section-number">4.7</span> 2.6 PMF untuk Random Variable Diskrit</a>
   <ul class="collapse">
-  <li><a href="#sifat-pmf" id="toc-sifat-pmf" class="nav-link" data-scroll-target="#sifat-pmf"><span class="header-section-number">4.8.1</span> Sifat PMF</a></li>
+  <li><a href="#sifat-pmf" id="toc-sifat-pmf" class="nav-link" data-scroll-target="#sifat-pmf"><span class="header-section-number">4.7.1</span> Sifat PMF</a></li>
   </ul></li>
-  <li><a href="#cdf-bahasa-probabilitas-kumulatif" id="toc-cdf-bahasa-probabilitas-kumulatif" class="nav-link" data-scroll-target="#cdf-bahasa-probabilitas-kumulatif"><span class="header-section-number">4.9</span> 2.7 CDF: Bahasa Probabilitas Kumulatif</a></li>
-  <li><a href="#pdf-untuk-random-variable-kontinu" id="toc-pdf-untuk-random-variable-kontinu" class="nav-link" data-scroll-target="#pdf-untuk-random-variable-kontinu"><span class="header-section-number">4.10</span> 2.8 PDF untuk Random Variable Kontinu</a>
+  <li><a href="#cdf-bahasa-probabilitas-kumulatif" id="toc-cdf-bahasa-probabilitas-kumulatif" class="nav-link" data-scroll-target="#cdf-bahasa-probabilitas-kumulatif"><span class="header-section-number">4.8</span> 2.7 CDF: Bahasa Probabilitas Kumulatif</a></li>
+  <li><a href="#pdf-untuk-random-variable-kontinu" id="toc-pdf-untuk-random-variable-kontinu" class="nav-link" data-scroll-target="#pdf-untuk-random-variable-kontinu"><span class="header-section-number">4.9</span> 2.8 PDF untuk Random Variable Kontinu</a>
   <ul class="collapse">
-  <li><a href="#sifat-pdf" id="toc-sifat-pdf" class="nav-link" data-scroll-target="#sifat-pdf"><span class="header-section-number">4.10.1</span> Sifat PDF</a></li>
+  <li><a href="#sifat-pdf" id="toc-sifat-pdf" class="nav-link" data-scroll-target="#sifat-pdf"><span class="header-section-number">4.9.1</span> Sifat PDF</a></li>
   </ul></li>
-  <li><a href="#menghubungkan-pmf-cdf-dan-pdf" id="toc-menghubungkan-pmf-cdf-dan-pdf" class="nav-link" data-scroll-target="#menghubungkan-pmf-cdf-dan-pdf"><span class="header-section-number">4.11</span> 2.9 Menghubungkan PMF, CDF, dan PDF</a>
+  <li><a href="#menghubungkan-pmf-cdf-dan-pdf" id="toc-menghubungkan-pmf-cdf-dan-pdf" class="nav-link" data-scroll-target="#menghubungkan-pmf-cdf-dan-pdf"><span class="header-section-number">4.10</span> 2.9 Menghubungkan PMF, CDF, dan PDF</a>
   <ul class="collapse">
-  <li><a href="#untuk-diskrit" id="toc-untuk-diskrit" class="nav-link" data-scroll-target="#untuk-diskrit"><span class="header-section-number">4.11.1</span> Untuk diskrit</a></li>
-  <li><a href="#untuk-kontinu" id="toc-untuk-kontinu" class="nav-link" data-scroll-target="#untuk-kontinu"><span class="header-section-number">4.11.2</span> Untuk kontinu</a></li>
+  <li><a href="#untuk-diskrit" id="toc-untuk-diskrit" class="nav-link" data-scroll-target="#untuk-diskrit"><span class="header-section-number">4.10.1</span> Untuk diskrit</a></li>
+  <li><a href="#untuk-kontinu" id="toc-untuk-kontinu" class="nav-link" data-scroll-target="#untuk-kontinu"><span class="header-section-number">4.10.2</span> Untuk kontinu</a></li>
   </ul></li>
-  <li><a href="#ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" id="toc-ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" class="nav-link" data-scroll-target="#ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi"><span class="header-section-number">4.12</span> 2.10 Ekspektasi: Tebakan Terbaik Sebelum Fakta Terjadi</a>
+  <li><a href="#ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" id="toc-ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" class="nav-link" data-scroll-target="#ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi"><span class="header-section-number">4.11</span> 2.10 Ekspektasi: Tebakan Terbaik Sebelum Fakta Terjadi</a>
   <ul class="collapse">
-  <li><a href="#untuk-random-variable-diskrit" id="toc-untuk-random-variable-diskrit" class="nav-link" data-scroll-target="#untuk-random-variable-diskrit"><span class="header-section-number">4.12.1</span> Untuk random variable diskrit</a></li>
-  <li><a href="#untuk-random-variable-kontinu" id="toc-untuk-random-variable-kontinu" class="nav-link" data-scroll-target="#untuk-random-variable-kontinu"><span class="header-section-number">4.12.2</span> Untuk random variable kontinu</a></li>
+  <li><a href="#untuk-random-variable-diskrit" id="toc-untuk-random-variable-diskrit" class="nav-link" data-scroll-target="#untuk-random-variable-diskrit"><span class="header-section-number">4.11.1</span> Untuk random variable diskrit</a></li>
+  <li><a href="#untuk-random-variable-kontinu" id="toc-untuk-random-variable-kontinu" class="nav-link" data-scroll-target="#untuk-random-variable-kontinu"><span class="header-section-number">4.11.2</span> Untuk random variable kontinu</a></li>
   </ul></li>
-  <li><a href="#varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" id="toc-varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" class="nav-link" data-scroll-target="#varians-dan-simpangan-baku-seberapa-liar-penyimpangannya"><span class="header-section-number">4.13</span> 2.11 Varians dan Simpangan Baku: Seberapa Liar Penyimpangannya?</a>
+  <li><a href="#varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" id="toc-varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" class="nav-link" data-scroll-target="#varians-dan-simpangan-baku-seberapa-liar-penyimpangannya"><span class="header-section-number">4.12</span> 2.11 Varians dan Simpangan Baku: Seberapa Liar Penyimpangannya?</a>
   <ul class="collapse">
-  <li><a href="#definisi" id="toc-definisi" class="nav-link" data-scroll-target="#definisi"><span class="header-section-number">4.13.1</span> Definisi</a></li>
-  <li><a href="#bentuk-yang-sering-lebih-praktis" id="toc-bentuk-yang-sering-lebih-praktis" class="nav-link" data-scroll-target="#bentuk-yang-sering-lebih-praktis"><span class="header-section-number">4.13.2</span> Bentuk yang sering lebih praktis</a></li>
+  <li><a href="#definisi" id="toc-definisi" class="nav-link" data-scroll-target="#definisi"><span class="header-section-number">4.12.1</span> Definisi</a></li>
+  <li><a href="#bentuk-yang-sering-lebih-praktis" id="toc-bentuk-yang-sering-lebih-praktis" class="nav-link" data-scroll-target="#bentuk-yang-sering-lebih-praktis"><span class="header-section-number">4.12.2</span> Bentuk yang sering lebih praktis</a></li>
   </ul></li>
-  <li><a href="#sifat-sifat-penting-ekspektasi-dan-varians" id="toc-sifat-sifat-penting-ekspektasi-dan-varians" class="nav-link" data-scroll-target="#sifat-sifat-penting-ekspektasi-dan-varians"><span class="header-section-number">4.14</span> 2.12 Sifat-Sifat Penting Ekspektasi dan Varians</a>
+  <li><a href="#sifat-sifat-penting-ekspektasi-dan-varians" id="toc-sifat-sifat-penting-ekspektasi-dan-varians" class="nav-link" data-scroll-target="#sifat-sifat-penting-ekspektasi-dan-varians"><span class="header-section-number">4.13</span> 2.12 Sifat-Sifat Penting Ekspektasi dan Varians</a>
   <ul class="collapse">
-  <li><a href="#linearitas-ekspektasi" id="toc-linearitas-ekspektasi" class="nav-link" data-scroll-target="#linearitas-ekspektasi"><span class="header-section-number">4.14.1</span> Linearitas ekspektasi</a></li>
-  <li><a href="#varians-terhadap-transformasi-linear" id="toc-varians-terhadap-transformasi-linear" class="nav-link" data-scroll-target="#varians-terhadap-transformasi-linear"><span class="header-section-number">4.14.2</span> Varians terhadap transformasi linear</a></li>
+  <li><a href="#linearitas-ekspektasi" id="toc-linearitas-ekspektasi" class="nav-link" data-scroll-target="#linearitas-ekspektasi"><span class="header-section-number">4.13.1</span> Linearitas ekspektasi</a></li>
+  <li><a href="#varians-terhadap-transformasi-linear" id="toc-varians-terhadap-transformasi-linear" class="nav-link" data-scroll-target="#varians-terhadap-transformasi-linear"><span class="header-section-number">4.13.2</span> Varians terhadap transformasi linear</a></li>
   </ul></li>
-  <li><a href="#diskrit-dan-kontinu-dalam-praktik" id="toc-diskrit-dan-kontinu-dalam-praktik" class="nav-link" data-scroll-target="#diskrit-dan-kontinu-dalam-praktik"><span class="header-section-number">4.15</span> 2.13 Diskrit dan Kontinu dalam Praktik</a>
+  <li><a href="#diskrit-dan-kontinu-dalam-praktik" id="toc-diskrit-dan-kontinu-dalam-praktik" class="nav-link" data-scroll-target="#diskrit-dan-kontinu-dalam-praktik"><span class="header-section-number">4.14</span> 2.13 Diskrit dan Kontinu dalam Praktik</a>
   <ul class="collapse">
-  <li><a href="#pedoman-intuitif" id="toc-pedoman-intuitif" class="nav-link" data-scroll-target="#pedoman-intuitif"><span class="header-section-number">4.15.1</span> Pedoman intuitif</a></li>
+  <li><a href="#pedoman-intuitif" id="toc-pedoman-intuitif" class="nav-link" data-scroll-target="#pedoman-intuitif"><span class="header-section-number">4.14.1</span> Pedoman intuitif</a></li>
   </ul></li>
-  <li><a href="#dari-histogram-ke-distribusi" id="toc-dari-histogram-ke-distribusi" class="nav-link" data-scroll-target="#dari-histogram-ke-distribusi"><span class="header-section-number">4.16</span> 2.14 Dari Histogram ke Distribusi</a></li>
-  <li><a href="#kmqa-mini-case-1-timbangan-berat-badan" id="toc-kmqa-mini-case-1-timbangan-berat-badan" class="nav-link" data-scroll-target="#kmqa-mini-case-1-timbangan-berat-badan"><span class="header-section-number">4.17</span> 2.15 KMQA Mini-Case 1 — Timbangan Berat Badan</a>
+  <li><a href="#dari-histogram-ke-distribusi" id="toc-dari-histogram-ke-distribusi" class="nav-link" data-scroll-target="#dari-histogram-ke-distribusi"><span class="header-section-number">4.15</span> 2.14 Dari Histogram ke Distribusi</a></li>
+  <li><a href="#kmqa-mini-case-1-timbangan-berat-badan" id="toc-kmqa-mini-case-1-timbangan-berat-badan" class="nav-link" data-scroll-target="#kmqa-mini-case-1-timbangan-berat-badan"><span class="header-section-number">4.16</span> 2.15 KMQA Mini-Case 1 — Timbangan Berat Badan</a>
   <ul class="collapse">
-  <li><a href="#k-konteks" id="toc-k-konteks" class="nav-link" data-scroll-target="#k-konteks"><span class="header-section-number">4.17.1</span> K — Konteks</a></li>
-  <li><a href="#m-model" id="toc-m-model" class="nav-link" data-scroll-target="#m-model"><span class="header-section-number">4.17.2</span> M — Model</a></li>
-  <li><a href="#q-questions" id="toc-q-questions" class="nav-link" data-scroll-target="#q-questions"><span class="header-section-number">4.17.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply" id="toc-a-apply" class="nav-link" data-scroll-target="#a-apply"><span class="header-section-number">4.17.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks" id="toc-k-konteks" class="nav-link" data-scroll-target="#k-konteks"><span class="header-section-number">4.16.1</span> K — Konteks</a></li>
+  <li><a href="#m-model" id="toc-m-model" class="nav-link" data-scroll-target="#m-model"><span class="header-section-number">4.16.2</span> M — Model</a></li>
+  <li><a href="#q-questions" id="toc-q-questions" class="nav-link" data-scroll-target="#q-questions"><span class="header-section-number">4.16.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply" id="toc-a-apply" class="nav-link" data-scroll-target="#a-apply"><span class="header-section-number">4.16.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" id="toc-kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" class="nav-link" data-scroll-target="#kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol"><span class="header-section-number">4.18</span> 2.16 KMQA Mini-Case 2 — Jumlah Kendaraan di Gerbang Tol</a>
+  <li><a href="#kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" id="toc-kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" class="nav-link" data-scroll-target="#kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol"><span class="header-section-number">4.17</span> 2.16 KMQA Mini-Case 2 — Jumlah Kendaraan di Gerbang Tol</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-1" id="toc-k-konteks-1" class="nav-link" data-scroll-target="#k-konteks-1"><span class="header-section-number">4.18.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-1" id="toc-m-model-1" class="nav-link" data-scroll-target="#m-model-1"><span class="header-section-number">4.18.2</span> M — Model</a></li>
-  <li><a href="#q-questions-1" id="toc-q-questions-1" class="nav-link" data-scroll-target="#q-questions-1"><span class="header-section-number">4.18.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-1" id="toc-a-apply-1" class="nav-link" data-scroll-target="#a-apply-1"><span class="header-section-number">4.18.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-1" id="toc-k-konteks-1" class="nav-link" data-scroll-target="#k-konteks-1"><span class="header-section-number">4.17.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-1" id="toc-m-model-1" class="nav-link" data-scroll-target="#m-model-1"><span class="header-section-number">4.17.2</span> M — Model</a></li>
+  <li><a href="#q-questions-1" id="toc-q-questions-1" class="nav-link" data-scroll-target="#q-questions-1"><span class="header-section-number">4.17.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-1" id="toc-a-apply-1" class="nav-link" data-scroll-target="#a-apply-1"><span class="header-section-number">4.17.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#kmqa-mini-case-3-waktu-tunggu-pasien" id="toc-kmqa-mini-case-3-waktu-tunggu-pasien" class="nav-link" data-scroll-target="#kmqa-mini-case-3-waktu-tunggu-pasien"><span class="header-section-number">4.19</span> 2.17 KMQA Mini-Case 3 — Waktu Tunggu Pasien</a>
+  <li><a href="#kmqa-mini-case-3-waktu-tunggu-pasien" id="toc-kmqa-mini-case-3-waktu-tunggu-pasien" class="nav-link" data-scroll-target="#kmqa-mini-case-3-waktu-tunggu-pasien"><span class="header-section-number">4.18</span> 2.17 KMQA Mini-Case 3 — Waktu Tunggu Pasien</a>
   <ul class="collapse">
-  <li><a href="#k-konteks-2" id="toc-k-konteks-2" class="nav-link" data-scroll-target="#k-konteks-2"><span class="header-section-number">4.19.1</span> K — Konteks</a></li>
-  <li><a href="#m-model-2" id="toc-m-model-2" class="nav-link" data-scroll-target="#m-model-2"><span class="header-section-number">4.19.2</span> M — Model</a></li>
-  <li><a href="#q-questions-2" id="toc-q-questions-2" class="nav-link" data-scroll-target="#q-questions-2"><span class="header-section-number">4.19.3</span> Q — Questions</a></li>
-  <li><a href="#a-apply-2" id="toc-a-apply-2" class="nav-link" data-scroll-target="#a-apply-2"><span class="header-section-number">4.19.4</span> A — Apply</a></li>
+  <li><a href="#k-konteks-2" id="toc-k-konteks-2" class="nav-link" data-scroll-target="#k-konteks-2"><span class="header-section-number">4.18.1</span> K — Konteks</a></li>
+  <li><a href="#m-model-2" id="toc-m-model-2" class="nav-link" data-scroll-target="#m-model-2"><span class="header-section-number">4.18.2</span> M — Model</a></li>
+  <li><a href="#q-questions-2" id="toc-q-questions-2" class="nav-link" data-scroll-target="#q-questions-2"><span class="header-section-number">4.18.3</span> Q — Questions</a></li>
+  <li><a href="#a-apply-2" id="toc-a-apply-2" class="nav-link" data-scroll-target="#a-apply-2"><span class="header-section-number">4.18.4</span> A — Apply</a></li>
   </ul></li>
-  <li><a href="#python-toolbox-dasar-untuk-bab-ini" id="toc-python-toolbox-dasar-untuk-bab-ini" class="nav-link" data-scroll-target="#python-toolbox-dasar-untuk-bab-ini"><span class="header-section-number">4.20</span> 2.18 Python Toolbox Dasar untuk Bab Ini</a>
+  <li><a href="#python-toolbox-dasar-untuk-bab-ini" id="toc-python-toolbox-dasar-untuk-bab-ini" class="nav-link" data-scroll-target="#python-toolbox-dasar-untuk-bab-ini"><span class="header-section-number">4.19</span> 2.18 Python Toolbox Dasar untuk Bab Ini</a>
   <ul class="collapse">
-  <li><a href="#simulasi-data" id="toc-simulasi-data" class="nav-link" data-scroll-target="#simulasi-data"><span class="header-section-number">4.20.1</span> Simulasi data</a></li>
-  <li><a href="#pmf-pdf-cdf-dari-scipy" id="toc-pmf-pdf-cdf-dari-scipy" class="nav-link" data-scroll-target="#pmf-pdf-cdf-dari-scipy"><span class="header-section-number">4.20.2</span> PMF / PDF / CDF dari SciPy</a></li>
-  <li><a href="#plot-cepat" id="toc-plot-cepat" class="nav-link" data-scroll-target="#plot-cepat"><span class="header-section-number">4.20.3</span> Plot cepat</a></li>
+  <li><a href="#simulasi-data" id="toc-simulasi-data" class="nav-link" data-scroll-target="#simulasi-data"><span class="header-section-number">4.19.1</span> Simulasi data</a></li>
+  <li><a href="#pmf-pdf-cdf-dari-scipy" id="toc-pmf-pdf-cdf-dari-scipy" class="nav-link" data-scroll-target="#pmf-pdf-cdf-dari-scipy"><span class="header-section-number">4.19.2</span> PMF / PDF / CDF dari SciPy</a></li>
+  <li><a href="#plot-cepat" id="toc-plot-cepat" class="nav-link" data-scroll-target="#plot-cepat"><span class="header-section-number">4.19.3</span> Plot cepat</a></li>
   </ul></li>
-  <li><a href="#kesalahan-kesalahan-umum-yang-harus-dihindari" id="toc-kesalahan-kesalahan-umum-yang-harus-dihindari" class="nav-link" data-scroll-target="#kesalahan-kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">4.21</span> 2.19 Kesalahan-Kesalahan Umum yang Harus Dihindari</a></li>
-  <li><a href="#menyimpulkan-bab-ini" id="toc-menyimpulkan-bab-ini" class="nav-link" data-scroll-target="#menyimpulkan-bab-ini"><span class="header-section-number">4.22</span> 2.20 Menyimpulkan Bab Ini</a></li>
-  <li><a href="#ringkasan-poin-inti" id="toc-ringkasan-poin-inti" class="nav-link" data-scroll-target="#ringkasan-poin-inti"><span class="header-section-number">4.23</span> 2.21 Ringkasan Poin Inti</a></li>
-  <li><a href="#latihan-bab-2" id="toc-latihan-bab-2" class="nav-link" data-scroll-target="#latihan-bab-2"><span class="header-section-number">4.24</span> 2.22 Latihan Bab 2</a>
+  <li><a href="#kesalahan-kesalahan-umum-yang-harus-dihindari" id="toc-kesalahan-kesalahan-umum-yang-harus-dihindari" class="nav-link" data-scroll-target="#kesalahan-kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">4.20</span> 2.19 Kesalahan-Kesalahan Umum yang Harus Dihindari</a></li>
+  <li><a href="#menyimpulkan-bab-ini" id="toc-menyimpulkan-bab-ini" class="nav-link" data-scroll-target="#menyimpulkan-bab-ini"><span class="header-section-number">4.21</span> 2.20 Menyimpulkan Bab Ini</a></li>
+  <li><a href="#ringkasan-poin-inti" id="toc-ringkasan-poin-inti" class="nav-link" data-scroll-target="#ringkasan-poin-inti"><span class="header-section-number">4.22</span> 2.21 Ringkasan Poin Inti</a></li>
+  <li><a href="#latihan-bab-2" id="toc-latihan-bab-2" class="nav-link" data-scroll-target="#latihan-bab-2"><span class="header-section-number">4.23</span> 2.22 Latihan Bab 2</a>
   <ul class="collapse">
-  <li><a href="#a.-konseptual" id="toc-a.-konseptual" class="nav-link" data-scroll-target="#a.-konseptual"><span class="header-section-number">4.24.1</span> A. Konseptual</a></li>
-  <li><a href="#b.-hitungan" id="toc-b.-hitungan" class="nav-link" data-scroll-target="#b.-hitungan"><span class="header-section-number">4.24.2</span> B. Hitungan</a></li>
-  <li><a href="#c.-python" id="toc-c.-python" class="nav-link" data-scroll-target="#c.-python"><span class="header-section-number">4.24.3</span> C. Python</a></li>
-  <li><a href="#d.-aplikatif" id="toc-d.-aplikatif" class="nav-link" data-scroll-target="#d.-aplikatif"><span class="header-section-number">4.24.4</span> D. Aplikatif</a></li>
+  <li><a href="#a.-konseptual" id="toc-a.-konseptual" class="nav-link" data-scroll-target="#a.-konseptual"><span class="header-section-number">4.23.1</span> A. Konseptual</a></li>
+  <li><a href="#b.-hitungan" id="toc-b.-hitungan" class="nav-link" data-scroll-target="#b.-hitungan"><span class="header-section-number">4.23.2</span> B. Hitungan</a></li>
+  <li><a href="#c.-python" id="toc-c.-python" class="nav-link" data-scroll-target="#c.-python"><span class="header-section-number">4.23.3</span> C. Python</a></li>
+  <li><a href="#d.-aplikatif" id="toc-d.-aplikatif" class="nav-link" data-scroll-target="#d.-aplikatif"><span class="header-section-number">4.23.4</span> D. Aplikatif</a></li>
   </ul></li>
-  <li><a href="#penutup-kecil" id="toc-penutup-kecil" class="nav-link" data-scroll-target="#penutup-kecil"><span class="header-section-number">4.25</span> 2.23 Penutup Kecil</a></li>
+  <li><a href="#penutup-kecil" id="toc-penutup-kecil" class="nav-link" data-scroll-target="#penutup-kecil"><span class="header-section-number">4.24</span> 2.23 Penutup Kecil</a></li>
+  <li><a href="#tambahan-soal" id="toc-tambahan-soal" class="nav-link" data-scroll-target="#tambahan-soal"><span class="header-section-number">4.25</span> Tambahan Soal</a>
+  <ul class="collapse">
+  <li><a href="#prinsip-prinsip-dasar-yang-digunakan" id="toc-prinsip-prinsip-dasar-yang-digunakan" class="nav-link" data-scroll-target="#prinsip-prinsip-dasar-yang-digunakan"><span class="header-section-number">4.25.1</span> <strong>Prinsip-Prinsip Dasar yang Digunakan</strong></a></li>
+  <li><a href="#solusi-bebrapa-soal-problem-set-3" id="toc-solusi-bebrapa-soal-problem-set-3" class="nav-link" data-scroll-target="#solusi-bebrapa-soal-problem-set-3"><span class="header-section-number">4.25.2</span> <strong>Solusi Bebrapa Soal Problem Set 3</strong></a></li>
+  <li><a href="#desain-kode-python-class-probset3solver" id="toc-desain-kode-python-class-probset3solver" class="nav-link" data-scroll-target="#desain-kode-python-class-probset3solver"><span class="header-section-number">4.25.3</span> <strong>Desain Kode Python (Class <code>ProbSet3Solver</code>)</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -325,7 +330,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></h1>
 </div>
 
 
@@ -342,8 +347,7 @@ window.Quarto = {
 </header>
 
 
-<section id="tujuan-bab" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="tujuan-bab"><span class="header-section-number">4.1</span> Tujuan Bab</h2>
+<p>title: “Bab 2. Random Variable Umum” format: html jupyter: python3</p>
 <p>Setelah mempelajari bab ini, mahasiswa diharapkan mampu:</p>
 <ol type="1">
 <li>memahami <strong>random variable</strong> sebagai pemetaan dari hasil acak ke bilangan,</li>
@@ -354,15 +358,14 @@ window.Quarto = {
 <li>menghitung dan menafsirkan <strong>ekspektasi</strong>, <strong>varians</strong>, dan <strong>simpangan baku</strong>,</li>
 <li>menghubungkan ukuran-ukuran tersebut dengan <strong>pengambilan keputusan</strong>.</li>
 </ol>
-</section>
-<section id="pembuka" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="pembuka"><span class="header-section-number">4.2</span> Pembuka</h2>
+<section id="pembuka" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="pembuka"><span class="header-section-number">4.1</span> Pembuka</h2>
 <p>Pada bab sebelumnya, kita sudah melihat bahwa probabilitas menjadi penting ketika kita harus mengambil keputusan di bawah ketidakpastian. Kita juga sudah melihat bahwa salah satu cara paling kuat untuk “menjinakkan” ketidakpastian adalah dengan membuat <strong>model</strong>.</p>
 <p>Di bab ini, kita masuk ke fondasi model tersebut: <strong>random variable</strong>.</p>
 <p>Random variable adalah salah satu ide yang tampak sederhana, tetapi pengaruhnya sangat besar. Begitu kita berhasil memetakan hasil-hasil acak menjadi angka, kita memperoleh akses ke dunia matematika: kita bisa menggambar, menghitung, mensimulasikan, membandingkan, dan akhirnya memutuskan.</p>
 </section>
-<section id="quick-win-dari-dunia-acak-ke-garis-bilangan" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="quick-win-dari-dunia-acak-ke-garis-bilangan"><span class="header-section-number">4.3</span> 2.1 Quick Win: Dari Dunia Acak ke Garis Bilangan</h2>
+<section id="quick-win-dari-dunia-acak-ke-garis-bilangan" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="quick-win-dari-dunia-acak-ke-garis-bilangan"><span class="header-section-number">4.2</span> 2.1 Quick Win: Dari Dunia Acak ke Garis Bilangan</h2>
 <p>Mari mulai dari contoh sederhana. Misalkan kita melempar dua koin. Ruang sampelnya adalah:</p>
 <p><span class="math display">\[
 S = \{HH, HT, TH, TT\}
@@ -374,7 +377,7 @@ X = \text{jumlah sisi Head yang muncul}
 <p>Maka: - <span class="math inline">\(X(HH)=2\)</span> - <span class="math inline">\(X(HT)=1\)</span> - <span class="math inline">\(X(TH)=1\)</span> - <span class="math inline">\(X(TT)=0\)</span></p>
 <p>Artinya, hasil-hasil acak yang tadinya berupa simbol <span class="math inline">\(HH, HT, TH, TT\)</span> dipetakan menjadi angka <span class="math inline">\(0,1,2\)</span>.</p>
 <p>Mari lihat dengan Python.</p>
-<div id="cb287d82" class="cell" data-execution_count="1">
+<div id="3c91d3a7" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> itertools</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -390,7 +393,7 @@ X = \text{jumlah sisi Head yang muncul}
 <pre><code>[(('H', 'H'), 2), (('H', 'T'), 1), (('T', 'H'), 1), (('T', 'T'), 0)]</code></pre>
 </div>
 </div>
-<div id="33c450c3" class="cell" data-execution_count="2">
+<div id="397e8332" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [X(o) <span class="cf">for</span> o <span class="kw">in</span> outcomes]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>unique, counts <span class="op">=</span> np.unique(values, return_counts<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -412,14 +415,14 @@ X = \text{jumlah sisi Head yang muncul}
 </div>
 <p>Dari sini kita melihat <em>quick win</em> yang penting: - event hidup di ruang sampel, - random variable memetakan event ke angka, - distribusi random variable memberi tahu kita bagaimana peluang tersebar pada angka-angka itu.</p>
 </section>
-<section id="k-konteks-mengapa-kita-perlu-random-variable" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="k-konteks-mengapa-kita-perlu-random-variable"><span class="header-section-number">4.4</span> 2.2 K — Konteks: Mengapa Kita Perlu Random Variable?</h2>
+<section id="k-konteks-mengapa-kita-perlu-random-variable" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="k-konteks-mengapa-kita-perlu-random-variable"><span class="header-section-number">4.3</span> 2.2 K — Konteks: Mengapa Kita Perlu Random Variable?</h2>
 <p>Bayangkan beberapa pertanyaan berikut: - Berapa jumlah kendaraan yang lewat gerbang tol dalam satu jam? - Berapa waktu tunggu pasien sampai dilayani? - Berapa profit harian sebuah klinik? - Berapa banyak produk cacat dalam 100 unit? - Berapa lama sebuah lampu bertahan sebelum rusak?</p>
 <p>Semua pertanyaan ini punya satu pola: hasilnya <strong>tidak pasti</strong>, tetapi hasil itu <strong>berupa bilangan</strong>.</p>
 <p>Itulah alasan random variable menjadi penting. Ia menjadi jembatan antara: - kejadian acak di dunia nyata, dan - analisis matematis berbasis angka.</p>
 </section>
-<section id="m-model-definisi-random-variable" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="m-model-definisi-random-variable"><span class="header-section-number">4.5</span> 2.3 M — Model: Definisi Random Variable</h2>
+<section id="m-model-definisi-random-variable" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="m-model-definisi-random-variable"><span class="header-section-number">4.4</span> 2.3 M — Model: Definisi Random Variable</h2>
 <p>Secara formal, random variable <span class="math inline">\(X\)</span> adalah sebuah fungsi yang memetakan setiap hasil <span class="math inline">\(\omega\)</span> dalam ruang sampel <span class="math inline">\(S\)</span> ke sebuah bilangan real:</p>
 <p><span class="math display">\[
 X: S \to \mathbb{R}
@@ -429,13 +432,13 @@ X: S \to \mathbb{R}
 \omega \mapsto X(\omega)
 \]</span></p>
 <p>Di sini: - <span class="math inline">\(S\)</span> = ruang sampel, - <span class="math inline">\(\omega\)</span> = satu hasil acak, - <span class="math inline">\(X(\omega)\)</span> = angka yang dihasilkan oleh pemetaan itu.</p>
-<section id="catatan-penting" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="catatan-penting"><span class="header-section-number">4.5.1</span> Catatan penting</h3>
+<section id="catatan-penting" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="catatan-penting"><span class="header-section-number">4.4.1</span> Catatan penting</h3>
 <p>Random variable bukan “angka yang acak” dalam arti longgar. Secara matematis, random variable adalah <strong>fungsi</strong>. Keacakan datang dari kenyataan bahwa hasil <span class="math inline">\(\omega\)</span> belum diketahui sebelum eksperimen terjadi.</p>
 </section>
 </section>
-<section id="event-vs-nilai-random-variable" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="event-vs-nilai-random-variable"><span class="header-section-number">4.6</span> 2.4 Event vs Nilai Random Variable</h2>
+<section id="event-vs-nilai-random-variable" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="event-vs-nilai-random-variable"><span class="header-section-number">4.5</span> 2.4 Event vs Nilai Random Variable</h2>
 <p>Mahasiswa sering bingung membedakan dua hal ini:</p>
 <ul>
 <li><strong>event</strong> = himpunan hasil dalam ruang sampel,</li>
@@ -454,7 +457,7 @@ X = 7
 \]</span></p>
 <p>Jadi: - event adalah kumpulan outcome, - random variable adalah angka yang dihasilkan dari outcome itu.</p>
 <p>Mari visualisasikan cepat.</p>
-<div id="3223ba3c" class="cell" data-execution_count="3">
+<div id="2ea095f9" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>outcomes <span class="op">=</span> <span class="bu">list</span>(itertools.product(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>), repeat<span class="op">=</span><span class="dv">2</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sums <span class="op">=</span> [<span class="bu">sum</span>(o) <span class="cf">for</span> o <span class="kw">in</span> outcomes]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -478,8 +481,8 @@ X = 7
 </div>
 </div>
 </section>
-<section id="range-nilai-nilai-yang-mungkin" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="range-nilai-nilai-yang-mungkin"><span class="header-section-number">4.7</span> 2.5 Range: Nilai-Nilai yang Mungkin</h2>
+<section id="range-nilai-nilai-yang-mungkin" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="range-nilai-nilai-yang-mungkin"><span class="header-section-number">4.6</span> 2.5 Range: Nilai-Nilai yang Mungkin</h2>
 <p>Range dari random variable adalah himpunan semua nilai yang mungkin diambil oleh random variable tersebut.</p>
 <p>Untuk contoh dua dadu dengan: <span class="math display">\[
 X = \text{jumlah mata dadu}
@@ -488,17 +491,17 @@ X = \text{jumlah mata dadu}
 \{2,3,4,\dots,12\}
 \]</span></p>
 <p>Range ini penting karena memberi tahu: - apa saja kemungkinan nilai, - apakah nilai-nilai itu diskrit atau kontinu, - bagaimana bentuk distribusinya.</p>
-<section id="diskrit-vs-kontinu" class="level3" data-number="4.7.1">
-<h3 data-number="4.7.1" class="anchored" data-anchor-id="diskrit-vs-kontinu"><span class="header-section-number">4.7.1</span> Diskrit vs Kontinu</h3>
-<section id="random-variable-diskrit" class="level4" data-number="4.7.1.1">
-<h4 data-number="4.7.1.1" class="anchored" data-anchor-id="random-variable-diskrit"><span class="header-section-number">4.7.1.1</span> Random Variable Diskrit</h4>
+<section id="diskrit-vs-kontinu" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="diskrit-vs-kontinu"><span class="header-section-number">4.6.1</span> Diskrit vs Kontinu</h3>
+<section id="random-variable-diskrit" class="level4" data-number="4.6.1.1">
+<h4 data-number="4.6.1.1" class="anchored" data-anchor-id="random-variable-diskrit"><span class="header-section-number">4.6.1.1</span> Random Variable Diskrit</h4>
 <p>Jika range terdiri dari titik-titik terpisah, misalnya: <span class="math display">\[
 \{0,1,2,3,\dots\}
 \]</span> maka random variable itu diskrit.</p>
 <p>Contoh: - jumlah pelanggan datang, - jumlah cacat, - jumlah pesan masuk, - banyaknya Head.</p>
 </section>
-<section id="random-variable-kontinu" class="level4" data-number="4.7.1.2">
-<h4 data-number="4.7.1.2" class="anchored" data-anchor-id="random-variable-kontinu"><span class="header-section-number">4.7.1.2</span> Random Variable Kontinu</h4>
+<section id="random-variable-kontinu" class="level4" data-number="4.6.1.2">
+<h4 data-number="4.6.1.2" class="anchored" data-anchor-id="random-variable-kontinu"><span class="header-section-number">4.6.1.2</span> Random Variable Kontinu</h4>
 <p>Jika range berupa interval pada garis bilangan, misalnya: <span class="math display">\[
 [0,\infty)
 \]</span> atau <span class="math display">\[
@@ -508,15 +511,15 @@ X = \text{jumlah mata dadu}
 </section>
 </section>
 </section>
-<section id="pmf-untuk-random-variable-diskrit" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="pmf-untuk-random-variable-diskrit"><span class="header-section-number">4.8</span> 2.6 PMF untuk Random Variable Diskrit</h2>
+<section id="pmf-untuk-random-variable-diskrit" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="pmf-untuk-random-variable-diskrit"><span class="header-section-number">4.7</span> 2.6 PMF untuk Random Variable Diskrit</h2>
 <p>Jika <span class="math inline">\(X\)</span> diskrit, maka distribusinya dapat dinyatakan dengan <strong>Probability Mass Function (PMF)</strong>:</p>
 <p><span class="math display">\[
 p_X(x) = P(X=x)
 \]</span></p>
 <p>PMF memberi peluang bahwa random variable mengambil nilai tepat <span class="math inline">\(x\)</span>.</p>
-<section id="sifat-pmf" class="level3" data-number="4.8.1">
-<h3 data-number="4.8.1" class="anchored" data-anchor-id="sifat-pmf"><span class="header-section-number">4.8.1</span> Sifat PMF</h3>
+<section id="sifat-pmf" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="sifat-pmf"><span class="header-section-number">4.7.1</span> Sifat PMF</h3>
 <ol type="1">
 <li><p><span class="math display">\[
 p_X(x) \ge 0
@@ -525,12 +528,12 @@ p_X(x) \ge 0
 \sum_x p_X(x) = 1
 \]</span></p></li>
 </ol>
-<section id="contoh-jumlah-head-pada-dua-lemparan-koin" class="level4" data-number="4.8.1.1">
-<h4 data-number="4.8.1.1" class="anchored" data-anchor-id="contoh-jumlah-head-pada-dua-lemparan-koin"><span class="header-section-number">4.8.1.1</span> Contoh: jumlah Head pada dua lemparan koin</h4>
+<section id="contoh-jumlah-head-pada-dua-lemparan-koin" class="level4" data-number="4.7.1.1">
+<h4 data-number="4.7.1.1" class="anchored" data-anchor-id="contoh-jumlah-head-pada-dua-lemparan-koin"><span class="header-section-number">4.7.1.1</span> Contoh: jumlah Head pada dua lemparan koin</h4>
 <p><span class="math display">\[
 P(X=0)=\frac{1}{4}, \quad P(X=1)=\frac{1}{2}, \quad P(X=2)=\frac{1}{4}
 \]</span></p>
-<div id="2ad4420b" class="cell" data-execution_count="4">
+<div id="bbcd9bca" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pmf <span class="op">=</span> np.array([<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>])</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -550,24 +553,24 @@ P(X=0)=\frac{1}{4}, \quad P(X=1)=\frac{1}{2}, \quad P(X=2)=\frac{1}{4}
 </div>
 </div>
 </section>
-<section id="interpretasi-keputusan" class="level4" data-number="4.8.1.2">
-<h4 data-number="4.8.1.2" class="anchored" data-anchor-id="interpretasi-keputusan"><span class="header-section-number">4.8.1.2</span> Interpretasi keputusan</h4>
+<section id="interpretasi-keputusan" class="level4" data-number="4.7.1.2">
+<h4 data-number="4.7.1.2" class="anchored" data-anchor-id="interpretasi-keputusan"><span class="header-section-number">4.7.1.2</span> Interpretasi keputusan</h4>
 <p>PMF membantu menjawab pertanyaan seperti: - seberapa mungkin tepat 2 cacat? - seberapa mungkin tepat 5 pelanggan datang? - seberapa mungkin tepat 1 dari 3 server gagal?</p>
 </section>
 </section>
 </section>
-<section id="cdf-bahasa-probabilitas-kumulatif" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="cdf-bahasa-probabilitas-kumulatif"><span class="header-section-number">4.9</span> 2.7 CDF: Bahasa Probabilitas Kumulatif</h2>
+<section id="cdf-bahasa-probabilitas-kumulatif" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="cdf-bahasa-probabilitas-kumulatif"><span class="header-section-number">4.8</span> 2.7 CDF: Bahasa Probabilitas Kumulatif</h2>
 <p>Baik untuk random variable diskrit maupun kontinu, salah satu fungsi terpenting adalah <strong>Cumulative Distribution Function (CDF)</strong>:</p>
 <p><span class="math display">\[
 F_X(x) = P(X \le x)
 \]</span></p>
 <p>CDF memberi peluang bahwa nilai random variable <strong>tidak melebihi</strong> <span class="math inline">\(x\)</span>.</p>
 <p>Ini sangat penting karena banyak keputusan berbentuk: - peluang rusak sebelum waktu tertentu, - peluang demand tidak melebihi stok, - peluang profit lebih kecil dari nol, - peluang nilai ujian di bawah batas lulus.</p>
-<section id="contoh-cdf-diskrit" class="level4" data-number="4.9.0.1">
-<h4 data-number="4.9.0.1" class="anchored" data-anchor-id="contoh-cdf-diskrit"><span class="header-section-number">4.9.0.1</span> Contoh CDF diskrit</h4>
+<section id="contoh-cdf-diskrit" class="level4" data-number="4.8.0.1">
+<h4 data-number="4.8.0.1" class="anchored" data-anchor-id="contoh-cdf-diskrit"><span class="header-section-number">4.8.0.1</span> Contoh CDF diskrit</h4>
 <p>Untuk <span class="math inline">\(X\)</span> = jumlah Head pada dua lemparan koin: - <span class="math inline">\(F(0)=P(X\le 0)=1/4\)</span> - <span class="math inline">\(F(1)=P(X\le 1)=3/4\)</span> - <span class="math inline">\(F(2)=1\)</span></p>
-<div id="f32797a5" class="cell" data-execution_count="5">
+<div id="1e2383b8" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cdf <span class="op">=</span> np.cumsum(pmf)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
@@ -588,8 +591,8 @@ F_X(x) = P(X \le x)
 </div>
 </section>
 </section>
-<section id="pdf-untuk-random-variable-kontinu" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="pdf-untuk-random-variable-kontinu"><span class="header-section-number">4.10</span> 2.8 PDF untuk Random Variable Kontinu</h2>
+<section id="pdf-untuk-random-variable-kontinu" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="pdf-untuk-random-variable-kontinu"><span class="header-section-number">4.9</span> 2.8 PDF untuk Random Variable Kontinu</h2>
 <p>Untuk random variable kontinu, kita biasanya tidak berbicara tentang peluang tepat pada satu titik, karena:</p>
 <p><span class="math display">\[
 P(X=x)=0
@@ -602,8 +605,8 @@ f_X(x)
 <p><span class="math display">\[
 P(a \le X \le b) = \int_a^b f_X(x)\,dx
 \]</span></p>
-<section id="sifat-pdf" class="level3" data-number="4.10.1">
-<h3 data-number="4.10.1" class="anchored" data-anchor-id="sifat-pdf"><span class="header-section-number">4.10.1</span> Sifat PDF</h3>
+<section id="sifat-pdf" class="level3" data-number="4.9.1">
+<h3 data-number="4.9.1" class="anchored" data-anchor-id="sifat-pdf"><span class="header-section-number">4.9.1</span> Sifat PDF</h3>
 <ol type="1">
 <li><p><span class="math display">\[
 f_X(x)\ge 0
@@ -612,8 +615,8 @@ f_X(x)\ge 0
 \int_{-\infty}^{\infty} f_X(x)\,dx = 1
 \]</span></p></li>
 </ol>
-<section id="contoh-cepat-uniform-kontinu-pada-01" class="level4" data-number="4.10.1.1">
-<h4 data-number="4.10.1.1" class="anchored" data-anchor-id="contoh-cepat-uniform-kontinu-pada-01"><span class="header-section-number">4.10.1.1</span> Contoh cepat: Uniform kontinu pada [0,1]</h4>
+<section id="contoh-cepat-uniform-kontinu-pada-01" class="level4" data-number="4.9.1.1">
+<h4 data-number="4.9.1.1" class="anchored" data-anchor-id="contoh-cepat-uniform-kontinu-pada-01"><span class="header-section-number">4.9.1.1</span> Contoh cepat: Uniform kontinu pada [0,1]</h4>
 <p><span class="math display">\[
 f(x)=
 \begin{cases}
@@ -624,7 +627,7 @@ f(x)=
 <p>Maka: <span class="math display">\[
 P(0.2 \le X \le 0.7)=0.5
 \]</span></p>
-<div id="f005b522" class="cell" data-execution_count="6">
+<div id="f5d54f57" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.2</span>, <span class="dv">400</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> np.where((x <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (x <span class="op">&lt;=</span> <span class="dv">1</span>), <span class="fl">1.0</span>, <span class="fl">0.0</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -645,24 +648,24 @@ P(0.2 \le X \le 0.7)=0.5
 </div>
 </div>
 </section>
-<section id="interpretasi-penting" class="level4" data-number="4.10.1.2">
-<h4 data-number="4.10.1.2" class="anchored" data-anchor-id="interpretasi-penting"><span class="header-section-number">4.10.1.2</span> Interpretasi penting</h4>
+<section id="interpretasi-penting" class="level4" data-number="4.9.1.2">
+<h4 data-number="4.9.1.2" class="anchored" data-anchor-id="interpretasi-penting"><span class="header-section-number">4.9.1.2</span> Interpretasi penting</h4>
 <p>Tinggi PDF bukan peluang langsung.<br>
 Peluang adalah <strong>luas area</strong> di bawah kurva PDF.</p>
 </section>
 </section>
 </section>
-<section id="menghubungkan-pmf-cdf-dan-pdf" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="menghubungkan-pmf-cdf-dan-pdf"><span class="header-section-number">4.11</span> 2.9 Menghubungkan PMF, CDF, dan PDF</h2>
+<section id="menghubungkan-pmf-cdf-dan-pdf" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="menghubungkan-pmf-cdf-dan-pdf"><span class="header-section-number">4.10</span> 2.9 Menghubungkan PMF, CDF, dan PDF</h2>
 <p>Hubungan penting:</p>
-<section id="untuk-diskrit" class="level3" data-number="4.11.1">
-<h3 data-number="4.11.1" class="anchored" data-anchor-id="untuk-diskrit"><span class="header-section-number">4.11.1</span> Untuk diskrit</h3>
+<section id="untuk-diskrit" class="level3" data-number="4.10.1">
+<h3 data-number="4.10.1" class="anchored" data-anchor-id="untuk-diskrit"><span class="header-section-number">4.10.1</span> Untuk diskrit</h3>
 <p><span class="math display">\[
 F_X(x)=\sum_{t \le x} p_X(t)
 \]</span></p>
 </section>
-<section id="untuk-kontinu" class="level3" data-number="4.11.2">
-<h3 data-number="4.11.2" class="anchored" data-anchor-id="untuk-kontinu"><span class="header-section-number">4.11.2</span> Untuk kontinu</h3>
+<section id="untuk-kontinu" class="level3" data-number="4.10.2">
+<h3 data-number="4.10.2" class="anchored" data-anchor-id="untuk-kontinu"><span class="header-section-number">4.10.2</span> Untuk kontinu</h3>
 <p><span class="math display">\[
 F_X(x)=\int_{-\infty}^{x} f_X(t)\,dt
 \]</span></p>
@@ -672,27 +675,27 @@ f_X(x)=\frac{d}{dx}F_X(x)
 <p>Jadi: - PMF/PDF memberi struktur lokal distribusi, - CDF memberi akumulasi peluang sampai titik tertentu.</p>
 </section>
 </section>
-<section id="ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi"><span class="header-section-number">4.12</span> 2.10 Ekspektasi: Tebakan Terbaik Sebelum Fakta Terjadi</h2>
+<section id="ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="ekspektasi-tebakan-terbaik-sebelum-fakta-terjadi"><span class="header-section-number">4.11</span> 2.10 Ekspektasi: Tebakan Terbaik Sebelum Fakta Terjadi</h2>
 <p>Ekspektasi adalah ukuran pusat distribusi. Ia sering dipandang sebagai <strong>rata-rata jangka panjang</strong>.</p>
-<section id="untuk-random-variable-diskrit" class="level3" data-number="4.12.1">
-<h3 data-number="4.12.1" class="anchored" data-anchor-id="untuk-random-variable-diskrit"><span class="header-section-number">4.12.1</span> Untuk random variable diskrit</h3>
+<section id="untuk-random-variable-diskrit" class="level3" data-number="4.11.1">
+<h3 data-number="4.11.1" class="anchored" data-anchor-id="untuk-random-variable-diskrit"><span class="header-section-number">4.11.1</span> Untuk random variable diskrit</h3>
 <p><span class="math display">\[
 E[X] = \sum_x x\,p_X(x)
 \]</span></p>
 </section>
-<section id="untuk-random-variable-kontinu" class="level3" data-number="4.12.2">
-<h3 data-number="4.12.2" class="anchored" data-anchor-id="untuk-random-variable-kontinu"><span class="header-section-number">4.12.2</span> Untuk random variable kontinu</h3>
+<section id="untuk-random-variable-kontinu" class="level3" data-number="4.11.2">
+<h3 data-number="4.11.2" class="anchored" data-anchor-id="untuk-random-variable-kontinu"><span class="header-section-number">4.11.2</span> Untuk random variable kontinu</h3>
 <p><span class="math display">\[
 E[X] = \int_{-\infty}^{\infty} x f_X(x)\,dx
 \]</span></p>
-<section id="contoh-jumlah-head-pada-dua-lemparan-koin-1" class="level4" data-number="4.12.2.1">
-<h4 data-number="4.12.2.1" class="anchored" data-anchor-id="contoh-jumlah-head-pada-dua-lemparan-koin-1"><span class="header-section-number">4.12.2.1</span> Contoh: jumlah Head pada dua lemparan koin</h4>
+<section id="contoh-jumlah-head-pada-dua-lemparan-koin-1" class="level4" data-number="4.11.2.1">
+<h4 data-number="4.11.2.1" class="anchored" data-anchor-id="contoh-jumlah-head-pada-dua-lemparan-koin-1"><span class="header-section-number">4.11.2.1</span> Contoh: jumlah Head pada dua lemparan koin</h4>
 <p><span class="math display">\[
 E[X] = 0 \cdot \frac14 + 1 \cdot \frac12 + 2 \cdot \frac14 = 1
 \]</span></p>
 <p>Mari cek dengan simulasi.</p>
-<div id="dbcedfe6" class="cell" data-execution_count="7">
+<div id="40242b64" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">123</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100000</span></span>
@@ -706,18 +709,18 @@ E[X] = 0 \cdot \frac14 + 1 \cdot \frac12 + 2 \cdot \frac14 = 1
 </div>
 </div>
 </section>
-<section id="interpretasi-keputusan-1" class="level4" data-number="4.12.2.2">
-<h4 data-number="4.12.2.2" class="anchored" data-anchor-id="interpretasi-keputusan-1"><span class="header-section-number">4.12.2.2</span> Interpretasi keputusan</h4>
+<section id="interpretasi-keputusan-1" class="level4" data-number="4.11.2.2">
+<h4 data-number="4.11.2.2" class="anchored" data-anchor-id="interpretasi-keputusan-1"><span class="header-section-number">4.11.2.2</span> Interpretasi keputusan</h4>
 <p>Ekspektasi menjawab pertanyaan seperti: - rata-rata keuntungan harian, - rata-rata jumlah pelanggan, - rata-rata cacat per batch, - rata-rata waktu tunggu.</p>
 <p>Tetapi ekspektasi <strong>tidak mengatakan seluruh cerita</strong>. Dua distribusi dengan mean sama bisa memiliki risiko yang sangat berbeda.</p>
 </section>
 </section>
 </section>
-<section id="varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" class="level2" data-number="4.13">
-<h2 data-number="4.13" class="anchored" data-anchor-id="varians-dan-simpangan-baku-seberapa-liar-penyimpangannya"><span class="header-section-number">4.13</span> 2.11 Varians dan Simpangan Baku: Seberapa Liar Penyimpangannya?</h2>
+<section id="varians-dan-simpangan-baku-seberapa-liar-penyimpangannya" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="varians-dan-simpangan-baku-seberapa-liar-penyimpangannya"><span class="header-section-number">4.12</span> 2.11 Varians dan Simpangan Baku: Seberapa Liar Penyimpangannya?</h2>
 <p>Varians mengukur seberapa jauh random variable menyebar dari nilai ekspektasinya.</p>
-<section id="definisi" class="level3" data-number="4.13.1">
-<h3 data-number="4.13.1" class="anchored" data-anchor-id="definisi"><span class="header-section-number">4.13.1</span> Definisi</h3>
+<section id="definisi" class="level3" data-number="4.12.1">
+<h3 data-number="4.12.1" class="anchored" data-anchor-id="definisi"><span class="header-section-number">4.12.1</span> Definisi</h3>
 <p><span class="math display">\[
 \mathrm{Var}(X)=E[(X-E[X])^2]
 \]</span></p>
@@ -725,14 +728,14 @@ E[X] = 0 \cdot \frac14 + 1 \cdot \frac12 + 2 \cdot \frac14 = 1
 \sigma_X = \sqrt{\mathrm{Var}(X)}
 \]</span></p>
 </section>
-<section id="bentuk-yang-sering-lebih-praktis" class="level3" data-number="4.13.2">
-<h3 data-number="4.13.2" class="anchored" data-anchor-id="bentuk-yang-sering-lebih-praktis"><span class="header-section-number">4.13.2</span> Bentuk yang sering lebih praktis</h3>
+<section id="bentuk-yang-sering-lebih-praktis" class="level3" data-number="4.12.2">
+<h3 data-number="4.12.2" class="anchored" data-anchor-id="bentuk-yang-sering-lebih-praktis"><span class="header-section-number">4.12.2</span> Bentuk yang sering lebih praktis</h3>
 <p><span class="math display">\[
 \mathrm{Var}(X)=E[X^2] - (E[X])^2
 \]</span></p>
-<section id="contoh-dua-investasi-dengan-mean-sama-variance-beda" class="level4" data-number="4.13.2.1">
-<h4 data-number="4.13.2.1" class="anchored" data-anchor-id="contoh-dua-investasi-dengan-mean-sama-variance-beda"><span class="header-section-number">4.13.2.1</span> Contoh: dua investasi dengan mean sama, variance beda</h4>
-<div id="338f30bc" class="cell" data-execution_count="8">
+<section id="contoh-dua-investasi-dengan-mean-sama-variance-beda" class="level4" data-number="4.12.2.1">
+<h4 data-number="4.12.2.1" class="anchored" data-anchor-id="contoh-dua-investasi-dengan-mean-sama-variance-beda"><span class="header-section-number">4.12.2.1</span> Contoh: dua investasi dengan mean sama, variance beda</h4>
+<div id="3090c6a9" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2026</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> rng.choice([<span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>], size<span class="op">=</span><span class="dv">100000</span>, p<span class="op">=</span>[<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.25</span>])</span>
@@ -745,7 +748,7 @@ E[X] = 0 \cdot \frac14 + 1 \cdot \frac12 + 2 \cdot \frac14 = 1
 Mean B = 9.9584 Var B = 49.78426944 Std B = 7.055796867824356</code></pre>
 </div>
 </div>
-<div id="3106a424" class="cell" data-execution_count="9">
+<div id="1bc5aef6" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.hist(A, bins<span class="op">=</span>np.arange(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">21.5</span>, <span class="dv">1</span>), alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"A"</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.hist(B, bins<span class="op">=</span>np.arange(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">21.5</span>, <span class="dv">1</span>), alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"B"</span>)</span>
@@ -764,29 +767,29 @@ Mean B = 9.9584 Var B = 49.78426944 Std B = 7.055796867824356</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretasi-keputusan-2" class="level4" data-number="4.13.2.2">
-<h4 data-number="4.13.2.2" class="anchored" data-anchor-id="interpretasi-keputusan-2"><span class="header-section-number">4.13.2.2</span> Interpretasi keputusan</h4>
+<section id="interpretasi-keputusan-2" class="level4" data-number="4.12.2.2">
+<h4 data-number="4.12.2.2" class="anchored" data-anchor-id="interpretasi-keputusan-2"><span class="header-section-number">4.12.2.2</span> Interpretasi keputusan</h4>
 <p>Jika kita hanya melihat mean, dua pilihan ini tampak setara. Tetapi jika kita juga melihat variance, kita sadar bahwa salah satu pilihan jauh lebih berisiko.</p>
 </section>
 </section>
 </section>
-<section id="sifat-sifat-penting-ekspektasi-dan-varians" class="level2" data-number="4.14">
-<h2 data-number="4.14" class="anchored" data-anchor-id="sifat-sifat-penting-ekspektasi-dan-varians"><span class="header-section-number">4.14</span> 2.12 Sifat-Sifat Penting Ekspektasi dan Varians</h2>
-<section id="linearitas-ekspektasi" class="level3" data-number="4.14.1">
-<h3 data-number="4.14.1" class="anchored" data-anchor-id="linearitas-ekspektasi"><span class="header-section-number">4.14.1</span> Linearitas ekspektasi</h3>
+<section id="sifat-sifat-penting-ekspektasi-dan-varians" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="sifat-sifat-penting-ekspektasi-dan-varians"><span class="header-section-number">4.13</span> 2.12 Sifat-Sifat Penting Ekspektasi dan Varians</h2>
+<section id="linearitas-ekspektasi" class="level3" data-number="4.13.1">
+<h3 data-number="4.13.1" class="anchored" data-anchor-id="linearitas-ekspektasi"><span class="header-section-number">4.13.1</span> Linearitas ekspektasi</h3>
 <p>Untuk konstanta <span class="math inline">\(a,b\)</span>: <span class="math display">\[
 E[aX+b] = aE[X]+b
 \]</span></p>
 <p>Ini sangat penting karena memungkinkan kita memindahkan model ke unit baru atau mengubah skala.</p>
 </section>
-<section id="varians-terhadap-transformasi-linear" class="level3" data-number="4.14.2">
-<h3 data-number="4.14.2" class="anchored" data-anchor-id="varians-terhadap-transformasi-linear"><span class="header-section-number">4.14.2</span> Varians terhadap transformasi linear</h3>
+<section id="varians-terhadap-transformasi-linear" class="level3" data-number="4.13.2">
+<h3 data-number="4.13.2" class="anchored" data-anchor-id="varians-terhadap-transformasi-linear"><span class="header-section-number">4.13.2</span> Varians terhadap transformasi linear</h3>
 <p><span class="math display">\[
 \mathrm{Var}(aX+b)=a^2 \mathrm{Var}(X)
 \]</span></p>
 <p>Artinya: - menambah konstanta tidak mengubah variance, - mengalikan skala dengan <span class="math inline">\(a\)</span> memperbesar variance sebesar <span class="math inline">\(a^2\)</span>.</p>
 <p>Mari cek.</p>
-<div id="70bcfacb" class="cell" data-execution_count="10">
+<div id="d660badb" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">0</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">5</span>, scale<span class="op">=</span><span class="dv">2</span>, size<span class="op">=</span><span class="dv">100000</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -806,12 +809,12 @@ Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
 </div>
 </section>
 </section>
-<section id="diskrit-dan-kontinu-dalam-praktik" class="level2" data-number="4.15">
-<h2 data-number="4.15" class="anchored" data-anchor-id="diskrit-dan-kontinu-dalam-praktik"><span class="header-section-number">4.15</span> 2.13 Diskrit dan Kontinu dalam Praktik</h2>
+<section id="diskrit-dan-kontinu-dalam-praktik" class="level2" data-number="4.14">
+<h2 data-number="4.14" class="anchored" data-anchor-id="diskrit-dan-kontinu-dalam-praktik"><span class="header-section-number">4.14</span> 2.13 Diskrit dan Kontinu dalam Praktik</h2>
 <p>Secara praktik, banyak data diukur secara diskrit: - berat badan dibulatkan ke 0.1 kg, - waktu dicatat dalam detik, - panjang dicatat dalam milimeter.</p>
 <p>Tetapi secara model, kadang jauh lebih sederhana menganggap besaran itu kontinu. Ini bukan kesalahan, tetapi bentuk idealisasi yang membantu analisis.</p>
-<section id="pedoman-intuitif" class="level3" data-number="4.15.1">
-<h3 data-number="4.15.1" class="anchored" data-anchor-id="pedoman-intuitif"><span class="header-section-number">4.15.1</span> Pedoman intuitif</h3>
+<section id="pedoman-intuitif" class="level3" data-number="4.14.1">
+<h3 data-number="4.14.1" class="anchored" data-anchor-id="pedoman-intuitif"><span class="header-section-number">4.14.1</span> Pedoman intuitif</h3>
 <ul>
 <li>Jika nilai alami berupa hitungan → cenderung diskrit</li>
 <li>Jika nilai alami berupa pengukuran halus → sering dimodelkan kontinu</li>
@@ -819,11 +822,11 @@ Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
 <p>Contoh: - jumlah mobil → diskrit - waktu hidup lampu → kontinu - jumlah pasien → diskrit - suhu → kontinu</p>
 </section>
 </section>
-<section id="dari-histogram-ke-distribusi" class="level2" data-number="4.16">
-<h2 data-number="4.16" class="anchored" data-anchor-id="dari-histogram-ke-distribusi"><span class="header-section-number">4.16</span> 2.14 Dari Histogram ke Distribusi</h2>
+<section id="dari-histogram-ke-distribusi" class="level2" data-number="4.15">
+<h2 data-number="4.15" class="anchored" data-anchor-id="dari-histogram-ke-distribusi"><span class="header-section-number">4.15</span> 2.14 Dari Histogram ke Distribusi</h2>
 <p>Dalam kenyataan, kita sering tidak mulai dari rumus distribusi, tetapi dari data. Dari data, kita bisa membuat histogram untuk melihat bentuk penyebaran.</p>
 <p>Mari contohkan data simulasi.</p>
-<div id="ccea72b3" class="cell" data-execution_count="11">
+<div id="f9244385" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">99</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">100</span>, scale<span class="op">=</span><span class="dv">15</span>, size<span class="op">=</span><span class="dv">5000</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -844,49 +847,49 @@ Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
 </div>
 <p>Histogram tidak otomatis menjadi PMF atau PDF yang eksak, tetapi histogram sangat berguna untuk: - menduga bentuk distribusi, - melihat pusat, - melihat penyebaran, - mendeteksi skewness atau outlier, - memilih model awal yang masuk akal.</p>
 </section>
-<section id="kmqa-mini-case-1-timbangan-berat-badan" class="level2" data-number="4.17">
-<h2 data-number="4.17" class="anchored" data-anchor-id="kmqa-mini-case-1-timbangan-berat-badan"><span class="header-section-number">4.17</span> 2.15 KMQA Mini-Case 1 — Timbangan Berat Badan</h2>
-<section id="k-konteks" class="level3" data-number="4.17.1">
-<h3 data-number="4.17.1" class="anchored" data-anchor-id="k-konteks"><span class="header-section-number">4.17.1</span> K — Konteks</h3>
+<section id="kmqa-mini-case-1-timbangan-berat-badan" class="level2" data-number="4.16">
+<h2 data-number="4.16" class="anchored" data-anchor-id="kmqa-mini-case-1-timbangan-berat-badan"><span class="header-section-number">4.16</span> 2.15 KMQA Mini-Case 1 — Timbangan Berat Badan</h2>
+<section id="k-konteks" class="level3" data-number="4.16.1">
+<h3 data-number="4.16.1" class="anchored" data-anchor-id="k-konteks"><span class="header-section-number">4.16.1</span> K — Konteks</h3>
 <p>Sebuah timbangan digital menampilkan berat badan dalam satu angka desimal.</p>
 </section>
-<section id="m-model" class="level3" data-number="4.17.2">
-<h3 data-number="4.17.2" class="anchored" data-anchor-id="m-model"><span class="header-section-number">4.17.2</span> M — Model</h3>
+<section id="m-model" class="level3" data-number="4.16.2">
+<h3 data-number="4.16.2" class="anchored" data-anchor-id="m-model"><span class="header-section-number">4.16.2</span> M — Model</h3>
 <p>Jika <span class="math inline">\(X\)</span> adalah berat badan orang yang naik ke timbangan, maka <span class="math inline">\(X\)</span> dapat dimodelkan sebagai random variable kontinu, walaupun tampilan akhirnya dibulatkan.</p>
 </section>
-<section id="q-questions" class="level3" data-number="4.17.3">
-<h3 data-number="4.17.3" class="anchored" data-anchor-id="q-questions"><span class="header-section-number">4.17.3</span> Q — Questions</h3>
+<section id="q-questions" class="level3" data-number="4.16.3">
+<h3 data-number="4.16.3" class="anchored" data-anchor-id="q-questions"><span class="header-section-number">4.16.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Apa range masuk akalnya?</li>
 <li>Apakah lebih masuk akal dipandang diskrit atau kontinu?</li>
 <li>Ukuran apa yang penting: mean, variance, atau keduanya?</li>
 </ol>
 </section>
-<section id="a-apply" class="level3" data-number="4.17.4">
-<h3 data-number="4.17.4" class="anchored" data-anchor-id="a-apply"><span class="header-section-number">4.17.4</span> A — Apply</h3>
+<section id="a-apply" class="level3" data-number="4.16.4">
+<h3 data-number="4.16.4" class="anchored" data-anchor-id="a-apply"><span class="header-section-number">4.16.4</span> A — Apply</h3>
 <p>Jawabannya: - range teknis mungkin 0–999.9, tetapi range realistis jauh lebih sempit, - secara teori lebih nyaman dipandang kontinu, - mean memberi pusat berat populasi, - variance memberi seberapa beragam berat badan orang yang diukur.</p>
 </section>
 </section>
-<section id="kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" class="level2" data-number="4.18">
-<h2 data-number="4.18" class="anchored" data-anchor-id="kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol"><span class="header-section-number">4.18</span> 2.16 KMQA Mini-Case 2 — Jumlah Kendaraan di Gerbang Tol</h2>
-<section id="k-konteks-1" class="level3" data-number="4.18.1">
-<h3 data-number="4.18.1" class="anchored" data-anchor-id="k-konteks-1"><span class="header-section-number">4.18.1</span> K — Konteks</h3>
+<section id="kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol" class="level2" data-number="4.17">
+<h2 data-number="4.17" class="anchored" data-anchor-id="kmqa-mini-case-2-jumlah-kendaraan-di-gerbang-tol"><span class="header-section-number">4.17</span> 2.16 KMQA Mini-Case 2 — Jumlah Kendaraan di Gerbang Tol</h2>
+<section id="k-konteks-1" class="level3" data-number="4.17.1">
+<h3 data-number="4.17.1" class="anchored" data-anchor-id="k-konteks-1"><span class="header-section-number">4.17.1</span> K — Konteks</h3>
 <p>Kita ingin memodelkan jumlah kendaraan yang lewat dalam satu jam.</p>
 </section>
-<section id="m-model-1" class="level3" data-number="4.18.2">
-<h3 data-number="4.18.2" class="anchored" data-anchor-id="m-model-1"><span class="header-section-number">4.18.2</span> M — Model</h3>
+<section id="m-model-1" class="level3" data-number="4.17.2">
+<h3 data-number="4.17.2" class="anchored" data-anchor-id="m-model-1"><span class="header-section-number">4.17.2</span> M — Model</h3>
 <p>Jika <span class="math inline">\(X\)</span> = jumlah kendaraan, maka <span class="math inline">\(X\)</span> adalah random variable diskrit.</p>
 </section>
-<section id="q-questions-1" class="level3" data-number="4.18.3">
-<h3 data-number="4.18.3" class="anchored" data-anchor-id="q-questions-1"><span class="header-section-number">4.18.3</span> Q — Questions</h3>
+<section id="q-questions-1" class="level3" data-number="4.17.3">
+<h3 data-number="4.17.3" class="anchored" data-anchor-id="q-questions-1"><span class="header-section-number">4.17.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Mengapa diskrit?</li>
 <li>Apa range yang masuk akal?</li>
 <li>Apa arti <span class="math inline">\(P(X=120)\)</span>? Apa arti <span class="math inline">\(P(X\le 120)\)</span>?</li>
 </ol>
 </section>
-<section id="a-apply-1" class="level3" data-number="4.18.4">
-<h3 data-number="4.18.4" class="anchored" data-anchor-id="a-apply-1"><span class="header-section-number">4.18.4</span> A — Apply</h3>
+<section id="a-apply-1" class="level3" data-number="4.17.4">
+<h3 data-number="4.17.4" class="anchored" data-anchor-id="a-apply-1"><span class="header-section-number">4.17.4</span> A — Apply</h3>
 <ul>
 <li>diskrit karena berupa hitungan,</li>
 <li><span class="math inline">\(P(X=120)\)</span> adalah peluang tepat 120 kendaraan,</li>
@@ -894,26 +897,26 @@ Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
 </ul>
 </section>
 </section>
-<section id="kmqa-mini-case-3-waktu-tunggu-pasien" class="level2" data-number="4.19">
-<h2 data-number="4.19" class="anchored" data-anchor-id="kmqa-mini-case-3-waktu-tunggu-pasien"><span class="header-section-number">4.19</span> 2.17 KMQA Mini-Case 3 — Waktu Tunggu Pasien</h2>
-<section id="k-konteks-2" class="level3" data-number="4.19.1">
-<h3 data-number="4.19.1" class="anchored" data-anchor-id="k-konteks-2"><span class="header-section-number">4.19.1</span> K — Konteks</h3>
+<section id="kmqa-mini-case-3-waktu-tunggu-pasien" class="level2" data-number="4.18">
+<h2 data-number="4.18" class="anchored" data-anchor-id="kmqa-mini-case-3-waktu-tunggu-pasien"><span class="header-section-number">4.18</span> 2.17 KMQA Mini-Case 3 — Waktu Tunggu Pasien</h2>
+<section id="k-konteks-2" class="level3" data-number="4.18.1">
+<h3 data-number="4.18.1" class="anchored" data-anchor-id="k-konteks-2"><span class="header-section-number">4.18.1</span> K — Konteks</h3>
 <p>Sebuah klinik ingin memodelkan waktu tunggu pasien hingga dilayani.</p>
 </section>
-<section id="m-model-2" class="level3" data-number="4.19.2">
-<h3 data-number="4.19.2" class="anchored" data-anchor-id="m-model-2"><span class="header-section-number">4.19.2</span> M — Model</h3>
+<section id="m-model-2" class="level3" data-number="4.18.2">
+<h3 data-number="4.18.2" class="anchored" data-anchor-id="m-model-2"><span class="header-section-number">4.18.2</span> M — Model</h3>
 <p>Jika <span class="math inline">\(X\)</span> = waktu tunggu (menit), maka <span class="math inline">\(X\)</span> biasanya dimodelkan kontinu.</p>
 </section>
-<section id="q-questions-2" class="level3" data-number="4.19.3">
-<h3 data-number="4.19.3" class="anchored" data-anchor-id="q-questions-2"><span class="header-section-number">4.19.3</span> Q — Questions</h3>
+<section id="q-questions-2" class="level3" data-number="4.18.3">
+<h3 data-number="4.18.3" class="anchored" data-anchor-id="q-questions-2"><span class="header-section-number">4.18.3</span> Q — Questions</h3>
 <ol type="1">
 <li>Mengapa kontinu?</li>
 <li>Mengapa <span class="math inline">\(P(X=10)=0\)</span> tetapi <span class="math inline">\(P(9.5 \le X \le 10.5)\)</span> bisa positif?</li>
 <li>Mengapa CDF penting dalam konteks ini?</li>
 </ol>
 </section>
-<section id="a-apply-2" class="level3" data-number="4.19.4">
-<h3 data-number="4.19.4" class="anchored" data-anchor-id="a-apply-2"><span class="header-section-number">4.19.4</span> A — Apply</h3>
+<section id="a-apply-2" class="level3" data-number="4.18.4">
+<h3 data-number="4.18.4" class="anchored" data-anchor-id="a-apply-2"><span class="header-section-number">4.18.4</span> A — Apply</h3>
 <ul>
 <li>kontinu karena waktu dapat berubah halus,</li>
 <li>pada model kontinu, peluang titik tunggal nol,</li>
@@ -922,29 +925,29 @@ Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
 </ul>
 </section>
 </section>
-<section id="python-toolbox-dasar-untuk-bab-ini" class="level2" data-number="4.20">
-<h2 data-number="4.20" class="anchored" data-anchor-id="python-toolbox-dasar-untuk-bab-ini"><span class="header-section-number">4.20</span> 2.18 Python Toolbox Dasar untuk Bab Ini</h2>
+<section id="python-toolbox-dasar-untuk-bab-ini" class="level2" data-number="4.19">
+<h2 data-number="4.19" class="anchored" data-anchor-id="python-toolbox-dasar-untuk-bab-ini"><span class="header-section-number">4.19</span> 2.18 Python Toolbox Dasar untuk Bab Ini</h2>
 <p>Berikut beberapa alat Python yang sangat sering dipakai untuk random variable.</p>
-<div id="71741b01" class="cell" data-execution_count="12">
+<div id="08d9b188" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="simulasi-data" class="level3" data-number="4.20.1">
-<h3 data-number="4.20.1" class="anchored" data-anchor-id="simulasi-data"><span class="header-section-number">4.20.1</span> Simulasi data</h3>
-<div id="5bee6ccd" class="cell" data-execution_count="13">
+<section id="simulasi-data" class="level3" data-number="4.19.1">
+<h3 data-number="4.19.1" class="anchored" data-anchor-id="simulasi-data"><span class="header-section-number">4.19.1</span> Simulasi data</h3>
+<div id="b9a20ce2" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sample_binom <span class="op">=</span> np.random.binomial(n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span><span class="fl">0.4</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sample_norm <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sample_binom, sample_norm[:<span class="dv">5</span>]</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>(array([2, 5, 6, 3, 2, 1, 3, 4, 4, 6], dtype=int32),
- array([-0.2121798 , -0.15579186,  1.42424089, -2.10092645, -0.1740425 ]))</code></pre>
+<pre><code>(array([1, 5, 3, 4, 5, 4, 2, 5, 6, 6], dtype=int32),
+ array([ 0.50982446, -0.05628679,  0.44523706, -0.72393806,  0.01663346]))</code></pre>
 </div>
 </div>
 </section>
-<section id="pmf-pdf-cdf-dari-scipy" class="level3" data-number="4.20.2">
-<h3 data-number="4.20.2" class="anchored" data-anchor-id="pmf-pdf-cdf-dari-scipy"><span class="header-section-number">4.20.2</span> PMF / PDF / CDF dari SciPy</h3>
-<div id="36156e54" class="cell" data-execution_count="14">
+<section id="pmf-pdf-cdf-dari-scipy" class="level3" data-number="4.19.2">
+<h3 data-number="4.19.2" class="anchored" data-anchor-id="pmf-pdf-cdf-dari-scipy"><span class="header-section-number">4.19.2</span> PMF / PDF / CDF dari SciPy</h3>
+<div id="a80371d4" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x_discrete <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">11</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pmf_binom <span class="op">=</span> stats.binom.pmf(x_discrete, n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span><span class="fl">0.4</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -960,9 +963,9 @@ Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
 </div>
 </div>
 </section>
-<section id="plot-cepat" class="level3" data-number="4.20.3">
-<h3 data-number="4.20.3" class="anchored" data-anchor-id="plot-cepat"><span class="header-section-number">4.20.3</span> Plot cepat</h3>
-<div id="054cfb38" class="cell" data-execution_count="15">
+<section id="plot-cepat" class="level3" data-number="4.19.3">
+<h3 data-number="4.19.3" class="anchored" data-anchor-id="plot-cepat"><span class="header-section-number">4.19.3</span> Plot cepat</h3>
+<div id="e5a121fb" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.stem(x_discrete, pmf_binom, basefmt<span class="op">=</span><span class="st">" "</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Contoh PMF Binomial dari scipy.stats"</span>)</span>
@@ -980,8 +983,8 @@ Var[Y] ~ 36.00925288630492    teori = 36.009252886304914</code></pre>
 </div>
 </section>
 </section>
-<section id="kesalahan-kesalahan-umum-yang-harus-dihindari" class="level2" data-number="4.21">
-<h2 data-number="4.21" class="anchored" data-anchor-id="kesalahan-kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">4.21</span> 2.19 Kesalahan-Kesalahan Umum yang Harus Dihindari</h2>
+<section id="kesalahan-kesalahan-umum-yang-harus-dihindari" class="level2" data-number="4.20">
+<h2 data-number="4.20" class="anchored" data-anchor-id="kesalahan-kesalahan-umum-yang-harus-dihindari"><span class="header-section-number">4.20</span> 2.19 Kesalahan-Kesalahan Umum yang Harus Dihindari</h2>
 <ol type="1">
 <li><p><strong>Menganggap random variable sama dengan event</strong><br>
 Tidak. Event adalah himpunan outcome. Random variable adalah fungsi ke bilangan.</p></li>
@@ -995,14 +998,14 @@ Tidak. Pemilihan model harus sesuai konteks.</p></li>
 Tidak. Dalam model kontinu, peluang tepat satu titik adalah nol.</p></li>
 </ol>
 </section>
-<section id="menyimpulkan-bab-ini" class="level2" data-number="4.22">
-<h2 data-number="4.22" class="anchored" data-anchor-id="menyimpulkan-bab-ini"><span class="header-section-number">4.22</span> 2.20 Menyimpulkan Bab Ini</h2>
+<section id="menyimpulkan-bab-ini" class="level2" data-number="4.21">
+<h2 data-number="4.21" class="anchored" data-anchor-id="menyimpulkan-bab-ini"><span class="header-section-number">4.21</span> 2.20 Menyimpulkan Bab Ini</h2>
 <p>Bab ini memberi fondasi yang akan dipakai terus-menerus pada bab-bab berikutnya.</p>
 <p>Kita telah melihat bahwa: - random variable adalah fungsi dari ruang sampel ke bilangan real, - range membantu kita mengenali jenis peubah acak, - PMF dipakai untuk diskrit, - PDF dipakai untuk kontinu, - CDF berlaku untuk keduanya, - ekspektasi memberi ukuran pusat, - varians dan simpangan baku memberi ukuran penyebaran.</p>
 <p>Dengan fondasi ini, kita siap masuk ke distribusi-distribusi khusus yang sangat sering dipakai dalam pemodelan nyata.</p>
 </section>
-<section id="ringkasan-poin-inti" class="level2" data-number="4.23">
-<h2 data-number="4.23" class="anchored" data-anchor-id="ringkasan-poin-inti"><span class="header-section-number">4.23</span> 2.21 Ringkasan Poin Inti</h2>
+<section id="ringkasan-poin-inti" class="level2" data-number="4.22">
+<h2 data-number="4.22" class="anchored" data-anchor-id="ringkasan-poin-inti"><span class="header-section-number">4.22</span> 2.21 Ringkasan Poin Inti</h2>
 <ol type="1">
 <li><strong>Random variable</strong> memetakan hasil acak menjadi angka.</li>
 <li><strong>Event</strong> berbeda dari <strong>nilai random variable</strong>.</li>
@@ -1013,18 +1016,18 @@ Tidak. Dalam model kontinu, peluang tepat satu titik adalah nol.</p></li>
 <li>Dalam keputusan nyata, kita hampir selalu perlu melihat lebih dari sekadar mean.</li>
 </ol>
 </section>
-<section id="latihan-bab-2" class="level2" data-number="4.24">
-<h2 data-number="4.24" class="anchored" data-anchor-id="latihan-bab-2"><span class="header-section-number">4.24</span> 2.22 Latihan Bab 2</h2>
-<section id="a.-konseptual" class="level3" data-number="4.24.1">
-<h3 data-number="4.24.1" class="anchored" data-anchor-id="a.-konseptual"><span class="header-section-number">4.24.1</span> A. Konseptual</h3>
+<section id="latihan-bab-2" class="level2" data-number="4.23">
+<h2 data-number="4.23" class="anchored" data-anchor-id="latihan-bab-2"><span class="header-section-number">4.23</span> 2.22 Latihan Bab 2</h2>
+<section id="a.-konseptual" class="level3" data-number="4.23.1">
+<h3 data-number="4.23.1" class="anchored" data-anchor-id="a.-konseptual"><span class="header-section-number">4.23.1</span> A. Konseptual</h3>
 <ol type="1">
 <li>Jelaskan dengan kata-kata sendiri apa itu random variable.</li>
 <li>Apa perbedaan antara event “jumlah mata dua dadu = 7” dan nilai random variable <span class="math inline">\(X=7\)</span>?</li>
 <li>Mengapa PDF bukan peluang langsung?</li>
 </ol>
 </section>
-<section id="b.-hitungan" class="level3" data-number="4.24.2">
-<h3 data-number="4.24.2" class="anchored" data-anchor-id="b.-hitungan"><span class="header-section-number">4.24.2</span> B. Hitungan</h3>
+<section id="b.-hitungan" class="level3" data-number="4.23.2">
+<h3 data-number="4.23.2" class="anchored" data-anchor-id="b.-hitungan"><span class="header-section-number">4.23.2</span> B. Hitungan</h3>
 <ol type="1">
 <li>Untuk dua lemparan koin, hitung PMF dan CDF dari jumlah Head.</li>
 <li>Untuk dua dadu fair, hitung:
@@ -1039,16 +1042,16 @@ Tidak. Dalam model kontinu, peluang tepat satu titik adalah nol.</p></li>
 </ul></li>
 </ol>
 </section>
-<section id="c.-python" class="level3" data-number="4.24.3">
-<h3 data-number="4.24.3" class="anchored" data-anchor-id="c.-python"><span class="header-section-number">4.24.3</span> C. Python</h3>
+<section id="c.-python" class="level3" data-number="4.23.3">
+<h3 data-number="4.23.3" class="anchored" data-anchor-id="c.-python"><span class="header-section-number">4.23.3</span> C. Python</h3>
 <ol type="1">
 <li>Simulasikan 50.000 lemparan dua koin dan bandingkan histogram hasil dengan PMF teoritis.</li>
 <li>Simulasikan 50.000 lemparan dua dadu dan gambar CDF empiris jumlah mata dadu.</li>
 <li>Simulasikan random variable kontinu sederhana dan tunjukkan bahwa peluang titik tunggal mendekati nol.</li>
 </ol>
 </section>
-<section id="d.-aplikatif" class="level3" data-number="4.24.4">
-<h3 data-number="4.24.4" class="anchored" data-anchor-id="d.-aplikatif"><span class="header-section-number">4.24.4</span> D. Aplikatif</h3>
+<section id="d.-aplikatif" class="level3" data-number="4.23.4">
+<h3 data-number="4.23.4" class="anchored" data-anchor-id="d.-aplikatif"><span class="header-section-number">4.23.4</span> D. Aplikatif</h3>
 <ol type="1">
 <li>Sebutkan satu random variable diskrit dan satu kontinu dari kehidupan sehari-hari.</li>
 <li>Dalam konteks layanan klinik, ukuran mana yang lebih penting: mean waktu tunggu atau peluang menunggu lebih dari 30 menit? Jelaskan.</li>
@@ -1056,12 +1059,224 @@ Tidak. Dalam model kontinu, peluang tepat satu titik adalah nol.</p></li>
 </ol>
 </section>
 </section>
-<section id="penutup-kecil" class="level2" data-number="4.25">
-<h2 data-number="4.25" class="anchored" data-anchor-id="penutup-kecil"><span class="header-section-number">4.25</span> 2.23 Penutup Kecil</h2>
+<section id="penutup-kecil" class="level2" data-number="4.24">
+<h2 data-number="4.24" class="anchored" data-anchor-id="penutup-kecil"><span class="header-section-number">4.24</span> 2.23 Penutup Kecil</h2>
 <p>Bab ini mungkin terlihat “dasar”, tetapi fondasi yang kuat justru dibuat dari konsep-konsep dasar yang dipahami dengan jernih. Begitu Anda benar-benar memahami random variable, PMF, CDF, PDF, ekspektasi, dan varians, banyak topik berikutnya akan terasa jauh lebih masuk akal.</p>
 <p>Di bab berikutnya, kita akan mulai memasuki keluarga-keluarga <strong>distribusi diskrit khusus</strong> yang sangat sering dipakai dalam pemodelan: Bernoulli, Binomial, Geometric, Poisson, dan lainnya.</p>
+</section>
+<section id="tambahan-soal" class="level2" data-number="4.25">
+<h2 data-number="4.25" class="anchored" data-anchor-id="tambahan-soal"><span class="header-section-number">4.25</span> Tambahan Soal</h2>
+<p>Sumber: “Problem Set 3: Probabilitas dan Statistik” author: “Dosen: Dimitri Mahayana”</p>
+<p><strong>Soal 1</strong> Misalkan <span class="math inline">\(X\)</span> adalah <em>random variable</em> diskrit dengan Probability Mass Function (PMF):</p>
+<p><span class="math display">\[
+P(X = x) =
+\begin{cases}
+0,1 &amp; \text{untuk } x = 0,2 \\
+0,2 &amp; \text{untuk } x = 0,4 \\
+0,2 &amp; \text{untuk } x = 0,5 \\
+0,3 &amp; \text{untuk } x = 0,8 \\
+0,2 &amp; \text{untuk } x = 1 \\
+0 &amp; \text{lainnya}
+\end{cases}
+\]</span></p>
+<ol type="a">
+<li>Tentukan <span class="math inline">\(R_x\)</span>, range dari <em>random variable</em> <span class="math inline">\(X\)</span>!</li>
+<li>Tentukan <span class="math inline">\(P(X \le 0,5)\)</span>!</li>
+<li>Tentukan <span class="math inline">\(P(0,25 &lt; X &lt; 0,75)\)</span>!</li>
+<li>Tentukan <span class="math inline">\(P(X = 0,2 \mid X &lt; 0,6)\)</span>!</li>
+<li>Tentukan <span class="math inline">\(\mu\)</span> dan <span class="math inline">\(\sigma^2\)</span>!</li>
+</ol>
+<p><strong>Soal 2</strong> Diketahui fungsi distribusi <em>random variable</em> diskrit <span class="math inline">\(X\)</span> adalah:</p>
+<p><span class="math display">\[
+F(x) =
+\begin{cases}
+0, &amp; x &lt; -1 \\
+0,2, &amp; -1 \le x &lt; 0 \\
+0,5, &amp; 0 \le x &lt; 1 \\
+0,8, &amp; 1 \le x &lt; 3 \\
+1, &amp; x \ge 3
+\end{cases}
+\]</span></p>
+<ol type="a">
+<li>Gambarkan grafik <span class="math inline">\(F(x)\)</span>!</li>
+<li>Tentukan fungsi massa probabilitas untuk <span class="math inline">\(X\)</span>!</li>
+<li>Hitung <span class="math inline">\(P(X &lt; 1)\)</span>!</li>
+<li>Hitung <span class="math inline">\(P(0 &lt; X \le 3)\)</span>!</li>
+<li>Hitung <span class="math inline">\(P(0 \le X &lt; 3)\)</span>!</li>
+<li>Hitung <span class="math inline">\(P(0 &lt; X &lt; 3)\)</span>!</li>
+<li>Hitung <span class="math inline">\(P(0 \le X \le 3)\)</span>!</li>
+</ol>
+<p><strong>Soal 3</strong> Misalkan <em>random variable</em> <span class="math inline">\(X\)</span> mempunyai fungsi distribusi kumulatif:</p>
+<p><span class="math display">\[
+F(x) =
+\begin{cases}
+0 &amp; x \le 0 \\
+1 - e^{-x^2} &amp; x &gt; 0
+\end{cases}
+\]</span></p>
+<p>Berapa probabilitas <span class="math inline">\(X\)</span> melebihi 1?</p>
+<p><strong>Soal 4</strong> Tentukan range dari masing-masing <em>random variable</em> berikut: a. Suatu timbangan elektrik menampilkan berat pada gram terdekatnya. Timbangan ini hanya menampilkan 5 digit saja. Semua berat yang lebih dari nilai tersebut (99999 g) akan ditampilkan sebagai 99999. <em>Random variable</em> nya adalah berat yang ditampilkan. b. Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. <em>Random variable</em> nya adalah jumlah part dari sampling sebanyak 5 part yang tidak sesuai dengan persyaratan pelanggan. c.&nbsp;Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. Part tersebut dipilih secara acak, secara langsung tanpa pengembalian, sampai part yang tidak sesuai dengan syarat didapat. <em>Random variable</em> nya adalah jumlah part yang terambil.</p>
+<p><strong>Soal 5</strong> Suatu sistem komunikasi untuk bisnis mempunyai 4 jalur eksternal. Pada waktu tertentu, sistem ini diobservasi. Misalkan <em>random variable</em> <span class="math inline">\(X\)</span> melambangkan jumlah jalur yang digunakan. Asumsikan probabilitas suatu jalur sedang digunakan saat observasi adalah 0,8. Tentukan ruang sampel dari observasi tersebut! Gambarkan dalam tabel! Diasumsikan bahwa jalur satu sama lain adalah independen.</p>
+<p><strong>Soal 6</strong> Divisi Marketing memperkirakan bahwa sebuah alat baru untuk analisis sampel tanah akan sangat berhasil, berhasil, atau tidak berhasil dengan probabilitas 0,3; 0,6; dan 0,1 secara berurutan. Pendapatan tahunan berkaitan dengan produk yang sangat berhasil, berhasil, atau tidak berhasil adalah Rp. 100 milyar, Rp. 50 milyar, dan Rp. 10 milyar secara berurutan. Misalkan <span class="math inline">\(X\)</span> adalah <em>random variable</em> yang menyatakan pendapatan tahunan dari produk tersebut. Tentukan PMF dari <span class="math inline">\(X\)</span>!</p>
+<p><strong>Soal 7</strong> Sebuah perusahaan manufaktur disk drive memperkirakan bahwa dalam lima tahun, sebuah storage device dengan kapasitas 1TB, 500GB, dan 100GB akan terjual dengan probabilitas 0,5; 0,3; dan 0,2 dengan pendapatan tahunan sebesar Rp. 500 milyar, Rp. 250 milyar, dan Rp. 100 milyar secara berurutan. Misalkan <span class="math inline">\(X\)</span> adalah <em>random variable</em> yang menyatakan pendapatan tahunan dari produk tersebut. Tentukan PMF dari <span class="math inline">\(X\)</span>!</p>
+<p><strong>Soal 8</strong> Dalam proses manufaktur semikonduktor, 3 wafer diuji. Setiap wafer akan dinyatakan lolos uji atau gagal. Asumsi probabilitas sebuah wafer lolos uji adalah 0,8 dan wafer-wafer tersebut independen. a. Tentukan PMF dari jumlah wafer yang lolos uji! b. Tentukan CMF dari jumlah wafer yang lolos uji! c.&nbsp;Tentukan mean dari <em>random variable</em> tersebut! d.&nbsp;Tentukan variansi dari <em>random variable</em> tersebut!</p>
+<p><strong>Soal 9</strong> Maskapai penerbangan menjual 125 tiket untuk 120 penumpang. Probabilitas penumpang tidak datang adalah 0,1 dan penumpang berperilaku independen. a. Berapa probabilitas setiap penumpang yang datang bisa mendapatkan penerbangan? b. Berapa probabilitas penerbangan berangkat dengan kursi kosong?</p>
+<p><strong>Soal 10</strong> Jumlah panggilan telepon yang datang pada suatu operator selular sering dimodelkan sebagai <em>random variable</em> yang mengikuti distribusi Poisson. Misalkan pada rata-ratanya, terdapat 10 panggilan per jam. a. Berapa probabilitas terdapat tepat 5 panggilan dalam 1 jam? b. Berapa probabilitas terdapat 3 atau kurang panggilan dalam 1 jam? c.&nbsp;Berapa probabilitas terdapat tepat 15 panggilan dalam 2 jam? d.&nbsp;Berapa probabilitas terdapat tepat 5 panggilan dalam 30 menit?</p>
+<p><strong>Soal 11</strong> Jumlah permukaan cacat pada panel plastik yang digunakan dalam interior mobil memiliki distribusi Poisson dengan mean 0,05 cacat per ft<span class="math inline">\(^2\)</span>. Asumsikan suatu interior mobil mengandung 10 ft<span class="math inline">\(^2\)</span> panel plastik. a. Berapa probabilitas tidak terdapat cacat permukaan pada interior mobil? b. Jika sepuluh mobil dijual, berapa probabilitas dari sepuluh mobil tersebut tidak ada yang memiliki cacat permukaan? c.&nbsp;Jika sepuluh mobil dijual, berapa probabilitas paling banyak satu mobil yang memiliki cacat permukaan? d.&nbsp;Jika 100 Panel diperiksa, berapa probabilitas lebih sedikit dari 5 panel memiliki cacat permukaan?</p>
+<p><strong>Soal 12</strong> Sebuah bank berskala nasional merencanakan meletakkan 5 set infrastruktur hardware di 5 Data Center (Jakarta, Surabaya, Kalimantan, Batam, dan Papua) untuk menjalankan aplikasi <em>Core Banking System</em> (CBS). Masing-masing set infrastruktur hardware memiliki probabilitas untuk bekerja dengan baik sebesar 0,8. Definisikan <span class="math inline">\(X\)</span> sebagai <em>random variable</em> yang merepresentasikan jumlah Data Center yang bekerja dengan baik. a. Buatlah tabel distribusi probabilitas <em>random variable</em> <span class="math inline">\(X\)</span>! b. Gambarkan distribusi peluang <em>random variable</em> <span class="math inline">\(X\)</span>! c.&nbsp;Gambarkan distribusi kumulatif <em>random variable</em> <span class="math inline">\(X\)</span>! d.&nbsp;Dengan melihat gambar distribusi kumulatif, estimasikan suatu nilai <span class="math inline">\(M\)</span> sehingga <span class="math inline">\(P(X \le M) = 0,5\)</span>. Nilai <span class="math inline">\(M\)</span> ini disebut nilai median! e. Tentukan mean dan variansi untuk <em>random variable</em> <span class="math inline">\(X\)</span>! f.&nbsp;Tentukan probabilitas sistem down secara total! g. Tentukan probabilitas sistem nyaris down secara total (tinggal 1 Data Center yang bekerja dengan baik)! h. Tentukan probabilitas minimal 1 Data Center bekerja dengan baik!</p>
+<p><strong>Soal 13</strong> Sebuah komponen memiliki umur <span class="math inline">\(L\)</span> yang diukur dalam satuan hari, sedemikian sehingga <span class="math inline">\(P(L=n)\)</span> dari kegagalan pada hari ke-<span class="math inline">\(n\)</span> diberikan oleh distribusi geometrik, dan mengikuti <span class="math inline">\(P(L=n) = (1 - b)b^n\)</span>; untuk <span class="math inline">\(n = 0, 1, 2, 3, \dots\)</span>. Bila <span class="math inline">\(b = 0,6\)</span>: a. Gambarkan distribusi peluang dari <em>random variable</em> <span class="math inline">\(L\)</span>! b. Gambarkan distribusi kumulatif dari <em>random variable</em> <span class="math inline">\(L\)</span>! c.&nbsp;Estimasikan suatu nilai <span class="math inline">\(M\)</span> sehingga <span class="math inline">\(P(L \le M) = 0,5\)</span> (nilai median)! d.&nbsp;Tentukan nilai ekspektasi (mean) untuk <em>random variable</em> <span class="math inline">\(L\)</span>! e. Tentukan peluang kejadian <span class="math inline">\(F_i\)</span>, yaitu kejadian bahwa tidak terjadi failure (kerusakan) sebelum hari ke-<span class="math inline">\(i\)</span>.</p>
+<p><strong>Soal 14</strong> Diketahui fungsi padat probabilitas (<em>density function</em>) dari <em>random variable</em> kontinu <span class="math inline">\(X\)</span> adalah:</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+kx, &amp; 0 \le x \le 4 \\
+0, &amp; x \text{ lainnya}
+\end{cases}
+\]</span></p>
+<ol type="a">
+<li>Hitung nilai <span class="math inline">\(k\)</span>!</li>
+<li>Gambar grafik <span class="math inline">\(f(x)\)</span>!</li>
+<li>Hitung <span class="math inline">\(F(x)\)</span>!</li>
+<li>Gambarkan grafik <span class="math inline">\(F(x)\)</span>!</li>
+<li>Hitung <span class="math inline">\(P(X &lt; 1/2)\)</span> dan <span class="math inline">\(P(1/2 &lt; X &lt; 1)\)</span>!</li>
+</ol>
+<p><strong>Soal 15</strong> Running time algoritma komputasi tertentu <span class="math inline">\(R\)</span> minimal adalah satu unit waktu (<span class="math inline">\(v=1\)</span>) dan peluang <span class="math inline">\(R &gt; 10\)</span> unit waktu adalah 0,5. Hal ini dengan asumsi bahwa algoritma ini diinisiasi secara sebarang. Tentukan probabilitas bahwa running time melebihi 1000 unit waktu! Diasumsikan <span class="math inline">\(R\)</span> mengikuti distribusi Pareto:</p>
+<p><span class="math display">\[ f(r) = \frac{a r_m^a}{r^{a+1}} \quad \text{dan} \quad F(r) = 1 - \left(\frac{r_m}{r}\right)^a \]</span></p>
+<p><strong>Soal 16</strong> Sebuah sesi <em>file transfer protocol</em> (ftp) berdurasi <span class="math inline">\(L\)</span> memiliki waktu minimum <span class="math inline">\(t_0\)</span>. Diketahui <span class="math inline">\(P(L &gt; 2t_0) = 4P(L &gt; 4t_0)\)</span> dan probability density function <span class="math inline">\(L\)</span> adalah <span class="math inline">\(f(l) = a t_0^a l^{-a-1}\)</span>, <span class="math inline">\(a &gt; 0\)</span> untuk <span class="math inline">\(l \ge t_0\)</span> dan nol untuk <span class="math inline">\(l &lt; t_0\)</span>. Tentukan probabilitas sebuah sesi akan melebihi <span class="math inline">\(10t_0\)</span>!</p>
+<p><strong>Soal 17</strong> Kereta Api tiba di stasiun setiap 15 menit dimulai pukul 07.00. Jika seorang penumpang tiba distasiun tersebut pukul 07.00 sampai 07.30 yang dianggap berdistribusi uniform, hitung peluang penumpang tersebut menunggu kereta api kurang dari 5 menit?</p>
+<p><strong>Soal 18</strong> Probabilitas fungsi kepadatan dari berat bersih (dalam pound) pada sebuah paket senyawa kimia herbisida adalah <span class="math inline">\(f(x) = 2,0\)</span> untuk setiap nilai pada <span class="math inline">\(49,75 &lt; x &lt; 50,25\)</span> pounds. a. Tentukan probabilitas untuk paket tersebut memiliki berat lebih dari 50 pounds. b. Berapa banyak senyawa kimia yang terkandung dalam 90% dari keseluruhan paket?</p>
+<p><strong>Soal 19</strong> Diketahui fungsi distribusi <em>random variable</em> kontinu <span class="math inline">\(X\)</span> adalah:</p>
+<p><span class="math display">\[
+F(x) =
+\begin{cases}
+0 &amp; x &lt; 0 \\
+0,2x &amp; 0 \le x &lt; 4 \\
+0,04x + 0,64 &amp; 4 \le x &lt; 9 \\
+1 &amp; 9 \le x
+\end{cases}
+\]</span></p>
+<ol type="a">
+<li>Tentukan nilai <span class="math inline">\(E(X)\)</span>!</li>
+<li>Tentukan nilai <span class="math inline">\(P(X \ge 6)\)</span>!</li>
+</ol>
+<p><strong>Soal 20</strong> Jumlah kesalahan ketik dalam suatu buku teks mengikuti distribusi Poisson dengan mean 0,01 kesalahan/halaman. Berapa probabilitas terdapat kurang dari atau sama dengan tiga kesalahan dalam 100 halaman?</p>
+<p><strong>Soal 21</strong> Suatu persimpangan dengan lampu sinyal pada jalur berangkat pagi adalah 20% hijau pada waktu kamu melewatinya. Asumsikan setiap pagi adalah percobaan yang independen. a. Dalam 5 pagi (5 hari), berapa probabilitas lampunya hijau hanya pada satu pagi saja? b. Dalam 20 pagi, berapa probabilitas lampunya hijau tepat empat kali? c.&nbsp;Dalam 20 minggu, berapa probabilitas lampunya hijau lebih dari empat kali?</p>
+<p><strong>Soal 22</strong> Suatu perusahaan menyimpan komponen yang didapat dari pemasok. Misalkan 2% dari komponen adalah cacat dan komponen yang cacat saling bebas satu sama lain. Berapa banyak komponen yang harus dipunya perusahaan sehingga 100 order dapat diselesaikan tanpa memesan komponen lagi mempunyai probabilitas paling tidak 0,95?</p>
+<p><strong>Soal 23</strong> Misalkan bahwa jumlah km suatu mobil bisa melaju sampai akinya habis adalah berdistribusi eksponensial dengan mean 10000 km. Jika seseorang ingin melakukan perjalanan 5000 km, berapa probabilitas dia bisa menyelesaikan perjalanannya tanpa harus mengganti akinya?</p>
+<p>Berikut adalah analisis dari setiap soal pada Problem Set 3 beserta prinsip probabilitas yang digunakan, solusinya, dan implementasi kode Python untuk memecahkannya.</p>
+<section id="prinsip-prinsip-dasar-yang-digunakan" class="level3" data-number="4.25.1">
+<h3 data-number="4.25.1" class="anchored" data-anchor-id="prinsip-prinsip-dasar-yang-digunakan"><span class="header-section-number">4.25.1</span> <strong>Prinsip-Prinsip Dasar yang Digunakan</strong></h3>
+<p>Berdasarkan materi kuliah <em>Random Variable</em>, berikut adalah prinsip utama untuk menyelesaikan Problem Set 3: 1. <strong>Random Variable Diskrit:</strong> Memiliki himpunan nilai yang terhitung. Fungsi Probabilitas (PMF) dinotasikan dengan <span class="math inline">\(f(x) = P(X = x)\)</span> dengan syarat <span class="math inline">\(\sum f(x) = 1\)</span>. 2. <strong>Random Variable Kontinu:</strong> Nilainya terdefinisi pada interval tak terhitung, dan probabilitas adalah luas area di bawah kurva Fungsi Kepadatan Probabilitas (PDF), dihitung dengan integral <span class="math inline">\(P(a &lt; X &lt; b) = \int_a^b f(x) dx\)</span>. 3. <strong>Fungsi Distribusi Kumulatif (CDF):</strong> CDF atau <span class="math inline">\(F(x)\)</span> adalah akumulasi probabilitas <span class="math inline">\(P(X \le x)\)</span>. Pada fungsi kontinu, <span class="math inline">\(f(x)\)</span> adalah turunan pertama dari CDF, yaitu <span class="math inline">\(f(x) = dF(x)/dx\)</span>. 4. <strong>Nilai Harap (Mean/Ekspektasi) dan Variansi:</strong> Mean (<span class="math inline">\(\mu\)</span>) menunjukkan pusat distribusi probabilitas, dihitung dengan <span class="math inline">\(\sum x f(x)\)</span> untuk diskrit dan <span class="math inline">\(\int x f(x) dx\)</span> untuk kontinu. Variansi (<span class="math inline">\(\sigma^2\)</span>) mengukur penyebaran, dihitung dengan <span class="math inline">\(E(X^2) - \mu^2\)</span>.</p>
+<hr>
+</section>
+<section id="solusi-bebrapa-soal-problem-set-3" class="level3" data-number="4.25.2">
+<h3 data-number="4.25.2" class="anchored" data-anchor-id="solusi-bebrapa-soal-problem-set-3"><span class="header-section-number">4.25.2</span> <strong>Solusi Bebrapa Soal Problem Set 3</strong></h3>
+<p><strong>Soal 1: Analisis Distribusi Diskrit</strong> * <strong>Masalah:</strong> Diketahui <span class="math inline">\(X\)</span> diskrit dengan <span class="math inline">\(P(0,2)=0,1; P(0,4)=0,2; P(0,5)=0,2; P(0,8)=0,3; P(1)=0,2\)</span>. * <strong>Solusi:</strong> * <strong>Range (<span class="math inline">\(R_x\)</span>):</strong> <span class="math inline">\(\{0,2;\; 0,4;\; 0,5;\; 0,8;\; 1\}\)</span>. * <strong><span class="math inline">\(P(X \le 0,5)\)</span>:</strong> <span class="math inline">\(0,1 + 0,2 + 0,2 = \mathbf{0,5}\)</span>. * <strong><span class="math inline">\(P(0,25 &lt; X &lt; 0,75)\)</span>:</strong> Nilai yang masuk hanyalah 0,4 dan 0,5. Jumlahnya <span class="math inline">\(= 0,2 + 0,2 = \mathbf{0,4}\)</span> <em>(Catatan: Pada dokumen sumber terdapat ralat perhitungan manual di mana probabilitas <span class="math inline">\(0,8\)</span> ikut ditambahkan sehingga menjadi <span class="math inline">\(0,7\)</span>)</em>. * <strong>Probabilitas Bersyarat <span class="math inline">\(P(X=0,2 \mid X&lt;0,6)\)</span>:</strong> <span class="math inline">\(P(X=0,2) / P(X&lt;0,6) = 0,1 / (0,1+0,2+0,2) = 0,1 / 0,5 = \mathbf{0,2}\)</span>. * <strong>Mean &amp; Variansi:</strong> <span class="math inline">\(\mu = \sum xP(x) = \mathbf{0,64}\)</span>. Variansi <span class="math inline">\(\sigma^2 = E(X^2) - \mu^2 = 0,478 - 0,64^2 = \mathbf{0,0684}\)</span>.</p>
+<p><strong>Soal 2: Fungsi Distribusi Kumulatif (CDF) Eksponensial Khusus</strong> * <strong>Masalah:</strong> <span class="math inline">\(F(x) = 1 - e^{-x^2}\)</span> untuk <span class="math inline">\(x &gt; 0\)</span>. Berapa probabilitas <span class="math inline">\(X &gt; 1\)</span>?. * <strong>Solusi:</strong> <span class="math inline">\(P(X &gt; 1) = 1 - P(X \le 1) = 1 - F(1) = 1 - (1 - e^{-1}) = e^{-1} \approx \mathbf{0,3679}\)</span>.</p>
+<p><strong>Soal 3 &amp; 4: Pemodelan Fungsi Massa Probabilitas (PMF)</strong> * <strong>Masalah:</strong> Menerjemahkan probabilitas kesuksesan produk menjadi fungsi PMF pendapatan <span class="math inline">\(X\)</span>. * <strong>Solusi:</strong> * <strong>Soal 3:</strong> <span class="math inline">\(f(10M) = 0,1;\; f(50M) = 0,6;\; f(100M) = 0,3\)</span>. * <strong>Soal 4:</strong> <span class="math inline">\(f(100M) = 0,2;\; f(250M) = 0,3;\; f(500M) = 0,5\)</span>.</p>
+<p><strong>Soal 5: PDF Berupa Garis Linear (<span class="math inline">\(f(x) = kx\)</span>)</strong> * <strong>Masalah:</strong> <span class="math inline">\(f(x) = kx\)</span> untuk <span class="math inline">\(0 \le x \le 4\)</span>. Tentukan konstanta <span class="math inline">\(k\)</span>, CDF, dan probabilitas pada rentang tertentu. * <strong>Solusi:</strong> * <strong>Mencari <span class="math inline">\(k\)</span>:</strong> <span class="math inline">\(\int_0^4 kx dx = 1 \implies 8k = 1 \implies \mathbf{k = 1/8}\)</span>. * <strong>Fungsi CDF (<span class="math inline">\(F(x)\)</span>):</strong> <span class="math inline">\(\int_0^x \frac{1}{8}t dt = \mathbf{x^2/16}\)</span>. * <strong><span class="math inline">\(P(X &lt; 1/2)\)</span>:</strong> <span class="math inline">\(F(1/2) = (1/2)^2 / 16 = \mathbf{1/64}\)</span>. * <strong><span class="math inline">\(P(1/2 &lt; X &lt; 1)\)</span>:</strong> <span class="math inline">\(F(1) - F(1/2) = \frac{1}{16} - \frac{1}{64} = \mathbf{3/64}\)</span>.</p>
+<p><strong>Soal 6: Distribusi Pareto (Waktu Komputasi Algoritma)</strong> * <strong>Masalah:</strong> <span class="math inline">\(F(r) = 1 - (1/r)^\alpha\)</span>. Diketahui <span class="math inline">\(P(R &gt; 10) = 0,5\)</span>. Cari <span class="math inline">\(P(R &gt; 1000)\)</span>. * <strong>Solusi:</strong> Substitusi <span class="math inline">\(P(R \le 10) = 0,5 \implies 1 - (1/10)^\alpha = 0,5 \implies 10^{-\alpha} = 0,5 \implies \alpha = -\log(0,5)\)</span>. Lalu hitung target: <span class="math inline">\(P(R &gt; 1000) = (1/1000)^{-\log(0,5)} = \mathbf{0,125}\)</span>.</p>
+<p><strong>Soal 7: Distribusi Seragam Senyawa Kimia</strong> * <strong>Masalah:</strong> <span class="math inline">\(f(x) = 2,0\)</span> pada interval <span class="math inline">\(49,75 &lt; x &lt; 50,25\)</span>. Jika <span class="math inline">\(Y\)</span> melambangkan <span class="math inline">\(90\%\)</span> dari <span class="math inline">\(X\)</span>, tentukan nilai batas intervalnya. * <strong>Solusi:</strong> <span class="math inline">\(P(X &gt; 50) = \int_{50}^{50,25} 2,0 dx = \mathbf{0,5}\)</span>. Transformasi <span class="math inline">\(Y = 0,9X \implies X = Y/0,9 \approx 1,111Y\)</span>. Maka interval batas baru <span class="math inline">\(Y\)</span> adalah <span class="math inline">\(49,75 &lt; 1,111Y &lt; 50,25 \implies \mathbf{44,775 &lt; y &lt; 47,25}\)</span>.</p>
+<p><strong>Soal 8: Ekstraksi PDF dari CDF Terpotong (Piecewise)</strong> * <strong>Masalah:</strong> Diketahui CDF <span class="math inline">\(F(x) = 0,2x\)</span> (untuk <span class="math inline">\(0 \le x &lt; 4\)</span>) dan <span class="math inline">\(0,04x + 0,64\)</span> (untuk <span class="math inline">\(4 \le x &lt; 9\)</span>). Hitung Ekspektasi <span class="math inline">\(E(X)\)</span> dan <span class="math inline">\(P(X \ge 6)\)</span>. * <strong>Solusi:</strong> * Turunkan <span class="math inline">\(F(x)\)</span> untuk mendapat <span class="math inline">\(f(x)\)</span>: Diperoleh <span class="math inline">\(f(x) = 0,2\)</span> pada <span class="math inline">\(x \in [0,4)\)</span> dan <span class="math inline">\(f(x) = 0,04\)</span> pada <span class="math inline">\(x \in [4,9)\)</span>. * <strong>Ekspektasi <span class="math inline">\(E(X)\)</span>:</strong> <span class="math inline">\(\int_0^4 x(0,2) dx + \int_4^9 x(0,04) dx = 1,6 + 1,3 = \mathbf{2,9}\)</span>. * <strong><span class="math inline">\(P(X \ge 6)\)</span>:</strong> <span class="math inline">\(1 - F(6) = 1 - (0,04(6) + 0,64) = 1 - 0,88 = \mathbf{0,12}\)</span>.</p>
+<hr>
+</section>
+<section id="desain-kode-python-class-probset3solver" class="level3" data-number="4.25.3">
+<h3 data-number="4.25.3" class="anchored" data-anchor-id="desain-kode-python-class-probset3solver"><span class="header-section-number">4.25.3</span> <strong>Desain Kode Python (Class <code>ProbSet3Solver</code>)</strong></h3>
+<p>Kode berikut menyediakan alat matematis berbasis fungsi integrasi <code>scipy</code> dan <code>numpy</code> untuk menyelesaikan seluruh logika soal di atas secara <em>reusable</em>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.integrate <span class="im">as</span> integrate</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProbSet3Solver:</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Class penyelesaian Problem Set 3 Probabilitas &amp; Statistik"""</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> discrete_stats(x_vals, p_vals):</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Menghitung Mean dan Variansi Distribusi Diskrit (Soal 1)"""</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        mean <span class="op">=</span> <span class="bu">sum</span>(x <span class="op">*</span> p <span class="cf">for</span> x, p <span class="kw">in</span> <span class="bu">zip</span>(x_vals, p_vals))</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        e_x_square <span class="op">=</span> <span class="bu">sum</span>((x<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> p <span class="cf">for</span> x, p <span class="kw">in</span> <span class="bu">zip</span>(x_vals, p_vals))</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        variance <span class="op">=</span> e_x_square <span class="op">-</span> (mean<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> mean, variance</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> discrete_conditional(x_vals, p_vals, target_x, condition_max):</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""P(X = target_x | X &lt; condition_max)"""</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>        p_target <span class="op">=</span> p_vals[x_vals.index(target_x)]</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>        p_condition <span class="op">=</span> <span class="bu">sum</span>(p <span class="cf">for</span> x, p <span class="kw">in</span> <span class="bu">zip</span>(x_vals, p_vals) <span class="cf">if</span> x <span class="op">&lt;</span> condition_max)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> p_target <span class="op">/</span> p_condition</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> continuous_cdf_exp_square(x):</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Evaluasi F(x) = 1 - e^(-x^2) untuk mencari P(X &gt; x) (Soal 2)"""</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>        f_x <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> math.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> f_x <span class="co"># P(X &gt; x)</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> find_pdf_constant(func_template, a, b):</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Mencari konstanta k agar Integral f(x) = 1 (Soal 5)"""</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># func_template adalah fungsi tanpa k, misal x -&gt; x</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>        integral_val, _ <span class="op">=</span> integrate.quad(func_template, a, b)</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>        k <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> integral_val</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> k</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> pareto_probability(r_known, p_known_greater, r_target):</span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Menyelesaikan Soal Pareto dengan mencari alpha dari logaritma (Soal 6)"""</span></span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>        <span class="co"># P(R &gt; r_known) = p_known_greater  =&gt; (1/r_known)^alpha = p_known_greater</span></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># alpha * log(1/r_known) = log(p_known_greater)</span></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>        alpha <span class="op">=</span> math.log(p_known_greater) <span class="op">/</span> math.log(<span class="dv">1</span> <span class="op">/</span> r_known)</span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Menghitung probabilitas target P(R &gt; r_target)</span></span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="dv">1</span> <span class="op">/</span> r_target)<span class="op">**</span>alpha</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> piecewise_expected_value(funcs, bounds):</span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a><span class="co">        Mencari E(X) dari fungsi terpotong (Piecewise) (Soal 8).</span></span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a><span class="co">        funcs = [f1(x), f2(x)], bounds = [(a,b), (c,d)]</span></span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>        expected_value <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> f, (a, b) <span class="kw">in</span> <span class="bu">zip</span>(funcs, bounds):</span>
+<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>            val, _ <span class="op">=</span> integrate.quad(<span class="kw">lambda</span> x: x <span class="op">*</span> f(x), a, b)</span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>            expected_value <span class="op">+=</span> val</span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> expected_value</span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a><span class="co"># EKSKUSI SOLUSI MENGGUNAKAN KELAS PYTHON</span></span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a>    solver <span class="op">=</span> ProbSet3Solver()</span>
+<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Soal 1 ---</span></span>
+<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a>    x_vals <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>]</span>
+<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a>    p_vals <span class="op">=</span> [<span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>]</span>
+<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a>    mean_1, var_1 <span class="op">=</span> solver.discrete_stats(x_vals, p_vals)</span>
+<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a>    p_cond <span class="op">=</span> solver.discrete_conditional(x_vals, p_vals, <span class="fl">0.2</span>, <span class="fl">0.6</span>)</span>
+<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soal 1 -&gt; Mean: </span><span class="sc">{</span>mean_1<span class="sc">:.2f}</span><span class="ss">, Var: </span><span class="sc">{</span>var_1<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soal 1 -&gt; P(X=0.2 | X&lt;0.6) = </span><span class="sc">{</span>p_cond<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Soal 2 ---</span></span>
+<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a>    p_gt_1 <span class="op">=</span> solver.continuous_cdf_exp_square(<span class="dv">1</span>)</span>
+<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soal 2 -&gt; P(X &gt; 1) = </span><span class="sc">{</span>p_gt_1<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Soal 5 ---</span></span>
+<span id="cb22-77"><a href="#cb22-77" aria-hidden="true" tabindex="-1"></a>    <span class="co"># f(x) = k*x dari 0 ke 4</span></span>
+<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> solver.find_pdf_constant(<span class="kw">lambda</span> x: x, <span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soal 5 -&gt; Konstanta k = </span><span class="sc">{</span>k<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Soal 6 ---</span></span>
+<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a>    <span class="co"># P(R &gt; 10) = 0.5, cari P(R &gt; 1000)</span></span>
+<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a>    p_pareto <span class="op">=</span> solver.pareto_probability(<span class="dv">10</span>, <span class="fl">0.5</span>, <span class="dv">1000</span>)</span>
+<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soal 6 -&gt; P(R &gt; 1000) = </span><span class="sc">{</span>p_pareto<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb22-85"><a href="#cb22-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-86"><a href="#cb22-86" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Soal 8 ---</span></span>
+<span id="cb22-87"><a href="#cb22-87" aria-hidden="true" tabindex="-1"></a>    <span class="co"># f(x) = 0.2 (0 sampai 4), dan f(x) = 0.04 (4 sampai 9)</span></span>
+<span id="cb22-88"><a href="#cb22-88" aria-hidden="true" tabindex="-1"></a>    funcs <span class="op">=</span> [<span class="kw">lambda</span> x: <span class="fl">0.2</span>, <span class="kw">lambda</span> x: <span class="fl">0.04</span>]</span>
+<span id="cb22-89"><a href="#cb22-89" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> [(<span class="dv">0</span>, <span class="dv">4</span>), (<span class="dv">4</span>, <span class="dv">9</span>)]</span>
+<span id="cb22-90"><a href="#cb22-90" aria-hidden="true" tabindex="-1"></a>    exp_8 <span class="op">=</span> solver.piecewise_expected_value(funcs, bounds)</span>
+<span id="cb22-91"><a href="#cb22-91" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soal 8 -&gt; E(X) = </span><span class="sc">{</span>exp_8<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1472,8 +1687,8 @@ Tidak. Dalam model kontinu, peluang tepat satu titik adalah nol.</p></li>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-distribusi-diskrit.html" class="pagination-link" aria-label="Bab 3. Distribusi Random Variable Diskrit">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-distribusi-diskrit.html" class="pagination-link" aria-label="Tujuan Bab">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

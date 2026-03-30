@@ -1,8 +1,8 @@
----
+
 title: "Bab 2. Random Variable Umum"
 format: html
 jupyter: python3
----
+
 
 ## Tujuan Bab
 
@@ -724,3 +724,389 @@ Dengan fondasi ini, kita siap masuk ke distribusi-distribusi khusus yang sangat 
 Bab ini mungkin terlihat “dasar”, tetapi fondasi yang kuat justru dibuat dari konsep-konsep dasar yang dipahami dengan jernih. Begitu Anda benar-benar memahami random variable, PMF, CDF, PDF, ekspektasi, dan varians, banyak topik berikutnya akan terasa jauh lebih masuk akal.
 
 Di bab berikutnya, kita akan mulai memasuki keluarga-keluarga **distribusi diskrit khusus** yang sangat sering dipakai dalam pemodelan: Bernoulli, Binomial, Geometric, Poisson, dan lainnya.
+
+## Tambahan Soal
+
+Sumber: "Problem Set 3: Probabilitas dan Statistik"
+author: "Dosen: Dimitri Mahayana"
+
+**Soal 1**
+Misalkan $X$ adalah *random variable* diskrit dengan Probability Mass Function (PMF):
+
+$$
+P(X = x) = 
+\begin{cases} 
+0,1 & \text{untuk } x = 0,2 \\ 
+0,2 & \text{untuk } x = 0,4 \\ 
+0,2 & \text{untuk } x = 0,5 \\ 
+0,3 & \text{untuk } x = 0,8 \\ 
+0,2 & \text{untuk } x = 1 \\ 
+0 & \text{lainnya} 
+\end{cases}
+$$
+
+a. Tentukan $R_x$, range dari *random variable* $X$!
+b. Tentukan $P(X \le 0,5)$!
+c. Tentukan $P(0,25 < X < 0,75)$!
+d. Tentukan $P(X = 0,2 \mid X < 0,6)$!
+e. Tentukan $\mu$ dan $\sigma^2$!
+
+
+
+**Soal 2**
+Diketahui fungsi distribusi *random variable* diskrit $X$ adalah:
+
+$$
+F(x) = 
+\begin{cases} 
+0, & x < -1 \\ 
+0,2, & -1 \le x < 0 \\ 
+0,5, & 0 \le x < 1 \\ 
+0,8, & 1 \le x < 3 \\ 
+1, & x \ge 3 
+\end{cases}
+$$
+
+a. Gambarkan grafik $F(x)$!
+b. Tentukan fungsi massa probabilitas untuk $X$!
+c. Hitung $P(X < 1)$!
+d. Hitung $P(0 < X \le 3)$!
+e. Hitung $P(0 \le X < 3)$!
+f. Hitung $P(0 < X < 3)$!
+g. Hitung $P(0 \le X \le 3)$!
+
+
+
+**Soal 3**
+Misalkan *random variable* $X$ mempunyai fungsi distribusi kumulatif:
+
+$$
+F(x) = 
+\begin{cases} 
+0 & x \le 0 \\ 
+1 - e^{-x^2} & x > 0 
+\end{cases}
+$$
+
+Berapa probabilitas $X$ melebihi 1?
+
+
+
+**Soal 4**
+Tentukan range dari masing-masing *random variable* berikut:
+a. Suatu timbangan elektrik menampilkan berat pada gram terdekatnya. Timbangan ini hanya menampilkan 5 digit saja. Semua berat yang lebih dari nilai tersebut (99999 g) akan ditampilkan sebagai 99999. *Random variable* nya adalah berat yang ditampilkan.
+b. Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. *Random variable* nya adalah jumlah part dari sampling sebanyak 5 part yang tidak sesuai dengan persyaratan pelanggan.
+c. Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. Part tersebut dipilih secara acak, secara langsung tanpa pengembalian, sampai part yang tidak sesuai dengan syarat didapat. *Random variable* nya adalah jumlah part yang terambil.
+
+
+
+**Soal 5**
+Suatu sistem komunikasi untuk bisnis mempunyai 4 jalur eksternal. Pada waktu tertentu, sistem ini diobservasi. Misalkan *random variable* $X$ melambangkan jumlah jalur yang digunakan. Asumsikan probabilitas suatu jalur sedang digunakan saat observasi adalah 0,8. Tentukan ruang sampel dari observasi tersebut! Gambarkan dalam tabel! Diasumsikan bahwa jalur satu sama lain adalah independen.
+
+
+
+**Soal 6**
+Divisi Marketing memperkirakan bahwa sebuah alat baru untuk analisis sampel tanah akan sangat berhasil, berhasil, atau tidak berhasil dengan probabilitas 0,3; 0,6; dan 0,1 secara berurutan. Pendapatan tahunan berkaitan dengan produk yang sangat berhasil, berhasil, atau tidak berhasil adalah Rp. 100 milyar, Rp. 50 milyar, dan Rp. 10 milyar secara berurutan. Misalkan $X$ adalah *random variable* yang menyatakan pendapatan tahunan dari produk tersebut. Tentukan PMF dari $X$!
+
+
+
+**Soal 7**
+Sebuah perusahaan manufaktur disk drive memperkirakan bahwa dalam lima tahun, sebuah storage device dengan kapasitas 1TB, 500GB, dan 100GB akan terjual dengan probabilitas 0,5; 0,3; dan 0,2 dengan pendapatan tahunan sebesar Rp. 500 milyar, Rp. 250 milyar, dan Rp. 100 milyar secara berurutan. Misalkan $X$ adalah *random variable* yang menyatakan pendapatan tahunan dari produk tersebut. Tentukan PMF dari $X$!
+
+
+
+**Soal 8**
+Dalam proses manufaktur semikonduktor, 3 wafer diuji. Setiap wafer akan dinyatakan lolos uji atau gagal. Asumsi probabilitas sebuah wafer lolos uji adalah 0,8 dan wafer-wafer tersebut independen.
+a. Tentukan PMF dari jumlah wafer yang lolos uji! 
+b. Tentukan CMF dari jumlah wafer yang lolos uji!
+c. Tentukan mean dari *random variable* tersebut!
+d. Tentukan variansi dari *random variable* tersebut!
+
+
+
+**Soal 9**
+Maskapai penerbangan menjual 125 tiket untuk 120 penumpang. Probabilitas penumpang tidak datang adalah 0,1 dan penumpang berperilaku independen.
+a. Berapa probabilitas setiap penumpang yang datang bisa mendapatkan penerbangan?
+b. Berapa probabilitas penerbangan berangkat dengan kursi kosong?
+
+
+
+**Soal 10**
+Jumlah panggilan telepon yang datang pada suatu operator selular sering dimodelkan sebagai *random variable* yang mengikuti distribusi Poisson. Misalkan pada rata-ratanya, terdapat 10 panggilan per jam.
+a. Berapa probabilitas terdapat tepat 5 panggilan dalam 1 jam?
+b. Berapa probabilitas terdapat 3 atau kurang panggilan dalam 1 jam?
+c. Berapa probabilitas terdapat tepat 15 panggilan dalam 2 jam?
+d. Berapa probabilitas terdapat tepat 5 panggilan dalam 30 menit?
+
+
+
+**Soal 11**
+Jumlah permukaan cacat pada panel plastik yang digunakan dalam interior mobil memiliki distribusi Poisson dengan mean 0,05 cacat per ft$^2$. Asumsikan suatu interior mobil mengandung 10 ft$^2$ panel plastik.
+a. Berapa probabilitas tidak terdapat cacat permukaan pada interior mobil?
+b. Jika sepuluh mobil dijual, berapa probabilitas dari sepuluh mobil tersebut tidak ada yang memiliki cacat permukaan?
+c. Jika sepuluh mobil dijual, berapa probabilitas paling banyak satu mobil yang memiliki cacat permukaan?
+d. Jika 100 Panel diperiksa, berapa probabilitas lebih sedikit dari 5 panel memiliki cacat permukaan?
+
+
+
+**Soal 12**
+Sebuah bank berskala nasional merencanakan meletakkan 5 set infrastruktur hardware di 5 Data Center (Jakarta, Surabaya, Kalimantan, Batam, dan Papua) untuk menjalankan aplikasi *Core Banking System* (CBS). Masing-masing set infrastruktur hardware memiliki probabilitas untuk bekerja dengan baik sebesar 0,8. Definisikan $X$ sebagai *random variable* yang merepresentasikan jumlah Data Center yang bekerja dengan baik.
+a. Buatlah tabel distribusi probabilitas *random variable* $X$!
+b. Gambarkan distribusi peluang *random variable* $X$!
+c. Gambarkan distribusi kumulatif *random variable* $X$!
+d. Dengan melihat gambar distribusi kumulatif, estimasikan suatu nilai $M$ sehingga $P(X \le M) = 0,5$. Nilai $M$ ini disebut nilai median!
+e. Tentukan mean dan variansi untuk *random variable* $X$!
+f. Tentukan probabilitas sistem down secara total!
+g. Tentukan probabilitas sistem nyaris down secara total (tinggal 1 Data Center yang bekerja dengan baik)!
+h. Tentukan probabilitas minimal 1 Data Center bekerja dengan baik!
+
+
+
+**Soal 13**
+Sebuah komponen memiliki umur $L$ yang diukur dalam satuan hari, sedemikian sehingga $P(L=n)$ dari kegagalan pada hari ke-$n$ diberikan oleh distribusi geometrik, dan mengikuti $P(L=n) = (1 - b)b^n$; untuk $n = 0, 1, 2, 3, \dots$. Bila $b = 0,6$:
+a. Gambarkan distribusi peluang dari *random variable* $L$!
+b. Gambarkan distribusi kumulatif dari *random variable* $L$!
+c. Estimasikan suatu nilai $M$ sehingga $P(L \le M) = 0,5$ (nilai median)!
+d. Tentukan nilai ekspektasi (mean) untuk *random variable* $L$!
+e. Tentukan peluang kejadian $F_i$, yaitu kejadian bahwa tidak terjadi failure (kerusakan) sebelum hari ke-$i$.
+
+
+
+**Soal 14**
+Diketahui fungsi padat probabilitas (*density function*) dari *random variable* kontinu $X$ adalah:
+
+$$
+f(x) = 
+\begin{cases} 
+kx, & 0 \le x \le 4 \\ 
+0, & x \text{ lainnya} 
+\end{cases}
+$$
+
+a. Hitung nilai $k$!
+b. Gambar grafik $f(x)$!
+c. Hitung $F(x)$!
+d. Gambarkan grafik $F(x)$!
+e. Hitung $P(X < 1/2)$ dan $P(1/2 < X < 1)$!
+
+
+
+**Soal 15**
+Running time algoritma komputasi tertentu $R$ minimal adalah satu unit waktu ($v=1$) dan peluang $R > 10$ unit waktu adalah 0,5. Hal ini dengan asumsi bahwa algoritma ini diinisiasi secara sebarang. Tentukan probabilitas bahwa running time melebihi 1000 unit waktu! Diasumsikan $R$ mengikuti distribusi Pareto:
+
+$$ f(r) = \frac{a r_m^a}{r^{a+1}} \quad \text{dan} \quad F(r) = 1 - \left(\frac{r_m}{r}\right)^a $$
+
+
+
+**Soal 16**
+Sebuah sesi *file transfer protocol* (ftp) berdurasi $L$ memiliki waktu minimum $t_0$. Diketahui $P(L > 2t_0) = 4P(L > 4t_0)$ dan probability density function $L$ adalah $f(l) = a t_0^a l^{-a-1}$, $a > 0$ untuk $l \ge t_0$ dan nol untuk $l < t_0$. Tentukan probabilitas sebuah sesi akan melebihi $10t_0$!
+
+
+
+**Soal 17**
+Kereta Api tiba di stasiun setiap 15 menit dimulai pukul 07.00. Jika seorang penumpang tiba distasiun tersebut pukul 07.00 sampai 07.30 yang dianggap berdistribusi uniform, hitung peluang penumpang tersebut menunggu kereta api kurang dari 5 menit?
+
+
+
+**Soal 18**
+Probabilitas fungsi kepadatan dari berat bersih (dalam pound) pada sebuah paket senyawa kimia herbisida adalah $f(x) = 2,0$ untuk setiap nilai pada $49,75 < x < 50,25$ pounds.
+a. Tentukan probabilitas untuk paket tersebut memiliki berat lebih dari 50 pounds.
+b. Berapa banyak senyawa kimia yang terkandung dalam 90% dari keseluruhan paket?
+
+
+
+**Soal 19**
+Diketahui fungsi distribusi *random variable* kontinu $X$ adalah:
+
+$$
+F(x) = 
+\begin{cases} 
+0 & x < 0 \\ 
+0,2x & 0 \le x < 4 \\ 
+0,04x + 0,64 & 4 \le x < 9 \\ 
+1 & 9 \le x 
+\end{cases}
+$$
+
+a. Tentukan nilai $E(X)$!
+b. Tentukan nilai $P(X \ge 6)$!
+
+
+
+**Soal 20**
+Jumlah kesalahan ketik dalam suatu buku teks mengikuti distribusi Poisson dengan mean 0,01 kesalahan/halaman. Berapa probabilitas terdapat kurang dari atau sama dengan tiga kesalahan dalam 100 halaman?
+
+
+
+**Soal 21**
+Suatu persimpangan dengan lampu sinyal pada jalur berangkat pagi adalah 20% hijau pada waktu kamu melewatinya. Asumsikan setiap pagi adalah percobaan yang independen.
+a. Dalam 5 pagi (5 hari), berapa probabilitas lampunya hijau hanya pada satu pagi saja?
+b. Dalam 20 pagi, berapa probabilitas lampunya hijau tepat empat kali?
+c. Dalam 20 minggu, berapa probabilitas lampunya hijau lebih dari empat kali?
+
+
+
+**Soal 22**
+Suatu perusahaan menyimpan komponen yang didapat dari pemasok. Misalkan 2% dari komponen adalah cacat dan komponen yang cacat saling bebas satu sama lain. Berapa banyak komponen yang harus dipunya perusahaan sehingga 100 order dapat diselesaikan tanpa memesan komponen lagi mempunyai probabilitas paling tidak 0,95?
+
+
+
+**Soal 23**
+Misalkan bahwa jumlah km suatu mobil bisa melaju sampai akinya habis adalah berdistribusi eksponensial dengan mean 10000 km. Jika seseorang ingin melakukan perjalanan 5000 km, berapa probabilitas dia bisa menyelesaikan perjalanannya tanpa harus mengganti akinya?
+
+
+
+Berikut adalah analisis dari setiap soal pada Problem Set 3 beserta prinsip probabilitas yang digunakan, solusinya, dan implementasi kode Python untuk memecahkannya.
+
+### **Prinsip-Prinsip Dasar yang Digunakan**
+Berdasarkan materi kuliah *Random Variable*, berikut adalah prinsip utama untuk menyelesaikan Problem Set 3:
+1.  **Random Variable Diskrit:** Memiliki himpunan nilai yang terhitung. Fungsi Probabilitas (PMF) dinotasikan dengan $f(x) = P(X = x)$ dengan syarat $\sum f(x) = 1$.
+2.  **Random Variable Kontinu:** Nilainya terdefinisi pada interval tak terhitung, dan probabilitas adalah luas area di bawah kurva Fungsi Kepadatan Probabilitas (PDF), dihitung dengan integral $P(a < X < b) = \int_a^b f(x) dx$. 
+3.  **Fungsi Distribusi Kumulatif (CDF):** CDF atau $F(x)$ adalah akumulasi probabilitas $P(X \le x)$. Pada fungsi kontinu, $f(x)$ adalah turunan pertama dari CDF, yaitu $f(x) = dF(x)/dx$.
+4.  **Nilai Harap (Mean/Ekspektasi) dan Variansi:** Mean ($\mu$) menunjukkan pusat distribusi probabilitas, dihitung dengan $\sum x f(x)$ untuk diskrit dan $\int x f(x) dx$ untuk kontinu. Variansi ($\sigma^2$) mengukur penyebaran, dihitung dengan $E(X^2) - \mu^2$.
+
+---
+
+### **Solusi Bebrapa Soal Problem Set 3**
+
+**Soal 1: Analisis Distribusi Diskrit**
+*   **Masalah:** Diketahui $X$ diskrit dengan $P(0,2)=0,1; P(0,4)=0,2; P(0,5)=0,2; P(0,8)=0,3; P(1)=0,2$.
+*   **Solusi:**
+    *   **Range ($R_x$):** $\{0,2;\; 0,4;\; 0,5;\; 0,8;\; 1\}$.
+    *   **$P(X \le 0,5)$:** $0,1 + 0,2 + 0,2 = \mathbf{0,5}$.
+    *   **$P(0,25 < X < 0,75)$:** Nilai yang masuk hanyalah 0,4 dan 0,5. Jumlahnya $= 0,2 + 0,2 = \mathbf{0,4}$ *(Catatan: Pada dokumen sumber terdapat ralat perhitungan manual di mana probabilitas $0,8$ ikut ditambahkan sehingga menjadi $0,7$)*.
+    *   **Probabilitas Bersyarat $P(X=0,2 \mid X<0,6)$:** $P(X=0,2) / P(X<0,6) = 0,1 / (0,1+0,2+0,2) = 0,1 / 0,5 = \mathbf{0,2}$.
+    *   **Mean & Variansi:** $\mu = \sum xP(x) = \mathbf{0,64}$. Variansi $\sigma^2 = E(X^2) - \mu^2 = 0,478 - 0,64^2 = \mathbf{0,0684}$.
+
+**Soal 2: Fungsi Distribusi Kumulatif (CDF) Eksponensial Khusus**
+*   **Masalah:** $F(x) = 1 - e^{-x^2}$ untuk $x > 0$. Berapa probabilitas $X > 1$?.
+*   **Solusi:** $P(X > 1) = 1 - P(X \le 1) = 1 - F(1) = 1 - (1 - e^{-1}) = e^{-1} \approx \mathbf{0,3679}$.
+
+**Soal 3 & 4: Pemodelan Fungsi Massa Probabilitas (PMF)**
+*   **Masalah:** Menerjemahkan probabilitas kesuksesan produk menjadi fungsi PMF pendapatan $X$.
+*   **Solusi:**
+    *   **Soal 3:** $f(10M) = 0,1;\; f(50M) = 0,6;\; f(100M) = 0,3$.
+    *   **Soal 4:** $f(100M) = 0,2;\; f(250M) = 0,3;\; f(500M) = 0,5$.
+
+**Soal 5: PDF Berupa Garis Linear ($f(x) = kx$)**
+*   **Masalah:** $f(x) = kx$ untuk $0 \le x \le 4$. Tentukan konstanta $k$, CDF, dan probabilitas pada rentang tertentu.
+*   **Solusi:**
+    *   **Mencari $k$:** $\int_0^4 kx dx = 1 \implies 8k = 1 \implies \mathbf{k = 1/8}$.
+    *   **Fungsi CDF ($F(x)$):** $\int_0^x \frac{1}{8}t dt = \mathbf{x^2/16}$.
+    *   **$P(X < 1/2)$:** $F(1/2) = (1/2)^2 / 16 = \mathbf{1/64}$.
+    *   **$P(1/2 < X < 1)$:** $F(1) - F(1/2) = \frac{1}{16} - \frac{1}{64} = \mathbf{3/64}$.
+
+**Soal 6: Distribusi Pareto (Waktu Komputasi Algoritma)**
+*   **Masalah:** $F(r) = 1 - (1/r)^\alpha$. Diketahui $P(R > 10) = 0,5$. Cari $P(R > 1000)$.
+*   **Solusi:** Substitusi $P(R \le 10) = 0,5 \implies 1 - (1/10)^\alpha = 0,5 \implies 10^{-\alpha} = 0,5 \implies \alpha = -\log(0,5)$. Lalu hitung target: $P(R > 1000) = (1/1000)^{-\log(0,5)} = \mathbf{0,125}$.
+
+**Soal 7: Distribusi Seragam Senyawa Kimia**
+*   **Masalah:** $f(x) = 2,0$ pada interval $49,75 < x < 50,25$. Jika $Y$ melambangkan $90\%$ dari $X$, tentukan nilai batas intervalnya.
+*   **Solusi:** $P(X > 50) = \int_{50}^{50,25} 2,0 dx = \mathbf{0,5}$. Transformasi $Y = 0,9X \implies X = Y/0,9 \approx 1,111Y$. Maka interval batas baru $Y$ adalah $49,75 < 1,111Y < 50,25 \implies \mathbf{44,775 < y < 47,25}$.
+
+**Soal 8: Ekstraksi PDF dari CDF Terpotong (Piecewise)**
+*   **Masalah:** Diketahui CDF $F(x) = 0,2x$ (untuk $0 \le x < 4$) dan $0,04x + 0,64$ (untuk $4 \le x < 9$). Hitung Ekspektasi $E(X)$ dan $P(X \ge 6)$.
+*   **Solusi:**
+    *   Turunkan $F(x)$ untuk mendapat $f(x)$: Diperoleh $f(x) = 0,2$ pada $x \in [0,4)$ dan $f(x) = 0,04$ pada $x \in [4,9)$.
+    *   **Ekspektasi $E(X)$:** $\int_0^4 x(0,2) dx + \int_4^9 x(0,04) dx = 1,6 + 1,3 = \mathbf{2,9}$.
+    *   **$P(X \ge 6)$:** $1 - F(6) = 1 - (0,04(6) + 0,64) = 1 - 0,88 = \mathbf{0,12}$.
+
+---
+
+### **Desain Kode Python (Class `ProbSet3Solver`)**
+
+Kode berikut menyediakan alat matematis berbasis fungsi integrasi `scipy` dan `numpy` untuk menyelesaikan seluruh logika soal di atas secara *reusable*.
+
+```python
+import numpy as np
+import scipy.integrate as integrate
+import math
+
+class ProbSet3Solver:
+    """Class penyelesaian Problem Set 3 Probabilitas & Statistik"""
+    
+    @staticmethod
+    def discrete_stats(x_vals, p_vals):
+        """Menghitung Mean dan Variansi Distribusi Diskrit (Soal 1)"""
+        mean = sum(x * p for x, p in zip(x_vals, p_vals))
+        e_x_square = sum((x**2) * p for x, p in zip(x_vals, p_vals))
+        variance = e_x_square - (mean**2)
+        return mean, variance
+
+    @staticmethod
+    def discrete_conditional(x_vals, p_vals, target_x, condition_max):
+        """P(X = target_x | X < condition_max)"""
+        p_target = p_vals[x_vals.index(target_x)]
+        p_condition = sum(p for x, p in zip(x_vals, p_vals) if x < condition_max)
+        return p_target / p_condition
+
+    @staticmethod
+    def continuous_cdf_exp_square(x):
+        """Evaluasi F(x) = 1 - e^(-x^2) untuk mencari P(X > x) (Soal 2)"""
+        f_x = 1 - math.exp(-(x**2))
+        return 1 - f_x # P(X > x)
+
+    @staticmethod
+    def find_pdf_constant(func_template, a, b):
+        """Mencari konstanta k agar Integral f(x) = 1 (Soal 5)"""
+        # func_template adalah fungsi tanpa k, misal x -> x
+        integral_val, _ = integrate.quad(func_template, a, b)
+        k = 1 / integral_val
+        return k
+
+    @staticmethod
+    def pareto_probability(r_known, p_known_greater, r_target):
+        """Menyelesaikan Soal Pareto dengan mencari alpha dari logaritma (Soal 6)"""
+        # P(R > r_known) = p_known_greater  => (1/r_known)^alpha = p_known_greater
+        # alpha * log(1/r_known) = log(p_known_greater)
+        alpha = math.log(p_known_greater) / math.log(1 / r_known)
+        # Menghitung probabilitas target P(R > r_target)
+        return (1 / r_target)**alpha
+
+    @staticmethod
+    def piecewise_expected_value(funcs, bounds):
+        """
+        Mencari E(X) dari fungsi terpotong (Piecewise) (Soal 8).
+        funcs = [f1(x), f2(x)], bounds = [(a,b), (c,d)]
+        """
+        expected_value = 0
+        for f, (a, b) in zip(funcs, bounds):
+            val, _ = integrate.quad(lambda x: x * f(x), a, b)
+            expected_value += val
+        return expected_value
+
+# ==========================================
+# EKSKUSI SOLUSI MENGGUNAKAN KELAS PYTHON
+# ==========================================
+if __name__ == "__main__":
+    solver = ProbSet3Solver()
+
+    # --- Soal 1 ---
+    x_vals = [0.2, 0.4, 0.5, 0.8, 1.0]
+    p_vals = [0.1, 0.2, 0.2, 0.3, 0.2]
+    mean_1, var_1 = solver.discrete_stats(x_vals, p_vals)
+    p_cond = solver.discrete_conditional(x_vals, p_vals, 0.2, 0.6)
+    print(f"Soal 1 -> Mean: {mean_1:.2f}, Var: {var_1:.4f}")
+    print(f"Soal 1 -> P(X=0.2 | X<0.6) = {p_cond:.2f}")
+
+    # --- Soal 2 ---
+    p_gt_1 = solver.continuous_cdf_exp_square(1)
+    print(f"Soal 2 -> P(X > 1) = {p_gt_1:.4f}")
+
+    # --- Soal 5 ---
+    # f(x) = k*x dari 0 ke 4
+    k = solver.find_pdf_constant(lambda x: x, 0, 4)
+    print(f"Soal 5 -> Konstanta k = {k:.3f}")
+
+    # --- Soal 6 ---
+    # P(R > 10) = 0.5, cari P(R > 1000)
+    p_pareto = solver.pareto_probability(10, 0.5, 1000)
+    print(f"Soal 6 -> P(R > 1000) = {p_pareto:.3f}")
+
+    # --- Soal 8 ---
+    # f(x) = 0.2 (0 sampai 4), dan f(x) = 0.04 (4 sampai 9)
+    funcs = [lambda x: 0.2, lambda x: 0.04]
+    bounds = [(0, 4), (4, 9)]
+    exp_8 = solver.piecewise_expected_value(funcs, bounds)
+    print(f"Soal 8 -> E(X) = {exp_8:.2f}")
+```

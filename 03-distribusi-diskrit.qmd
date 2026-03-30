@@ -1,8 +1,8 @@
----
+
 title: "Bab 3. Distribusi Random Variable Diskrit"
 format: html
 jupyter: python3
----
+
 
 ## Tujuan Bab
 
@@ -802,3 +802,268 @@ Yang terpenting bukan hanya bisa menghitung peluangnya, tetapi juga bisa mengata
 Kalau di bab sebelumnya kita baru belajar “apa itu random variable”, maka di bab ini kita mulai benar-benar melihat keluarga model yang bisa dipakai untuk dunia nyata.
 
 Di bab berikutnya, kita akan beralih ke **distribusi random variable kontinu**. Di sana, fokus kita tidak lagi pada hitungan kejadian, tetapi pada besaran seperti waktu, umur hidup, tinggi, jarak, dan banyak pengukuran lain yang lebih nyaman dipandang kontinu.
+
+
+## Tambahan Soal
+Sumber "Problem Set 4: Probabilitas dan Statistik"
+author: "Dosen: Dimitri Mahayana"
+
+
+
+
+**Soal 1**
+Misalkan $X$ adalah peubah acak berdistribusi seragam dengan rentang bilangan bulat 0 sampai 9. Tentukan rataan (mean), variansi dan standar deviasi dari peubah acak $Y = 5X$ dan bandingkan hasilnya dengan $X$!
+
+
+
+**Soal 2**
+Jumlah panggilan telepon yang datang pada suatu operator selular sering dimodelkan sebagai random variable yang mengikuti distribusi Poisson. Misalkan pada rata-ratanya, terdapat 10 panggilan per jam. 
+a. Berapa probabilitas terdapat tepat 5 panggilan dalam 1 jam?
+b. Berapa probabilitas terdapat 3 atau kurang panggilan dalam 1 jam?
+c. Berapa probabilitas terdapat tepat 15 panggilan dalam 2 jam?
+d. Berapa probabilitas terdapat tepat 5 panggilan dalam 30 menit?
+
+
+
+**Soal 3**
+Jumlah permukaan cacat pada panel plastik yang digunakan dalam interior mobil memiliki distribusi Poisson dengan mean 0,05 cacat per $\text{ft}^2$. Asumsikan suatu interior mobil mengandung 10 $\text{ft}^2$ panel plastik.
+a. Berapa probabilitas tidak terdapat cacat permukaan pada interior mobil?
+b. Jika sepuluh mobil dijual, berapa probabilitas dari sepuluh mobil tersebut tidak ada yang memiliki cacat permukaan?
+c. Jika sepuluh mobil dijual, berapa probabilitas paling banyak satu mobil yang memiliki cacat permukaan?
+d. Jika 100 Panel diperiksa, berapa probabilitas lebih sedikit dari 5 panel memiliki cacat permukaan?
+
+
+
+**Soal 4**
+Sebuah bank berskala nasional merencanakan meletakkan 5 set infrastruktur hardware di 5 data center untuk menjalankan aplikasi *Core Banking System* (CBS) yang melayani para nasabah. 5 data center masing-masing dipilih di Jakarta, Surabaya, Kalimantan, Batam dan Papua. Tujuannya adalah untuk mencegah sistem down secara total bila terjadi bencana (disaster) di satu data center. Perencanaan juga bertujuan agar bank tetap bisa menjalankan operasi bisnis dan melayani pelanggan dengan baik bila terjadi bencana (disaster) yang melumpuhkan operasi di salah satu data center. Masing-masing set infrastruktur hardware memiliki probability untuk bekerja dengan baik sebesar 0,8. Definisikan $X$ sebagai random variable yang merepresentasikan jumlah Data Center yang bekerja dengan baik.
+a. Buatlah tabel distribusi probabilitas random variable $X$!
+b. Gambarkan distribusi probabilitas random variable $X$!
+c. Gambarkan distribusi kumulatif random variable $X$!
+d. Dengan melihat gambar distribusi kumulatif random variable $X$, estimasikan suatu nilai $M$ sehingga $P(X \le M) = 0,5$. Nilai $M$ ini disebut nilai median dari random variable $X$!
+e. Tentukan mean dan variansi untuk random variable $X$!
+f. Tentukan probabilitas sistem down secara total!
+g. Tentukan probabilitas sistem nyaris down secara total, dalam arti tinggal 1 Data Center yang bekerja dengan baik!
+h. Tentukan probabilitas minimal 1 Data Center bekerja dengan baik!
+
+
+
+**Soal 5**
+Sebuah komponen memiliki umur $L$ yang diukur dalam satuan hari, sedemikian sehingga $P[L=n]$ dari kegagalan pada hari ke $n$ diberikan oleh distribusi geometrik, dan mengikuti $P[L = n] = (1 – b)b^n$; untuk $n = 0,1,2,3,\dots$. Bila $b = 0,6$:
+a. Gambarkan distribusi probabilitas dari random variable $L$!
+b. Gambarkan distribusi kumulatif dari random variable $L$!
+c. Dengan melihat gambar distribusi kumulatif random variable $L$, estimasikan suatu nilai $M$ sehingga $P(X \le M) = 0,5$. Nilai $M$ ini disebut nilai median dari random variable $L$!
+d. Tentukan nilai ekspektasi (mean) untuk random variable $L$!
+e. Tentukan peluang kejadian $F_i$, yaitu kejadian bahwa tidak terjadi failure (kerusakan) sebelum hari ke-$i$.
+
+
+
+**Soal 6**
+Tentukan range dari masing-masing random variable berikut.
+a. Suatu timbangan elektrik menampilkan berat pada gram terdekatnya. Timbangan ini hanya menampilkan 5 digit saja. Semua berat yang lebih dari nilai tersebut (99999 g) akan ditampilkan sebagai 99999. Random variablenya adalah berat yang ditampilkan.
+b. Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. Random variablenya adalah jumlah part dari sampling sebanyak 5 part yang tidak sesuai dengan persyaratan pelanggan.
+c. Sebanyak 500 part mesin mengandung 10 part yang tidak sesuai dengan persyaratan pelanggan. Part tersebut dipilih secara acak, secara langsung tanpa pengembalian, sampai part yang tidak sesuai dengan syarat didapat. Random variablenya adalah jumlah part yang terambil.
+
+
+
+**Soal 7**
+Suatu sistem komunikasi untuk bisnis mempunyai 4 jalur eksternal. Pada waktu tertentu, sistem ini diobservasi. Misalkan random variable $X$ melambangkan jumlah jalur yang digunakan. Asumsikan probabilitas suatu jalur sedang digunakan saat observasi adalah 0,8. Tentukan ruang sampel dari observasi tersebut! Gambarkan dalam tabel! Diasumsikan bahwa jalur satu sama lain adalah independen.
+
+
+
+**Soal 8**
+Dalam proses manufaktur semikonduktor, 3 wafer diuji. Setiap wafer akan dinyatakan lolos uji atau gagal. Asumsi probabilitas sebuah wafer lolos uji adalah 0,8 dan wafer-wafer tersebut independen.
+a. Tentukan PMF dari jumlah wafer yang lolos uji! Tentukan CMF dari jumlah wafer yang lolos uji!
+b. Tentukan mean dari random variable tersebut!
+c. Tentukan variansi dari random variable tersebut!
+
+
+
+**Soal 9**
+Jumlah kesalahan ketik dalam suatu buku teks mengikuti distribusi Poisson dengan mean 0,01 kesalahan/halaman. Berapa probabilitas terdapat kurang dari atau sama dengan tiga kesalahan dalam 100 halaman?
+
+
+
+**Soal 10**
+Suatu persimpangan dengan lampu sinyal pada jalur berangkat pagi adalah 20% hijau pada waktu kamu melewatinya (tidak perlu menunggu lampu merah). Asumsikan setiap pagi adalah percobaan yang independen.
+a. Dalam 5 pagi (5 hari), berapa probabilitas lampunya hijau hanya pada satu pagi saja?
+b. Dalam 20 pagi, berapa probabilitas lampunya hijau tepat empat kali?
+c. Dalam 20 minggu, berapa probabilitas lampunya hijau lebih dari empat kali?
+
+
+Berdasarkan dokumen sumber yang Anda berikan, yaitu materi kuliah dan **Problem Set 4**, fokus utamanya adalah pada keluarga **Distribusi Probabilitas Diskrit**, yang meliputi Distribusi Seragam Diskrit, Binomial, Geometrik, dan Poisson. 
+
+Berikut adalah analisis prinsip, solusi lengkap untuk ke-10 soal pada dokumen tersebut, serta implementasi Python berbasis OOP (*Object-Oriented Programming*) untuk menyelesaikannya.
+
+
+
+### **Analisis Soal dan Prinsip Probabilitas (Problem Set 4)**
+
+**Soal 1: Peubah Acak Seragam Diskrit**
+*   **Masalah:** $X$ terdistribusi seragam dari 0 sampai 9. Cari mean, variansi, standar deviasi $X$ dan $Y = 5X$.
+*   **Prinsip:** **Distribusi Seragam Diskrit & Linearitas.** Jika probabilitas setiap kejadian sama, rata-rata adalah nilai tengah $(a+b)/2$ dan variansi dihitung dengan $( (b-a+1)^2 - 1 ) / 12$. Sifat linear menyatakan $E(aX) = aE(X)$ dan $Var(aX) = a^2Var(X)$.
+*   **Solusi:**
+    *   $E(X) = (9+0)/2 = \mathbf{4,5}$.
+    *   $\sigma_X^2 = ((9-0+1)^2 - 1) / 12 = \mathbf{8,25}$. 
+    *   $\sigma_X = \sqrt{8,25} = \mathbf{2,87}$.
+    *   Untuk $Y=5X$: $E(Y) = 5(4,5) = \mathbf{22,5}$; $\sigma_Y^2 = 5^2(8,25) = \mathbf{206,25}$; $\sigma_Y = \mathbf{14,36}$.
+
+**Soal 2: Panggilan Telepon Operator**
+*   **Masalah:** Panggilan masuk 10 per jam ($\lambda=10$). Hitung probabilitas kejadian pada berbagai interval waktu.
+*   **Prinsip:** **Proses Poisson.** Digunakan untuk menghitung probabilitas jumlah kejadian pada rentang waktu kontinu. Parameter $\lambda$ (laju) harus disesuaikan proporsional dengan interval waktu $t$ ($\mu = \lambda t$).
+*   **Solusi:**
+    *   a) Tepat 5 panggilan (1 jam): $P(X=5; \lambda=10) = e^{-10}10^5 / 5! = \mathbf{0,037833}$.
+    *   b) $\le 3$ panggilan (1 jam): $\sum_{x=0}^3 e^{-10}10^x / x! = \mathbf{0,010336}$.
+    *   c) Tepat 15 (2 jam, $\lambda t=20$): $e^{-20}20^{15} / 15! = \mathbf{0,051649}$.
+    *   d) Tepat 5 (0,5 jam, $\lambda t=5$): $e^{-5}5^5 / 5! = \mathbf{0,175467}$.
+
+**Soal 3: Cacat Panel Interior Mobil**
+*   **Masalah:** Cacat Poisson 0,05/$ft^2$. 1 mobil = 10 $ft^2$. Hitung probabilitas cacat untuk 1 mobil dan 10 mobil.
+*   **Prinsip:** **Gabungan Poisson dan Binomial.** Poisson digunakan untuk mencari probabilitas dasar suatu barang cacat/tidak. Hasilnya diumpankan sebagai probabilitas sukses ($p$) ke model Binomial untuk menghitung distribusi pada kelompok sampel (misal 10 mobil).
+*   **Solusi:**
+    *   a) 1 mobil tanpa cacat ($\mu = 0,05 \times 10 = 0,5$): $P(X=0) = e^{-0.5}(0.5)^0/0! = \mathbf{0,60653}$.
+    *   b) 10 mobil tanpa cacat: $b(0; 10, 0,60653) = \mathbf{0,006738}$.
+    *   c) $\le 1$ mobil cacat dari 10 mobil ($p_{cacat} = 1-0,60653$): $P(Y \le 1) = \mathbf{0,050448}$.
+    *   d) 100 panel, $<5$ cacat: Jika 1 panel=1 $ft^2$, $p=0,9512$, $P(Y<5) = \mathbf{0,4583}$. Jika 1 panel=10 $ft^2$, $p=0,60653$, $P(Y<5) = \mathbf{1,43 \times 10^{-16}}$.
+
+**Soal 4: Keandalan Data Center**
+*   **Masalah:** 5 Data Center, probabilitas ON = 0,8. Cari PMF, Median, Mean, Variansi, dan probabilitas kegagalan.
+*   **Prinsip:** **Eksperimen Bernoulli & Binomial.** Karena sistem hanya memiliki kondisi ON/OFF yang saling independen, ini adalah proses Bernoulli dengan $n=5, p=0,8$.
+*   **Solusi:**
+    *   e) Rata-rata $\mu = np = 5(0,8) = \mathbf{4}$; Variansi $\sigma^2 = npq = 5(0,8)(0,2) = \mathbf{0,8}$.
+    *   d) Median $M = \mathbf{3}$ (karena probabilitas kumulatif melewati 0,5 pada titik ini).
+    *   f) Sistem down total $P(X=0) = \mathbf{0,00032}$.
+    *   g) 1 yang ON $P(X=1) = \mathbf{0,0064}$.
+    *   h) Minimal 1 ON $P(X \ge 1) = 1 - P(X=0) = \mathbf{0,99968}$.
+
+**Soal 5: Umur Komponen (Geometrik)**
+*   **Masalah:** Kegagalan pada hari ke-$n$ mengikuti $P[L=n] = (1-b)b^n$ dengan $b=0,6$.
+*   **Prinsip:** **Distribusi Geometrik.** Memodelkan jumlah percobaan sampai sukses (atau kegagalan) pertama didapatkan. Bentuk kumulatifnya menggunakan prinsip deret ukur tak hingga.
+*   **Solusi:**
+    *   c) Median $M = \mathbf{0}$.
+    *   d) Ekspektasi $E(L) = (1-b)/(1-b) = \mathbf{1}$.
+    *   e) Peluang tidak gagal sebelum hari ke-$i$ ($F_i$): Diperoleh dari $\sum_{l=i}^\infty (1-b)b^l = \mathbf{b^i}$.
+
+**Soal 6: Range Ruang Sampel**
+*   **Masalah:** Menentukan *Sample Space* (Ruang Sampel) dari 3 eksperimen berbeda.
+*   **Prinsip:** **Definisi Ruang Sampel.** Memetakan semua kemungkinan hasil (*outcomes*) yang logis dari suatu eksperimen acak.
+*   **Solusi:**
+    *   a) Timbangan 5 digit: $\mathbf{R_X = \{0, 1, 2, ..., 99999\}}$.
+    *   b) Ambil 5 part: $\mathbf{R_X = \{0, 1, 2, 3, 4, 5\}}$ cacat.
+    *   c) Tarik acak sampai dapat 1 cacat (total 500, 10 cacat): Jumlah maksimum tarikan gagal adalah 490 (karena 490 part baik). Tarikan ke-491 pasti cacat. Jadi $\mathbf{R_X = \{1, 2, ..., 491\}}$.
+
+**Soal 7: Jalur Eksternal Komunikasi**
+*   **Masalah:** 4 jalur observasi, probabilitas digunakan $p=0,8$. Tentukan ruang sampel dan PMF.
+*   **Prinsip:** **Binomial PMF.** Menggunakan rumus kombinasi $\binom{n}{x} p^x q^{n-x}$ untuk $n=4, p=0,8$.
+*   **Solusi:** 
+    Tabel probabilitas: $X=0 \rightarrow \mathbf{0,0016}$, $X=1 \rightarrow \mathbf{0,0256}$, $X=2 \rightarrow \mathbf{0,1536}$, $X=3 \rightarrow \mathbf{0,4096}$, $X=4 \rightarrow \mathbf{0,4096}$.
+
+**Soal 8: Uji Manufaktur Wafer**
+*   **Masalah:** 3 wafer diuji, peluang lolos 0,8. Cari PMF, CMF, Mean, dan Variansi.
+*   **Prinsip:** **Sifat Lengkap Distribusi Binomial.** Menggunakan rumus dasar nilai harap $E(X)=np$ dan variansi $\sigma^2=npq$.
+*   **Solusi:**
+    *   a) PMF $x \in \{0,1,2,3\}$ secara berurutan: $\mathbf{0,008;\; 0,096;\; 0,384;\; 0,512}$. CMF: $\mathbf{0,008;\; 0,104;\; 0,488;\; 1,000}$.
+    *   b) Mean $\mu = 3(0,8) = \mathbf{2,4}$.
+    *   c) Variansi $\sigma^2 = 3(0,8)(0,2) = \mathbf{0,48}$.
+
+**Soal 9: Typo Buku Teks**
+*   **Masalah:** Poisson mean 0,01 per halaman. Berapa $P(\le 3)$ untuk 100 halaman?
+*   **Prinsip:** **Proporsionalitas Interval Poisson.** Karena rentang diubah menjadi 100 halaman, laju $\lambda$ dikalikan 100 menjadi $\mu = 1$.
+*   **Solusi:** $P(X \le 3) = \sum_{x=0}^3 e^{-1}1^x/x! = \mathbf{0,981}$.
+
+**Soal 10: Lampu Sinyal Persimpangan**
+*   **Masalah:** Peluang lampu hijau 0,2. Observasi untuk 5 hari, 20 hari, dan 140 hari.
+*   **Prinsip:** **Eksperimen Binomial Berulang.** Proses Bernoulli dapat diskalakan hanya dengan mengubah ukuran sampel observasi ($n$) tanpa merubah probabilitas $p$.
+*   **Solusi:**
+    *   a) $n=5$, Tepat 1 kali ($X=1$): $b(1; 5, 0,2) = \mathbf{0,4096}$.
+    *   b) $n=20$, Tepat 4 kali ($X=4$): $b(4; 20, 0,2) = \mathbf{0,2182}$.
+    *   c) $n=140$, Tepat 4 kali ($X=4$): $b(4; 140, 0,2) = \mathbf{1,6214 \times 10^{-9}}$ *(Catatan: Sumber teks soal tertulis 'lebih dari empat kali', namun rumus solusi di dokumen menghitung probabilitas tepat 4 kali, sehingga jawaban di atas mengikuti alur matematis dokumen sumber)*.
+
+
+
+### **Implementasi Kode Python**
+
+Berikut adalah kelas Python yang dapat didaur ulang (*reusable*) menggunakan pustaka `scipy.stats` untuk memecahkan semua persoalan di atas.
+
+```python
+import scipy.stats as stats
+import math
+
+class DiscreteProbSolver:
+    """Toolkit Python untuk Menyelesaikan Problem Set Distribusi Diskrit Khusus"""
+
+    @staticmethod
+    def uniform_discrete_stats(a, b):
+        """Menghitung Mean, Variansi, dan Standar Deviasi Distribusi Seragam (Soal 1)"""
+        mean = (a + b) / 2
+        variance = ((b - a + 1)**2 - 1) / 12
+        return mean, variance, math.sqrt(variance)
+
+    @staticmethod
+    def poisson_prob(rate, time_multiplier, x, prob_type="exact"):
+        """Menghitung probabilitas Poisson dengan penyesuaian interval waktu (Soal 2, 3, 9)"""
+        mu = rate * time_multiplier
+        if prob_type == "exact":
+            return stats.poisson.pmf(x, mu)
+        elif prob_type == "less_equal":
+            return stats.poisson.cdf(x, mu)
+        elif prob_type == "greater_equal":
+            return stats.poisson.sf(x - 1, mu) # 1 - CDF(x-1)
+
+    @staticmethod
+    def binomial_prob(n, p, x, prob_type="exact"):
+        """Menghitung probabilitas Binomial (Soal 3, 4, 7, 8, 10)"""
+        if prob_type == "exact":
+            return stats.binom.pmf(x, n, p)
+        elif prob_type == "less_equal":
+            return stats.binom.cdf(x, n, p)
+        elif prob_type == "greater_equal":
+            return stats.binom.sf(x - 1, n, p) # 1 - CDF(x-1)
+
+    @staticmethod
+    def binomial_stats(n, p):
+        """Menghitung Mean dan Variansi Distribusi Binomial (Soal 4, 8)"""
+        return n * p, n * p * (1 - p)
+
+    @staticmethod
+    def custom_geometric_survival(b, i):
+        """Fungsi spesifik kelangsungan hidup komponen dari P(L=n) = (1-b)*b^n (Soal 5)"""
+        return b ** i
+
+# ==========================================
+# TEST CASE: MENGUJI METODE UNTUK PROBLEM SET 4
+# ==========================================
+if __name__ == "__main__":
+    solver = DiscreteProbSolver()
+
+    # Soal 1: Seragam Diskrit dan Transformasi Y = 5X
+    mean_X, var_X, std_X = solver.uniform_discrete_stats(0, 9)
+    print(f"Soal 1 - Mean Y: {5 * mean_X}, Variansi Y: {25 * var_X}, Std Y: {5 * std_X:.2f}")
+
+    # Soal 2: Panggilan Telepon (Poisson)
+    prob_2c = solver.poisson_prob(rate=10, time_multiplier=2, x=15, prob_type="exact")
+    print(f"Soal 2c - P(15 panggilan dalam 2 jam): {prob_2c:.6f}")
+
+    # Soal 3: Cacat Panel (Poisson -> Binomial)
+    p_no_defect_1car = solver.poisson_prob(rate=0.05, time_multiplier=10, x=0, prob_type="exact")
+    p_max_1_defect_10cars = solver.binomial_prob(10, 1 - p_no_defect_1car, 1, prob_type="less_equal")
+    print(f"Soal 3c - P(Maks 1 mobil cacat dari 10): {p_max_1_defect_10cars:.6f}")
+
+    # Soal 4: Data Center (Binomial)
+    prob_4h = solver.binomial_prob(n=5, p=0.8, x=1, prob_type="greater_equal")
+    print(f"Soal 4h - P(Minimal 1 Server ON): {prob_4h:.5f}")
+
+    # Soal 5: Komponen Geometrik
+    print(f"Soal 5e - P(Bertahan sampai hari ke-2 dengan b=0.6): {solver.custom_geometric_survival(0.6, 2):.4f}")
+
+    # Soal 8: Uji Wafer (Binomial Stats)
+    mean_8, var_8 = solver.binomial_stats(n=3, p=0.8)
+    print(f"Soal 8 - Mean Wafer Lolos: {mean_8:.1f}, Variansi: {var_8:.2f}")
+
+    # Soal 9: Typo Buku (Poisson)
+    prob_9 = solver.poisson_prob(rate=0.01, time_multiplier=100, x=3, prob_type="less_equal")
+    print(f"Soal 9 - P(<=3 typo di 100 hal): {prob_9:.3f}")
+
+    # Soal 10: Lampu Lalu Lintas (Binomial)
+    prob_10c = solver.binomial_prob(n=140, p=0.2, x=4, prob_type="exact")
+    print(f"Soal 10c - P(Tepat 4 kali hijau dalam 140 hari): {prob_10c:.4e}")
+```

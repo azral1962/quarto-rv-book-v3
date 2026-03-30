@@ -1,8 +1,8 @@
----
+
 title: "Bab 5. Random Variable Multivariat dan Fungsi Random Variable"
 format: html
 jupyter: python3
----
+
 
 ## Tujuan Bab
 
@@ -177,7 +177,7 @@ $$
 dengan $X \in \{0,1,2\}$ dan $Y \in \{0,1\}$:
 
 | $x \backslash y$ | 0   | 1   |
-|---|---:|---:|
+||:|:|
 | 0 | 0.10 | 0.20 |
 | 1 | 0.15 | 0.25 |
 | 2 | 0.10 | 0.20 |
@@ -875,3 +875,546 @@ Ini adalah langkah penting menuju cara berpikir yang lebih matang. Dunia nyata j
 Dengan bab ini, Anda sudah punya salah satu kemampuan yang sangat penting dalam probabilitas: melihat bahwa ketidakpastian jarang berdiri sendiri. Ia biasanya datang berpasangan, berkelompok, saling terkait, dan sering kali menghasilkan peubah baru yang lebih relevan bagi keputusan.
 
 Di bab terakhir, kita akan menutup perjalanan ini dengan merangkum prinsip-prinsip utamanya: bagaimana random variable, distribusi, Python, dan pengambilan keputusan menyatu menjadi satu cara berpikir yang kuat.
+
+
+## Soal Tambahan
+
+Sumber: "Problem Set 6: Probabilitas dan Statistik"
+"Distribusi Probabilitas Gabungan (Multivariat)"
+Author: Dimitri Mahayana
+
+**Petunjuk:** Kerjakan soal-soal berikut dengan teliti dan kumpulkan!
+
+
+
+**Soal 1**
+Tunjukkan bahwa suatu fungsi tertentu memenuhi sifat-sifat dari fungsi massa probabilitas gabungan! *(Catatan: Asumsikan terdapat tabel distribusi probabilitas f(x,y) yang menyertai soal ini).*
+
+
+
+**Soal 2**
+Tentukan nilai $c$ yang dapat membuat fungsi $f(x,y) = c(x+y)$ menjadi sebuah distribusi probabilitas gabungan pada sembilan titik dengan $x = 1, 2, 3$ dan $y = 1, 2, 3$.
+
+
+
+**Soal 3**
+Empat printer elektronik dipilih dari sejumlah printer rusak. Setiap printer diperiksa dan kemudian diklasifikasikan kedalam dua kelas, yakni cacat berat dan cacat ringan. Anggap sebuah *random variable* $X$ dan $Y$ masing-masing menunjukkan jumlah dari printer dengan keadaan cacat berat dan cacat ringan. Tentukan rentang distribusi probabilitas gabungan dari $X$ dan $Y$.
+
+
+
+**Soal 4**
+Sebuah *website* bisnis kecil berisikan 100 *webpages* dengan 60%, 30% dan 10% dari *webpages* tersebut, merupakan *webpages* yang berisikan konten dengan grafik rendah, sedang dan tinggi, secara berurutan. Sampel dari 4 *webpages* dipilih tanpa penggantian, serta $X$ dan $Y$ menunjukkan jumlah *webpages* dengan output grafik sedang dan tinggi pada sampel. Tentukan:
+a. $f_{XY}(x,y)$
+b. $f_X(x)$
+c. $E(X)$
+d. $f_{Y|3}(y)$
+e. $E(Y|X = 3)$
+f. $V(Y|X = 3)$
+g. Apakah $X$ dan $Y$ independen?
+
+
+
+**Soal 5**
+Anggap bahwa variabel random $X$, $Y$, dan $Z$ memiliki distribusi probabilitas gabungan yang terdefinisi pada sebuah tabel (merujuk pada soal sebelumnya). Tentukan:
+a. $P(X=2)$
+b. $P(Z<1,5)$
+c. $E(X)$
+d. $P(X=1, Y=2)$
+e. $P(X=1 \text{ atau } Z=2)$
+
+
+
+**Soal 6**
+Empat oven elektronik yang terjatuh pada saat proses pengiriman diperiksa dan diklasifikasikan menjadi kedalam tiga kelas, yakni cacat berat, cacat ringan dan tidak cacat sama sekali. Pada pengalaman sebelumnya, setidaknya 60% dari oven yang terjatuh pada proses pengiriman akan mengalami cacat berat, 30% akan mengalami cacat ringan dan sekitar 10%-nya tidak akan mengalami kecacatan sama sekali. Asumsikan bahwa kecacatan pada empat oven muncul secara independen.
+a. Apakah distribusi probabilitas dari jumlah oven pada setiap kategori bersifat multinomial? Mengapa demikian/mengapa tidak demikian?
+b. Berapa probabilitas terjadinya kondisi dimana empat oven yang terjatuh, 2 diantaranya mengalami cacat berat dan 2 lainnya mengalami cacat ringan?
+c. Berapa probabilitas terjadinya kondisi dimana tidak ada dari empat oven yang terjatuh tersebut yang mengalami cacat?
+
+
+
+**Soal 7**
+Pada sebuah transmisi informasi digital, probabilitas dimana bit mengalami distorsi tinggi, sedang dan rendah, secara berurutan, adalah 0,01; 0,04 dan 0,95. Anggap bahwa tiga bit ditransmisikan dan setiap muatan distorsi pada setiap bit diasumsikan independen.
+a. Berapa probabilitas terjadinya kondisi dimana dua bit memiliki distorsi tinggi dan satu lainnya mengalami distorsi sedang?
+b. Berapa probabilitas terjadinya kondisi dimana ketiga bit memiliki distorsi rendah?
+
+
+
+**Soal 8**
+Tentukan nilai $c$ yang dapat membuat fungsi $f(x, y) = cxy$ menjadi fungsi padat probabilitas gabungan pada rentang $0 < x < 3$ dan $0 < y < 3$.
+
+
+
+**Soal 9**
+Lanjutan dari soal 8, tentukan hal-hal berikut:
+a. $P(X < 1, Y < 2)$
+b. $P(1 < X < 2)$
+c. $P(Y > 1)$
+d. $P(X < 2, Y < 2)$
+e. $E(X)$
+f. $E(Y)$
+
+
+
+**Soal 10**
+Dua metode dalam mengukur kehalusan permukaan digunakan dalam mengevaluasi sebuah produk kertas. Pengukuran tersebut direkam sebagai deviasi dari nominal kehalusan permukaan dalam satuan terkodifikasi. Distribusi probabilitas gabungan dari dua pengukuran adalah distribusi seragam pada wilayah rentang $0 < x < 4$, $0 < y$, dan $x - 1 < y < x + 1$ dengan fungsi $f_{XY}(x,y) = c$ berlaku pada wilayah rentang tersebut. Tentukan nilai $c$ sedemikian rupa sehingga $f_{XY}(x, y)$ merupakan fungsi distribusi probabilitas gabungan.
+
+
+
+**Soal 11**
+Sebuah bisnis manufaktur pakaian populer menerima pesanan *online* dari dua *routing system* yang berbeda. Rentang waktu antara setiap pesanan untuk setiap *routing system* pada hari biasa diketahui terdistribusi secara eksponensial dengan rata-rata selama 3,2 menit. Setiap sistem diasumsikan beroperasi secara independen. Tentukan:
+a. Berapa probabilitas terjadinya kondisi tidak ada pesanan yang diterima hingga periode waktu 5 menit dari pesanan terakhir? 
+b. Berapa probabilitas untuk keadaan tidak ada pesanan yang diterima hingga periode waktu 10 menit?
+c. Berapa probabilitas terjadinya keadaan kedua sistem menerima dua pesanan pada rentang 10 dan 15 menit setelah situs pemesanan baru dibuka?
+d. Mengapa distribusi probabilitas gabungan tidak dibutuhkan untuk menjawab pertanyaan sebelumnya?
+
+
+
+**Soal 12**
+Anggap variabel random $X$, $Y$, dan $Z$ memiliki fungsi padat probabilitas gabungan $f(x, y, z) = 8xyz$ untuk setiap $0 < x < 1$, $0 < y < 1$ dan $0 < z < 1$. Tentukan hal-hal berikut:
+a. $P(X < 0,5)$
+b. $P(X < 0,5, Y < 0,5)$
+c. $P(Z < 2)$
+d. $P(X < 0,5, Z < 2)$
+e. $E(X)$
+
+
+
+**Soal 13**
+Tentukan nilai $c$ yang dapat membuat fungsi $f_{XYZ}(x, y, z) = c$ menjadi fungsi padat probabilitas gabungan pada wilayah rentang $x > 0$, $y > 0$, $z > 0$, dan $x + y + z < 1$.
+
+
+
+**Soal 14**
+Sebuah manufaktur lampu elektroluminesen mengetahui bahwa jumlah tinta luminesen yang terkandung dalam setiap satu produknya ialah terdistribusi secara normal dengan nilai rata-rata 1,2 gram dan standar deviasi 0,03 gram. Setiap lampu yang memiliki kurang dari 1,14 gram tinta luminesen akan gagal dalam memenuhi spesifikasi pelanggan. Sampel random sejumlah 25 lampu diambil dan kandungan massa tinta luminesen yang terkandung pada setiap sampel lampu tersebut diukur. Tentukan:
+a. Berapa probabilitas bahwa setidaknya 1 lampu gagal memenuhi spesifikasi?
+b. Berapa probabilitas bahwa 5 lampu atau kurang gagal memenuhi spesifikasi?
+c. Berapa probabilitas bahwa seluruh sampel lampu tersebut memenuhi spesifikasi?
+d. Mengapa distribusi probabilitas gabungan dari kasus sampel 25 lampu tidak dibutuhkan untuk menjawab pertanyaan sebelumnya?
+
+
+
+**Soal 15**
+Tentukan nilai $c$ serta nilai kovarian dan korelasi untuk fungsi massa probabilitas gabungan $f_{XY}(x, y) = c(x + y)$ untuk setiap nilai $x = 1, 2, 3$ dan $y = 1, 2, 3$.
+
+
+
+**Soal 16**
+Anggap sebuah korelasi antara $X$ dan $Y$ adalah $\rho$. Untuk konstanta $a$, $b$, $c$, dan $d$, apa korelasi antara variabel random $U = aX + b$ dan $V = cY + d$?
+
+
+
+**Soal 17**
+Anggap $X$ dan $Y$ merepresentasikan konsentrasi dan viskositas dari sebuah produk kimia. Kemudian, anggap $X$ dan $Y$ memiliki distribusi normal bivariat dengan $\sigma_x = 4$, $\sigma_y = 1$, $\mu_x = 2$ dan $\mu_y = 1$. Gambarlah plot kontur kasar dari fungsi padat probabilitas gabungan untuk setiap nilai $\rho$:
+a. $\rho = 0$
+b. $\rho = -0,8$
+c. $\rho = 0,8$
+
+
+
+**Soal 18**
+Pada sebuah manufaktur lampu elektroluminesen, beberapa lapis berbeda dari tinta dimasukkan kedalam plastik substrat. Ketebalan dari *layer* ini sangat vital dalam memenuhi spesifikasi warna akhir dan intensitas cahaya yang dihasilkan dari lampu. Anggap $X$ dan $Y$ menunjukkan ketebalan dari 2 lapisan tinta yang berbeda. Diketahui bahwa $X$ terdistribusi secara normal dengan nilai rata-rata 0,1 milimeter dan standar deviasi sebesar 0,00031 milimeter. $Y$ juga terdistribusi secara normal dengan nilai rata-rata 0,23 milimeter dan standar deviasi sebesar 0,00017 milimeter. Nilai $\rho$ pada kedua variabel tersebut sama dengan 0. 
+
+Agar memenuhi spesifikasi, ketebalan tinta pada lapisan $X$ harus berada pada rentang 0,099535 hingga 0,100465 milimeter serta ketebalan tinta pada lapisan $Y$ harus berada pada rentang 0,22966 hingga 0,23034 milimeter. Berapa probabilitas didapatkannya sebuah lampu yang dipilih secara acak akan sesuai dengan spesifikasi?
+
+
+
+**Soal 19**
+Jika terdapat $X$ dan $Y$, yang mana $X$ dan $Y$ memiliki distribusi normal bivariat dengan nilai $\rho = 0$, maka tunjukkan bahwa $X$ dan $Y$ independen!
+
+
+
+**Soal 20**
+Jika terdapat $X$ dan $Y$, yang mana $X$ dan $Y$ independen dan merupakan variabel random normal dengan $E(X) = 0$, $V(X) = 4$, $E(Y) = 10$, dan $V(Y) = 9$. Tentukan hal-hal berikut:
+a. $E(2X + 3Y)$
+b. $V(2X + 3Y)$
+c. $P(2X + 3Y < 30)$
+d. $P(2X + 3Y < 40)$
+
+
+
+**Soal 21**
+Anggap sebuah variabel random $X$ merepresentasikan panjang sebuah bagian yang dilubangi dalam centimeter. Kemudian anggap variabel random $Y$ merupakan panjang dari bagian tersebut dalam satuan millimeter. Jika $E(X) = 5$ dan $V(X) = 0,25$, maka berapa nilai rata-rata dan variansi dari variabel $Y$?
+
+
+
+**Soal 22**
+Sebuah *casing* plastik untuk sebuah piringan magnetik tersusun dari 2 bagian. Ketebalan dari setiap bagian terdistribusi secara normal dengan nilai rata-rata 2 milimeter dan dengan standar deviasi sebesar 0,1 milimeter serta setiap bagian saling independen.
+a. Tentukan nilai rata-rata dan standar deviasi dari ketebalan total dari kedua bagian *casing* plastik tersebut.
+b. Berapa probabilitas ketebalan total dari kedua bagian *casing* plastik tersebut lebih besar dari 4,3 milimeter.
+
+
+
+**Soal 23**
+Sebuah komponen berbentuk U terbentuk dari 3 bagian, A, B dan C. Panjang dari A terdistribusi normal dengan nilai rata-rata 10 milimeter dan dengan standar deviasi sebesar 0,1 milimeter. Kemudian, ketebalan bagian B dan C terdistribusi secara normal dengan nilai rata-rata 2 milimeter dan dengan standar deviasi sebesar 0,05 milimeter. Asumsikan semua dimensi independen.
+a. Tentukan nilai rata-rata dan standar deviasi dari panjang gap D. *(Diasumsikan gap $D = A - B - C$)*.
+b. Berapa probabilitas bahwa gap D memiliki panjang kurang dari 5,9 milimeter.
+
+
+
+**Soal 24**
+Persentase orang yang diberi obat antirheumatoid yang menderita efek samping parah, sedang dan ringan secara berurutan ialah 10%, 20% dan 70%. Asumsikan bahwa orang bereaksi secara independen dan misalkan 20 orang diberikan obat. Tentukan hal-hal berikut:
+a. Probabilitas bahwa 2, 4 dan 14 orang secara berurutan akan menderita efek samping parah, sedang dan rendah.
+b. Probabilitas bahwa tidak ada seorang pun yang menderita efek samping yang parah.
+c. Nilai rata-rata dan variansi dari jumlah orang yang menderita efek samping parah.
+d. Tentukan distribusi probabilitas bersyarat dari jumlah orang yang menderita efek samping parah ketika 19 orang menderita efek samping ringan.
+e. Tentukan nilai mean bersyarat $\mu_{Y|X}$ dari jumlah orang yang menderita efek samping parah ketika 19 orang menderita efek samping ringan.
+
+
+
+**Soal 25**
+Tentukan nilai $c$ sedemikian rupa sehingga fungsi $f(x, y) = cx^2y$ untuk setiap nilai $0 < x < 3$ dan $0 < y < 2$ memenuhi sifat-sifat fungsi padat probabilitas gabungan!
+
+
+
+**Soal 26**
+Sebuah distribusi gabungan dari variabel random kontinu $X$, $Y$, dan $Z$ adalah konstan pada wilayah $x^2 + y^2 \le 1$ dan $0 < z < 4$.
+a. Tentukan $P(X^2 + Y^2 \le 0,5)$.
+b. Tentukan $P(X^2 + Y^2 \le 0,5, Z < 2)$.
+c. Bagaimana fungsi padat probabilitas gabungan bersyarat dari $X$ dan $Y$ ketika nilai $Z = 1$?
+d. Bagaimana fungsi probabilitas kepadatan marginal $X$?
+e. Tentukan nilai rata-rata bersyarat dari $Z$ ketika nilai $X = 0$ dan $Y = 0$.
+f. Secara umum, tentukan nilai rata-rata bersyarat dari $Z$ ketika nilai $X = x$ dan $Y = y$.
+
+
+
+**Soal 27**
+Umur dari 6 komponen utama pada mesin fotokopi merupakan variabel random dengan nilai rata-rata secara berurutan yakni 8.000, 10.000, 10.000, 20.000, 20.000 dan 25.000 jam. Tentukan:
+a. Berapa probabilitas umur dari seluruh komponen tersebut lebih besar dari 5.000 jam?
+b. Berapa probabilitas umur dari setidaknya satu komponen dari keenam komponen tersebut lebih besar dari 25.000 jam?
+
+
+
+**Soal 28**
+Jika $f_{XY}(x, y) = \frac{1}{1,2\pi} \exp\{ - [0,72(x-1)^2 - 1,6(x-1)(y-2) + (y-2)^2] \}$. Tentukan $E(X)$, $E(Y)$, $V(X)$, $V(Y)$ dan juga $\rho$ dengan mengatur ulang parameter dalam fungsi padat probabilitas gabungan.
+
+
+
+**Soal 29**
+Sebuah perusahaan kecil akan melakukan pengambilan keputusan untuk menentukan investasi apa yang akan digunakan untuk uang tunai yang dihasilkan dari operasi. Setiap investasi memiliki nilai rata-rata dan standar deviasi yang terkait dengan persentase kenaikan. Keamanan pertama memiliki persentase kenaikan nilai rata-rata 5% dengan standar deviasi 2%, dan keamanan kedua memberikan nilai rata-rata yang sama 5% dengan standar deviasi 4%. Sekuritas memiliki korelasi -0,5, sehingga ada korelasi negatif antara persentase pengembalian. 
+
+Jika perusahaan menginvestasikan dua juta dolar dengan setengah di setiap keamanan (keamanan pertama dan kedua), berapa rata-rata dan standar deviasi dari persentase pengembalian? Bandingkan standar deviasi dari strategi ini dengan strategi yang menginvestasikan dua juta dolar hanya pada keamanan pertama dan kemudian interpretasikan!
+
+
+## Ringkasan Solusi
+
+Berikut adalah lembar jawaban komprehensif yang berisi penyelesaian sistematis untuk soal-soal pada Problem Set 6 (Distribusi Probabilitas Gabungan / Multivariat) berdasarkan prinsip probabilitas dan statistika:
+
+### **LEMBAR JAWABAN: PROBLEM SET 6**
+
+**Soal 1: Pembuktian Fungsi Massa Probabilitas Gabungan**
+Syarat PMF Gabungan adalah $f(x,y) \ge 0$ dan $\sum \sum f(x,y) = 1$.
+Berdasarkan tabel distribusi pada sumber: $f(x,y) = \frac{1}{4} + \frac{1}{8} + \frac{1}{4} + \frac{1}{4} + \frac{1}{8} = \frac{8}{8} = \mathbf{1}$. Karena totalnya tepat 1 dan tidak ada probabilitas negatif, fungsi tersebut terbukti memenuhi sifat PMF gabungan.
+
+**Soal 2: Konstanta Distribusi Probabilitas**
+$\sum_{x=1}^3 \sum_{y=1}^3 c(x+y) = 1$
+$c [ (1+1) + (1+2) + (1+3) + (2+1) + (2+2) + (2+3) + (3+1) + (3+2) + (3+3) ] = 1$
+$c [ 2 + 3 + 4 + 3 + 4 + 5 + 4 + 5 + 6 ] = 36c = 1 \implies \mathbf{c = 1/36}$
+
+**Soal 3: Rentang Distribusi Printer Cacat**
+$X$ (cacat berat), $Y$ (cacat ringan) dari total sampel $n = 4$.
+Karena jumlah $X$ dan $Y$ tidak mungkin melebihi sampel, rentang distribusinya adalah:
+$\mathbf{x \in \{0, 1, 2, 3, 4\}}$ dan $\mathbf{y \in \{0, 1, 2, 3, 4\}}$ dengan syarat mutlak $\mathbf{x + y \le 4}$.
+
+**Soal 4: Website Bisnis (Distribusi Hipergeometrik Bivariat)**
+Diketahui 100 pages: 60 (Rendah), 30 ($X$/Sedang), 10 ($Y$/Tinggi). Ambil $n=4$ tanpa pengembalian.
+a. $f_{XY}(x,y) = \frac{\binom{30}{x} \binom{10}{y} \binom{60}{4-x-y}}{\binom{100}{4}}$
+b. $f_X(x) = \frac{\binom{30}{x} \binom{70}{4-x}}{\binom{100}{4}}$
+c. $E(X) = n \cdot p_x = 4 \times (\frac{30}{100}) = \mathbf{1,2}$
+d. $f_{Y|3}(y) = P(Y=y | X=3) = \frac{f_{XY}(3,y)}{f_X(3)} = \frac{\binom{10}{y} \binom{60}{1-y}}{\binom{70}{1}}$ untuk $y \in \{0, 1\}$
+e. $E(Y|X=3) = \sum y \cdot f_{Y|3}(y) = 1 \cdot (\frac{10}{70}) = \mathbf{1/7}$
+f. $V(Y|X=3) = E(Y^2) - (E(Y))^2 = \frac{1}{7} - (\frac{1}{7})^2 = \mathbf{6/49}$
+g. **Tidak Independen**, karena rentang $Y$ bergantung langsung pada nilai $X$ ($x+y \le 4$).
+
+**Soal 5: Evaluasi Tabel Probabilitas Z**
+Berdasarkan data probabilitas gabungan $f(x,y,z)$:
+a. $P(X=2) = 0,20 + 0,15 + 0,10 + 0,05 = \mathbf{0,50}$
+b. $P(Z<1,5) \implies P(Z=1) = 0,05 + 0,15 + 0,20 + 0,10 = \mathbf{0,50}$
+c. $E(X) = 1(0,50) + 2(0,50) = \mathbf{1,5}$
+d. $P(X=1, Y=2) = 0,15 + 0,20 = \mathbf{0,35}$
+e. $P(X=1 \cup Z=2) = P(X=1) + P(Z=2) - P(X=1 \cap Z=2) = 0,50 + 0,50 - (0,10+0,20) = \mathbf{0,70}$
+
+**Soal 6 & 7: Distribusi Multinomial Oven & Transmisi Bit**
+**Oven:** $n=4$, $p_1(berat)=0,6$, $p_2(ringan)=0,3$, $p_3(tidak)=0,1$.
+*   a. **Ya, bersifat multinomial** karena pengujian bersifat independen, kategori > 2 dan probabilitas konstan.
+*   b. $P(2 \text{ berat}, 2 \text{ ringan}, 0 \text{ tidak}) = \frac{4!}{2!2!0!} (0,6)^2 (0,3)^2 (0,1)^0 = 6 \times 0,36 \times 0,09 = \mathbf{0,1944}$
+*   c. $P(0 \text{ cacat}) = \frac{4!}{0!0!4!} (0,1)^4 = \mathbf{0,0001}$
+
+**Transmisi Bit:** $n=3$, $p_T=0,01$, $p_S=0,04$, $p_R=0,95$.
+*   a. $P(2 \text{ Tinggi}, 1 \text{ Sedang}) = \frac{3!}{2!1!0!} (0,01)^2 (0,04)^1 (0,95)^0 = 3 \times 0,0001 \times 0,04 = \mathbf{0,000012}$
+*   b. $P(3 \text{ Rendah}) = (0,95)^3 = \mathbf{0,857375}$
+
+**Soal 8 & 9: PDF Kontinu Gabungan f(x,y) = cxy**
+*   **Nilai c:** $\int_0^3 \int_0^3 cxy \,dx\,dy = c [\frac{x^2}{2}]_0^3 [\frac{y^2}{2}]_0^3 = c(\frac{81}{4}) = 1 \implies \mathbf{c = 4/81}$
+*   a. $P(X<1, Y<2) = \int_0^2 \int_0^1 \frac{4}{81}xy \,dx\,dy = \frac{4}{81} (\frac{1}{2}) (2) = \mathbf{4/81}$
+*   b. $P(1<X<2) = \int_0^3 \int_1^2 \frac{4}{81}xy \,dx\,dy = \frac{4}{81} (\frac{3}{2}) (\frac{9}{2}) = \mathbf{1/3}$
+*   c. $P(Y>1) = \int_1^3 \int_0^3 \frac{4}{81}xy \,dx\,dy = \frac{4}{81} (\frac{9}{2}) (4) = \mathbf{8/9}$
+*   d. $P(X<2, Y<2) = \int_0^2 \int_0^2 \frac{4}{81}xy \,dx\,dy = \frac{4}{81} (2) (2) = \mathbf{16/81}$
+*   e. $E(X) = \int_0^3 \int_0^3 x (\frac{4}{81}xy) \,dx\,dy = \frac{4}{81} (9) (\frac{9}{2}) = \mathbf{2}$
+*   f. $E(Y) = \mathbf{2}$ (karena fungsi simetris)
+
+**Soal 10: Pengukuran Kertas Seragam**
+Luas area rentang = $\int_0^4 (x+1) - (x-1) dx = \int_0^4 2 dx = 8$. Agar volume $\iint f(x,y) dx dy = 1$, maka $\mathbf{c = 1/8}$.
+
+**Soal 11: Sistem Pemesanan Independen (Eksponensial)**
+Laju $\lambda = 1/3,2 = 0,3125$ pesanan/menit.
+*   a. Prob(0 pesanan dlm 5 mnt, 1 sistem) = $e^{-5/3,2} \approx 0,2096$. Jika kedua sistem = $(0,2096)^2 \approx \mathbf{0,0439}$.
+*   b. Prob(0 pesanan dlm 10 mnt, 2 sistem) = $(e^{-10/3,2})^2 \approx \mathbf{0,00193}$.
+*   c. Menggunakan Poisson interval $\mu = 5/3,2 = 1,5625$. $P(X=2) = e^{-1,5625} \frac{1,5625^2}{2} \approx 0,2558$. Jika kedua sistem = $(0,2558)^2 \approx \mathbf{0,0654}$.
+*   d. Distribusi gabungan **tidak dibutuhkan** karena kedua *routing system* telah secara eksplisit dideklarasikan beroperasi secara independen.
+
+**Soal 12: Fungsi 3 Variabel f(x,y,z) = 8xyz**
+Variabel independen pada batas $0 < x,y,z < 1$.
+*   a. $P(X < 0,5) = \int_0^{0,5} 2x dx = \mathbf{0,25}$
+*   b. $P(X < 0,5, Y < 0,5) = P(X<0,5) \cdot P(Y<0,5) = 0,25 \times 0,25 = \mathbf{0,0625}$
+*   c. $P(Z < 2) = \mathbf{1}$ (Batas maksimal fungsi adalah 1)
+*   d. $P(X < 0,5, Z < 2) = 0,25 \times 1 = \mathbf{0,25}$
+*   e. $E(X) = \int_0^1 x(2x) dx = \mathbf{2/3}$
+
+**Soal 13: Fungsi f(x,y,z) = c**
+Batas adalah simplex ruang 3D $x+y+z \le 1$. Volume dari struktur bangun datar ini adalah $\int_0^1 \int_0^{1-x} \int_0^{1-x-y} 1 \,dz\,dy\,dx = 1/6$. Agar probabilitas bernilai 1, maka $\mathbf{c = 6}$.
+
+**Soal 14: Manufaktur Lampu (Normal)**
+$\mu = 1,2$, $\sigma = 0,03$. Gagal $< 1,14$. $Z = \frac{1,14 - 1,2}{0,03} = -2$. $P(gagal) = P(Z < -2) = 0,02275$. Total sampel $n=25$ (Distribusi Binomial).
+*   a. $P(\ge 1 gagal) = 1 - P(0 gagal) = 1 - (1 - 0,02275)^{25} \approx \mathbf{0,438}$
+*   b. $P(\le 5 gagal) = \sum_{x=0}^{5} b(x; 25; 0,02275) \approx \mathbf{0,9999}$
+*   c. $P(seluruh memenuhi/0 gagal) = \mathbf{0,562}$
+*   d. **Tidak dibutuhkan**, karena setiap sampel lampu yang ditarik bersifat independen dari lampu lainnya (distribusi marginal Binomial dapat menangani skenario independen).
+
+**Soal 15: Kovariansi dan Korelasi f(x,y) = c(x+y)**
+Telah dibuktikan $\mathbf{c = 1/36}$.
+Distribusi Marginal (simetris): $E(X) = E(Y) = 13/6$. Variansi $V(X) = 23/36$.
+Ekspektasi gabungan $E(XY) = \sum xy \cdot \frac{x+y}{36} = 168/36 = \mathbf{14/3}$.
+Kovariansi: $Cov(X,Y) = E(XY) - E(X)E(Y) = \frac{168}{36} - (\frac{13}{6})^2 = \mathbf{-1/36}$.
+Korelasi: $\rho = \frac{Cov(X,Y)}{\sigma_X \sigma_Y} = \frac{-1/36}{23/36} = \mathbf{-1/23}$.
+
+**Soal 16: Perubahan Korelasi Linier**
+Korelasi $U=aX+b$ dan $V=cY+d$ bebas dari pergeseran ($b,d$). Korelasinya tetap sebesar $\mathbf{\rho}$ jika tanda perkalian $a$ dan $c$ positif (searah), dan $\mathbf{-\rho}$ jika perkalian $a$ dan $c$ bernilai negatif (berlawanan arah).
+
+**Soal 17: Plot Kontur Normal Bivariat**
+*   a. $\rho = 0$: Kontur elips sejajar sumbu tegak/datar karena variansi $\sigma_x \ne \sigma_y$.
+*   b. $\rho = -0,8$: Kontur elips condong memanjang dari kiri-atas ke kanan-bawah.
+*   c. $\rho = 0,8$: Kontur elips condong memanjang dari kiri-bawah ke kanan-atas.
+
+**Soal 18: Tinta Lapis Bivariat Spesifikasi**
+Karena $\rho=0$, $X$ dan $Y$ adalah independen.
+$Z_X = \frac{0,100465 - 0,1}{0,00031} = \pm 1,5 \implies P(Specs X) = P(-1,5 < Z < 1,5) = 0,8664$.
+$Z_Y = \frac{0,23034 - 0,23}{0,00017} = \pm 2,0 \implies P(Specs Y) = P(-2 < Z < 2) = 0,9545$.
+Probabilitas lulus kedua *specs*: $0,8664 \times 0,9545 = \mathbf{0,827}$.
+
+**Soal 19: Pembuktian Independensi ρ = 0**
+Pada distribusi normal bivariat eksak, jika $\rho = 0$, eksponensial dari fungsi padat gabungan $(x-\mu_x)(y-\mu_y)$ bernilai nol, sehingga persamaannya dapat dipecah sempurna secara aljabar menjadi $f(x,y) = f(x) \cdot f(y)$. Ini adalah bukti matematis absolut bahwa mereka independen.
+
+**Soal 20: Kombinasi Variabel Normal (E(X)=0, V(X)=4, E(Y)=10, V(Y)=9)**
+Asumsikan $W = 2X + 3Y$.
+*   a. $E(W) = 2(0) + 3(10) = \mathbf{30}$
+*   b. $V(W) = 2^2(4) + 3^2(9) = 16 + 81 = \mathbf{97}$
+*   c. $P(W < 30) = P(Z < \frac{30-30}{\sqrt{97}}) = P(Z < 0) = \mathbf{0,50}$
+*   d. $P(W < 40) = P(Z < \frac{40-30}{\sqrt{97}}) = P(Z < 1,015) = \mathbf{0,8449}$
+
+**Soal 21: Transformasi Satuan (cm ke mm)**
+Variabel berubah linear dengan fungsi $Y = 10X$.
+Rata-rata: $E(Y) = 10 \cdot E(X) = 10(5) = \mathbf{50 \text{ mm}}$.
+Variansi: $V(Y) = 10^2 \cdot V(X) = 100(0,25) = \mathbf{25 \text{ mm}^2}$.
+
+**Soal 22 & 23: Kombinasi Linier Komponen Geometris**
+**Casing (T = X1 + X2):** $\mu = 2$, $\sigma = 0,1$.
+*   a. Rata-rata $\mu_T = 2+2 = \mathbf{4 \text{ mm}}$. Standar deviasi $\sigma_T = \sqrt{0,1^2+0,1^2} = \sqrt{0,02} \approx \mathbf{0,1414 \text{ mm}}$.
+*   b. $P(T > 4,3) = P(Z > \frac{4,3-4}{0,1414}) = P(Z > 2,12) = \mathbf{0,017}$.
+
+**Gap (D = A - B - C):** $\mu_A=10, \sigma_A=0,1$, $\mu_{B,C}=2, \sigma_{B,C}=0,05$.
+*   a. $\mu_D = 10 - 2 - 2 = \mathbf{6 \text{ mm}}$. $\sigma_D = \sqrt{0,1^2 + (-1)^2(0,05)^2 + (-1)^2(0,05)^2} = \sqrt{0,015} \approx \mathbf{0,1225 \text{ mm}}$.
+*   b. $P(D < 5,9) = P(Z < \frac{5,9-6}{0,1225}) = P(Z < -0,816) = \mathbf{0,207}$.
+
+**Soal 24: Reaksi Obat Antirheumatoid (Bersyarat)**
+20 orang: 10% Parah ($Y$), 20% Sedang, 70% Ringan ($X$).
+*   a. $P(2P, 4S, 14R) = \frac{20!}{2!4!14!} (0,1)^2 (0,2)^4 (0,7)^{14} = \mathbf{0,016}$.
+*   b. $P(0P) = (1 - 0,1)^{20} = 0,9^{20} = \mathbf{0,1216}$.
+*   c. Mean $Y = 20(0,1) = \mathbf{2}$. Variansi $Y = 20(0,1)(0,9) = \mathbf{1,8}$.
+*   d. Jika 19 Ringan ($X=19$), tersisa $n=1$ orang. Rasio normalisasi probabilitas bersyarat parah: $p' = \frac{0,1}{0,1+0,2} = 1/3$. Distribusinya adalah binomial dengan $n=1, p=1/3$.
+*   e. $\mu_{Y|X=19} = n \cdot p' = 1 \cdot (1/3) = \mathbf{1/3}$.
+
+**Soal 25 & 26: Fungsi Terdistribusi Lingkaran Gabungan**
+*   **Soal 25:** $\int_0^3 \int_0^2 cx^2y \,dy\,dx = 1 \implies c [\frac{3^3}{3}] [\frac{2^2}{2}] = 18c = 1 \implies \mathbf{c = 1/18}$.
+*   **Soal 26:** $f(x,y,z)$ pada $x^2+y^2 \le 1$ dan $0<z<4$. Area silinder $4\pi$. Densitas konstan = $\frac{1}{4\pi}$.
+    *   a. $P(X^2+Y^2 \le 0,5) = \frac{\pi(0,5)}{\pi(1)} = \mathbf{0,5}$.
+    *   b. $P(Z<2 \cap r^2\le0,5) = 0,5 \times \frac{2}{4} = \mathbf{0,25}$.
+    *   c. $f(x,y | Z=1) = \mathbf{1/\pi}$ (Distribusi seragam piringan penuh terlepas dari $Z$).
+    *   d. $f_X(x) = \int \int \frac{1}{4\pi} dy dz = \mathbf{\frac{2\sqrt{1-x^2}}{\pi}}$.
+    *   e & f. $E(Z|x,y) = \mathbf{2}$ untuk segala kombinasi (karena Z menyebar seragam dari 0 hingga 4 dan independen dari penampang XY).
+
+**Soal 27: Keandalan 6 Mesin Fotokopi (Eksponensial)**
+*   a. $P(\text{seluruh} > 5.000) = \prod e^{-5000/\mu_i} = e^{-5/8} e^{-5/10} e^{-5/10} e^{-5/20} e^{-5/20} e^{-5/25} = e^{-2,325} = \mathbf{0,0977}$.
+*   b. $P(\text{setidaknya 1} > 25.000) = 1 - P(\text{seluruh} \le 25.000) = 1 - \prod (1 - e^{-25000/\mu_i})$.
+
+**Soal 28 & 29: Normal Bivariat Eksponensial & Portofolio**
+*   **Soal 28:** Membandingkan matriks kuadratik pada ekspresi $\exp\{-\dots\}$ dengan kernel standar normal bivariat menunjukkan nilai pemusatan sentral $E(X) = \mathbf{1}$ dan $E(Y) = \mathbf{2}$.
+*   **Soal 29:** $X_1$ (mean 5, sd 2), $X_2$ (mean 5, sd 4), $\rho = -0,5$, Bobot investasi $w = 0,5$.
+    *   Return Rata-rata = $0,5(5) + 0,5(5) = \mathbf{5\%}$.
+    *   Variansi Total = $w^2 \sigma_1^2 + w^2 \sigma_2^2 + 2w^2 \rho \sigma_1 \sigma_2 = 0,25(4) + 0,25(16) + 2(0,25)(-0,5)(2)(4) = 1 + 4 - 2 = 3$.
+    *   Standar Deviasi (Risiko) = $\mathbf{\sqrt{3} \approx 1,732\%}$.
+    *   **Interpretasi:** Diversifikasi ke instrumen dengan korelasi negatif efektif menurunkan rasio risiko gabungan ($1,732\%$) menjadi jauh lebih rendah dibandingkan dengan berinvestasi tunggal pada instrumen teraman pertama sekalipun ($2\%$).
+
+## Konsep Solusi
+### **Kategori 1: Distribusi Multinomial (Diskrit Gabungan)**
+**Prinsip yang Digunakan:**
+Distribusi Multinomial adalah perluasan dari distribusi Binomial. Distribusi ini digunakan ketika sebuah eksperimen memiliki lebih dari dua kemungkinan hasil (mutually exclusive) pada setiap percobaannya, dan percobaan tersebut dilakukan sebanyak $n$ kali secara independen.
+Rumusnya: $P(X_1=x_1, ..., X_k=x_k) = \frac{n!}{x_1!...x_k!} p_1^{x_1} ... p_k^{x_k}$
+
+**Soal & Solusi Representatif:**
+*   **Kasus Oven Cacat:** 4 oven jatuh. Probabilitas cacat berat ($p_1=0,6$), ringan ($p_2=0,3$), tidak cacat ($p_3=0,1$).
+    *   *P(2 berat, 2 ringan, 0 tidak cacat):* $\frac{4!}{2!2!0!} (0,6)^2 (0,3)^2 (0,1)^0 = 6 \times 0,36 \times 0,09 = \mathbf{0,1944}$.
+    *   *P(0 cacat dari 4 oven):* $\frac{4!}{0!0!4!} (0,6)^0 (0,3)^0 (0,1)^4 = \mathbf{0,0001}$.
+*   **Kasus Efek Samping Obat:** 20 orang. Parah ($p_1=0,1$), sedang ($p_2=0,2$), ringan ($p_3=0,7$).
+    *   *P(2 parah, 4 sedang, 14 ringan):* $\frac{20!}{2!4!14!} (0,1)^2 (0,2)^4 (0,7)^{14} \approx \mathbf{0,016}$.
+    *   *Mean efek parah:* $E(X_1) = np_1 = 20 \times 0,1 = \mathbf{2 \text{ orang}}$.
+    *   *Variansi efek parah:* $V(X_1) = np_1(1-p_1) = 20(0,1)(0,9) = \mathbf{1,8}$.
+
+
+
+### **Kategori 2: Distribusi Gabungan Kontinu & Penentuan Konstanta ($c$)**
+**Prinsip yang Digunakan:**
+Untuk fungsi padat probabilitas (PDF) gabungan kontinu $f(x,y)$, total volume di bawah kurva (integral lipat dua pada seluruh rentang) harus sama dengan 1 ($\iint f(x,y) dx dy = 1$). Probabilitas kejadian tertentu dihitung dengan mengintegralkan fungsi tersebut pada batas wilayah kejadiannya.
+
+**Soal & Solusi Representatif:**
+*   **Kasus Variabel $f(x,y) = cxy$:** Rentang $0 < x < 3$ dan $0 < y < 3$.
+    *   *Menentukan c:* $\int_0^3 \int_0^3 cxy \,dy\,dx = c [\frac{x^2}{2}]_0^3 [\frac{y^2}{2}]_0^3 = c(\frac{9}{2})(\frac{9}{2}) = \frac{81c}{4} = 1$. Maka $\mathbf{c = 4/81}$.
+    *   *Menentukan E(X):* $E(X) = \iint x \cdot f(x,y) dx dy = \int_0^3 \int_0^3 x (\frac{4}{81}xy) dy dx = \mathbf{2}$.
+*   **Kasus Evaluasi Kehalusan Permukaan Kertas:** Rentang $0 < x < 4$ dan $x-1 < y < x+1$ dengan $f(x,y) = c$.
+    *   Luas area batas: $\int_0^4 ( (x+1) - (x-1) ) dx = \int_0^4 2 dx = 8$. Agar integral = 1, maka $\mathbf{c = 1/8}$.
+
+
+
+### **Kategori 3: Kombinasi Linear Variabel Random Independen**
+**Prinsip yang Digunakan:**
+Jika $X_1, X_2, \dots$ adalah variabel random independen berdistribusi normal, maka kombinasi linear mereka $Y = a_1X_1 + a_2X_2 + \dots$ juga akan terdistribusi normal .
+*   Mean: $\mu_Y = a_1\mu_1 + a_2\mu_2 + \dots$ 
+*   Variansi: $\sigma_Y^2 = a_1^2\sigma_1^2 + a_2^2\sigma_2^2 + \dots$ 
+
+**Soal & Solusi Representatif:**
+*   **Kasus Casing Plastik Magnetik:** Terdiri dari 2 bagian independen, masing-masing $\mu=2, \sigma=0,1$.
+    *   *Total Ketebalan ($T = X_1 + X_2$):* $\mu_T = 2 + 2 = \mathbf{4 \text{ mm}}$. Variansi $\sigma_T^2 = 0,1^2 + 0,1^2 = 0,02$. Standar deviasi $\sigma_T = \mathbf{\sqrt{0,02} \approx 0,1414 \text{ mm}}$.
+    *   *P(T > 4,3):* Transformasi ke Z: $Z = \frac{4,3 - 4}{0,1414} = 2,12$. Nilai $P(Z > 2,12) \approx \mathbf{0,017}$.
+*   **Kasus Komponen Berbentuk U:** Gap $D = A - B - C$. $A \sim N(10; 0,1^2)$, $B, C \sim N(2; 0,05^2)$.
+    *   *Mean gap D:* $10 - 2 - 2 = \mathbf{6 \text{ mm}}$.
+    *   *Variansi D:* $V(A) + V(-B) + V(-C) = 0,1^2 + (-1)^2(0,05)^2 + (-1)^2(0,05)^2 = 0,01 + 0,0025 + 0,0025 = \mathbf{0,015}$. Standar deviasi $\approx 0,1225$.
+    *   *P(D < 5,9):* $P(Z < \frac{5,9 - 6}{0,1225}) = P(Z < -0.816) \approx \mathbf{0,207}$.
+*   **Kasus Portofolio Investasi:** $X_1$ (Keamanan 1): $\mu=5\%, \sigma=2\%$. $X_2$ (Keamanan 2): $\mu=5\%, \sigma=4\%$. Korelasi $\rho = -0,5$. Investasi dibagi rata 50:50.
+    *   $R = 0,5 X_1 + 0,5 X_2$.
+    *   *Rata-rata Return:* $0,5(5) + 0,5(5) = \mathbf{5\%}$.
+    *   *Variansi dengan korelasi:* $\sigma_R^2 = a^2\sigma_1^2 + b^2\sigma_2^2 + 2ab\cdot Cov(X_1,X_2)$ di mana $Cov = \rho \sigma_1 \sigma_2$.
+        $\sigma_R^2 = (0,5^2)(2^2) + (0,5^2)(4^2) + 2(0,5)(0,5)(-0,5)(2)(4) = 1 + 4 - 2 = \mathbf{3}$.
+    *   *Standar deviasi:* $\mathbf{\sqrt{3} \approx 1,732\%}$. Nilai ini lebih rendah dibanding investasi hanya pada keamanan pertama (2%), menunjukkan prinsip diversifikasi meminimalkan risiko.
+
+
+
+### **Kategori 4: Kovariansi, Korelasi, dan Normal Bivariat**
+**Prinsip yang Digunakan:**
+Kovariansi mengukur hubungan linear antara dua variabel, dan Korelasi ($\rho$) menyelaraskan skala kovariansi ke rentang $-1 \le \rho \le 1$. Jika $\rho=0$ pada distribusi normal bivariat, maka kedua variabel dipastikan independen.
+
+**Soal & Solusi Representatif:**
+*   **Kasus Spesifikasi Tinta Luminesen:** $X \sim N(0,1; 0,00031^2)$, $Y \sim N(0,23; 0,00017^2)$, $\rho=0$. Spesifikasi: $0,099535 < X < 0,100465$ dan $0,22966 < Y < 0,23034$.
+    *   Karena $\rho=0$, kejadian $X$ dan $Y$ independen. Kita bisa menghitung probabilitas total sebagai $P(Specs X) \times P(Specs Y)$.
+    *   $Z_{X1} = \frac{0,099535 - 0,1}{0,00031} = -1,5$ dan $Z_{X2} = 1,5$. Area $P(-1,5 < Z < 1,5) \approx 0,8664$.
+    *   $Z_{Y1} = \frac{0,22966 - 0,23}{0,00017} = -2$ dan $Z_{Y2} = 2$. Area $P(-2 < Z < 2) \approx 0,9545$.
+    *   *Probabilitas lampu lulus uji:* $0,8664 \times 0,9545 \approx \mathbf{0,827}$.
+
+
+
+### **Desain Kelas Python Multivariat (Reusable)**
+
+Skrip di bawah ini dirancang menggunakan `scipy.integrate` dan `scipy.stats` untuk menjawab setiap keluarga masalah di atas.
+
+```python
+import numpy as np
+import scipy.stats as stats
+import scipy.integrate as integrate
+import math
+
+class MultivariateSolver:
+    
+    @staticmethod
+    def multinomial_prob(n, x_list, p_list):
+        """
+        Menghitung Probabilitas Distribusi Multinomial (Kasus Oven Cacat, Obat)
+        x_list: list jumlah observasi untuk tiap kategori
+        p_list: list probabilitas untuk tiap kategori
+        """
+        prob = math.factorial(n)
+        for x in x_list:
+            prob /= math.factorial(x)
+        for x, p in zip(x_list, p_list):
+            prob *= (p ** x)
+        return prob
+    
+    @staticmethod
+    def find_continuous_constant_2D(f_xy, x_bounds, y_bounds):
+        """
+        Mencari konstanta 'c' agar integral f(x,y) = 1
+        x_bounds: list [min, max], y_bounds: list [min, max] atau fungsi lambda
+        """
+        if callable(y_bounds): # Jika batas Y bergantung pada X
+            integral_val, _ = integrate.dblquad(f_xy, x_bounds, x_bounds, y_bounds, y_bounds)
+        else:
+            integral_val, _ = integrate.dblquad(f_xy, x_bounds, x_bounds, lambda x: y_bounds, lambda x: y_bounds)
+        return 1 / integral_val
+
+    @staticmethod
+    def linear_combination_normal(means, std_devs, weights):
+        """
+        Menghitung distribusi Y = a1*X1 + a2*X2 ... dari variabel Normal Independen
+        (Kasus Casing Plastik, Komponen U-Shape)
+        """
+        mu_Y = sum(w * m for w, m in zip(weights, means))
+        var_Y = sum((w**2) * (s**2) for w, s in zip(weights, std_devs))
+        return mu_Y, math.sqrt(var_Y)
+
+    @staticmethod
+    def portfolio_risk(w1, w2, mu1, mu2, std1, std2, corr):
+        """
+        Kalkulasi E(R) dan Var(R) untuk kombinasi Linear Dependent (Kasus Portofolio Investasi)
+        """
+        exp_return = w1*mu1 + w2*mu2
+        covariance = corr * std1 * std2
+        variance = (w1**2)*(std1**2) + (w2**2)*(std2**2) + 2*w1*w2*covariance
+        return exp_return, math.sqrt(variance)
+
+# ==========================================
+# EKSUSI KODE UNTUK MEMECAHKAN KASUS
+# ==========================================
+if __name__ == "__main__":
+    solver = MultivariateSolver()
+
+    # 1. Penyelesaian Kasus Multinomial Oven Cacat
+    print(" Kasus Multinomial Oven ")
+    prob_oven = solver.multinomial_prob(4,, [0.6, 0.3, 0.1])
+    print(f"Probabilitas(2 berat, 2 ringan): {prob_oven:.4f}")
+
+    # 2. Penyelesaian Konstanta C untuk f(x,y) = c * x * y
+    print("\n Kasus Integral Konstanta c ")
+    f_xy_dummy = lambda y, x: x * y # dblquad expects y then x
+    c_val = solver.find_continuous_constant_2D(f_xy_dummy,)
+    print(f"Nilai c yang memenuhi adalah: {c_val:.4f} (Ekspektasi: 0.0494 atau 4/81)")
+
+    # 3. Penyelesaian Kombinasi Linear (Komponen U-Shape D = A - B - C)
+    print("\n Kasus Komponen U-Shape ")
+    mu_D, std_D = solver.linear_combination_normal(
+        means=, 
+        std_devs=[0.1, 0.05, 0.05], 
+        weights=[1, -1, -1] # D = A - B - C
+    )
+    # P(D < 5.9)
+    p_less_5_9 = stats.norm.cdf(5.9, loc=mu_D, scale=std_D)
+    print(f"Mean Gap D: {mu_D}, Std Dev: {std_D:.4f}")
+    print(f"Probabilitas Gap < 5.9mm: {p_less_5_9:.4f}")
+
+    # 4. Penyelesaian Portofolio Investasi dengan Korelasi
+    print("\n Kasus Portofolio Investasi ")
+    ret, risk = solver.portfolio_risk(
+        w1=0.5, w2=0.5, 
+        mu1=5, mu2=5, 
+        std1=2, std2=4, 
+        corr=-0.5
+    )
+    print(f"Rata-rata Return: {ret}%")
+    print(f"Standar Deviasi (Risiko): {risk:.4f}%")
+```

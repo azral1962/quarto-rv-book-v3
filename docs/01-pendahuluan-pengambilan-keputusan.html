@@ -195,25 +195,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-random-variable-umum.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-distribusi-diskrit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Bab 3. Distribusi Random Variable Diskrit</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-distribusi-kontinu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bab 4. Distribusi Random Variable Kontinu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-random-variable-multivariat-dan-fungsi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bab 5. Random Variable Multivariat dan Fungsi Random Variable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -363,7 +363,7 @@ window.Quarto = {
 <li><strong>B</strong>: bisa sangat menguntungkan, tetapi bisa juga sangat buruk</li>
 </ul>
 <p>Secara kasatmata, dua opsi bisa saja memiliki rata-rata hasil yang sama. Tetapi apakah itu berarti keduanya sama baik?</p>
-<div id="b7d5db8b" class="cell" data-execution_count="1">
+<div id="c0e318c0" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -385,7 +385,7 @@ Mean B = 10.24422094568761
 Var B  = 144.83317214885628</code></pre>
 </div>
 </div>
-<div id="e787026a" class="cell" data-execution_count="2">
+<div id="25d61080" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.hist(A, bins<span class="op">=</span><span class="dv">60</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"Investasi A"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.hist(B, bins<span class="op">=</span><span class="dv">60</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"Investasi B"</span>)</span>
@@ -475,7 +475,7 @@ E[X] = \text{ekspektasi}
 </section>
 <section id="a-apply-1" class="level3" data-number="3.7.4">
 <h3 data-number="3.7.4" class="anchored" data-anchor-id="a-apply-1"><span class="header-section-number">3.7.4</span> A — Apply</h3>
-<div id="287a427e" class="cell" data-execution_count="3">
+<div id="c1c2ab06" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -490,7 +490,7 @@ E[X] = \text{ekspektasi}
 E[XB] ~ 12.0198  Var[XB] ~ 147.42240796</code></pre>
 </div>
 </div>
-<div id="0ce4aff1" class="cell" data-execution_count="4">
+<div id="cfafeab2" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.hist(XA, bins<span class="op">=</span>np.arange(XA.<span class="bu">min</span>()<span class="op">-</span><span class="fl">0.5</span>, XA.<span class="bu">max</span>()<span class="op">+</span><span class="fl">1.5</span>), alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"XA"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.hist(XB, bins<span class="op">=</span>np.arange(XB.<span class="bu">min</span>()<span class="op">-</span><span class="fl">0.5</span>, XB.<span class="bu">max</span>()<span class="op">+</span><span class="fl">1.5</span>), alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"XB"</span>)</span>
@@ -559,7 +559,7 @@ X \approx \mathrm{Poisson}(\lambda = np = 1)
 </section>
 <section id="a-apply-2" class="level3" data-number="3.8.4">
 <h3 data-number="3.8.4" class="anchored" data-anchor-id="a-apply-2"><span class="header-section-number">3.8.4</span> A — Apply</h3>
-<div id="574dccc0" class="cell" data-execution_count="5">
+<div id="3ea3792f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> comb, exp, factorial</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
@@ -577,7 +577,7 @@ X \approx \mathrm{Poisson}(\lambda = np = 1)
 P(X=2) Poisson  = 0.18393972058572117</code></pre>
 </div>
 </div>
-<div id="dd5ecfaa" class="cell" data-execution_count="6">
+<div id="65c231c3" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom, poisson</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">8</span>)</span>
@@ -641,7 +641,7 @@ P(X &lt; T)
 </section>
 <section id="a-apply-3" class="level3" data-number="3.9.4">
 <h3 data-number="3.9.4" class="anchored" data-anchor-id="a-apply-3"><span class="header-section-number">3.9.4</span> A — Apply</h3>
-<div id="3378fa68" class="cell" data-execution_count="7">
+<div id="5724e22b" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> <span class="dv">900</span></span>
@@ -655,7 +655,7 @@ P(X &lt; 850) = 0.15865525393145707
 P(X &lt; 900) = 0.5</code></pre>
 </div>
 </div>
-<div id="da1e3a36" class="cell" data-execution_count="8">
+<div id="df306962" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">700</span>, <span class="dv">1100</span>, <span class="dv">400</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> norm.pdf(x, loc<span class="op">=</span>mu, scale<span class="op">=</span>sigma)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -716,7 +716,7 @@ P = I^2 R
 </section>
 <section id="a-apply-4" class="level3" data-number="3.10.4">
 <h3 data-number="3.10.4" class="anchored" data-anchor-id="a-apply-4"><span class="header-section-number">3.10.4</span> A — Apply</h3>
-<div id="a2ab75e7" class="cell" data-execution_count="9">
+<div id="795eb61f" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">123</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">10</span>, scale<span class="op">=</span><span class="fl">0.8</span>, size<span class="op">=</span><span class="dv">100000</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> <span class="dv">5</span></span>
@@ -729,7 +729,7 @@ P = I^2 R
 Mean(P) = 503.3047460543435 Var(P) = 6420.356765767546</code></pre>
 </div>
 </div>
-<div id="01b43a53" class="cell" data-execution_count="10">
+<div id="ed89a3e5" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plt.hist(I, bins<span class="op">=</span><span class="dv">60</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"Arus I"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.hist(P, bins<span class="op">=</span><span class="dv">60</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"Daya P = I^2 R"</span>)</span>
@@ -796,7 +796,7 @@ M_t = M_{t-1} + \Pi_t
 </section>
 <section id="a-apply-5" class="level3" data-number="3.11.4">
 <h3 data-number="3.11.4" class="anchored" data-anchor-id="a-apply-5"><span class="header-section-number">3.11.4</span> A — Apply</h3>
-<div id="7e28bfc7" class="cell" data-execution_count="11">
+<div id="0d79c970" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -824,7 +824,7 @@ M_t = M_{t-1} + \Pi_t
 <span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(final_capitals), bankrupt <span class="op">/</span> n_sims</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5e61b3b6" class="cell" data-execution_count="12">
+<div id="c68965e7" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>capital_levels <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sales_stds <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">500</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -862,7 +862,7 @@ std sales=300 | mean final capital=3,950,022 | P(bankrupt)=0.002
 std sales=500 | mean final capital=4,118,620 | P(bankrupt)=0.087</code></pre>
 </div>
 </div>
-<div id="51cb44ef" class="cell" data-execution_count="13">
+<div id="9c231e2c" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> capital_levels:</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [r[<span class="dv">0</span>] <span class="cf">for</span> r <span class="kw">in</span> results[c]]</span>
@@ -952,7 +952,7 @@ Jika satu layanan rata-rata 30 menit, maka laju layanan dokter:</p>
 </section>
 <section id="a-apply-6" class="level3" data-number="3.12.4">
 <h3 data-number="3.12.4" class="anchored" data-anchor-id="a-apply-6"><span class="header-section-number">3.12.4</span> A — Apply</h3>
-<div id="48fd9d99" class="cell" data-execution_count="14">
+<div id="ce132dbe" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -991,7 +991,7 @@ Jika satu layanan rata-rata 30 menit, maka laju layanan dokter:</p>
 <span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>    busy_minutes <span class="op">=</span> <span class="dv">60</span> <span class="op">*</span> busy_hours</span>
 <span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> served_count, busy_minutes</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="83168ed1" class="cell" data-execution_count="15">
+<div id="0b198612" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>served <span class="op">=</span> []</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>profits <span class="op">=</span> []</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1019,7 +1019,7 @@ Rata-rata profit per hari = 218.96898501959993
 Profit maksimum simulasi = 459.8579788323201</code></pre>
 </div>
 </div>
-<div id="65308bcd" class="cell" data-execution_count="16">
+<div id="ce23c97b" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> np.arange(served.<span class="bu">min</span>()<span class="op">-</span><span class="fl">0.5</span>, served.<span class="bu">max</span>()<span class="op">+</span><span class="fl">1.5</span>, <span class="dv">1</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plt.hist(served, bins<span class="op">=</span>bins, density<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.75</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
@@ -1036,7 +1036,7 @@ Profit maksimum simulasi = 459.8579788323201</code></pre>
 </div>
 </div>
 </div>
-<div id="727c73f4" class="cell" data-execution_count="17">
+<div id="4ba29f6a" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>plt.hist(profits, bins<span class="op">=</span><span class="dv">60</span>, density<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.75</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Profit per hari ($)"</span>)</span>
@@ -1528,8 +1528,8 @@ Profit maksimum simulasi = 459.8579788323201</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-random-variable-umum.html" class="pagination-link" aria-label="Bab 2. Random Variable Umum">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bab 2. Random Variable Umum</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02-random-variable-umum.html" class="pagination-link" aria-label="Tujuan Bab">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tujuan Bab</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
