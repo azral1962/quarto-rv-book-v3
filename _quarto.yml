@@ -4,7 +4,7 @@ project:
 book:
   title: "Random Variable untuk Pengambilan Keputusan"
   author: "Armein Z. R. Langi"
-  date: "2026-03-31"
+  date: now
   chapters:
     - index.qmd
     - 00-kata-pengantar.qmd
@@ -15,15 +15,15 @@ book:
     - 05-random-variable-multivariat-dan-fungsi.qmd
     - 06-penutup.qmd
 
+lang: id
 format:
   html:
     theme: cosmo
     toc: true
     number-sections: true
-  pdf:
-    documentclass: scrreprt
+  typst:
     toc: true
-    number-sections: true
+    keep-typ: true
 
 execute:
   echo: true
